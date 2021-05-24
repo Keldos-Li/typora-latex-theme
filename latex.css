@@ -78,7 +78,7 @@ strong {
 }
 
 #write p{
-	text-align:left;
+  text-align:left;
 }
 
 /*
@@ -105,14 +105,14 @@ blockquote{
   font-style: normal; /* 本来打算用italic的，但是中文支持很差。如果需要斜体就再斜体好了 */
   font-family: "Latin Modern Roman", Times, 仿宋, sans-serif;
   border-left: 3px solid grey;
-	padding-left: 16px; /* 文字离左边框的距离 */
+  padding-left: 16px; /* 文字离左边框的距离 */
   margin-left: 20px; /* 左边框离页面边的距离 */
   font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
-	color: grey; /* 文字颜色 */
+  color: grey; /* 文字颜色 */
 }
 
-	/*border-width: 0.5pt 0;
-  border-style:solid;	这一行本来使用了上下边框*/
+  /*border-width: 0.5pt 0;
+  border-style:solid; 这一行本来使用了上下边框*/
 
 /* 标题属性 */
 h1,h2,h3,h4,h5,h6 {
@@ -123,27 +123,27 @@ h1,h2,h3,h4,h5,h6 {
 h1 {
   font-family: "LMRoman10-Bold", 华文黑体Bold;
   font-weight: bold;
-	text-align: center;
+  text-align: center;
   column-span: all;
-	font-size: 18pt;
+  font-size: 18pt;
 }
 h2 {
-	font-family: "LMRoman10-Bold", 方正公文黑体; 
-	font-size: 14pt;
+  font-family: "LMRoman10-Bold", 方正公文黑体; 
+  font-size: 14pt;
 }
 h3 {
-	font-family: "LMRoman10-Bold", 方正公文黑体;
-	font-size: 12pt;
+  font-family: "LMRoman10-Bold", 方正公文黑体;
+  font-size: 12pt;
   line-height: 12pt;
 }
 h4 {
-	font-family: "LMRoman10-Bold", 华文粗楷-SC;
-	font-size: 10pt;
+  font-family: "LMRoman10-Bold", 华文粗楷-SC;
+  font-size: 10pt;
   line-height: 8pt;
 }
 h5 {
-	font-family: "LMRoman10-Bold", 方正公文仿宋; 
-	font-size: 10pt;
+  font-family: "LMRoman10-Bold", 方正公文仿宋; 
+  font-size: 10pt;
   line-height: 10pt;
 }
 
@@ -153,31 +153,31 @@ h5 {
 .md-toc-h4,
 .md-toc-h5,
 .md-toc-h6 {
-	font-family: "Latin Modern Roman", Times, 宋体-简;
+  font-family: "Latin Modern Roman", Times, 宋体-简;
 }
 
 /* 三线表 */
 #write table{
-	border-top: 1.2pt solid;
-	border-bottom: 1.2pt solid;
-	font-family: "Latin Modern Roman", Times, 宋体-简;
-	font-size: 9pt;
-	text-align: center;
+  border-top: 1.2pt solid;
+  border-bottom: 1.2pt solid;
+  font-family: "Latin Modern Roman", Times, 宋体-简;
+  font-size: 9pt;
+  text-align: center;
   page-break-inside: avoid;
   width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
   margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
 }
 #write table td{
-	padding:7px;
+  padding:7px;
 }
 #write table tr{
-	padding:7px;
+  padding:7px;
 }
 /* 表格标题（首行）样式 */
 #write thead{
-	border-bottom: 0.5pt solid;
-	font-family: "LMRoman10-Bold", 华文黑体Bold;
-	font-size:9.5pt;
+  border-bottom: 0.5pt solid;
+  font-family: "LMRoman10-Bold", 华文黑体Bold;
+  font-size:9.5pt;
 }
 
 img{
