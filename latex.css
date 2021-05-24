@@ -1,0 +1,448 @@
+/* 下面是知乎作者 @让幻想飞 写的注释： */
+  /*这篇样式基于知乎大佬LAN DU的样式，原文知乎链接：
+  https://zhuanlan.zhihu.com/p/158767474
+  GitHub链接：
+  https://github.com/du33169/typora-theme-essay_cn
+  主要改动：
+  - 适配LaTeX的字体。选用像LaTeX的字体是装“哔”的重要手段。
+  - 更改标题、目录和大纲的编号样式。改成1. ，1.1 ， 1.1.1 ，……这样的编号更有一种浓厚的论文感觉。
+  - 二级及以下标题全部靠左，适应文章样式。后面加上大空白，适配LaTeX样式
+  不足之处：
+  - 仍然无法添加页眉页脚。
+  适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”*/
+
+/* @让幻想飞 的知乎文章地址：https://zhuanlan.zhihu.com/p/357096043
+   github项目地址: https://github.com/yfzhao20/Typora-markdown; */
+/*
+ 本人呢，因为是给自己用的，所以字体文件都直接安装引用了，也没打算放出来_(:з」∠)_。
+ 其他部分各种部分都重新编写了一点，修改了一点。_(:з」∠)_
+ 主要改动在于：
+ - 修改了多级列表编号样式；
+ - 增加了代码块字体和代码块样式；
+ - 修改了table样式；
+ - 修改了字体；
+ - 整理了代码编写风格使其更美观；
+ - 增订了大部分注释；（当然我写得很随意啦啦啦）
+ - 增加了侧边栏字体修改
+ 已知的bug: 
+ - 无编号项目列表有很大的bug！！在二级项目之后，你不能混用有序列表和无序列表！因为全都是重新定义的content，我不能理解它为什么会对子项目产生影响！！可恶！
+ - 当行间代码太长跨页的时候好像也会有点问题，到时候再改；
+
+ 未来的预期的话我可能会试一下搞成前导定义统一颜色字体字号啥最后引用的，现在的代码就是东拼西凑的，最后肯定需要整合的。
+ 具体时间不确定、。。
+ keldos 呜呜呜好烦啊
+*/
+/* ******************** */
+
+
+body{
+  /* border:1px solid bxlack; for debug */
+  padding:0 !important;
+  margin:0 !important;
+  line-height: 16pt /* 行距 */
+  /*counter-reset: tableHead 0 imgHead 0;*/
+}
+
+/* 正文区基本属性，参照wordTeX模板设置字体大小*/
+#write {
+   font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", sans-serif; 
+   font-size: 9.5pt; /* 字体大小 */
+   max-width: 21cm; /* A4标准宽度 */
+/* column-count: 2;
+   column-gap: 25px;
+   column-width: 8cm; 
+   display: inline-block; */ /* 这里可以试分栏的，但确实不适合实现 */
+}
+/* 粗体样式设置 */
+strong {
+  font-weight: 750; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，这里因为我使用的宋体-简的bold不明显，但存在heavy字重，所以标了750 */
+}
+
+/* 页边距处理 */
+@media screen{
+  #write{
+   padding:1.8cm 2cm; 
+   border:0.8px solid #AAC ; /* 添加一个淡蓝色的边框 */
+  }
+}
+
+@media print{
+  #write{
+   padding: 6.5mm !important; 
+   margin: 0 !important; 
+  }
+  @page{
+    size: A4; /* 强制A4大小吧，虽然页边距的设置还是很迷幻 */
+    margin: 1.8cm 2cm 1.2cm 2cm !important; /* 采用了浙江大学喜欢的边距；当然需要其他效果的时候也可以改*/
+  }
+}
+
+#write p{
+	text-align:left;
+}
+
+/*
+#write figure:after{
+  counter-increment: tableHead;
+  content: "表" counter(tableHead) " ";
+  text-align:center;
+  width:100%;
+  display:inline-block;
+}*/
+/* 图片，导出PDF时暂时无法显示 */
+/*
+#write .md-image:after{
+  counter-increment: imgHead;
+  content: "图" counter(imgHead) " ";
+  text-align:center;
+  width:100%;
+  display:inline-block;
+}
+*/
+
+/* basic样式采用一般的引言，具有左边框、左缩进 */
+blockquote{
+  font-style: normal; /* 本来打算用italic的，但是中文支持很差。如果需要斜体就再斜体好了 */
+  font-family: "Latin Modern Roman", Times, 仿宋, sans-serif;
+  border-left: 3px solid grey;
+	padding-left: 16px; /* 文字离左边框的距离 */
+  margin-left: 20px; /* 左边框离页面边的距离 */
+  font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
+	color: grey; /* 文字颜色 */
+}
+
+	/*border-width: 0.5pt 0;
+  border-style:solid;	这一行本来使用了上下边框*/
+
+/* 标题属性 */
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  page-break-after: avoid !important;
+}
+
+h1 {
+  font-family: "LMRoman10-Bold", 华文黑体Bold;
+  font-weight: bold;
+	text-align: center;
+  column-span: all;
+	font-size: 18pt;
+}
+h2 {
+	font-family: "LMRoman10-Bold", 方正公文黑体; 
+	font-size: 14pt;
+}
+h3 {
+	font-family: "LMRoman10-Bold", 方正公文黑体;
+	font-size: 12pt;
+  line-height: 12pt;
+}
+h4 {
+	font-family: "LMRoman10-Bold", 华文粗楷-SC;
+	font-size: 10pt;
+  line-height: 8pt;
+}
+h5 {
+	font-family: "LMRoman10-Bold", 方正公文仿宋; 
+	font-size: 10pt;
+  line-height: 10pt;
+}
+
+/* 目录标题属性 */
+.md-toc-h2,
+.md-toc-h3,
+.md-toc-h4,
+.md-toc-h5,
+.md-toc-h6 {
+	font-family: "Latin Modern Roman", Times, 宋体-简;
+}
+
+/* 三线表 */
+#write table{
+	border-top: 1.2pt solid;
+	border-bottom: 1.2pt solid;
+	font-family: "Latin Modern Roman", Times, 宋体-简;
+	font-size: 9pt;
+	text-align: center;
+  page-break-inside: avoid;
+  width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
+  margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+}
+#write table td{
+	padding:7px;
+}
+#write table tr{
+	padding:7px;
+}
+/* 表格标题（首行）样式 */
+#write thead{
+	border-bottom: 0.5pt solid;
+	font-family: "LMRoman10-Bold", 华文黑体Bold;
+	font-size:9.5pt;
+}
+
+img{
+    page-break-inside:avoid; /* 避免图片在导出时被断开 */
+}
+
+/* ============ 多级列表样式 ============ */
+ul {
+  list-style: disc; /* 无序列表第一级：实心圆点 */
+}
+ul ul {
+  /*list-style: circle;*/
+  list-style: '–　 '; /* 直接用空格代替一部分缩进的调整了我真懒 */
+  left: -0.8em;
+}
+ul ul ul{
+  list-style: "◦　  ";  /* 无序列表第三极：小圈 */
+  left: -0.6em;
+}
+
+ol {
+  list-style: decimal; /* 有序列表第一级：数字 */
+}
+
+ol ol{
+    counter-reset: liist;
+    list-style: none; 
+}
+ol ol li {
+    counter-increment: liist;
+    position: relative;
+}
+ol ol li::before {
+    content: "(" counter(liist, lower-alpha) ") "; /* 有序列表第二级：括号加小写字母 */
+    position: absolute;
+    margin-right: 0.5rem;
+    left: -2.4em;
+}
+
+ol ol ol {
+  counter-reset: liiist;
+  list-style: none;
+  margin: 0;
+}
+ol ol ol li {
+    counter-increment: liiist;
+    position: relative;
+}
+ol ol ol li::before {
+    content: counter(liiist, lower-roman) ". "; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+    align-self: flex-end;
+    position: absolute;
+    left: -2.4em;
+    /*-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;*/
+    width:4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+    text-align:right;
+}
+
+li {
+    position: relative;
+}
+/* ============ 多级列表样式END ============ */
+
+
+/* 行内代码 */
+p code, li code {
+  color: rgb(60, 112, 198);
+  background-color:#fefefe;
+  font-family:'Latin Modern Mono', 'SF Mono', 'Source Code', 苹方-简, monospace;
+  box-sizing: border-box; 
+  /*border: 1px #ced8e4 solid; */ /* 实体边框 */
+  border-right: 0px;
+  margin: 0 2px 0 2px ;
+  padding: 0 2px 0 2px;
+  border-radius: 2px 2px 2px 2px ; /* 圆角 */
+  box-shadow: 0 0 1px 1px #c8d3df; /* 阴影 */
+}
+/* 代码块样式*/
+#write .CodeMirror-wrap {
+  padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
+}
+#write .CodeMirror-code pre { 
+  font-family: 'Latin Modern Mono', 苹方-简, monospace;
+}
+
+/* typora 编写模式 */
+#typora-source {
+/*background: ;
+  color: ;*/
+  font-family: 'SF Mono', 苹方-简, monospace;
+  line-height: 1.5rem;
+}
+
+/* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
+/* 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题 */
+#write{
+  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0
+}
+#write 
+
+h1 {
+  counter-reset: h2
+}
+
+h2 {
+  counter-reset: h3
+}
+
+h3 {
+  counter-reset: h4
+}
+
+h4 {
+  counter-reset: h5
+}
+
+h5 {
+  counter-reset: h6
+}
+
+/* put counter result into headings */
+#write h2:before {
+  counter-increment: h2;
+  content: counter(h2);
+  margin-right: 2rem;
+}
+
+#write h3:before,
+h3.md-focus.md-heading:before /** override the default style for focused headings */ {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3);
+  margin-right: 2rem;
+}
+
+#write h4:before,
+h4.md-focus.md-heading:before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4);
+  margin-right: 2rem;
+}
+
+#write h5:before,
+h5.md-focus.md-heading:before {
+  counter-increment: h5;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+  margin-right: 2rem;
+}
+
+/* 目录 */
+.md-toc-content{
+  margin-left: 2em;
+  counter-reset: toc-h2 toc-h3 toc-h4 ;/* 修复缺失上级标题时无法递增 */
+  page-break-after: always;
+}
+.md-toc-inner{
+  margin-left:0 !important;
+  color:black !important;
+}
+.md-toc-item{
+  color:black !important;
+  font-size: 9pt;
+  font-family: "Latin Modern Roman", Times, Times, Times, 宋体-简, "Source Han Serif CN", sans-serif; 
+}
+/* 目录标题 */
+.md-toc-content .md-toc-h1 {
+  display:none; /* 不显示一级标题 */
+  counter-reset: toc-h2;
+}
+.md-toc-content .md-toc-h2 {
+  counter-reset: toc-h3;
+}
+.md-toc-content .md-toc-h3 {
+  counter-reset: toc-h4;
+}
+.md-toc-content .md-toc-h4 {
+  counter-reset: toc-h5;
+} 
+.md-toc-content .md-toc-h5 {
+  counter-reset: toc-h6;
+} 
+.md-toc-content .md-toc-h2:before {
+  counter-increment: toc-h2;
+  content: counter(toc-h2);
+  margin-right: 1rem;
+}
+.md-toc-content .md-toc-h3:before {
+  counter-increment: toc-h3;
+  content: counter(toc-h2) "." counter(toc-h3);
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h4:before {
+  counter-increment: toc-h4;
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
+  margin-left: 3.5rem;
+  margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h5:before {
+  counter-increment: toc-h5;
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5);
+  margin-left: 5.5rem;
+  margin-right: 0.5rem;
+}
+
+/* 侧边大纲标题 */
+.sidebar-content .outline-h1 {
+  counter-reset: outline-h2;
+}
+.sidebar-content .outline-h2 {
+  counter-reset: outline-h3;
+}
+.sidebar-content .outline-h3 {
+  counter-reset: outline-h4;
+}
+.sidebar-content .outline-h4 {
+  counter-reset: outline-h5;
+}
+.sidebar-content .outline-h5 {
+  counter-reset: outline-h6;
+} 
+
+.sidebar-content .outline-h2 .outline-label:before {
+  counter-increment: outline-h2;
+  content: counter(outline-h2) " ";
+}
+.sidebar-content .outline-h3 .outline-label:before {
+  counter-increment: outline-h3;
+  content: counter(outline-h2) "." counter(outline-h3) "  ";
+}
+.sidebar-content .outline-h4 .outline-label:before {
+  counter-increment: outline-h4;
+  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "  ";
+}
+.sidebar-content .outline-h5 .outline-label:before {
+  counter-increment: outline-h5;
+  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "." counter(outline-h5) "  ";
+}
+
+.sidebar-content {
+  font-family: 苹方-简, serif; /* 侧边栏的字体修改 */
+  list-style: None;
+}
+
+/** override the default style for focused headings */
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+  color: inherit;
+  border: inherit;
+  border-radius: inherit;
+  position: inherit;
+  left:initial;
+  float: none;
+  top:initial;
+  font-size: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  vertical-align: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
