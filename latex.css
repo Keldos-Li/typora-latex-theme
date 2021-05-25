@@ -45,13 +45,13 @@ body{
 
 /* 正文区基本属性，参照wordTeX模板设置字体大小*/
 #write {
-   font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
-   font-size: 9.5pt; /* 字体大小 */
-   max-width: 21cm; /* A4标准宽度 */
-/* column-count: 2;
-   column-gap: 25px;
-   column-width: 8cm; 
-   display: inline-block; */ /* 这里可以试分栏的，但确实不适合实现 */
+    font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
+    font-size: 9.5pt; /* 字体大小 */
+    max-width: 21cm; /* A4标准宽度 */
+  /* column-count: 2;
+    column-gap: 25px;
+    column-width: 8cm; 
+    display: inline-block; */ /* 这里可以试分栏的，但确实不适合实现 */
 }
 /* 粗体样式设置 */
 strong {
@@ -61,12 +61,16 @@ strong {
 /* 页边距处理 */
 @media screen{
   #write{
-   padding:1.8cm 2cm; 
-   border:0.8px solid #AAC ; /* 添加一个淡蓝色的边框 */
+    padding: 1.8cm 2cm; 
+    border: 0.8px solid #AAC ; /* 添加一个淡蓝色的边框 */
   }
 }
 
 @media print{
+  #write{
+    padding: 6.5mm !important; 
+    margin: 0 !important; 
+  }
   @page{
     size: A4; /* 强制A4大小吧，虽然页边距的设置还是很迷幻 */
     margin: 1.8cm 2cm 1.2cm 2cm !important; /* 采用了浙江大学喜欢的边距；当然需要其他效果的时候也可以改*/
@@ -337,7 +341,7 @@ h5.md-focus.md-heading:before {
 .md-toc-item{
   color:black !important;
   font-size: 9pt;
-  font-family: "Latin Modern Roman", Times, Times, Times, 宋体-简, "Source Han Serif CN", serif; 
+  font-family: "Latin Modern Roman", Times, Times, Times, 宋体-简, "Source Han Serif CN", sans-serif; 
 }
 /* 目录标题 */
 .md-toc-content .md-toc-h1 {
