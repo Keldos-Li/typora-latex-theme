@@ -35,10 +35,13 @@
 /* ******************** */
 
 :root {
-  --side-bar-bg-color: #1A1A1A; /*change background of sidebar*/
-  --window-border: px solid #929292;
+  --side-bar-bg-color: #282828; /*change background of sidebar*/
+  --window-border: 0px solid #929292;
   --title-color: #DDDDDD;
-  --text-color: #DDDDDD;
+  --text-color: #DCDCDC;
+  --select-text-bg-color: #9AB1CF;
+  --select-text-font-color: #161616;
+  /*--bg-color: hsl(0, 0%, 15%);*/
 }
 
 body{
@@ -47,19 +50,20 @@ body{
   margin:0 !important;
   line-height: 16pt /* 行距 */
   /*counter-reset: tableHead 0 imgHead 0;*/
+  color: #DDDDDD; /* 黑色模式修改 */
+  background-color: #282828; /* 黑色模式修改 */
 }
 
 /* 正文区基本属性，参照wordTeX模板设置字体大小*/
 #write {
-    font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
-    font-size: 9.5pt; /* 字体大小 */
-    max-width: 21cm; /* A4标准宽度 */
+  font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
+  font-size: 9.5pt; /* 字体大小 */
+  max-width: 21cm; /* A4标准宽度 */
+  background-color: #1E1E1E; /* 黑色模式修改 */
   /* column-count: 2;
     column-gap: 25px;
     column-width: 8cm; 
     display: inline-block; */ /* 这里可以试分栏的，但确实不适合实现 */
-    color: #DDDDDD; /* 黑色模式修改 */
-    background-color: #1f1f1f; /* 黑色模式修改 */
 }
 /* 粗体样式设置 */
 strong {
@@ -70,7 +74,8 @@ strong {
 @media screen{
   #write{
     padding: 1.8cm 2cm; 
-    border: 1.2px solid #AAAAAA ; /* 添加一个淡蓝色的边框 */
+    /*border: 1px solid #AAAAAA ;*/
+    box-shadow: 0 0 24px 12px #101010; /* 页边来一个阴影！！好耶 */
   }
 }
 
@@ -196,7 +201,7 @@ h5 {
 }
 
 img{
-    page-break-inside:avoid; /* 避免图片在导出时被断开 */
+  page-break-inside:avoid; /* 避免图片在导出时被断开 */
 }
 
 /* ============ 多级列表样式 ============ */
@@ -261,9 +266,9 @@ li {
 
 /* 行内代码 */
 p code, li code {
-  color: rgb(60, 112, 198);
+  color: #8BB1F9;
   /*background-color:#fefefe;*/
-  background-color: black; /* 黑色模式修改 */
+  background-color: #161616; /* 黑色模式修改 */
   font-family:'Latin Modern Mono', 'SF Mono', 'Source Code', 苹方-简, monospace;
   box-sizing: border-box; 
   /*border: 1px #ced8e4 solid; */ /* 实体边框 */
@@ -281,6 +286,7 @@ p code, li code {
 #write .CodeMirror-code pre { 
   font-family: 'Latin Modern Mono', 苹方-简, monospace;
 }
+
 
 /* typora 编写模式 */
 #typora-source {
@@ -438,8 +444,8 @@ h5.md-focus.md-heading:before {
 .sidebar-content {
   font-family: 苹方-简, sans-serif; /* 侧边栏的字体修改 */
   list-style: None;
-  background-color: #1A1A1A;
-  color: #BFBFBF;
+  background-color: #282828; /*#1A1A1A;*/
+  color: #E9E9E9;
 }
 
 /** override the default style for focused headings */
@@ -467,10 +473,9 @@ h6.md-focus:before {
 }
 
 
-
 /* Modifications for dark-mode */
 /*下面是针对代码块的修改，各部分含义由名称可以知道 */
-.cm-s-inner .cm-variable {
+/*.cm-s-inner .cm-variable {
     color: #fff;
 }
 .cm-s-inner .cm-operator {
@@ -493,30 +498,148 @@ h6.md-focus:before {
 }
 .cm-s-inner .cm-number {
     color: #8c5853;
+}*/
+
+/* ====================我加的================== */
+/*.cm-s-inner {
+  background-color: #263238;
+  color: rgba(233, 237, 237);
+}*/
+/*.cm-s-inner .CodeMirror-gutters {
+  background: #263238;
+  color: #537f7e;
+  border: none;
+}*/
+/*.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner .CodeMirror-linenumber {
+  color: #537f7e;
+}*/
+.cm-s-inner .CodeMirror-cursor {
+  border-left: 1px solid #f8f8f0;
 }
+.cm-s-inner div.CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.15);
+}
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line > span::selection,
+.cm-s-inner .CodeMirror-line > span > span::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line > span::-moz-selection,
+.cm-s-inner .CodeMirror-line > span > span::-moz-selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+.cm-s-inner .CodeMirror-activeline-background {
+  background: rgba(0, 0, 0, 0);
+}
+.cm-s-inner .cm-keyword {
+  color: #c792ea;
+}
+.cm-s-inner .cm-operator {
+  color: #e9eded;
+}
+.cm-s-inner .cm-variable-2 {
+  color: #80CBC4;
+}
+.cm-s-inner .cm-variable-3 {
+  color: #82B1FF;
+}
+.cm-s-inner .cm-builtin {
+  color: #DECB6B;
+}
+.cm-s-inner .cm-atom {
+  color: #F77669;
+}
+.cm-s-inner .cm-number {
+  color: #F77669;
+}
+.cm-s-inner .cm-def {
+  color: #e9eded;
+}
+.cm-s-inner .cm-string {
+  color: #C3E88D;
+}
+.cm-s-inner .cm-string-2 {
+  color: #80CBC4;
+}
+.cm-s-inner .cm-comment {
+  color: #546E7A;
+}
+.cm-s-inner .cm-variable {
+  color: #82B1FF;
+}
+.cm-s-inner .cm-tag {
+  color: #80CBC4;
+}
+.cm-s-inner .cm-meta {
+  color: #80CBC4;
+}
+.cm-s-inner .cm-attribute {
+  color: #FFCB6B;
+}
+.cm-s-inner .cm-property {
+  color: #80CBAE;
+}
+.cm-s-inner .cm-qualifier {
+  color: #DECB6B;
+}
+.cm-s-inner .cm-variable-3 {
+  color: #DECB6B;
+}
+.cm-s-inner .cm-tag {
+  color: #ff5370;
+}
+.cm-s-inner .cm-error {
+  color: #ffffff;
+  background-color: #EC5F67;
+}
+.cm-s-inner .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+  color: #4770C0;
+}
+
+.md-fences {
+  /*background-color: #0E1116;*/
+  /*color: #e9eded;*/
+}
+.md-fences .code-tooltip {
+  background-color: #282828;
+}
+#write pre.md-fences {
+  /*padding: 10rem;*/
+}
+
 /* 改变光标的颜色，在黑暗背景下能显示*/
 .CodeMirror div.CodeMirror-cursor {
-    border-left: 1px solid #ffffff;
-    z-index: 3;
+  border-left: 1px solid #ffffff;
+  z-index: 3;
 }
 /*元数据（如yml front matter）的背景框 */
 pre.md-meta-block {
-    background: #161616;
-    color: white !important;
-}
-/* 整个界面编辑框外面的背景色 */
-html>body>content {
-    background-color: #1f1f1f;
+  background: #161616;
+  color: white !important;
+  padding: 1.4em;
+  font-family: "SF Mono", monospace;
 }
 
-#top-titlebar,
-#top-titlebar * {
-  background-color: #1A1A2A;
-  color: white;
+/* 整个界面编辑框外面的背景色 */
+html>body>content {
+  background-color: #161616;
 }
-#top-titlebar {
-  height: 28px;
-  font-family: var(--base-font);
+
+/*#top-titlebar,
+#top-titlebar * {
+  background-color: #1A1A1A;
+  color: white;
 }
 ::-webkit-scrollbar-corner {
   display: none;
@@ -528,30 +651,31 @@ html>body>content {
 }
 [draggable] {
   cursor: pointer;
-}
+}*/
+
 
 /* 调整html编辑时的行为，能看清楚里面的文字 */
 .md-rawblock-control:not(.md-rawblock-tooltip) {
-    background-color: #1f1f1f;
+  background-color: #1f1f1f;
 }
 .md-htmlblock .md-rawblock-tooltip {
-    z-index: 0;
-    color: rgb(45, 226, 43);
-    background-color: #1f1f1f;
+  z-index: 0;
+  color: rgb(45, 226, 43);
+  background-color: #1f1f1f;
 }
 .CodeMirror{
-    background-color: #1f1e1e;
+  background-color: #1f1e1e;
 }
 .md-rawblock-on-edit>.md-rawblock-tooltip, .md-rawblock:hover>.md-rawblock-container, .md-rawblock:hover>.md-rawblock-tooltip {
-    background: rgb(36, 36, 28);
-    display: block;
+  background: #1B1D21;
+  display: block;
 }
 .md-rawblock:hover>.md-rawblock-tooltip{
-    transition: none;
-    animation: none;
+  transition: none;
+  animation: none;
 }
 
 /*  更改URL超链接颜色，最初的颜色不易查看 */
-span>a{
-    color: rgb(55, 201, 201);
+span > a {
+  color: #8BB1F9;
 }
