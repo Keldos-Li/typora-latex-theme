@@ -45,7 +45,7 @@ body{
 
 /* 正文区基本属性，参照wordTeX模板设置字体大小*/
 #write {
-   font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", sans-serif; 
+   font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
    font-size: 9.5pt; /* 字体大小 */
    max-width: 21cm; /* A4标准宽度 */
 /* column-count: 2;
@@ -103,7 +103,7 @@ strong {
 /* basic样式采用一般的引言，具有左边框、左缩进 */
 blockquote{
   font-style: normal; /* 本来打算用italic的，但是中文支持很差。如果需要斜体就再斜体好了 */
-  font-family: "Latin Modern Roman", Times, 仿宋, sans-serif;
+  font-family: "Latin Modern Roman", Times, 仿宋, serif;
   border-left: 3px solid grey;
   padding-left: 16px; /* 文字离左边框的距离 */
   margin-left: 20px; /* 左边框离页面边的距离 */
@@ -341,7 +341,7 @@ h5.md-focus.md-heading:before {
 .md-toc-item{
   color:black !important;
   font-size: 9pt;
-  font-family: "Latin Modern Roman", Times, Times, Times, 宋体-简, "Source Han Serif CN", sans-serif; 
+  font-family: "Latin Modern Roman", Times, Times, Times, 宋体-简, "Source Han Serif CN", serif; 
 }
 /* 目录标题 */
 .md-toc-content .md-toc-h1 {
@@ -419,7 +419,7 @@ h5.md-focus.md-heading:before {
 }
 
 .sidebar-content {
-  font-family: 苹方-简, serif; /* 侧边栏的字体修改 */
+  font-family: 苹方-简, sans-serif; /* 侧边栏的字体修改 */
   list-style: None;
 }
 
