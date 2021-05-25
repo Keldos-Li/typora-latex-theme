@@ -67,10 +67,6 @@ strong {
 }
 
 @media print{
-  #write{
-   padding: 6.5mm !important; 
-   margin: 0 !important; 
-  }
   @page{
     size: A4; /* 强制A4大小吧，虽然页边距的设置还是很迷幻 */
     margin: 1.8cm 2cm 1.2cm 2cm !important; /* 采用了浙江大学喜欢的边距；当然需要其他效果的时候也可以改*/
