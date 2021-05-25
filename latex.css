@@ -68,12 +68,19 @@ strong {
 
 @media print{
   #write{
-    padding: 6.5mm !important; 
-    margin: 0 !important; 
+    padding: 0;
   }
   @page{
-    size: A4; /* 强制A4大小吧，虽然页边距的设置还是很迷幻 */
-    margin: 1.8cm 2cm 1.2cm 2cm !important; /* 采用了浙江大学喜欢的边距；当然需要其他效果的时候也可以改*/
+    /* size: A4;  强制A4大小 */
+    margin: 1.8cm 2cm 1.2cm 2cm !important; 
+    /* 请注意，macOS上不支持这个设置，
+    可以在typora的导出设置里重新设置自定义页边距，
+    或先导出为html，然后在Chrome中打开打印。
+    （不能用Safari！Safari会自行设置最小边距而且非常不合理，
+    这会导致您无法精确控制页边距；
+    另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），
+    会导致您无法显示很多字体！）
+    或者直接用pandoc的命令行设置 */
   }
 }
 
@@ -203,18 +210,18 @@ ol {
 }
 
 ol ol{
-    counter-reset: liist;
-    list-style: none; 
+  counter-reset: liist;
+  list-style: none; 
 }
 ol ol li {
-    counter-increment: liist;
-    position: relative;
+  counter-increment: liist;
+  position: relative;
 }
 ol ol li::before {
-    content: "(" counter(liist, lower-alpha) ") "; /* 有序列表第二级：括号加小写字母 */
-    position: absolute;
-    margin-right: 0.5rem;
-    left: -2.4em;
+  content: "(" counter(liist, lower-alpha) ") "; /* 有序列表第二级：括号加小写字母 */
+  position: absolute;
+  margin-right: 0.5rem;
+  left: -2.4em;
 }
 
 ol ol ol {
@@ -223,23 +230,23 @@ ol ol ol {
   margin: 0;
 }
 ol ol ol li {
-    counter-increment: liiist;
-    position: relative;
+  counter-increment: liiist;
+  position: relative;
 }
 ol ol ol li::before {
-    content: counter(liiist, lower-roman) ". "; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
-    align-self: flex-end;
-    position: absolute;
-    left: -2.4em;
-    /*-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;*/
-    width:4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
-    text-align:right;
+  content: counter(liiist, lower-roman) ". "; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+  align-self: flex-end;
+  position: absolute;
+  left: -2.4em;
+  /*-moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;*/
+  width:4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+  text-align:right;
 }
 
 li {
-    position: relative;
+  position: relative;
 }
 /* ============ 多级列表样式END ============ */
 
@@ -341,7 +348,7 @@ h5.md-focus.md-heading:before {
 .md-toc-item{
   color:black !important;
   font-size: 9pt;
-  font-family: "Latin Modern Roman", Times, Times, Times, 宋体-简, "Source Han Serif CN", sans-serif; 
+  font-family: "Latin Modern Roman", 宋体-简, "Source Han Serif CN", serif; 
 }
 /* 目录标题 */
 .md-toc-content .md-toc-h1 {
