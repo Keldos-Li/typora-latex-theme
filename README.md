@@ -6,6 +6,9 @@
 
 预览（较完整的论文预览见这里: [😀](https://blog.keldos.me/2021/05/md-latex-template/)）：
 
+![sample-essay_1](Supplemental/sample-essay-image/sample-essay_1.jpg)
+![sample-essay_2](Supplemental/sample-essay-image/sample-essay_2.jpg)
+
 | ![image-20210526201241978](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201241978.png) | ![image-20210526201312507](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201312507.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![image-20210526201429764](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201429764.png) | ![image-20210526201611922](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201611922.png) |

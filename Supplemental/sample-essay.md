@@ -193,7 +193,7 @@
 
 
 **参考文献:** 
-<div>
+
 ［1］  维基百科编者.操作系统[G/OL].维基百科,2020(2020-11-24) [2021-01-09]. https://zh.wikipedia.org/w/index.php?title=操作系统&oldid=62920825.
 ［2］  计算机操作系统及发展探讨.田舜文[J].数码设计  （下）2020,9(6):3.
 ［3］  计算机操作系统功能与其相关分类.宋辰辉[J].电脑迷,2018(7):15.
@@ -208,5 +208,3 @@
 ［12］ Statcounter. Desktop Operating System Market Share China [DS/OL]. (2020-12-20) [2021-01-09]. https://gs.statcounter.com/os-market-share/desktop/china/
 ［13］ 维基百科编者.Microsoft Windows[G/OL].维基百科, 2021(2021-01-02)[2021-01-10]. https://zh.wikipedia.org/w/index.php?title=Microsoft_Windows&oldid=63546256.
 ［14］ 韩兵,李海坤.浅谈Windows操作系统[J].数码世界,2017(06):66-67.
-</span>
-
