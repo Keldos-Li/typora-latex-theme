@@ -1,4 +1,4 @@
-# Typora伪装LaTeX（中文）样式主题
+# Typora伪装LaTeX中文样式主题
 
 本项目的初衷是为了简化中国大陆本科生小型通识课论文撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在css中修改适合自己学校的格式。
 
@@ -6,34 +6,42 @@
 
 预览（较完整的论文预览见这里: [😀](https://blog.keldos.me/2021/05/md-latex-template/)）：
 
-|   ![image-20210526201241978](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201241978.png)   |   ![image-20210526201312507](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201312507.png)   |
-| --- | --- |
-|   ![image-20210526201429764](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201429764.png)   |   ![image-20210526201611922](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201611922.png)   |
-|   ![image-20210526225659289](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526225659289.png)   |   ![image-20210526230001319](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526230001319.png)   |
+| ![image-20210526201241978](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201241978.png) | ![image-20210526201312507](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201312507.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20210526201429764](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201429764.png) | ![image-20210526201611922](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526201611922.png) |
+| ![image-20210526225659289](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526225659289.png) | ![image-20210526230001319](https://gitee.com/Keldos-Li/picture/raw/master/img/image-20210526230001319.png) |
 
 
 ## 安装
 
 *   最简单的办法是在该GitHub页面的右侧找到最新的release（或选用最新的不是开发者测试版的release，标志是是它的版本号不包含“b”，如“v0.0.4”而不是“v0.0.3-b1"）；
 
-*   如果你喜欢装\*，你也可以使用命令行下载最新版：
+    *   如果你喜欢装\*，你也可以使用命令行下载最新版：
 
-```bash
-$ cd （你常用的下载文件夹）
-$ git clone https://github.com/Keldos-Li/typora-latex-theme.git
-```
+    ```bash
+    $ cd （你常用的下载文件夹）
+    $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
+    ```
 
 *   解压这个文件，然后将`latex.css`和`latex-dark.css`两个文件复制到你的Typora主题文件夹；
+
     *   从`文件` – `偏好设置`中打开设置面板，然后单击“打开主题文件夹”。
-        *   对于Windows/Linux，这个文件夹一般是`C:\Users\用户名\AppData\Roaming\Typora\themes`；
-    *   对于Mac，这个文件夹一般是`/Users/{username}/Library/Application Support/abnerworks.Typora/themes/`。
+
+        对于Windows/Linux，这个文件夹一般是`C:\Users\用户名\AppData\Roaming\Typora\themes`；
+
+        对于Mac，这个文件夹一般是`/Users/{username}/Library/Application Support/abnerworks.Typora/themes/`。
+
 *   打开`Supplemental/Fonts`文件夹，安装需要的字体。
-    *   其中`Latin Modern`文件夹存放了常规LaTeX文档使用的英文字体，请所有用户安装。（大家都会喜欢这个字体的，所以安装吧，就不把它们放在主题文件夹下再import了。~~绝不是因为我懒~~）；
-    *   其他文件夹存放了一些中文字体和代码字体，可以选择性安装（特别是如果您已经拥有其中的一些字体的话）。请注意，如果您不拥有这些字体也不希望安装的话，请到css文件中自行更改选用的字体（本项目没有写太多字体回退机制）；
-        *   中文字体文件较大，所以均进行了压缩处理，安装前请解压；
-        *   如果您选用自己的其他字体，请尽量使用有完整字体系列的字体集作为正文字体。对于中文字体，一个完整的字体系列应该包括：常规体（regular）、粗体（bold），如果您希望粗体风格更强，它应当还包含黑体（Heavy）。
-        *   本项目还包含了一些方正公文字体，选用它们是因为它们已经存在粗体效果，可以直接应用为标题字体而跳过Typora的伪粗体机制。
-        *   所有的字体文件请自行获取授权，开发者不对您使用字体造成的法律纠纷负责。（当然，本项目包含的部分字体是免费可商用的和非商业使用免费的。）
+
+    其中`Latin Modern`文件夹存放了常规LaTeX文档使用的英文字体，请所有用户安装。（大家都会喜欢这个字体的，所以安装吧，就不把它们放在主题文件夹下再import了。~~绝不是因为我懒~~）；
+
+    其他文件夹存放了一些中文字体和代码字体，可以选择性安装（特别是如果您已经拥有其中的一些字体的话）。请注意，如果您不拥有这些字体也不希望安装的话，请到css文件中自行更改选用的字体（本项目没有写太多字体回退机制）；
+
+    *   中文字体文件较大，所以均进行了压缩处理，安装前请解压；
+    *   如果您选用自己的其他字体，请尽量使用有完整字体系列的字体集作为正文字体。对于中文字体，一个完整的字体系列应该包括：常规体（regular）、粗体（bold），如果您希望粗体风格更强，它应当还包含黑体（Heavy）。
+    *   本项目还包含了一些方正公文字体，选用它们是因为它们已经存在粗体效果，可以直接应用为标题字体而跳过Typora的伪粗体机制。
+    *   **所有的字体文件请自行获取授权**，本人不对您使用字体造成的法律纠纷负责。（当然，本项目包含的部分字体是免费可商用的和非商业使用免费的。）
+
 *   启动或重新启动Typora，然后从主题菜单中选择`Latex`或`Latex Dark`选项。
 
 ## 使用
@@ -51,7 +59,7 @@ $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
 
 *   PDF页面**页边距**：
 
-    *   在Windos/Linux中，您可以很好地使用
+    在Windos/Linux中，您可以很好地使用
 
     ```css
     @media print{
@@ -64,15 +72,15 @@ $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
 
     来更改打印PDF的页边距。
 
-    *   但对于Mac用户，因为[Typora本身的问题](https://github.com/typora/typora-issues/issues/998)，暂时不能使用这一方法调整页边距。
+    但对于Mac用户，因为[Typora本身的问题](https://github.com/typora/typora-issues/issues/998)，暂时不能使用这一方法调整页边距。
 
-        可以在Typora的导出设置里重新设置自定义页边距。
+    *   可以在Typora的导出设置里重新设置自定义页边距。
 
-        或先导出为html，然后在Chrome中打开打印。
+    *   或先导出为html，然后在Chrome中打开打印。
 
         （不能用Safari！Safari会自行设置最小边距而且非常不合理，这会导致您无法精确控制页边距；另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！）
 
-        或者直接用pandoc的命令行设置。
+    *   或者直接用pandoc的命令行设置。
 
 *   **超链接**：
 
@@ -143,9 +151,9 @@ $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
 >  - 适配LaTeX的字体。选用像LaTeX的字体是装“哔”的重要手段。
 >  - 更改标题、目录和大纲的编号样式。改成1. ，1.1 ， 1.1.1 ，……这样的编号更有一种浓厚的论文感觉。
 >  - 二级及以下标题全部靠左，适应文章样式。后面加上大空白，适配LaTeX样式
->    不足之处：
+>     不足之处：
 >  - 仍然无法添加页眉页脚。
->    适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”*/
+>     适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”*/
 
 @让幻想飞 的**知乎文章地址**：https://zhuanlan.zhihu.com/p/357096043；
 
