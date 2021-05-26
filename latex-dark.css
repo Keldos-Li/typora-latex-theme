@@ -1,40 +1,14 @@
-/* 下面是知乎作者 @让幻想飞 写的注释： */
-  /*这篇样式基于知乎大佬LAN DU的样式，原文知乎链接：
-  https://zhuanlan.zhihu.com/p/158767474
-  GitHub链接：
-  https://github.com/du33169/typora-theme-essay_cn
-  主要改动：
-  - 适配LaTeX的字体。选用像LaTeX的字体是装“哔”的重要手段。
-  - 更改标题、目录和大纲的编号样式。改成1. ，1.1 ， 1.1.1 ，……这样的编号更有一种浓厚的论文感觉。
-  - 二级及以下标题全部靠左，适应文章样式。后面加上大空白，适配LaTeX样式
-  不足之处：
-  - 仍然无法添加页眉页脚。
-  适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”*/
-
-/* @让幻想飞 的知乎文章地址：https://zhuanlan.zhihu.com/p/357096043
-   github项目地址: https://github.com/yfzhao20/Typora-markdown; */
-/*
- 本人呢，因为是给自己用的，所以字体文件都直接安装引用了，也没打算放出来_(:з」∠)_。
- 其他部分各种部分都重新编写了一点，修改了一点。_(:з」∠)_
- 主要改动在于：
- - 修改了多级列表编号样式；
- - 增加了代码块字体和代码块样式；
- - 修改了table样式；
- - 修改了字体；
- - 整理了代码编写风格使其更美观；
- - 增订了大部分注释；（当然我写得很随意啦啦啦）
- - 增加了侧边栏字体修改
- 已知的bug: 
- - 无编号项目列表有很大的bug！！在二级项目之后，你不能混用有序列表和无序列表！因为全都是重新定义的content，我不能理解它为什么会对子项目产生影响！！可恶！
- - 当行间代码太长跨页的时候好像也会有点问题，到时候再改；
-
- 未来的预期的话我可能会试一下搞成前导定义统一颜色字体字号啥最后引用的，现在的代码就是东拼西凑的，最后肯定需要整合的。
- 具体时间不确定、。。
- keldos 呜呜呜好烦啊
-*/
 /* ******************** */
 
 :root {
+  --md-char-color: hsl(212, 100%, 85%);
+  --link-hover: hsl(212, 100%, 85%);
+  --focus-cont-bg: hsl(0, 0%, 10%);
+  --focus-para-bg: hsl(0, 0%, 15%);
+  --opt-borderb: 1px dashed hsl(212, 100%, 65%);
+  --focus-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.9);
+  --opt-shadow: 0px 8px 16px 1px hsla(0, 0%, 0%, 0.3);
+
   --side-bar-bg-color: #282828; /*change background of sidebar*/
   --window-border: 0px solid #929292;
   --title-color: #DDDDDD;
@@ -42,6 +16,7 @@
   --select-text-bg-color: #9AB1CF;
   --select-text-font-color: #161616;
   /*--bg-color: hsl(0, 0%, 15%);*/
+  --mermaid-theme: night;
 }
 
 body{
@@ -52,6 +27,7 @@ body{
   /*counter-reset: tableHead 0 imgHead 0;*/
   color: #DDDDDD; /* 黑色模式修改 */
   background-color: #282828; /* 黑色模式修改 */
+  /*background:url(mermaidAPI.initialize({'fontFamily': '宋体-简, serif;'});); 可恶，不行 */
 }
 
 /* 正文区基本属性，参照wordTeX模板设置字体大小*/
@@ -82,6 +58,10 @@ strong {
 @media print{
   #write{
     padding: 0 !important;
+  }
+  #write a{
+    color: inherit;
+    text-decoration: none;
   }
   @page{
     /* size: A4;  强制A4大小 */
@@ -123,7 +103,7 @@ strong {
 /* basic样式采用一般的引言，具有左边框、左缩进 */
 blockquote{
   font-style: normal; /* 本来打算用italic的，但是中文支持很差。如果需要斜体就再斜体好了 */
-  font-family: "Latin Modern Roman", Times, 仿宋, serif;
+  font-family: "Latin Modern Roman", Times, 华文仿宋, serif;
   border-left: 3px solid grey;
   padding-left: 16px; /* 文字离左边框的距离 */
   margin-left: 20px; /* 左边框离页面边的距离 */
@@ -166,6 +146,11 @@ h5 {
   font-size: 10pt;
   line-height: 10pt;
 }
+h6 {
+  font-family: "LMRoman10-Bold", 方正公文仿宋; 
+  font-size: 9.5pt;
+  line-height: 10pt;
+}
 
 /* 目录标题属性 */
 .md-toc-h2,
@@ -178,24 +163,28 @@ h5 {
 
 /* 三线表 */
 #write table{
-  border-top: 1.2pt solid;
-  border-bottom: 1.2pt solid;
+  border-top: 1.2pt solid; /* 三线表第一条线宽度 */
+  border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
   font-family: "Latin Modern Roman", Times, 宋体-简;
-  font-size: 9pt;
+  font-size: 9.5pt;
   text-align: center;
   page-break-inside: avoid;
+  border-spacing: 6px;
   width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
   margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
 }
 #write table td{
-  padding:7px;
+  padding: 2px;
 }
 #write table tr{
-  padding:7px;
+  padding: 2px;
+}
+#write th{
+  padding: 0px 6px;
 }
 /* 表格标题（首行）样式 */
 #write thead{
-  border-bottom: 0.5pt solid;
+  border-bottom: 0.5pt solid; /* 三线表表头的线 */
   font-family: "LMRoman10-Bold", 华文黑体Bold;
   font-size:9.5pt;
 }
@@ -211,11 +200,11 @@ ul {
 ul ul {
   /*list-style: circle;*/
   list-style: '–　 '; /* 直接用空格代替一部分缩进的调整了我真懒 */
-  left: -0.8em;
+  /*left: -0.8em;*/
 }
 ul ul ul{
   list-style: "◦　  ";  /* 无序列表第三极：小圈 */
-  left: -0.6em;
+  left: 0.6em;
 }
 
 ol {
@@ -231,9 +220,9 @@ ol ol li {
   position: relative;
 }
 ol ol li::before {
-  content: "(" counter(liist, lower-alpha) ") "; /* 有序列表第二级：括号加小写字母 */
+  content: "(" counter(liist, lower-alpha) ")　　"; /* 有序列表第二级：括号加小写字母 */
   position: absolute;
-  margin-right: 0.5rem;
+  margin-right: 2rem;
   left: -2.4em;
 }
 
@@ -247,15 +236,15 @@ ol ol ol li {
   position: relative;
 }
 ol ol ol li::before {
-  content: counter(liiist, lower-roman) ". "; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+  content: counter(liiist, lower-roman) ".　　　"; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
   align-self: flex-end;
   position: absolute;
   left: -2.4em;
   /*-moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;*/
-  width:4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
-  text-align:right;
+  width: 4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+  text-align: right;
 }
 
 li {
@@ -302,23 +291,18 @@ p code, li code {
   counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0
 }
 #write 
-
 h1 {
   counter-reset: h2
 }
-
 h2 {
   counter-reset: h3
 }
-
 h3 {
   counter-reset: h4
 }
-
 h4 {
   counter-reset: h5
 }
-
 h5 {
   counter-reset: h6
 }
@@ -329,25 +313,28 @@ h5 {
   content: counter(h2);
   margin-right: 2rem;
 }
-
 #write h3:before,
 h3.md-focus.md-heading:before /** override the default style for focused headings */ {
   counter-increment: h3;
   content: counter(h2) "." counter(h3);
   margin-right: 2rem;
 }
-
 #write h4:before,
 h4.md-focus.md-heading:before {
   counter-increment: h4;
   content: counter(h2) "." counter(h3) "." counter(h4);
   margin-right: 2rem;
 }
-
 #write h5:before,
 h5.md-focus.md-heading:before {
   counter-increment: h5;
   content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+  margin-right: 2rem;
+}
+#write h6:before,
+h6.md-focus.md-heading:before {
+  counter-increment: h6;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
   margin-right: 2rem;
 }
 
@@ -404,6 +391,12 @@ h5.md-focus.md-heading:before {
   counter-increment: toc-h5;
   content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5);
   margin-left: 5.5rem;
+  margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h6:before {
+  counter-increment: toc-h6;
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5) "." counter(toc-h6);
+  margin-left: 7.5rem;
   margin-right: 0.5rem;
 }
 
@@ -631,6 +624,43 @@ pre.md-meta-block {
   font-family: "SF Mono", monospace;
 }
 
+:root {
+  --blur-text-color: hsla(0, 0%, 90%, 0.2);
+  --active-file-bg-color: hsl(0, 0%, 5%);
+  /* 文件列表 当前文件激活 背景色*/
+  --active-file-text-color: hsl(212, 100%, 75%);
+  --active-file-border-color: hsl(212, 100%, 75%);
+  /* 树形结构下文件激活边框色 */
+  /*--side-bar-bg-color: hsl(0, 0%, 10%);*/
+  /*文件 大纲 侧边栏 背景色*/
+  --item-hover-bg-color: hsl(0, 0%, 5%);
+  /* 打开文文件夹、正文菜单、最近使用 hover 效果 */
+  --item-hover-text-color: hsl(212, 100%, 75%);
+  --primary-color: hsl(212, 100%, 75%);
+  /* color of primary buttons */
+  --primary-btn-border-color: hsl(212, 100%, 75%);
+  --primary-btn-text-color: hsl(0, 0%, 15%);
+  --select-text-bg-color: hsl(212, 100%, 85%);
+  --select-text-font-color: hsl(0, 0%, 15%);
+  --active-bg: hsl(0, 0%, 10%);
+  --window-border: var(--bg-color);
+  --control-text-color: var(--title-color);
+  --control-text-hover-color: var(--text-color);
+}
+.active-tab-files .info-panel-tab,
+.active-tab-outline .info-panel-tab {
+  color: var(--active-file-text-color);
+}
+.file-list-item:hover {
+  background: var(--item-hover-bg-color);
+  color: var(--item-hover-text-color);
+}
+.file-node-content:hover {
+  background: var(--active-file-bg-color);
+  color: var(--active-file-text-color);
+}
+
+
 /* 整个界面编辑框外面的背景色 */
 html>body>content {
   background-color: #161616;
@@ -679,3 +709,4 @@ html>body>content {
 span > a {
   color: #8BB1F9;
 }
+
