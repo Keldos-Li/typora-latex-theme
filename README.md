@@ -8,7 +8,7 @@ markdown的轻量化特性，使您可以专注于论文内容而不用担心格
 
 ## 预览
 
-（较完整的论文预览见这里: [😀](https://blog.keldos.me/2021/05/md-latex-template/)）：
+（较完整的论文预览见这里: [😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果GitHub中的图像加载不出来，您也可以来看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。）
 
 ### 封面，摘要和关键词
 
