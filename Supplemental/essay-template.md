@@ -45,8 +45,6 @@
     </tbody>              
     </table>
 </div>
-
-
 <!-- 注释语句：导出PDF时会在这里分页 -->
 
 
@@ -63,8 +61,6 @@
 <div style="width:52px;float:left; font-family:方正公文黑体;">关键词：</div> 
 <div style="overflow:hidden; font-family:华文楷体;">计算机；操作系统；功能；发展；Windows；macOS；</div>
 </div>
-
-
 
 
 # Computer Work Hub — Operating System
@@ -84,19 +80,76 @@
 
 ## 什么是计算机操作系统
 
-　　操作系统（Operating System，OS）是一组相互关联的系统软件程序，用以主管并控制计算机操作、运用和运行硬件、软件资源和提供公共服务，最终来组织用户交互，更是也是计算机系统的核心支撑。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务，以帮助用户使用计算机。操作系统也提供一个让用户与系统交互的操作界面，有些操作系统集成了图形用户界面，而有些仅使用命令行界面。
+　　操作系统（Operating System，OS）是一组相互关联的系统软件程序，用以主管并控制计算机操作、运用和运行硬件、软件资源和提供公共服务，最终来组织用户交互，更是也是计算机系统的核心支撑。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务，以帮助用户使用计算机。操作系统也提供一个让用户与系统交互的操作界面，有些操作系统集成了图形用户界面，而有些仅使用命令行界面。^[1]^
 
 ## 操作系统的功能、结构和分类
 
 ### 操作系统的功能
 
-　　简单地说，操作系统管理并分配资源、调度和运行程序，位于底层硬件与用户之间，帮助用户和机器进行交互，架起了一座沟通用户与机器的桥梁：用户在操作系统的用户界面中输入命令；而操作系统则对命令进行解释，驱动硬件设备，以实现用户的要求。一个符合现代标准个人电脑的操作系统一般应该提供以下的功能：
+　　简单地说，操作系统管理并分配资源、调度和运行程序，位于底层硬件与用户之间，帮助用户和机器进行交互，架起了一座沟通用户与机器的桥梁：用户在操作系统的用户界面中输入命令；而操作系统则对命令进行解释，驱动硬件设备，以实现用户的要求。^[2]^ 一个符合现代标准个人电脑的操作系统一般应该提供以下的功能：
 
 #### 进程管理（处理器管理）
 
 　　在系统运行过程中，通过实施CPU分配策略，中央处理器可以根据计算机操作系统运行情况、所需执行程序命令内容，将各项程序任务进行合理分配，以保证系统运行稳定、命令得到有效执行。
 　　这分为四个方面：进程控制、进程同步、进程通信、调度。
 　　进程控制，是在并发执行多个作业时，为作业窗创建、终止进程，以及对进程在运行中状态改变的控制。
+　　下面随便放了一段东西：
+
+##### 数学方法（假定）
+
+　　根据*Zhejiang University Theorem*可知，该设想的处理过程是一个二重积分：
+$$
+\iint\limits_{x^2 + y^2 \leq R^2} f(x,y)\,\mathrm{d}x\,\mathrm{d}y = \int_{\theta=0}^{2\pi} \mathrm{d}\theta\int_{r=0}^R f(r\cos\theta,r\sin\theta) r\,\mathrm{d}r\, \tag{1}
+$$
+其中$x$表示我们在卷的路上的行进距离。再由卷王公式
+$$
+\frac{x^{2}}{1-x^{2}}+\frac{y^{2}}{1-y^{2}}+\frac{z^{2}}{1-z^{2}} \geq \frac{3 \sqrt{3}}{2}
+$$
+我们有了下面的数据处理方法。下面是我们的流程图表示说明：
+
+```mermaid
+graph LR
+A(开始) -->
+input[/输入a,b/] --> if{a%b=0 ?}
+if --->|yes| f1[GCD = b] --> B(结束)
+if --->|no| f2["a, b = b, a % b "]-->if
+```
+<center><strong>图 1  算法的流程图表示（假定）</strong></center>
+
+有了这个流程图，我们就可以根据它编写python程序代码。
+
+##### 算法的代码实现（假定）
+
+```python
+from functools import cmp_to_key
+def cmpkey2(x,y):
+    if x[1]>y[1]: return  1
+    elif x[1]<y[1]: return  -1
+    elif x[0]>y[0]: return  -1
+    elif x[0]<y[0]: return  1
+    return 0
+#input session
+text = ""
+while True:
+    ts = input()
+    if ts == '!!!!!': break
+    text += ' '; text += ts
+    text = text.lower()
+for ch in '!.,:*?': text=text.replace(ch, ' ')
+#count session
+cnt = {}
+for word in text.split(): cnt[word] = cnt.get(word, 0) + 1 
+#sort session
+cont = list(cnt.items())
+d = cont.sort(key=cmp_to_key(cmpkey2),reverse=True)
+
+print(len(cont))
+for i in range(10):
+    if i>=len(cont):
+        break
+    key, val = cont[i]
+    print(f"{key}={val}")
+```
 　　……
 
 ####  存储管理
@@ -121,11 +174,15 @@
 
 ## 操作系统的发展
 
-　　经过漫长的发展，操作系统逐渐成为今天我们熟悉的样子。从古至今，是一位位伟大的科学家和优秀的程序员共同努力才为我们带来了当今如此惊艳的伟大软件。……
+　　经过漫长的发展，操作系统逐渐成为今天我们熟悉的样子。从古至今，是一位位伟大的科学家和优秀的程序员共同努力才为我们带来了当今如此惊艳的伟大软件。
+
+　　……
 
 ### 操作系统的现状
 
-　　现代操作系统通常都有一个亲切美丽的图形用户界面，并使用如鼠标、触控版等有别于键盘的输入设备提供用户交互。……
+　　现代操作系统通常都有一个亲切美丽的图形用户界面，并使用如鼠标、触控版等有别于键盘的输入设备提供用户交互。
+
+　　……
 
 #### 个人电脑
 
@@ -138,9 +195,9 @@
 #### 移动操作系统
 
 　　在1990年代初期，Psion推出了小型移动计算设备Psion Series 3 PDA。它支持在名为EPOC的操作系统上运行的用户编写的应用程序。EPOC的更高版本成为Symbian，被用于诺基亚、爱立信、索尼爱立信、摩托罗拉、三星等手机；塞班在2010年之前曾是世界上使用最广泛的智能手机操作系统。微软也推出过Windows Mobile系列系统，它在2007年达到顶峰时，曾是美国智能手机最常用的操作系统。
-　Microsoft于2010年通过Windows Phone重新进入了移动操作系统市场，并在2015年被更新的Windows 10 Mobile取代。Windows 10 Mobile是Windows 10操作系统的分支版本，专为屏幕尺寸低于8寸的智能手机和平板电脑运行。它采用ARM架构和IA-32处理器架构，为移动设备提供了"强大的功能"。其中包括同步处理功能、通用应用、从Android和iOS的平台移植的应用、将设备连接至外部屏幕、可使用类似PC的鼠标和键盘输入等。尽管设想与愿景十分美好，但最终呈现效果始终不尽人意。2020年1月14日，因为Windows 10 Mobile使用人数太少，欠缺App开发人员，该系统正式停止更新，最后一个版本号停留在1709（10.0.15254.603）。许多人对Windows 10 Mobile的结局感到痛心疾首，读者可以通过[这里](https://www.microsoft.com/en-us/windows/windows-10-mobile-specifications)尝试为您的手机安装该系统。
+　　Microsoft于2010年通过Windows Phone重新进入了移动操作系统市场，并在2015年被更新的Windows 10 Mobile取代。Windows 10 Mobile是Windows 10操作系统的分支版本，专为屏幕尺寸低于8寸的智能手机和平板电脑运行。它采用ARM架构和IA-32处理器架构，为移动设备提供了"强大的功能"。其中包括同步处理功能、通用应用、从Android和iOS的平台移植的应用、将设备连接至外部屏幕、可使用类似PC的鼠标和键盘输入等。尽管设想与愿景十分美好，但最终呈现效果始终不尽人意。2020年1月14日，因为Windows 10 Mobile使用人数太少，欠缺App开发人员，该系统正式停止更新，最后一个版本号停留在1709（10.0.15254.603）。许多人对Windows 10 Mobile的结局感到痛心疾首，读者可以通过[这里](https://www.microsoft.com/en-us/windows/windows-10-mobile-specifications)尝试为您的手机安装该系统。
 　　Apple在2007年推出了iPhone及其操作系统，后者称为iPhone OS（也就是如今的iOS），它与Mac OS X一样，都基于类似Unix的Darwin。除了这些基础之外，它还引入了功能强大且创新的图形用户界面，该界面后来也用于Apple的平板电脑iPad上。（后来Apple将iPad上的操作系统与手机端区分开，改叫iPadOS。）一年后，基于经过修改的Linux内核，Google引入了具有自己的图形用户界面的Android。
-截止本文完稿，iOS已更新至iOS 14.3；Android已更新至Android 11（Beta 3）。读者可以分别点击[这里](https://www.apple.com.cn/ios/)和[这里](https://android.com/)查看关于这两个操作系统的更多官方信息。
+　　截止本文完稿，iOS已更新至iOS 14.3；Android已更新至Android 11（Beta 3）。读者可以分别点击[这里](https://www.apple.com.cn/ios/)和[这里](https://android.com/)查看关于这两个操作系统的更多官方信息。
 　　除了这些，移动领域还竞争着各种各样的其他移动操作系统。不过如今移动端主流的操作系统只有iOS和Android系统及基于Android内核修改的其他“换壳”安卓系统。
 
 <center><strong>表 1  全球/中国移动操作系统市场份额占比（%）</strong></center>
