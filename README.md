@@ -2,7 +2,7 @@
 
 本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在css中修改适合自己学校的格式。
 
-markdown的轻量化特性，使您可以专注于论文内容而不用担心格式。
+markdown的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王精美排版的论文与报告。
 
 这是一个Typora的markdown主题样式，该主题理论上适用于所有平台，CSS也适用于部分其他编辑器。macOS和Windows中的个别特性可能不同。
 
@@ -10,18 +10,135 @@ markdown的轻量化特性，使您可以专注于论文内容而不用担心格
 
 （较完整的论文预览见这里: [😀](https://blog.keldos.me/2021/05/md-latex-template/)）：
 
-|  | code | light mode | dark mode |
-| ---- | :----: | :----: | :----: |
-| 封面，摘要和关键词 | – |![sample-essay_1](Supplemental/sample-essay-image/sample-essay_1.png)|![sample-essay_2](Supplemental/sample-essay-image/sample-essay_2.png)|
-| 预览模式 | – |![preview-l](Supplemental/preview/preview-l.png)|![preview-d](Supplemental/preview/preview-d.png)|
-| 编辑模式 | – |![edit-l](Supplemental/preview/edit-l.png)|![edit-d](Supplemental/preview/edit-d.png)|
-| 层级标题 |![heading-c](Supplemental/preview/heading-c.png)|![heading-l](Supplemental/preview/heading-l.png)|![](Supplemental/preview/heading-d.png)|
-| 表格 |![table-c](Supplemental/preview/table-c.png)|![table-l](Supplemental/preview/table-l.png)|![table-d](Supplemental/preview/table-d.png)|
-| 项目列表 | ![item-c](Supplemental/preview/item-c.png) |![item-l](Supplemental/preview/item-l.png)|![item-d](Supplemental/preview/item-d.png)|
-| 代码块 | ![code-c](Supplemental/preview/code-c.png) |![](Supplemental/preview/code-l.png)|![code-d](Supplemental/preview/code-d.png)|
-| Mermaid | ![mermaid-c](Supplemental/preview/mermaid-c.png) |![mermaid-l](Supplemental/preview/mermaid-l.png)|![mermaid-d](Supplemental/preview/mermaid-d.png)|
-| 公式 | ![equation-c](Supplemental/preview/equation-c.png) |![equation-l](Supplemental/preview/equation-l.png)|![equation-d](Supplemental/preview/equation-d.png)|
+### 封面，摘要和关键词
 
+| ![sample-essay_1](https://gitee.com/Keldos-Li/picture/raw/master/img/sample-essay_1.png)|![sample-essay_2](https://gitee.com/Keldos-Li/picture/raw/master/img/sample-essay_2.png)|
+| :----: | :----: |
+
+### 预览与编写
+
+| ![preview-l](https://gitee.com/Keldos-Li/picture/raw/master/img/preview-l.png)|![preview-d](https://gitee.com/Keldos-Li/picture/raw/master/img/preview-d.png)|
+| :----: | :----: |
+| ![edit-l](https://gitee.com/Keldos-Li/picture/raw/master/img/edit-l.png)|![edit-d](https://gitee.com/Keldos-Li/picture/raw/master/img/edit-d.png)|
+
+#### 层级标题 
+
+|![heading-l](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-l.png)|![](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-d.png)|
+| :----: | :----: |
+
+```markdown
+层级标题：
+
+### 标题3
+
+#### 标题4
+
+##### 标题5
+
+###### 标题6
+```
+
+#### 表格 
+|![table-l](https://gitee.com/Keldos-Li/picture/raw/master/img/table-l.png)|![table-d](https://gitee.com/Keldos-Li/picture/raw/master/img/table-d.png)|
+| :----: | :----: |
+
+```markdown
+表格：
+
+<center><strong>表 2  全球/中国桌面操作系统市场份额占比（%）</strong></center>
+
+| OS   | Windows | macOS | Unknown | Linux | Chrome OS | 其他 |
+| ---- | ------- | ----- | ------- | ----- | --------- | ---- |
+| 全球 | 76.56   | 17.1  | 2.68    | 1.93  | 1.72      | 0.01 |
+| 中国 | 87.55   | 5.44  | 6.24    | 0.75  | 0.01      | 0.01 |
+```
+
+#### 项目列表
+|![item-l](https://gitee.com/Keldos-Li/picture/raw/master/img/item-l.png)|![item-d](https://gitee.com/Keldos-Li/picture/raw/master/img/item-d.png)|
+| :----: | :----: |
+
+```markdown
+项目列表：
+
+1.  有序列表项
+2.   有序列表项2
+    +   无序列表项1
+    +   无序列表项2. 
+        *   [x] 表示已完成。 ***==(请尽量不要使用此功能，因为它的对齐效果不佳)==***
+        *   [ ] 表示未完成。
+
+*   项目1 
+    *   项目2 
+        *   项目3 
+
+1. 项目1 
+2. 项目2 
+    1. 项目2.1 
+    2. 项目2.2 
+        1. 项目2.2.1 
+        2. 项目2.2.2
+```
+
+#### 代码块 
+|![code-l](https://gitee.com/Keldos-Li/picture/raw/master/img/code-l.png)|![code-d](https://gitee.com/Keldos-Li/picture/raw/master/img/code-d.png)|
+| :----: | :----: |
+
+```markdown
+代码块
+
+​```html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The *= Operator</h1>
+
+<p id="demo"></p>
+
+<script>
+var x = 10;
+x *= 5;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html>
+​```
+```
+
+#### Mermaid
+|![mermaid-l](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-l.png)|![mermaid-d](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-d.png)|
+| :----: | :----: |
+
+```markdown
+mermaid 图形
+
+​```mermaid
+graph LR
+A(开始) -->
+input[/输入a,b/] --> if{a%b=0 ?}
+if --->|yes| f1[GCD = b] --> B(结束)
+if --->|no| f2["a, b = b, a % b "]-->if
+​```
+```
+
+#### 公式
+
+|![equation-l](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-l.png)|![equation-d](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-d.png)|
+| :----: | :----: |
+
+```markdown
+公式:
+
+$$
+\iint\limits_{x^2 + y^2 \leq R^2} f(x,y)\,\mathrm{d}x\,\mathrm{d}y = \int_{\theta=0}^{2\pi} \mathrm{d}\theta\int_{r=0}^R f(r\cos\theta,r\sin\theta) r\,\mathrm{d}r\, \tag{1}
+$$
+```
+
+#### 其他
+
+还有支持其他语法特性功能，这里不再展示，请参考Typora的语法库。
 
 ## 安装
 
@@ -78,7 +195,7 @@ markdown的轻量化特性，使您可以专注于论文内容而不用担心格
 ## 使用
 
 *   如果您不希望您的论文有段后的额外行距，请在Typora的`偏好设置` – `Markdown` 中选取`保留连续的空格与单个换行`；
-*   尽管Typora不希望您直接编辑您下载的主题文件，但我们暂时推荐您直接修改我们的样式文件，得以充分达到自定义的效果，我为此写了大量的注释。
+*   尽管Typora不希望您直接编辑您下载的主题文件，但我暂时推荐您直接修改我们的样式文件，得以充分达到自定义的效果，我为此写了大量的注释。
     *   在当前版本中设置点较为分散，我后期应该会将设置点整合到`:root`设置中，届时您将可以直接在css样式表的最顶端修改。但目前，您不得不记住所有您更改过的位置，并在获取我们之后的更新后重新修改一遍（对不起！🙇🏻）
     *   如果您看不懂注释，或不知道修改代码会造成什么效果，请先自行百度/谷歌/必应，然后尝试联系我。
     *   修改CSS后请重新启动Typora以查看效果。
@@ -103,9 +220,9 @@ markdown的轻量化特性，使您可以专注于论文内容而不用担心格
     ```
 
     来更改打印PDF的页边距。
-
+    
     但对于macOS用户，因为[Typora本身的问题](https://github.com/typora/typora-issues/issues/998)，暂时不能使用这一方法调整页边距。
-
+    
     *   可以在Typora的导出设置里重新设置自定义页边距。
     *   或先导出为html，然后在Chrome中打开打印。
         （不能用Safari！Safari会自行设置最小边距而且非常不合理，这会导致您无法精确控制页边距；另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！）
@@ -172,6 +289,8 @@ markdown的轻量化特性，使您可以专注于论文内容而不用担心格
 
 该项目最初来自于知乎作者 @让幻想飞 （清华大佬，没想到和我一样年轻，但可能不喜欢及时回消息\_(:з」∠)\_）
 
+他的原注释：
+
 > 这篇样式基于知乎大佬LAN DU的样式，
 >
 > 原文知乎链接：https://zhuanlan.zhihu.com/p/158767474
@@ -182,11 +301,15 @@ markdown的轻量化特性，使您可以专注于论文内容而不用担心格
 > 主要改动：
 >
 >  - 适配LaTeX的字体。选用像LaTeX的字体是装“哔”的重要手段。
+>
 >  - 更改标题、目录和大纲的编号样式。改成1. ，1.1 ， 1.1.1 ，……这样的编号更有一种浓厚的论文感觉。
+>
 >  - 二级及以下标题全部靠左，适应文章样式。后面加上大空白，适配LaTeX样式
->     不足之处：
+>     
+>  不足之处：
+>     
 >  - 仍然无法添加页眉页脚。
->     适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”*/
+>     适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”
 
 @让幻想飞 的**知乎文章地址**：https://zhuanlan.zhihu.com/p/357096043；
 
