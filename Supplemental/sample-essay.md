@@ -1,5 +1,6 @@
 <div class="cover" style="page-break-after:always;font-family:方正公文仿宋;width:100%;height:100%;border:none;margin: 0 auto;text-align:center;">
     <div style="width:60%;margin: 0 auto;height:0;padding-bottom:10%;">
+        </br>
         <img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%A0%A1%E5%90%8D-%E9%BB%91%E8%89%B2.svg" alt="校名" style="width:100%;"/>
     </div>
     </br></br></br></br></br>
@@ -44,6 +45,7 @@
     </tbody>              
     </table>
 </div>
+
 
 <!-- 注释语句：导出PDF时会在这里分页 -->
 

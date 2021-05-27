@@ -1,0 +1,450 @@
+/* ******************** */
+
+
+body{
+  /* border:1px solid bxlack; for debug */
+  padding:0 !important;
+  margin:0 !important;
+  line-height: 16pt /* 行距 */
+  /*counter-reset: tableHead 0 imgHead 0;*/
+}
+
+/* 正文区基本属性，参照wordTeX模板设置字体大小*/
+#write {
+    font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
+    font-size: 9.5pt; /* 字体大小 */
+    max-width: 21cm; /* A4标准宽度 */
+    background-color: white;
+  /* column-count: 2;
+    column-gap: 25px;
+    column-width: 8cm; 
+    display: inline-block; */ /* 这里可以试分栏的，但确实不适合实现 */
+}
+/* 粗体样式设置 */
+strong {
+  font-weight: 750; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，这里因为我使用的宋体-简的bold不明显，但存在heavy字重，所以标了750 */
+}
+
+/* 页边距处理 */
+@media screen{
+  #write{
+    padding: 1.8cm 2cm; 
+    /*border: 0.8px solid #AAC ; /* 添加一个淡蓝色的边框 */
+    box-shadow: 0 0 24px 12px #CCCCCC; /* 页边来一个阴影！！好耶 */
+  }
+}
+/* 整个界面编辑框外面的背景色 */
+/*html>body>content {
+  background-color: #161616;
+}*/
+
+@media print{
+  #write{
+    padding: 0 !important;
+  }
+  #write a{
+    color: inherit;
+    text-decoration: none;
+  }
+  @page{
+    /* size: A4;  强制A4大小 */
+    margin: 1.8cm 2cm 1.2cm 2cm !important; 
+    /* 请注意，macOS上不支持这个设置，
+    可以在typora的导出设置里重新设置自定义页边距，
+    或先导出为html，然后在Chrome中打开打印。
+    （不能用Safari！Safari会自行设置最小边距而且非常不合理，
+    这会导致您无法精确控制页边距；
+    另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），
+    会导致您无法显示很多字体！）
+    或者直接用pandoc的命令行设置 */
+  }
+}
+
+#write p{
+  text-align:left;
+}
+
+/*
+#write figure:after{
+  counter-increment: tableHead;
+  content: "表" counter(tableHead) " ";
+  text-align:center;
+  width:100%;
+  display:inline-block;
+}*/
+/* 图片，导出PDF时暂时无法显示 */
+/*
+#write .md-image:after{
+  counter-increment: imgHead;
+  content: "图" counter(imgHead) " ";
+  text-align:center;
+  width:100%;
+  display:inline-block;
+}
+*/
+
+/* basic样式采用一般的引言，具有左边框、左缩进 */
+blockquote{
+  font-style: normal; /* 本来打算用italic的，但是中文支持很差。如果需要斜体就再斜体好了 */
+  font-family: "Latin Modern Roman", Times, 华文仿宋, serif;
+  border-left: 3px solid grey;
+  padding-left: 16px; /* 文字离左边框的距离 */
+  margin-left: 20px; /* 左边框离页面边的距离 */
+  font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
+  color: grey; /* 文字颜色 */
+}
+
+  /*border-width: 0.5pt 0;
+  border-style:solid; 这一行本来使用了上下边框*/
+
+/* 标题属性 */
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  page-break-after: avoid !important;
+}
+
+h1 {
+  font-family: "LMRoman10-Bold", 华文黑体Bold;
+  font-weight: bold;
+  text-align: center;
+  column-span: all;
+  font-size: 18pt;
+}
+h2 {
+  font-family: "LMRoman10-Bold", 方正公文黑体; 
+  font-size: 14pt;
+}
+h3 {
+  font-family: "LMRoman10-Bold", 方正公文黑体;
+  font-size: 12pt;
+  line-height: 12pt;
+}
+h4 {
+  font-family: "LMRoman10-Bold", 华文粗楷-SC;
+  font-size: 10pt;
+  line-height: 8pt;
+}
+h5 {
+  font-family: "LMRoman10-Bold", 方正公文仿宋; 
+  font-size: 10pt;
+  line-height: 10pt;
+}
+h6 {
+  font-family: "LMRoman10-Bold", 方正公文仿宋; 
+  font-size: 9.5pt;
+  line-height: 10pt;
+}
+
+/* 目录标题属性 */
+.md-toc-h2,
+.md-toc-h3,
+.md-toc-h4,
+.md-toc-h5,
+.md-toc-h6 {
+  font-family: "Latin Modern Roman", Times, 宋体-简;
+}
+
+/* 三线表 */
+#write table{
+  border-top: 1.2pt solid; /* 三线表第一条线宽度 */
+  border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
+  font-family: "Latin Modern Roman", Times, 宋体-简;
+  font-size: 9.5pt;
+  text-align: center;
+  page-break-inside: avoid;
+  border-spacing: 6px;
+  width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
+  margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+}
+#write table td{
+  padding: 2px;
+}
+#write table tr{
+  padding: 2px;
+}
+#write th{
+  padding: 0px 6px;
+}
+/* 表格标题（首行）样式 */
+#write thead{
+  border-bottom: 0.6pt solid; /* 三线表表头的线 */
+  font-family: "LMRoman10-Bold", 华文黑体Bold;
+  font-size:9.5pt;
+}
+
+img{
+    page-break-inside:avoid; /* 避免图片在导出时被断开 */
+}
+
+/* ============ 多级列表样式 ============ */
+ul {
+  list-style: disc; /* 无序列表第一级：实心圆点 */
+}
+ul ul {
+  /*list-style: circle;*/
+  list-style: '–　 '; /* 直接用空格代替一部分缩进的调整了我真懒 */
+  /*left: -0.8em;*/
+}
+ul ul ul{
+  list-style: "◦　  ";  /* 无序列表第三极：小圈 */
+  left: 0.6em;
+}
+
+ol {
+  list-style: decimal; /* 有序列表第一级：数字 */
+}
+
+ol ol{
+  counter-reset: liist;
+  list-style: none; 
+}
+ol ol li {
+  counter-increment: liist;
+  position: relative;
+}
+ol ol li::before {
+  content: "(" counter(liist, lower-alpha) ")　　"; /* 有序列表第二级：括号加小写字母 */
+  position: absolute;
+  margin-right: 2rem;
+  left: -2.4em;
+}
+
+ol ol ol {
+  counter-reset: liiist;
+  list-style: none;
+  margin: 0;
+}
+ol ol ol li {
+  counter-increment: liiist;
+  position: relative;
+}
+ol ol ol li::before {
+  content: counter(liiist, lower-roman) ".　　　"; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+  align-self: flex-end;
+  position: absolute;
+  left: -2.4em;
+  /*-moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;*/
+  width: 4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+  text-align: right;
+}
+
+li {
+  position: relative;
+}
+/* ============ 多级列表样式END ============ */
+
+
+/* 行内代码 */
+p code, li code {
+  color: rgb(60, 112, 198);
+  background-color:#fefefe;
+  font-family:'Latin Modern Mono', 'SF Mono', 'Source Code', 苹方-简, monospace;
+  box-sizing: border-box; 
+  /*border: 1px #ced8e4 solid; */ /* 实体边框 */
+  border-right: 0px;
+  margin: 0 2px 0 2px ;
+  padding: 0 2px 0 2px;
+  border-radius: 2px 2px 2px 2px ; /* 圆角 */
+  box-shadow: 0 0 1px 1px #c8d3df; /* 阴影 */
+}
+/* 代码块样式*/
+#write .CodeMirror-wrap {
+  padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
+}
+#write .CodeMirror-code pre { 
+  font-family: 'Latin Modern Mono', 苹方-简, monospace;
+}
+
+/* typora 编写模式 */
+#typora-source {
+/*background: ;
+  color: ;*/
+  font-family: 'SF Mono', 苹方-简, monospace;
+  line-height: 1.5rem;
+}
+
+/* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
+/* 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题 */
+#write{
+  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0
+}
+#write 
+h1 {
+  counter-reset: h2
+}
+h2 {
+  counter-reset: h3
+}
+h3 {
+  counter-reset: h4
+}
+h4 {
+  counter-reset: h5
+}
+h5 {
+  counter-reset: h6
+}
+
+/* put counter result into headings */
+#write h2:before {
+  counter-increment: h2;
+  content: counter(h2);
+  margin-right: 2rem;
+}
+#write h3:before,
+h3.md-focus.md-heading:before /** override the default style for focused headings */ {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3);
+  margin-right: 2rem;
+}
+#write h4:before,
+h4.md-focus.md-heading:before {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4);
+  margin-right: 2rem;
+}
+#write h5:before,
+h5.md-focus.md-heading:before {
+  counter-increment: h5;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+  margin-right: 2rem;
+}
+#write h6:before,
+h6.md-focus.md-heading:before {
+  counter-increment: h6;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+  margin-right: 2rem;
+}
+
+/* 目录 */
+.md-toc-content{
+  margin-left: 2em;
+  counter-reset: toc-h2 toc-h3 toc-h4 ;/* 修复缺失上级标题时无法递增 */
+  page-break-after: always;
+}
+.md-toc-inner{
+  margin-left:0 !important;
+  color:black !important;
+}
+.md-toc-item{
+  color:black !important;
+  font-size: 9pt;
+  font-family: "Latin Modern Roman", 宋体-简, "Source Han Serif CN", serif; 
+}
+/* 目录标题 */
+.md-toc-content .md-toc-h1 {
+  display:none; /* 不显示一级标题 */
+  counter-reset: toc-h2;
+}
+.md-toc-content .md-toc-h2 {
+  counter-reset: toc-h3;
+}
+.md-toc-content .md-toc-h3 {
+  counter-reset: toc-h4;
+}
+.md-toc-content .md-toc-h4 {
+  counter-reset: toc-h5;
+} 
+.md-toc-content .md-toc-h5 {
+  counter-reset: toc-h6;
+} 
+.md-toc-content .md-toc-h2:before {
+  counter-increment: toc-h2;
+  content: counter(toc-h2);
+  margin-right: 1rem;
+}
+.md-toc-content .md-toc-h3:before {
+  counter-increment: toc-h3;
+  content: counter(toc-h2) "." counter(toc-h3);
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h4:before {
+  counter-increment: toc-h4;
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
+  margin-left: 3.5rem;
+  margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h5:before {
+  counter-increment: toc-h5;
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5);
+  margin-left: 5.5rem;
+  margin-right: 0.5rem;
+}
+.md-toc-content .md-toc-h6:before {
+  counter-increment: toc-h6;
+  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "." counter(toc-h5) "." counter(toc-h6);
+  margin-left: 7.5rem;
+  margin-right: 0.5rem;
+}
+
+/* 侧边大纲标题 */
+.sidebar-content .outline-h1 {
+  counter-reset: outline-h2;
+}
+.sidebar-content .outline-h2 {
+  counter-reset: outline-h3;
+}
+.sidebar-content .outline-h3 {
+  counter-reset: outline-h4;
+}
+.sidebar-content .outline-h4 {
+  counter-reset: outline-h5;
+}
+.sidebar-content .outline-h5 {
+  counter-reset: outline-h6;
+} 
+
+.sidebar-content .outline-h2 .outline-label:before {
+  counter-increment: outline-h2;
+  content: counter(outline-h2) " ";
+}
+.sidebar-content .outline-h3 .outline-label:before {
+  counter-increment: outline-h3;
+  content: counter(outline-h2) "." counter(outline-h3) "  ";
+}
+.sidebar-content .outline-h4 .outline-label:before {
+  counter-increment: outline-h4;
+  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "  ";
+}
+.sidebar-content .outline-h5 .outline-label:before {
+  counter-increment: outline-h5;
+  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "." counter(outline-h5) "  ";
+}
+
+.sidebar-content {
+  font-family: 苹方-简, sans-serif; /* 侧边栏的字体修改 */
+  list-style: None;
+}
+
+pre.md-meta-block {
+  background: #CCCCCC;
+  padding: 1.4em;
+  font-family: "SF Mono", monospace;
+}
+
+/** override the default style for focused headings */
+#write>h3.md-focus:before,
+#write>h4.md-focus:before,
+#write>h5.md-focus:before,
+#write>h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+  color: inherit;
+  border: inherit;
+  border-radius: inherit;
+  position: inherit;
+  left:initial;
+  float: none;
+  top:initial;
+  font-size: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  vertical-align: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}

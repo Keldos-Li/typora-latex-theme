@@ -16,13 +16,11 @@ A common form of *lorem ipsum* reads:
 
 ----
 
-
-
-Inline styles support **strong**, *Emphasis*, `code`, <u>underline</u>, ~~strikethrough~~, :haha:, $\LaTeX$, X^2^, H~2~O, ==highlight==, [Link](typora.io), and image:
+Inline styles support **strong**, *Emphasis*, `code`, <u>underline</u>, ~~strikethrough~~, :smile:, $\LaTeX$, X^2^, H~2~O, ==highlight==, [Link](typora.io), and image:
 
 ![img](https://i.imgur.com/RGLj3oV.jpg)
 
-Block level contains:
+level heading:
 
 ### Heading 3
 
@@ -32,11 +30,16 @@ Block level contains:
 
 ###### Heading 6 
 
-| 　Left-Aligned　 | 　Center Aligned　 | 　Right Aligned　 |
-| :------------ | :-------------: | ------------: |
-| 　col 3 is    | 　some wordy text　 |       $1600　 |
-| 　col 2 is    |    centered     |         $12　 |
-| 　zebra stripes |    are neat     |          $1　 |
+table：
+
+<center><strong>table 1　Global / Chinese Desktop operating system Market share</strong> (%)</center>
+
+| OS   | Windows | macOS | Unknown | Linux | Chrome OS | 其他 |
+| ---- | ------- | ----- | ------- | ----- | --------- | ---- |
+| Global | 76.56   | 17.1  | 2.68    | 1.93  | 1.72      | 0.01 |
+| Chinese | 87.55   | 5.44  | 6.24    | 0.75  | 0.01      | 0.01 |
+
+items:
 
 1. ordered list item 1.
 2. ordered list item 2.
@@ -57,6 +60,8 @@ Block level contains:
         1.  Item 2.2.1
         2.  Item 2.2.2
 
+block code:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -76,6 +81,8 @@ document.getElementById("demo").innerHTML = x;
 </html>
 ```
 
+mermaid:
+
 ```mermaid
 graph LR
 A(start) -->
@@ -84,6 +91,16 @@ if --->|yes| f1[GCD = b] --> B(quit)
 if --->|no| f2["a, b = b, a % b "]-->if
 ```
 
+equations:
+
+$$
+\iint\limits_{x^2 + y^2 \leq R^2} f(x,y)\,\mathrm{d}x\,\mathrm{d}y = \int_{\theta=0}^{2\pi} \mathrm{d}\theta\int_{r=0}^R f(r\cos\theta,r\sin\theta) r\,\mathrm{d}r\, \tag{1}
+$$
+
+toc：
+
 [TOC]
 
+
 [^1]: *Forked* from https://en.wikipedia.org/wiki/Lorem_ipsum
+
