@@ -12,18 +12,17 @@ description: 这个 block 块是 YAML front matters
 
 常见的*lorem ipsum*起头如下：
 
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+> *Lorem ipsum dolor sit amet*, **consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua**. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 >
-> 我必须向你们解释，谴责快乐和赞美痛苦的这一错误观念是如何诞生的，我将给你们一个完整的系统说明，并阐述真理的伟大探索者，人类幸福的主要建造者的实际教导。
+> *我必须向你们解释*，**谴责快乐和赞美痛苦的这一错误观念是如何诞生的**，我将给你们一个完整的系统说明，并阐述真理的伟大探索者，人类幸福的主要建造者的实际教导。
 
+-------
 
-
-
-内联样式支持**粗体**、*斜体*、`code`、<u>下划线</u>、~~删除线~~、:haha:、$\LaTeX$、X^2^、H~2~O、==高亮==、[链接](typora.io)和图像：
+内联样式支持**粗体**、*斜体*、`code`、<u>下划线</u>、~~删除线~~、:smile:、$\LaTeX$、X^2^、H~2~O、==高亮==、[链接](typora.io)和图像：
 
 ![img](https://i.imgur.com/RGLj3oV.jpg)
 
-块级元素包含：
+层级标题：
 
 ### 标题3
 
@@ -33,11 +32,16 @@ description: 这个 block 块是 YAML front matters
 
 ###### 标题6
 
-| 　左对齐　 | 　中心对齐　 | 　右对齐　 |
-| :------------ | :-------------: | ------------: |
-| 第3栏 |　一些冗长的文字　 | $1600　 |
-| 第2栏    | 居中　|12美元|
-| 　斑马条纹|整齐| 1美元　 |
+表格：
+
+<center><strong>表 2  全球/中国桌面操作系统市场份额占比（%）</strong></center>
+
+| OS   | Windows | macOS | Unknown | Linux | Chrome OS | 其他 |
+| ---- | ------- | ----- | ------- | ----- | --------- | ---- |
+| 全球 | 76.56   | 17.1  | 2.68    | 1.93  | 1.72      | 0.01 |
+| 中国 | 87.55   | 5.44  | 6.24    | 0.75  | 0.01      | 0.01 |
+
+项目列表：
 
 1.  有序列表项
 2.   有序列表项2
@@ -56,6 +60,8 @@ description: 这个 block 块是 YAML front matters
     2. 项目2.2 
         1. 项目2.2.1 
         2. 项目2.2.2
+
+代码块：
 
 ```html
 <!DOCTYPE html>
@@ -76,6 +82,8 @@ document.getElementById("demo").innerHTML = x;
 </html>
 ```
 
+mermaid  图形：
+
 ```mermaid
 graph LR
 A(开始) -->
@@ -83,6 +91,14 @@ input[/输入a,b/] --> if{a%b=0 ?}
 if --->|yes| f1[GCD = b] --> B(结束)
 if --->|no| f2["a, b = b, a % b "]-->if
 ```
+
+公式:
+
+$$
+\iint\limits_{x^2 + y^2 \leq R^2} f(x,y)\,\mathrm{d}x\,\mathrm{d}y = \int_{\theta=0}^{2\pi} \mathrm{d}\theta\int_{r=0}^R f(r\cos\theta,r\sin\theta) r\,\mathrm{d}r\, \tag{1}
+$$
+
+目录：
 
 [TOC]
 
