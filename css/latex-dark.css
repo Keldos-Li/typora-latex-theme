@@ -23,7 +23,7 @@ body{
   /* border:1px solid bxlack; for debug */
   padding:0 !important;
   margin:0 !important;
-  line-height: 16pt /* 行距 */
+  line-height: 16pt; /* 行距 */
   /*counter-reset: tableHead 0 imgHead 0;*/
   color: #DDDDDD; /* 黑色模式修改 */
   background-color: #282828; /* 黑色模式修改 */
@@ -45,6 +45,10 @@ body{
 strong {
   font-weight: 750; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，这里因为我使用的宋体-简的bold不明显，但存在heavy字重，所以标了750 */
 }
+
+/*.MathJax {
+  font-family: "LatinModernMath-Regular";
+}*/
 
 /* 页边距处理 */
 @media screen{
@@ -282,7 +286,7 @@ p code, li code {
   /*background: ;*/
   color: #DDDDDD;
   font-family: 'SF Mono', 苹方-简, monospace;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 /* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
