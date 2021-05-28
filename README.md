@@ -1,4 +1,4 @@
-![](./Supplemental/preview.png)
+![cover](./Supplemental/cover.png)
 # Typora伪装LaTeX中文样式主题
 
 本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在css中修改适合自己学校的格式。
