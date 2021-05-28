@@ -311,6 +311,6 @@ $$
 >  - 仍然无法添加页眉页脚。
 >     适用于小论文、实验报告等对格式要求较松的情况，在不写代码的前提下装“哔”
 
-@让幻想飞 的**知乎文章地址**：https://zhuanlan.zhihu.com/p/357096043；
+@让幻想飞 的**知乎文章地址**：https://zhuanlan.zhihu.com/p/357096043
 
-**GitHub项目地址**: https://github.com/yfzhao20/Typora-markdown。
+**GitHub项目地址**: https://github.com/yfzhao20/Typora-markdown
