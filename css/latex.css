@@ -167,7 +167,7 @@ h6 {
 }
 /* 表格标题（首行）样式 */
 #write thead{
-  border-bottom: 0.6pt solid; /* 三线表表头的线 */
+  border-bottom: 0.5pt solid; /* 三线表表头的线 */
   font-family: "LMRoman10-Bold", 华文黑体Bold;
   font-size:9.5pt;
 }
@@ -262,7 +262,7 @@ p code, li code {
 /*background: ;
   color: ;*/
   font-family: 'SF Mono', 苹方-简, monospace;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 /* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
