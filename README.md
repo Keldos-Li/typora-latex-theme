@@ -161,7 +161,7 @@ $$
     
 *   解压这个文件，然后将`css`文件夹中的`latex.css`和`latex-dark.css`两个文件复制到你的[Typora主题文件夹](#怎么找到typora主题文件夹)下；
 
-*   打开`/Supplemental/Fonts`文件夹，安装需要的字体；
+*   打开`/Supplemental/Fonts`文件夹，安装[需要的字体](#该主题都包含了哪些字体)；
 
 *   启动或重新启动Typora，然后从主题菜单中选择`Latex`或`Latex Dark`选项。
 
@@ -251,7 +251,7 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 字体文件都存放在`/Supplemental/Fonts`文件夹。
 
-具体请参阅[这里](./Supplemental/Fonts/README.md)。
+具体请参阅[这里](./Supplemental/Fonts/)。
 
 *   **所有的字体文件请自行获取授权**，本人不对您使用字体造成的法律纠纷负责。
 
