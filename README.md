@@ -1,13 +1,13 @@
 ![cover](./Supplemental/cover.png)
 # Typora伪装LaTeX中文样式主题
 
-本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**实小型验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在css中修改适合自己学校的格式。
+本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**实小型验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。
 
-markdown的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由LaTeX​排版的精美论文与报告。
+markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由LaTeX​排版的精美论文与报告。
 
-这是一个Typora的markdown主题样式，该主题理论上适用于所有平台，CSS也适用于部分其他编辑器。macOS和Windows中的个别特性可能不同。
+这是一个 Typora 的 markdown 主题样式，该主题理论上适用于所有平台，CSS 也适用于部分其他编辑器。macOS 和 Windows 中的个别特性可能不同。
 
-If You not studying in China, please do Not use this theme. Intead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
+If you are not studying in China, please DO NOT use this theme. Intead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
 
 ## 预览
 
@@ -145,7 +145,7 @@ $$
 
 ## 安装
 
-*   安装前，请确保您已经安装Typora或其他markdown编辑器（也可以用某些IDLE），并拥有基本的markdown语法知识；
+*   安装前，请确保您已经安装 Typora 或其他 markdown 编辑器（也可以用某些 IDLE），并拥有基本的 markdown 语法知识；
 
     *   [如果您没有](#什么是typora)
 
@@ -159,7 +159,7 @@ $$
     $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
     ```
     
-*   解压这个文件，然后将`css`文件夹中的`latex.css`和`latex-dark.css`两个文件复制到你的Typora主题文件夹下；
+*   解压这个文件，然后将`css`文件夹中的`latex.css`和`latex-dark.css`两个文件复制到你的[Typora主题文件夹](#怎么找到typora主题文件夹)下；
 
 *   打开`/Supplemental/Fonts`文件夹，安装需要的字体；
 
@@ -175,13 +175,13 @@ $$
     *   如果您看不懂HTML代码，请先自行百度/谷歌/必应，然后尝试联系您在计算机系的同学；
 *   如果可以的话，或许您可以在论文致谢中提到这个项目。(/ω＼)
 
-　　这本质是一个适用于所有markdown编辑器的CSS样式（但对Typora编辑器做了额外的优化），您也可以将其用于其他您喜欢的markdown编辑器的自定义样式（尚未经过完整测试）。
+　　这本质是一个适用于所有 markdown 编辑器的 CSS 样式（但对 Typora 编辑器做了额外的优化），您也可以将其用于其他您喜欢的 markdown 编辑器的自定义样式（尚未经过完整测试）。
 
 ### 特别注意
 
 *   PDF页面**页边距**：
 
-    在Windos/Linux中，您可以很好地使用
+    在 Windos / Linux 中，您可以很好地使用
 
     ```css
     @media print{
@@ -192,28 +192,28 @@ $$
     }
     ```
 
-    来更改打印PDF的页边距。
+    来更改打印 PDF 的页边距。
     
-    但对于macOS用户，因为[Typora本身的问题](https://github.com/typora/typora-issues/issues/998)，暂时不能使用这一方法调整页边距。
+    但对于 macOS 用户，因为 [Typora 本身的问题](https://github.com/typora/typora-issues/issues/998)，暂时不能使用这一方法调整页边距。
     
-    *   可以在Typora的导出设置里重新设置自定义页边距。
-    *   或先导出为html，然后在Chrome中打开打印。
-        <br>（不能用Safari！Safari会自行设置它认为的最小边距，这会导致您无法精确控制页边距；另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！）
-    *   或者直接用pandoc的命令行设置。
+    *   可以在 Typora 的导出设置里重新设置自定义页边距。
+    *   或先导出为 html ，然后在 Chrome 中打开打印。
+        <br>（不能用 Safari！Safari 会自行设置它认为的最小边距，这会导致您无法精确控制页边距；另一方面，在某次更新后 Safari 取消了对 CSS 本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！）
+    *   或者直接用 pandoc 的命令行设置。
 
 *   **超链接**：
 
-    显然，我们不希望打印的论文存在蓝色的超链接（？），我在CSS中修改了部分代码，使得在页面编辑和导出html预览中可以得到正常的超链接样式，但打印时会取消颜色和下划线（仍可以点击链接）。
+    显然，我们不希望打印的论文存在蓝色的超链接（？），我在 CSS 中修改了部分代码，使得在页面编辑和导出html预览中可以得到正常的超链接样式，但打印时会取消颜色和下划线（仍可以点击链接）。
 
     不知道大家是否有这个需求，如果有更合适的方法可以联系我。
 
 *   **多级列表**：
 
-    因为我的技术原因，请暂时不要在**二级有序列表**之后**混用** *有序列表* 和 *无序列表* 以及*核对清单*，会出现一些bug。（虽然感觉会这么干的人应该不多。）如果您有解决方案，请联系我。
+    因为我的技术原因，请暂时不要在**二级有序列表**之后**混用** *有序列表* 和 *无序列表* 以及*核对清单*，会出现一些 bug。（虽然感觉会这么干的人应该不多。）如果您有解决方案，请联系我。
 
 *   **页眉和页脚**：
 
-    目前似乎不能直接定义，请在Typora的导出设置里设置好您需要的页眉和页脚文字，导出后在PDF编辑器中调整您喜欢的样式风格。
+    目前似乎不能直接定义，请在 Typora 的导出设置里设置好您需要的页眉和页脚文字，导出后在 PDF 编辑器中调整您喜欢的样式风格。
 
 *   **引用参考文献**
 
@@ -221,7 +221,7 @@ $$
 
 *   **专注模式**和**打字机模式**：
 
-    还没写这部分的代码。本主题样式初衷不在于此，如果您有需求，可以提交issue或进入讨论区讨论，我视需求和精力再进行开发。
+    还没写这部分的代码。本主题样式初衷不在于此，如果您有需求，可以提交 issue 或进入讨论区讨论，我视需求和精力再进行开发。
 
 ## Q&A
 
@@ -232,9 +232,9 @@ $$
 ### 什么是**markdown**？
 
 [markdown](https://daringfireball.net/projects/markdown/) 是一种轻量级标记语言，用于使用纯文本创建格式化文本。
-约翰·格鲁伯和亚伦·斯沃茨于2004年创建了Markdown，作为一种以源代码形式吸引人类读者的标记语言。
-Markdown排版语法简洁，让人们更多地关注内容本身而非排版。它可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式等文件。
-Markdown广泛用于博客、即时消息、在线论坛、协作软件、文档页面和阅读文件。
+约翰·格鲁伯和亚伦·斯沃茨于2004年创建了 Markdown，作为一种以源代码形式吸引人类读者的标记语言。
+Markdown 排版语法简洁，让人们更多地关注内容本身而非排版。它可与 HTML 混编，可导出 HTML、PDF 以及本身的 .md 格式等文件。
+Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文档页面和阅读文件。
 
 参考：
 
@@ -245,69 +245,34 @@ Markdown广泛用于博客、即时消息、在线论坛、协作软件、文档
 
 *   从`文件` – `偏好设置`中打开设置面板，然后单击“打开主题文件夹”即可。
 
-*   如果您需要手动打开，对于Windows/Linux，这个文件夹一般是`C:\Users\{username}\AppData\Roaming\Typora\themes\`；对于macOS，这个文件夹一般是`/Users/{username}/Library/Application Support/abnerworks.Typora/themes/`。
+*   如果您需要手动打开，对于 Windows / Linux，这个文件夹一般是`C:\Users\{username}\AppData\Roaming\Typora\themes\`；对于 macOS，这个文件夹一般是`/Users/{username}/Library/Application Support/abnerworks.Typora/themes/`。
 
 ### 该主题都包含了哪些字体？
 
-这里会列出所有我使用的字体，它们都存放在`/Supplemental/Fonts`文件夹。
+字体文件都存放在`/Supplemental/Fonts`文件夹。
 
-*   `Latin Modern`文件夹存放了常规LaTeX​文档使用的英文字体 **Latin Modern**，希望所有用户安装。（大家都会喜欢这个字体的，文件也不是很大，所以安装吧，就不把它们放在主题文件夹下再import了。~~绝不是因为我懒~~）；
-
-    *   如果您的学校强制要求使用 **Times New Roman**，那当我没说。~~（Times New Roman 系列真的太窄了，只是适合报纸，哪本英文书会用 Times New Roman 排啊真是的）~~ 请您自行前往CSS代码把将所有涉及到Latin Modern的`font-family`部分修改进行修改。
-
-*   其他文件夹存放了一些中文字体和代码字体，可以选择性安装（特别是如果您已经拥有其中的一些字体的话）。中文字体文件较大，请解压后安装。请注意，如果您**不拥有这些字体**也**不希望安装**的话，请到CSS文件中自行更改选用的字体（本项目没有写太多字体回退机制）；
-
-    其中包含：
-    *   `FZFS_Document.TTF`  **方正公文仿宋**  © Beijing Founder Electronics Co.,Ltd. 北京北大方正电子有限公司
-
-    *   `FZHT_Document.TTF`  **方正公文黑体**  © Beijing Founder Electronics Co.,Ltd. 北京北大方正电子有限公司
-
-    *   `FZKT_Document.TTF`  **方正公文楷体**  © Beijing Founder Electronics Co.,Ltd. 北京北大方正电子有限公司
-
-        *选用方正的这一系列字体，是因为它们已经存在粗体效果，可以直接应用为标题字体而跳过Typora的伪粗体机制。*
-
-    *   `Kaiti.ttc`  **华文楷体**  © 1991-1998, Changzhou SinoType Technology Co., Ltd. All rights reserved.　 常州华文印刷新技术有限公司
-
-    *   `STFANGSO.ttf`  **华文仿宋**  © 1991-1998, Changzhou SinoType Technology Co., Ltd. All rights reserved. 常州华文印刷新技术有限公司
-
-    *   `STHeitiBold.ttf`  **华文黑体Bold**  © 2018, Changzhou SinoType Technology Co., Ltd.. All rights reserved. 常州华文文字技术有限公司
-
-        *这比普通的华文黑体更黑。该字体被用于小标题样式 (heading) 。*
-
-    *   `Songti.ttc`  **宋体-简**  © 2010-2012, Changzhou SinoType Technology Co., Ltd. All rights reserved. 常州华文印刷新技术有限公司
-
-        *请检查您电脑中原先安装的宋体是否与本字体相同。该系列名称为“**宋体-简**”的字体集包含了**常规体**、**细体**、**粗体**、**黑体**共4个字重字体。*
-
-    *   `PingFang.ttc`  **苹方-简** \& **苹方-繁** \& **苹方-港**  Designed by DynaComware & Apple.
-
-        *共三个字体系列的字体集，每个字体系列又各包含从**极细体**到**中粗体**的共6个字重字体。 该字体被我用于界面 UI 和 source mode。*
-
-    *   `SF-Mono-Regular.otf` `SF-Mono-Bold.otf` `SF-Mono-RegularItalic.otf` `SF-Mono-BoldItalic.otf`  **SF Mono**  Apple Inc.
-
-        ***该Apple系统字体不被授权应用在任何除Xcode, Terminal.app和Console.app的其他应用程序上，此处分发仅用于学习目的，请在下载后24小时内删除。*** *该字体被我用于 source mode。*
-
-*   如果您选用自己的其他字体，请尽量使用有完整字体系列的字体集作为正文字体，在CSS中写入时尽量**填写字体系列名称而非PostScript名称**（除非您希望固定使用单一字重与字体风格），使markdown可以通过您书写时的标记自动选取使用的字体。对于中文字体，一个完整的字体系列应该包括：常规体（regular）、粗体（bold），如果您希望粗体风格更强，它应当还包含黑体（Heavy）。
+具体请参阅[这里](./Supplemental/Fonts/README.md)。
 
 *   **所有的字体文件请自行获取授权**，本人不对您使用字体造成的法律纠纷负责。
 
 ### 为什么要修改CSS文件？
 
-每个学校所要求的格式略有不同，尽管老师不会肉眼查看您的格式是否符合要求，但或许您为了自己的需要仍需要稍作修改，例如加大字体、行间距和页边距使得论文的页数显得更长。
+每个学校所要求的格式略有不同，尽管老师不会肉眼查看您的格式是否符合要求，但或许您为了自己的需要仍需要稍作修改，例如加大字体、行间距和页边距使得论文显得更长。
 
-尽管Typora不希望您直接编辑您下载的主题文件，但我暂时推荐您**直接修改**我们的样式文件，得以充分达到自定义的效果，我为此写了大量的注释。
+尽管 Typora 不希望您直接编辑您下载的主题文件，但我暂时推荐您**直接修改**我们的样式文件，得以充分达到自定义的效果，我为此写了大量的注释。
 
-*   在当前版本中设置点较为分散，我后期应该会将设置点整合到`:root`设置中，届时您将可以直接在css样式表的最顶端修改。但目前，您不得不记住所有您更改过的位置，并在获取我们之后的更新后重新修改一遍（对不起！🙇🏻）
+*   在当前版本中设置点较为分散，我后期应该会将设置点整合到`:root`设置中，届时您将可以直接在 CSS 样式表的最顶端修改。但目前，您不得不记住所有您更改过的位置，并在获取我们之后的更新后重新修改一遍（对不起！🙇🏻）
 
 #### 我该如何修改CSS文件？
 
-*   确保您电脑中拥有**文本编辑软件**，如*记事本*（Windows）或*文本编辑*（macOS），如果有代码编辑软件就更好了。如果双击CSS文件无法打开，请在系统让您选取程序时选取上述软件；
-    *   *绝对不要用Microsoft Word打开它！！！就算它可以！*
+*   确保您电脑中拥有**文本编辑软件**，如*记事本*（Windows）或*文本编辑*（macOS），如果有代码编辑软件就更好了。如果双击 CSS 文件无法打开，请在系统让您选取应用程序时选取上述软件；
+    *   *绝对不要用 Microsoft Word 打开它！！！就算它可以！*
 *   根据代码中的注释提示修改源代码中样式选择器的变量取值；
 *   如果您看不懂注释，或不知道修改代码会造成什么效果，请先自行百度/谷歌/必应，然后尝试联系我。
 
 ### 该主题不能满足我的需求？
 
-该样式只能作为**轻量级**排版输出，如果您需要更复杂的排版，请使用LaTeX或Word进行排版。
+该样式只能作为**轻量级**排版输出，如果您需要更复杂的排版，请使用 LaTeX 或 Word 进行排版。
 
 *   如果您是zjuer：[指南](https://github.com/TheNetAdmin/zjuthesis)
 
@@ -320,7 +285,7 @@ Markdown广泛用于博客、即时消息、在线论坛、协作软件、文档
 
 ## 说明
 
-本人呢，本来是打算自己用的，所以Latin modern字体文件都直接安装引用了_(:з」∠)\_。
+本人呢，本来是打算自己用的，所以 Latin modern 字体文件都直接安装引用了_(:з」∠)\_。
 相比原作者的代码，**其他部分各种部分都重新编写了一点，修改了一点。**\_(:з」∠)\_
 主要改动在于：
 
