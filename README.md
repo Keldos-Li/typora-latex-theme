@@ -11,7 +11,7 @@ If you are not studying in China, please DO NOT use this theme. Intead, you coul
 
 <!-- ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Keldos-Li/typora-latex-theme/latest/total) -->
 <!-- ![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow&style=plastic) -->
-<a href=" https://github.com/Keldos-Li/typora-latex-theme/releases/latest">![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green&logo=hack-the-box)</a>
+<a href="https://github.com/Keldos-Li/typora-latex-theme/releases/latest">![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green&logo=hack-the-box)</a>
 <a href="https://github.com/Keldos-Li/typora-latex-theme/stargazers">![GitHub Repo stars](https://img.shields.io/github/stars/Keldos-Li/typora-latex-theme?style=flat&logo=github&color=yellow)</a>
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=IB2QSpQSSOQIDZfN74ujqx1aVtQtdtXF&jump_from=webapi">
 ![QQ群](https://img.shields.io/badge/QQ群-643187070-89AED1?logo=Tencent-QQ)</a>
@@ -157,16 +157,15 @@ $$
     *   [如果您没有](#什么是typora)
 
 *   最简单的安装办法是在该GitHub页面的右侧找到最新的（或较早的正式版）release，然后下载`Source code (zip)`（**推荐！**）；
-    
-    release中也包含了单独的`.css`样式文件，如果您不需要再次下载字体文件和样例文件，可以仅下载`.css`，这会大大减小下载大小（如果您是首次下载使用，并不推荐这么做）。
-    
-    *   当然你也可以使用命令行下载最新的打包代码（虽然没用，只是可能酷一点？）：
-    
-    ```bash
+
+    release中也包含了单独的`.css`样式文件，如果您之前已经安装过该主题，不需要重复下载字体文件和样例文件，可以仅下载`.css`，这会大大减小下载大小（如果您是首次下载使用则并不推荐这么做）。
+
+    <details><summary>当然你也可以使用命令行下载最新的打包代码（虽然没用，只是可能酷一点？）：</summary>
+    <pre><codeblock>
     $ cd <你常用的下载文件夹>
     $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
-    ```
-    
+    </codeblock></pre>
+    </details>
 *   解压这个文件，然后将`css`文件夹中的`latex.css`和`latex-dark.css`两个文件复制到你的 [Typora主题文件夹](#怎么找到typora主题文件夹)下；
 
 *   打开`/Supplemental/Fonts`文件夹，安装[需要的字体](#该主题都包含了哪些字体)；
