@@ -10,10 +10,11 @@ markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 If you are not studying in China, please DO NOT use this theme. Intead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
 
 <!-- ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Keldos-Li/typora-latex-theme/latest/total) -->
-<!-- [GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow&style=plastic) -->
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green)
-![GitHub Repo stars](https://img.shields.io/github/stars/Keldos-Li/typora-latex-theme?style=lflat&logo=github) 
-![QQ群](https://img.shields.io/badge/QQ群-643187070-ff69b4)
+<!-- ![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow&style=plastic) -->
+<a href=" https://github.com/Keldos-Li/typora-latex-theme/releases/latest">![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green&logo=hack-the-box)</a>
+<a href="https://github.com/Keldos-Li/typora-latex-theme/stargazers">![GitHub Repo stars](https://img.shields.io/github/stars/Keldos-Li/typora-latex-theme?style=flat&logo=github&color=yellow)</a>
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=IB2QSpQSSOQIDZfN74ujqx1aVtQtdtXF&jump_from=webapi">
+![QQ群](https://img.shields.io/badge/QQ群-643187070-89AED1?logo=Tencent-QQ)</a>
 
 ## 预览
 
@@ -73,7 +74,7 @@ If you are not studying in China, please DO NOT use this theme. Intead, you coul
 2.   有序列表项2
     +   无序列表项1
     +   无序列表项2. 
-        *   [x] 表示已完成。 ***==(请尽量不要使用此功能，因为它的对齐效果不佳)==***
+        *   [x] 表示已完成。 ***==(请尽量不要使用此功能，因为它的对齐效果不佳，以后可能考虑修改)==***
         *   [ ] 表示未完成。
 
 *   项目1 
@@ -170,7 +171,9 @@ $$
 
 *   打开`/Supplemental/Fonts`文件夹，安装[需要的字体](#该主题都包含了哪些字体)；
 
-*   启动或重新启动 Typora，然后从主题菜单中选择`Latex`或`Latex Dark`选项。
+*   启动或重新启动 Typora，然后从主题菜单中选择`Latex`或`Latex Dark`选项；
+
+*   Watch这个项目以获取最新的更新。*（可选）*
 
 ## 使用
 
@@ -225,6 +228,8 @@ $$
 *   **引用参考文献**
 
     目前没有更好的方式，请您主动编号……（或许小型课程论文不需要大量参考文献。）
+
+    或者我之后可能考虑把markdown注释样式改一下。
 
 *   **专注模式**和**打字机模式**：
 
@@ -295,6 +300,7 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 *   在 GitHub [请求新的功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)。
 *   给仓库Star之后联系[我本人](mailto:i@keldos.me)。
 *   Fork之后PR。
+*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="Typora伪LaTeX交流反馈" title="Typora伪LaTeX交流反馈"></a>之后问群内大佬们。
 
 ## 说明
 
@@ -326,7 +332,7 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 >   虽然是都开源项目，但这个项目似乎经过三手每个人都重新做了仓库而不是fork😂，不过确实每经一次手都有很多深化和改进orz，感觉目前代码已经没有办法merge了，害。感觉不是很符合开源精神。有点对不起原作者的感觉🥲（虽然我们谈过话）。
 >
->   以及大家都是咋找到这里的啊，我惊了……我都没宣传 orz（可加QQ群告诉我一下？）
+>   以及大家都是咋找到这里的啊，我惊了……我都没宣传 orz（可加群告诉我一下？）
 
 *   This theme for Typora is built on Mac, with Typora version 0.10.10 (5354).
 
