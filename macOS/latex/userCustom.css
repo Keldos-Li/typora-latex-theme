@@ -5,181 +5,79 @@
 
 /* userCustom on macOS */
 
-body{
-  line-height: 16pt /* 行距 */
-}
+:root {
 
-/* 正文区基本属性，参照wordTeX模板设置字体大小*/
-#write {
-    font-family: "Latin Modern Roman", Times, 宋体-简, "Source Han Serif CN", serif; 
-    font-size: 9.5pt; /* 字体大小 */
-    max-width: 21cm; /* A4标准宽度 */
-}
-/* 粗体样式设置 */
-strong {
-  font-weight: 750; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，这里因为我使用的宋体-简的bold不明显，但存在heavy字重，所以标了750 */
-}
+/* == 字体设置 == */
 
-/* 页边距处理 */
-@media screen{
-  #write{
-    padding: 1.8cm 2cm; 
-  }
-}
+	/* 基准字体 */
+	--base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10"; /* 备选：Times, "Times New Roman" */
+	--base-Chinese-font: 宋体-简, 华文宋体;
+	--base-font-size: 9.5pt;
 
-@media print{
-  @page{
-    /* size: A4;  强制A4大小 */
-    margin: 1.8cm 2cm 1.2cm 2cm !important; 
+	/* 引言字体 */
+	--quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times, "Times New Roman", 华文仿宋;
+	--quote-font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
+
+	/* 代码字体（代码中的中文会调用ui-font） */
+	--code-font: "Latin Modern Mono", "Latin Modern Mono 10";
+
+	/* 侧边栏字体 */
+	--ui-font: 苹方-简;
+
+	/* source mode 字体 */
+	--sourceMode-font: ""; /* 默认调用code-font和ui-font */
+
+	/* 目录字体 */
+	--toc-font: ""; /* 默认调用base-font */
+	--toc-font-size: ""; /* 默认调用base-font-size */
+
+	/* 表格字体 */
+	--table-title-font: ""; /* 默认调用heading-font */
+	--table-font: ""; /* 默认调用base-font */
+
+	/* 标题字体（总设置） */
+	--heading-Latin-font: "LMRoman10-Bold"; 
+	--heading-Chinese-font: 华文黑体Bold;
+
+	/* 标题字体分别设置 */
+		/* 大标题（h1）字体 */
+		--title-Chinese-font: 华文黑体Bold;
+		--title-font-size: 18pt;
+		/* h2字体 */
+		--h2-Chinese-font: 方正公文黑体;
+		--h2-font-size: 14pt;
+		/* h3字体 */
+		--h3-Chinese-font: 方正公文黑体;
+		--h3-font-size: 12pt;
+		/* h4字体 */
+		--h4-Chinese-font: 华文粗楷-SC;
+		--h4-font-size: 10pt;
+		/* h5字体 */
+		--h5-Chinese-font: 方正公文仿宋;
+		--h5-font-size: 10pt;
+		/* h6字体 */
+		--h6-Chinese-font: 方正公文仿宋;
+		--h6-font-size: 9.5pt;
+
+	/* 粗体样式设置 */
+	--strong-weight: 900; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，900等同于heavy */ 
+
+	/* 基础行距 */
+	--base-line-height: 16pt; 
+
+/* == 页面设置 == */
+	/* 打印页边距 */
+	--set-margin: 1.8cm 2cm 1.2cm 2cm !important;
     /* 请注意，macOS上不支持这个设置，
-    可以在typora的导出设置里重新设置自定义页边距，
-    或先导出为html，然后在Chrome中打开打印。
-    （不能用Safari！Safari会自行设置最小边距而且非常不合理，
-    这会导致您无法精确控制页边距；
-    另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），
-    会导致您无法显示很多字体！）
-    或者直接用pandoc的命令行设置 */
-  }
-}
+       可以在typora的导出设置里重新设置自定义页边距，
+       或先导出为html，然后在Chrome中打开打印。
+       （不能用Safari！Safari会自行设置最小边距而且非常不合理，
+       这会导致您无法精确控制页边距；
+       另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），
+       会导致您无法显示很多字体！）
+       或者直接用pandoc的命令行设置 */
 
-blockquote{
-  font-family: "Latin Modern Roman", Times, 华文仿宋, serif;
-}
-
-/* 标题属性 */
-h1,h2,h3,h4,h5,h6 {
-  font-weight: normal;
-}
-
-h1 {
-  font-family: "LMRoman10-Bold", 华文黑体Bold;
-  font-size: 18pt;
-}
-h2 {
-  font-family: "LMRoman10-Bold", 方正公文黑体; 
-  font-size: 14pt;
-}
-h3 {
-  font-family: "LMRoman10-Bold", 方正公文黑体;
-  font-size: 12pt;
-}
-h4 {
-  font-family: "LMRoman10-Bold", 华文粗楷-SC;
-  font-size: 10pt;
-}
-h5 {
-  font-family: "LMRoman10-Bold", 方正公文仿宋; 
-  font-size: 10pt;
-}
-h6 {
-  font-family: "LMRoman10-Bold", 方正公文仿宋; 
-  font-size: 9.5pt;
-}
-
-/* 目录标题属性 */
-.md-toc-h2,
-.md-toc-h3,
-.md-toc-h4,
-.md-toc-h5,
-.md-toc-h6 {
-  font-family: "Latin Modern Roman", Times, 宋体-简;
-}
-
-/* 三线表 */
-#write table{
-  border-top: 1.2pt solid; /* 三线表第一条线宽度 */
-  border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
-  font-family: "Latin Modern Roman", Times, 宋体-简;
-  font-size: 9.5pt;
-}
-/* 表格标题（首行）样式 */
-#write thead{
-  border-bottom: 0.5pt solid; /* 三线表表头的线 */
-  font-family: "LMRoman10-Bold", 华文黑体Bold;
-  font-size:9.5pt;
-}
-
-/* 行内代码 */
-p code, li code {
-  color: rgb(60, 112, 198);
-  background-color:#fefefe;
-  font-family:'Latin Modern Mono', 'SF Mono', 'Source Code', 苹方-简, monospace;
-  box-sizing: border-box; 
-  /*border: 1px #ced8e4 solid; */ /* 实体边框 */
-  border-right: 0px;
-  margin: 0 2px 0 2px ;
-  padding: 0 2px 0 2px;
-  border-radius: 2px 2px 2px 2px ; /* 圆角 */
-  box-shadow: 0 0 1px 1px #c8d3df; /* 阴影 */
-}
-/* 代码块样式*/
-#write .CodeMirror-wrap {
-  padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
-}
-#write .CodeMirror-code pre { 
-  font-family: 'Latin Modern Mono', 苹方-简, monospace;
-}
-
-/* typora 编写模式 */
-#typora-source {
-/*background: ;
-  color: ;*/
-  font-family: 'SF Mono', 苹方-简, monospace;
-  line-height: 2rem;
-}
-
-/* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
-/* 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题 */
-#write{
-  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0
-}
-#write 
-h1 {
-  counter-reset: h2
-}
-h2 {
-  counter-reset: h3
-}
-h3 {
-  counter-reset: h4
-}
-h4 {
-  counter-reset: h5
-}
-h5 {
-  counter-reset: h6
-}
-
-.md-toc-item{
-  color:black !important;
-  font-size: 9pt;
-  font-family: "Latin Modern Roman", 宋体-简, "Source Han Serif CN", serif; 
-}
-
-/* 目录标题 */
-.md-toc-content .md-toc-h1 {
-  display:none; /* 不显示一级标题 */
-  counter-reset: toc-h2;
-}
-
-.sidebar-content .outline-h2 .outline-label:before {
-  counter-increment: outline-h2;
-  content: counter(outline-h2) " ";
-}
-.sidebar-content .outline-h3 .outline-label:before {
-  counter-increment: outline-h3;
-  content: counter(outline-h2) "." counter(outline-h3) "  ";
-}
-.sidebar-content .outline-h4 .outline-label:before {
-  counter-increment: outline-h4;
-  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "  ";
-}
-.sidebar-content .outline-h5 .outline-label:before {
-  counter-increment: outline-h5;
-  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4) "." counter(outline-h5) "  ";
-}
-
-.sidebar-content {
-  font-family: 苹方-简, sans-serif; /* 侧边栏的字体修改 */
-  list-style: None;
+/* == 控制设置 == */
+	/* 目录中是否显示一级标题 */
+	--toc-show-title: none; 
 }
