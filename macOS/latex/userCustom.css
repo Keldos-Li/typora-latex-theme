@@ -25,7 +25,7 @@
 	--ui-font: 苹方-简;
 
 	/* source mode 字体 */
-	--sourceMode-font: ""; /* 默认调用code-font和ui-font */
+	--sourceMode-font: "SF Mono", 苹方-简; /* 默认调用code-font和ui-font */
 
 	/* 目录字体 */
 	--toc-font: ""; /* 默认调用base-font */
