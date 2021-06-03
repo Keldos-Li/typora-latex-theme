@@ -332,6 +332,8 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 ## 鸣谢
 
+本项目是在下面两人工作的基础上完成的。括号内链接为两人的项目地址：
+
 [@让幻想飞](https://zhuanlan.zhihu.com/p/357096043)（[yfzhao20](https://github.com/yfzhao20/Typora-markdown)）
 
 > * 适配LaTeX的字体。选用像LaTeX的字体是装“哔”的重要手段。
