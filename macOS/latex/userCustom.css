@@ -1,0 +1,83 @@
+/* ============================================
+ * ============ TYPORA lATEX THEME ============
+ * ============================================
+ */
+
+/* userCustom on macOS */
+
+:root {
+
+/* == 字体设置 == */
+
+	/* 基准字体 */
+	--base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10"; /* 备选：Times, "Times New Roman" */
+	--base-Chinese-font: 宋体-简, 华文宋体;
+	--base-font-size: 9.5pt;
+
+	/* 引言字体 */
+	--quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times, "Times New Roman", 华文仿宋;
+	--quote-font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
+
+	/* 代码字体（代码中的中文会调用ui-font） */
+	--code-font: "Latin Modern Mono", "Latin Modern Mono 10";
+
+	/* 侧边栏字体 */
+	--ui-font: 苹方-简;
+
+	/* source mode 字体 */
+	--sourceMode-font: "SF Mono", 苹方-简; /* 默认调用code-font和ui-font */
+
+	/* 目录字体 */
+	--toc-font: ""; /* 默认调用base-font */
+	--toc-font-size: ""; /* 默认调用base-font-size */
+
+	/* 表格字体 */
+	--table-title-font: ""; /* 默认调用heading-font */
+	--table-font: ""; /* 默认调用base-font */
+
+	/* 标题字体（总设置） */
+	--heading-Latin-font: "LMRoman10-Bold"; 
+	--heading-Chinese-font: 华文黑体Bold;
+
+	/* 标题字体分别设置 */
+		/* 大标题（h1）字体 */
+		--title-Chinese-font: 华文黑体Bold;
+		--title-font-size: 18pt;
+		/* h2字体 */
+		--h2-Chinese-font: 方正公文黑体;
+		--h2-font-size: 14pt;
+		/* h3字体 */
+		--h3-Chinese-font: 方正公文黑体;
+		--h3-font-size: 12pt;
+		/* h4字体 */
+		--h4-Chinese-font: 华文粗楷-SC;
+		--h4-font-size: 10pt;
+		/* h5字体 */
+		--h5-Chinese-font: 方正公文仿宋;
+		--h5-font-size: 10pt;
+		/* h6字体 */
+		--h6-Chinese-font: 方正公文仿宋;
+		--h6-font-size: 9.5pt;
+
+	/* 粗体样式设置 */
+	--strong-weight: 900; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，900等同于heavy */ 
+
+	/* 基础行距 */
+	--base-line-height: 16pt; 
+
+/* == 页面设置 == */
+	/* 打印页边距 */
+	--set-margin: 1.8cm 2cm 1.2cm 2cm !important;
+    /* 请注意，macOS上不支持这个设置，
+       可以在typora的导出设置里重新设置自定义页边距，
+       或先导出为html，然后在Chrome中打开打印。
+       （不能用Safari！Safari会自行设置最小边距而且非常不合理，
+       这会导致您无法精确控制页边距；
+       另一方面，在某次更新后Safari取消了对CSS本地字体读取的支持（理由是隐私问题），
+       会导致您无法显示很多字体！）
+       或者直接用pandoc的命令行设置 */
+
+/* == 控制设置 == */
+	/* 目录中是否显示一级标题 */
+	--toc-show-title: none; 
+}
