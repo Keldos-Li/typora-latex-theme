@@ -126,39 +126,44 @@ blockquote {
   border-style:solid; 这一行本来使用了上下边框*/
 
 /* 标题属性 */
-h1,h2,h3,h4,h5,h6 {
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
     font-weight: normal;
     font-family: var(--heading-Latin-font), var(--heading-Chinese-font), sans-serif;
     page-break-after: avoid !important;
 }
 
-h1 {
+#write h1 {
     font-family: var(--heading-Latin-font), var(--title-Chinese-font), sans-serif;
     font-weight: bold;
     text-align: center;
     column-span: all;
     font-size: var(--title-font-size);
 }
-h2 {
+#write h2 {
     font-family: var(--heading-Latin-font), var(--h2-Chinese-font), sans-serif;
     font-size: var(--h2-font-size);
 }
-h3 {
+#write h3 {
     font-family: var(--heading-Latin-font), var(--h3-Chinese-font), sans-serif;
     font-size: var(--h3-font-size);
     line-height: var(--h3-font-size);
 }
-h4 {
+#write h4 {
     font-family: var(--heading-Latin-font), var(--h4-Chinese-font), sans-serif;
     font-size: var(--h4-font-size);
     line-height: var(--h4-font-size);
 }
-h5 {
+#write h5 {
     font-family: var(--heading-Latin-font), var(--h5-Chinese-font), sans-serif;
     font-size: var(--h5-font-size);
     line-height: var(--h5-font-size);
 }
-h6 {
+#write h6 {
     font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
     font-size: var(--h6-font-size);
     line-height: var(--h5-font-size); /* 没有写错，为了避免行距太小才这么写 */
