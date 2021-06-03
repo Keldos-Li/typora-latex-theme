@@ -83,7 +83,7 @@ strong {
     }
     @page {
         /* size: A4;  强制A4大小 */
-        margin: var(--set-margin);
+        margin: 1.8cm 2cm 1.2cm 2cm !important; /* 虽然暗色不支持导出，但还是放着 */
     }
 }
 
