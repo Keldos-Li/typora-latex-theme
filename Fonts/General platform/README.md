@@ -1,12 +1,14 @@
 # 使用字体（全平台）
 
+全平台适用的额外字体。
+
 ### `Latin Modern`
 
 　　`Latin Modern`文件夹存放了常规 LaTeX​ 文档使用的英文字体 **Latin Modern**，希望所有用户安装。（大家都会喜欢这个字体的，文件也不是很大，所以安装吧，就不把它们放在主题文件夹下再import了。~~绝不是因为我懒~~）。
 
-*   如果您的学校强制要求使用 **Times New Roman**，那当我没说。~~（Times New Roman 系列真的太窄了，只是适合报纸，哪本英文书会用 Times New Roman 排啊真是的）~~ 您可以在 `userCustom.css`  更换您默认使用的英文字体。
+*   如果您的学校强制要求使用 **Times New Roman**，那当我没说。~~（Times New Roman 系列真的太窄了，只是适合报纸，哪本英文书会用 Times New Roman 排啊真是的）~~ 您可以在 `userCustom.css`  更换您默认使用的英文字体。
 
-### `SF Mono` 系列
+### `SF Mono` 系列
 
 **SF Mono**  Apple Inc.
 
