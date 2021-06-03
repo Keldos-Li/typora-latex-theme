@@ -8,13 +8,11 @@
 
 ### `SF Mono` 系列
 
-*   `SF-Mono-Regular.otf` `SF-Mono-Bold.otf` `SF-Mono-RegularItalic.otf` `SF-Mono-BoldItalic.otf`  
+**SF Mono**  Apple Inc.
 
-    **SF Mono**  Apple Inc.
+　　该字体被我选用作为 Typora 编辑模式的代码字体。您完全可以在  `userCustom.css`  中将其更换为您喜欢的另一种代码字体。
 
-    该字体被我选用作为 Typora 编辑模式的代码字体。您完全可以在  `userCustom.css`  中将其更换为您喜欢的另一种代码字体。
-
-    ***该Apple系统字体不被授权应用在任何除Xcode, Terminal.app和Console.app的其他应用程序上，此处分发仅用于学习目的，请在下载后24小时内删除。*** 
+　　***该Apple系统字体不被授权应用在任何除Xcode, Terminal.app和Console.app的其他应用程序上，此处分发仅用于学习目的，请在下载后24小时内删除。*** 
 
 ## 说明
 
