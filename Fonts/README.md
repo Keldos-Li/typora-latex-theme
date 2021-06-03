@@ -2,13 +2,13 @@
 
 这里列出了所有我使用并在 CSS 中引用的字体。您可以在  `userCustom.css`  更换您默认使用的不同区块的字体。
 
-Mac 用户可以前往 [`/macOS`](./macOS) 和 [`/General platform`](./General platform) 获取适用于 macOS 的额外字体；
+Mac 用户可以前往 [`/macOS`](./macOS) 和 [`/General platform`](./General%20platform) 获取适用于 macOS 的额外字体；
 
-Windows 用户可以前往 [`/Windows`](./Windows) 和 [`/General platform`](./General platform) 获取适用于 Windows 的额外字体；
+Windows 用户可以前往 [`/Windows`](./Windows) 和 [`/General platform`](./General%20platform) 获取适用于 Windows 的额外字体；
 
 Linux 用户可以视自己系统字体的情况选择。
 
-*   如果您的电脑缺失了一部分系统字体，或您电脑的语言不是中文，或您的 Windows 电脑没有装载 MS Office，请尝试到 [`/System default`](./System default) 尝试安装部分系统字体。
+*   如果您的电脑缺失了一部分系统字体，或您电脑的语言不是中文，或您的 Windows 电脑没有装载 MS Office，请尝试到 [`/System default`](./System%20default) 尝试安装部分系统字体。
 
 ## 说明
 
