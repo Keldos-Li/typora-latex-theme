@@ -188,21 +188,46 @@ $$
 
 *   PDF 页面**页边距**：
 
-    在 Windos / Linux 中，您可以很好地在  `userCustom.css`  中修改页边距：
+    修改正确页边距共需两步：
 
-    ```css
-    /* 打印页边距 */
-    --set-margin: 1.8cm 2cm 1.2cm 2cm !important;
-        /* 按次序为 上 右 下 左 的页边距 */
-    ```
-    
-    但对于 macOS 用户，因为 [Typora 本身的问题](https://github.com/typora/typora-issues/issues/998)，暂时不能使用这一方法调整页边距。
-    
-    *   可以在 Typora 的导出设置里重新设置自定义页边距。
-    *   或先导出为 html ，然后在 Chrome 中打开打印。
+    1.  打开 `/latex` 文件夹中的 `userCustom.css` 文件中修改页边距：
+
+        ```css
+        /* 打印页边距 */
+        --set-margin: 1.8cm 2cm 1.2cm 2cm !important;
+            /* 按次序为 上 右 下 左 的页边距 */
+        ```
+
+    2.  打开 `latex.css` ，找到
+
+        ```css
+        @media print {
+            #write {
+                padding: 0 !important;
+            }
+            #write a {
+                color: inherit;
+                text-decoration: none;
+            }
+            @page {
+                margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距在这里！！！！！！！！！！！！！！！！ */
+        ```
+
+        （一般在第64行），然后修改页边距。
+
+    以上的第一处的设置调整了 Typora 预览界面包括导出html时的页面边距，第二处调整了 Typora 导出 PDF 时的页边距。
+
+    *   由于 CSS 自身缺陷，第二处不能引用变量，只能直接设定值，否则会出现错误。
+
+    在 Windos / Linux 中，您在两个 CSS 文件中同时修改页边距后即可导出正确的页面。
+
+    **但对于 macOS 用户，因为 [Typora 本身的问题](https://github.com/typora/typora-issues/issues/998)，第二处设置无效**。也就是说，第一处设置能够保证编辑预览时的页面边距正确，但直接导出时的页面边距无法精确修改。只能通过以下的办法：
+
+    *   在 Typora 的导出设置里自定义页边距。
+    *   先导出为 html ，然后在 Chrome 中打开打印。
         <br>（不能用 Safari！Safari 会自行设置它认为的最小边距，这会导致您无法精确控制页边距；另一方面，在某次更新后 Safari 取消了对 CSS 本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！）
-    *   或者直接用 pandoc 的命令行设置。
-    
+    *   直接用 pandoc 的命令行导出。
+
 *   **超链接**：
 
     显然，我们不希望打印的论文存在蓝色的超链接（？），我在 CSS 中修改了部分代码，使得在页面编辑和导出html预览中可以得到正常的超链接样式，但打印时会取消颜色和下划线（仍可以点击链接）。

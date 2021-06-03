@@ -61,7 +61,8 @@ strong {
     }
     @page {
         /* size: A4;  强制A4大小 */
-        margin: var(--set-margin);
+        margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距在这里！！！！！！！！！！！！！！！！ */
+        /* 参阅 <https://github.com/Keldos-Li/typora-latex-theme/blob/main/README.md#特别注意> */
     }
 }
 
