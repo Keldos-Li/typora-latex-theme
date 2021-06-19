@@ -152,7 +152,7 @@ $$
 
 ## 安装
 
-*   安装前，请确保您已经安装 Typora 或其他 markdown 编辑器（也可以用某些 IDLE），并拥有基本的 markdown 语法知识；
+*   安装前，请确保您已经安装 Typora 或其他 markdown 编辑器（也可以用某些 IDE），并拥有基本的 markdown 语法知识；
 
     *   [如果您没有](#什么是typora)
 
