@@ -272,7 +272,7 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 ### 怎么找到Typora主题文件夹？
 
-*   从`文件` – `偏好设置`中打开设置面板，然后单击“打开主题文件夹”即可。
+*   从`Typora` – `偏好设置`中打开`外观`面板，然后单击“打开主题文件夹”即可。
 
 *   如果您需要手动打开，对于 Windows，这个文件夹一般是`C:\Users\{username}\AppData\Roaming\Typora\themes`；对于 macOS，这个文件夹一般是`/Users/{username}/Library/Application Support/abnerworks.Typora/themes`；对于 Linux，这个目录一般是`~/.config/Typora/themes`。
 
