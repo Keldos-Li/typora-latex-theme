@@ -1,11 +1,11 @@
 ![cover](./Supplemental/cover.png)
 # Typora伪装LaTeX中文样式主题
 
+[预览](#预览) | [安装与使用](#安装与使用) | [下载与版本日志](releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](常见) | [已知 bug](#已知-bug)  
+
 本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。
 
-markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。
-
-这是一个 Typora 的 markdown 主题样式，在 macOS 上完成开发测试，理论上适用于所有平台，CSS 也适用于部分其他编辑器。macOS 和 Windows 中的个别特性可能不同。**目前持续更新新功能并解决bug，如有需要可前往develop分支获取最新的代码尝试测试。**
+Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。
 
 If you are not studying in China, please DO NOT use this theme. Instead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
 
@@ -18,7 +18,7 @@ If you are not studying in China, please DO NOT use this theme. Instead, you cou
 
 ## 预览
 
-（较完整的论文预览见这里: [点我😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果GitHub中的图像加载不出来，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。）
+较完整的论文预览见这里: [点我😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果GitHub中的图像加载不出来，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。
 
 ### 封面，摘要和关键词
 
@@ -35,18 +35,6 @@ If you are not studying in China, please DO NOT use this theme. Instead, you cou
 
 |![heading-l](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-l.png)|![](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-d.png)|
 | :----: | :----: |
-
-```markdown
-层级标题：
-
-### 标题3
-
-#### 标题4
-
-##### 标题5
-
-###### 标题6
-```
 
 #### 表格 
 |![table-l](https://gitee.com/Keldos-Li/picture/raw/master/img/table-l.png)|![table-d](https://gitee.com/Keldos-Li/picture/raw/master/img/table-d.png)|
@@ -67,62 +55,16 @@ If you are not studying in China, please DO NOT use this theme. Instead, you cou
 |![item-l](https://gitee.com/Keldos-Li/picture/raw/master/img/item-l.png)|![item-d](https://gitee.com/Keldos-Li/picture/raw/master/img/item-d.png)|
 | :----: | :----: |
 
-```markdown
-项目列表：
-
-1.  有序列表项
-2.   有序列表项2
-    +   无序列表项1
-    +   无序列表项2. 
-        *   [x] 表示已完成。 ***==(请尽量不要使用此功能，因为它的对齐效果不佳，以后可能考虑修改)==***
-        *   [ ] 表示未完成。
-
-*   项目1 
-    *   项目2 
-        *   项目3 
-
-1. 项目1 
-2. 项目2 
-    1. 项目2.1 
-    2. 项目2.2 
-        1. 项目2.2.1 
-        2. 项目2.2.2
-```
-
 #### 代码块 
 |![code-l](https://gitee.com/Keldos-Li/picture/raw/master/img/code-l.png)|![code-d](https://gitee.com/Keldos-Li/picture/raw/master/img/code-d.png)|
 | :----: | :----: |
-
-```markdown
-代码块
-
-​```html
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>The *= Operator</h1>
-
-<p id="demo"></p>
-
-<script>
-var x = 10;
-x *= 5;
-document.getElementById("demo").innerHTML = x;
-</script>
-
-</body>
-</html>
-​```
-```
 
 #### Mermaid
 |![mermaid-l](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-l.png)|![mermaid-d](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-d.png)|
 | :----: | :----: |
 
 ```markdown
-mermaid 图形
+mermaid 图形：
 
 ​```mermaid
 graph LR
@@ -138,99 +80,85 @@ if --->|no| f2["a, b = b, a % b "]-->if
 |![equation-l](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-l.png)|![equation-d](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-d.png)|
 | :----: | :----: |
 
-```markdown
-公式:
+```latex
+公式：
 
 $$
 \iint\limits_{x^2 + y^2 \leq R^2} f(x,y)\,\mathrm{d}x\,\mathrm{d}y = \int_{\theta=0}^{2\pi} \mathrm{d}\theta\int_{r=0}^R f(r\cos\theta,r\sin\theta) r\,\mathrm{d}r\, \tag{1}
 $$
 ```
 
-#### 其他
+## 安装与使用
 
-还有支持其他语法特性功能，这里不再展示，请参考Typora的语法库。
+1. 安装本主题前，**请确保您已经安装 Typora**. 如果您不清楚 Typora 是什么，这里[有一段介绍](#什么是-typora)。如果您对 markdown 的语法还不了解，[您可以从这里获得帮助](#什么是-markdown)。
 
-## 安装
+2. 前往本项目的 [release](release) 页面，然后下载最新版本的 `latex-theme.zip`. 
 
-*   安装前，请确保您已经安装 Typora 或其他 markdown 编辑器（也可以用某些 IDE），并拥有基本的 markdown 语法知识；
+3. 解压缩这个文件。如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。如果您正在使用 macOS ，请运行 `install.sh` 文件。运行上述文件后，适合您当前操作系统的 Typora 主题会被自动安装。如果您是要更新这个主题，以上的过程仍然有效；**新的主题文件会自动覆盖旧的主题文件**。
 
-    *   [如果您没有](#什么是typora)
+5. 如果您需要下载字体，请在 [release](release) 页面下载 `fonts.zip`，解压缩后即可安装您[需要的字体](#该主题都包含了哪些字体)。
 
-*   最简单的安装办法是在该 GitHub 页面的右侧找到最新的（或较早的正式版）release，然后下载适用于您系统平台的压缩文件；
+6. 启动或重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。
 
-    <details><summary>当然你也可以使用命令行下载最新的打包代码（虽然没用，只是可能酷一点？）：</summary>
-    <pre><codeblock>
-    $ cd <你常用的下载文件夹>
-    $ git clone https://github.com/Keldos-Li/typora-latex-theme.git
-    </codeblock></pre>
-    </details>
-*   解压这个文件，然后将 `/CSS` 文件夹中的所有文件（ `latex.css`、`latex-dark.css` 和`latex`文件夹）复制到你的 [Typora主题文件夹](#怎么找到typora主题文件夹)下；
+7. 本项目会持续更新，所以您可以选择点击本仓库的 `watch` 按钮（此按钮在 GitHub 网页版的右上方），从而实时跟进这个项目的更新信息。*（可选）*
 
-*   打开`/Fonts`文件夹，安装[需要的字体](#该主题都包含了哪些字体)；
+### 使用封面
 
-*   启动或重新启动 Typora，然后从主题菜单中选择 `Latex` 或 `Latex Dark` 选项；
-
-*   Watch这个项目以获取最新的更新。*（可选）*
-
-## 使用
-
-*   在 Typora 的`偏好设置` – `Markdown` 中选取`保留连续的空格与单个换行` *（如果您不希望您的论文有段后的额外行距的话）*；
-*   按照您学校的要求进行个性化设置；[（为什么？如何设置？）](#为什么要个性化设置？)
-
-    *   修改后请重新启动 Typora 以查看效果。
 *   `Supplemental` 文件夹中的 `essay-template.md` 和 `essay-template.pdf` 展示了一篇小论文在该主题下的效果（其中文字来源于我本人的课程作业以及一些拼凑，请不要在意过多细节），其中论文封面（也单独放置在 `cover-template.md` 文件中）、摘要、关键词和其他一些特别的元素使用 HTML 代码来编写。您可以自行取用修改它们的文字内容部分和代码部分来完成您的课程论文。
-    *   如果您看不懂 HTML 代码，请先自行百度/谷歌/必应，然后尝试联系您在计算机系的同学；
-*   如果可以的话，或许您可以在论文致谢中提到这个项目。(/ω＼)
+*   如果您看不懂 HTML 代码，请先自行百度/谷歌/必应，然后尝试联系您在计算机系的同学。
 
-　　这本质是一个适用于所有 markdown 编辑器的 CSS 样式（但对 Typora 编辑器做了额外的优化），您也可以将其用于其他您喜欢的 markdown 编辑器的自定义样式（尚未经过完整测试）。
+### 取消额外行距
 
-### 特别注意
+*   如果您不希望论文有段后的额外行距，可以在 Typora 的`偏好设置` – `Markdown` 中选取`保留连续的空格与单个换行`。
 
-*   PDF 页面**页边距**：
+## 个性化设置
 
-    修改正确页边距共需两步：
+在完成安装后，您可以选择按照学校的要求[进行个性化设置](#为什么要个性化设置？)。根据代码中的注释提示修改变量取值。在这里您可以轻松地更换正文、标题等不同元素的字体、字号、行距、页边距等。  
 
-    1.  打开 `/latex` 文件夹中的 `userCustom.css` 文件中修改页边距：
+进行个性化设置有两种方案：  
+1. 您可以直接在您下载的安装包中进行修改。比如，如果您目前在使用 Windows 操作系统，且您想修改亮色主题的主题文件，那您就应该打开 `Windows/latex.css`。**在完成修改后，请重新执行与您操作系统相匹配的脚本（`install.ps1` 或 `install.sh`），并重新启动 Typora，以应用您的更改**。  
+2. （面向高级用户）您也可以直接更改 Typora 主题文件夹下的文件，[点击此处了解主题文件夹所在的位置](#主题文件夹)。进入这个文件夹后，与本主题相关的两个文件分别是 `latex.css` 和 `latex-dark.css`，请您按需修改。**在完成修改后，请重新启动 Typora，以应用您的更改**。  
 
-        ```css
-        /* 打印页边距 */
-        --set-margin: 1.8cm 2cm 1.2cm 2cm !important;
+如果您在打开 CSS 文件时遇到了困难，请考虑使用 *记事本*（Windows）或*文本编辑*（macOS）打开它。**绝对不要用 Microsoft Word 打开它！！！就算它可以！**  
+
+如果您有更多的修改需求，请直接在 `latex.css` 和 `latex-dark.css` 中修改。  
+如果您看不懂注释，或不知道修改代码会造成什么效果，请先自行百度/谷歌/必应，然后尝试联系我。  
+
+以下是一些个性化设置的具体内容：  
+
+* **页边距**：
+  
+  若要修改页边距，您首先需要打开您想要修改的 CSS 文件。您需要在这个 CSS 文件中，分别找到两段类似这样的代码：  
+  
+  ```css
+    @media screen {
+        #write {
+            padding: 1.8cm 2cm 1.2cm 2cm !important;
             /* 按次序为 上 右 下 左 的页边距 */
-        ```
+  ```
 
-    2.  打开 `latex.css` ，找到
+  ```css
+    @media print {
+        @page {
+            /* size: A4;  强制A4大小 */
+             margin: 1.8cm 2cm 1.2cm 2cm !important;
+             /* 按次序为 上 右 下 左 的页边距 */
+  ```
 
-        ```css
-        @media print {
-            #write {
-                padding: 0 !important;
-            }
-            #write a {
-                color: inherit;
-                text-decoration: none;
-            }
-            @page {
-                margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距在这里！！！！！！！！！！！！！！！！ */
-        ```
+  真实的代码内容可能与以上描述不完全相同，但是嵌套关系一定是相同的。推荐您搜索`1.8cm`这个关键词，从而快速找到这两段代码。  
+  以上的第一处的设置调整了 Typora 预览界面包括导出 HTML 时的页面边距，第二处调整了 Typora 导出 PDF 时的页边距。
 
-        （一般在第64行），然后修改页边距。
+  在 Windows 中，您在两个 CSS 文件中同时修改页边距后即可导出正确的页面。
 
-    以上的第一处的设置调整了 Typora 预览界面包括导出html时的页面边距，第二处调整了 Typora 导出 PDF 时的页边距。
+  **但对于 macOS 用户，因为 [Typora 本身的问题](https://github.com/typora/typora-issues/issues/998)，第二处设置无效**。也就是说，第一处设置能够保证编辑预览时的页面边距正确，但直接导出时的页面边距无法精确修改。只能通过以下的办法：
 
-    *   由于 CSS 自身缺陷，第二处不能引用变量，只能直接设定值，否则会出现错误。
-
-    在 Windos / Linux 中，您在两个 CSS 文件中同时修改页边距后即可导出正确的页面。
-
-    **但对于 macOS 用户，因为 [Typora 本身的问题](https://github.com/typora/typora-issues/issues/998)，第二处设置无效**。也就是说，第一处设置能够保证编辑预览时的页面边距正确，但直接导出时的页面边距无法精确修改。只能通过以下的办法：
-
-    *   在 Typora 的导出设置里自定义页边距。
-    *   先导出为 html ，然后在 Chrome 中打开打印。
-        <br>（不能用 Safari！Safari 会自行设置它认为的最小边距，这会导致您无法精确控制页边距；另一方面，在某次更新后 Safari 取消了对 CSS 本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！）
-    *   直接用 pandoc 的命令行导出。
+  *   在 Typora 的导出设置里自定义页边距。
+  *   先导出为 HTML  ，然后在 Chrome 中打开打印。请注意，**不能用 Safari**！Safari 会自行设置它认为的最小边距，这会导致您无法精确控制页边距；另一方面，在某次更新后 Safari 取消了对 CSS 本地字体读取的支持（理由是隐私问题），会导致您无法显示很多字体！
+  *   直接用 pandoc 的命令行导出。
 
 *   **超链接**：
 
-    显然，我们不希望打印的论文存在蓝色的超链接（？），我在 CSS 中修改了部分代码，使得在页面编辑和导出html预览中可以得到正常的超链接样式，但打印时会取消颜色和下划线（仍可以点击链接）。
+    显然，我们不希望打印的论文存在蓝色的超链接（？），我在 CSS 中修改了部分代码，使得在页面编辑和导出 HTML 预览中可以得到正常的超链接样式，但打印时会取消颜色和下划线（仍可以点击链接）。
 
     不知道大家是否有这个需求，如果有更合适的方法可以联系我。
 
@@ -246,19 +174,40 @@ $$
 
     目前没有更好的方式，请您主动编号……（或许小型课程论文不需要大量参考文献。）
 
-    或者我之后可能考虑把markdown注释样式改一下。
+    或者我之后可能考虑把 markdown 注释样式改一下。
 
 *   **专注模式**和**打字机模式**：
 
     还没写这部分的代码。本主题样式初衷不在于此，如果您有需求，可以提交 issue 或进入讨论区讨论，我视需求和精力再进行开发。
+    
+## 面向高级用户
 
-## Q&A
+若您仅希望在 Windows 或 macOS 的 Typora 中使用本主题，请跳过本章节，因为**本章节涉及与主题相关的进阶用法**，您很有可能无需关心这些内容。
 
-### 什么是**Typora**？
+- Typora 是一个专有软件。在测试阶段，Typora 会保持免费；但在正式版中，其可能需要付费才能使用。
+- Typora 通过开源项目 Pandoc 将 markdown 转换为 HTML，每一个 markdown 元素都会带有特定的 HTML 标签。本主题的本质就是撰写一些 CSS 规则，从而规定超文本的样式。这意味着，本主题不但支持 Pandoc，还支持其他依赖 Pandoc 的 markdown 文本编辑器。
+- Typora 自身用户界面的样式也受本主题的影响。因此，在您阅读本项目的源代码时，需要留意，您看到的 CSS 规则不止影响了输出结果，还影响了 Typora UI。
+- 若要在本地构建本项目，请确保您安装了 sass. 然后，执行 `src` 目录下的 `build.sh`，即可完成构建。请注意，这里的构建结果不包含字体文件。
+- 目前，**本项目对 Linux 的支持并不完善**。主要问题有暗色模式无法正常显示、中文字符的字体存在问题等，但纯英文的显示是符合预期的。如果您仍想在 Linux 上安装这个主题，您也可以直接执行 `install.sh` 脚本。
 
-[Typora](https://typora.io/) 是一个超级好用的实时预览markdown编辑器；
+### 主题文件夹
 
-### 什么是**markdown**？
+各操作系统的 Typora 主题文件夹路径如下：
+
+| 操作系统 | 主题文件夹路径 |
+| :----: | :---- |
+| Windows | `%APPDATA%\Typora\themes` |
+| macOS | `~/Library/Application Support/abnerworks.Typora/themes` |
+| Linux | `~/.config/Typora/themes` |  
+
+
+## 常见问题
+
+### 什么是 **Typora**？
+
+[Typora](https://typora.io/) 是一个超级好用的实时预览 markdown 编辑器。
+
+### 什么是 **markdown**？
 
 [markdown](https://daringfireball.net/projects/markdown/) 是一种轻量级标记语言，用于使用纯文本创建格式化文本。
 约翰·格鲁伯和亚伦·斯沃茨于2004年创建了 Markdown，作为一种以源代码形式吸引人类读者的标记语言。
@@ -270,65 +219,44 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 *    [Markdown中文语法简介](https://markdown.com.cn/)
 *    [Typora使用的markdown语法参考](https://support.typora.io/Markdown-Reference/)
 
-### 怎么找到Typora主题文件夹？
-
-*   从`Typora` – `偏好设置`中打开`外观`面板，然后单击“打开主题文件夹”即可。
-
-*   如果您需要手动打开，对于 Windows，这个文件夹一般是`C:\Users\{username}\AppData\Roaming\Typora\themes`；对于 macOS，这个文件夹一般是`/Users/{username}/Library/Application Support/abnerworks.Typora/themes`；对于 Linux，这个目录一般是`~/.config/Typora/themes`。
-
 ### 该主题都包含了哪些字体？
 
-字体文件都存放在`/Fonts`文件夹。
-
-具体请参阅[这里](./Fonts/README.md)。
-
-*   **所有的字体文件请自行获取授权**，本人不对您使用字体造成的法律纠纷负责。
+字体文件都存放在`/Fonts`文件夹，详情请参阅[字体帮助](./Fonts/README.md)。**所有的字体文件请自行获取授权**，本人不对您使用字体造成的法律纠纷负责。
 
 ### 为什么要个性化设置？
 
 每个学校所要求的格式略有不同。另外，尽管老师不会肉眼查看您的格式是否符合要求，但或许您为了自己的需要仍需要稍作修改，例如加大字体、行间距和页边距使得论文显得更长。
 
-#### 我该如何个性化设置？
-
-*   确保您电脑中拥有**文本编辑软件**，如*记事本*（Windows）或*文本编辑*（macOS），如果有代码编辑软件就更好了；
-*   进入您 Typora 主题文件夹下的`\latex` 文件夹（您刚刚应当已经将其复制到这里），然后双击打开  `userCustom.css` ；（如果双击 CSS 文件无法打开，请在系统让您选取应用程序时选取上一步中提到的软件）
-    *   *绝对不要用 Microsoft Word 打开它！！！就算它可以！*
-*   根据代码中的注释提示修改变量取值。在这里您可以轻松地更换正文、标题等不同元素的字体、字号、行距、页边距等；
-*   如果您有更多的修改需求，请直接在 `latex.css` 和 `latex-dark.css` 中修改。
-    *   如果您看不懂注释，或不知道修改代码会造成什么效果，请先自行百度/谷歌/必应，然后尝试联系我。
-
 ### 该主题不能满足我的需求？
 
 该样式只能作为**轻量级**排版输出，如果您需要更复杂的排版，请使用 LaTeX 或 Word 进行排版。
 
-*   如果您是zjuer：[指南](https://github.com/TheNetAdmin/zjuthesis)
-*   如果您是tjuer：
+*   如果您是 ZJUer：[指南](https://github.com/TheNetAdmin/zjuthesis)
+*   如果您是 TJUer：
     *   [基于本项目二次开发的适配](https://github.com/KuangjuX/TJU-typora-latex-theme)
     *   [LaTeX指南](https://github.com/twtstudio/TJUThesisLatexTemplate)
 
-## 反馈
+## 已知 bug
 
-*   在 GitHub Issues [报告Bug](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=bug)。
-*   在 GitHub [请求新的功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)。
-*   给仓库Star之后联系[我本人](mailto:i@keldos.me)。
-*   Fork之后PR。
-*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="加入交流反馈QQ群" title="Typora伪LaTeX交流反馈"></a>之后问群内大佬们。
-
-## 说明
-
-已知的bug: 
-
-*   在 Windows 下将 Typora 设置为“一体化”后，darkmode的CSS暂时无法对设置页面进行背景修改。
+*   在 Windows 下将 Typora 设置为“一体化”后，darkmode 的 CSS 暂时无法对设置页面进行背景修改。
 
 - 无编号项目列表有很大的bug！！在二级项目之后，你不能混用有序列表和无序列表！因为全都是重新定义的content，我不能理解它为什么会对子项目产生影响！！可恶！
 - 当行间代码太长跨页的时候好像也会有点问题，到时候再改……
-- mermaid字体无法修改，我找遍了mermaid的最新文档和Typora的其他样式资源都没找到这个应该怎么在CSS样式表里修改……呜呜呜。
+- mermaid字体无法修改，我找遍了mermaid的最新文档和Typora的其他样式资源都没找到这个应该怎么在 CSS 样式表里修改……呜呜呜。
 
 话说论文封面的学校徽标是不是做得太大了（？）你们觉得不合适自己改改就好，就调一个`width`的事。
 
 >   虽然是都开源项目，但这个项目似乎经过三手每个人都重新做了仓库而不是fork😂，不过确实每经一次手都有很多深化和改进orz，感觉目前代码已经没有办法merge了，害。感觉不是很符合开源精神。有点对不起原作者的感觉🥲（虽然我们谈过话）。
 
 *   This theme for Typora is built on Mac, with Typora version 0.10.10 (5354).
+
+## 反馈
+
+*   在 GitHub Issues [报告Bug](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=bug)
+*   在 GitHub [请求新的功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)
+*   给仓库Star之后联系[我本人](mailto:i@keldos.me)。
+*   Fork之后PR
+*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="加入交流反馈QQ群" title="Typora伪LaTeX交流反馈"></a>之后问群内大佬们
 
 ## 鸣谢
 
