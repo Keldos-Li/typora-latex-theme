@@ -7,7 +7,7 @@ markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 
 这是一个 Typora 的 markdown 主题样式，在 macOS 上完成开发测试，理论上适用于所有平台，CSS 也适用于部分其他编辑器。macOS 和 Windows 中的个别特性可能不同。**目前持续更新新功能并解决bug，如有需要可前往develop分支获取最新的代码尝试测试。**
 
-If you are not studying in China, please DO NOT use this theme. Intead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
+If you are not studying in China, please DO NOT use this theme. Instead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
 
 <!-- ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Keldos-Li/typora-latex-theme/latest/total) -->
 <!-- ![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow&style=plastic) -->
@@ -156,7 +156,7 @@ $$
 
     *   [如果您没有](#什么是typora)
 
-*   最简单的安装办法是在该GitHub页面的右侧找到最新的（或较早的正式版）release，然后下载适用于您系统平台的压缩文件；
+*   最简单的安装办法是在该 GitHub 页面的右侧找到最新的（或较早的正式版）release，然后下载适用于您系统平台的压缩文件；
 
     <details><summary>当然你也可以使用命令行下载最新的打包代码（虽然没用，只是可能酷一点？）：</summary>
     <pre><codeblock>
