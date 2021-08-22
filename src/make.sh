@@ -51,5 +51,6 @@ scss --sourcemap=none $working_dir/macos-dark.scss $target_dir/$linux/latex-dark
 ########################################################################
 
 cp ./install.sh $target_dir
+cp ./install.ps1 $target_dir
 
 rm -r $working_dir
