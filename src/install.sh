@@ -1,21 +1,23 @@
 #! /bin/sh
 # this file will be copied into target directory
 
+base_dir=`dirname $0`
+
 if [ `uname` = "Linux" ]
 then
     dir="$HOME/.config/Typora/themes"
-    os="Linux"
+    os="$base_dir/Linux"
 elif [ `uname` = "Darwin" ]
 then
     dir="$HOME/Library/Application Support/abnerworks.Typora/themes"
-    os="macOS"
+    os="$base_dir/macOS"
 else
     echo "暂不支持当前操作系统 `uname`"
     exit 1
 fi
 
 echo "正在寻找 Typora 主题文件夹 $dir"
-if [ -d $dir ]
+if [ -d "$dir" ]
 then
     echo "已找到该文件夹"
 else
@@ -23,7 +25,7 @@ else
     exit 2
 fi
 
-cp -rf $os $dir
+cp -f $os/* "$dir"
 if [ $? -eq 0 ]
 then
     echo "安装成功"

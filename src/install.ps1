@@ -1,20 +1,38 @@
 # this file will be copied into target directory
 
+Add-Type -AssemblyName PresentationFramework
+
 $dir="$env:APPDATA\Typora\themes"
 $os="Windows"
 
-Write-Output "æ­£åœ¨å¯»æ‰¾ Typora ä¸»é¢˜æ–‡ä»¶å¤¹ $dir"
+Write-Output "ÕıÔÚÑ°ÕÒ Typora Ö÷ÌâÎÄ¼ş¼Ğ $dir"
 If (Test-Path -Path $dir -PathType Container) {
-    Write-Output "å·²æ‰¾åˆ°è¯¥æ–‡ä»¶å¤¹"
+    Write-Output "ÒÑÕÒµ½¸ÃÎÄ¼ş¼Ğ"
 } Else {
-    Throw "æœªæ‰¾åˆ°è¯¥æ–‡ä»¶å¤¹ï¼Œè¯·å…ˆå®‰è£… Typora"
+    $MessageBody = "Î´ÕÒµ½ Typora Ö÷ÌâÎÄ¼ş¼Ğ£¬ÇëÏÈ°²×° Typora"
+    $ButtonType = [System.Windows.MessageBoxButton]::OK
+    $MessageIcon = [System.Windows.MessageBoxImage]::Error
+    $MessageTitle = "°²×°Ê§°Ü"
+    Write-Error $MessageBody
+    [System.Windows.MessageBox]::Show($MessageBody, $MessageTitle, $ButtonType, $MessageIcon)
+    Throw $MessageBody
 }
 
 Try {
     Copy-Item -Path "$os\*" -Destination $dir -Recurse -Force -ErrorAction Stop
 } Catch {
-    Write-Error "å®‰è£…å¤±è´¥"
-    Throw $_.Exception.Message
+    $MessageBody = $_.Exception.Message
+    $ButtonType = [System.Windows.MessageBoxButton]::OK
+    $MessageIcon = [System.Windows.MessageBoxImage]::Error
+    $MessageTitle = "°²×°Ê§°Ü"
+    Write-Error $MessageTitle
+    [System.Windows.MessageBox]::Show($MessageBody, $MessageTitle, $ButtonType, $MessageIcon)
+    Throw $MessageBody
 }
 
-Write-Output "å®‰è£…æˆåŠŸ"
+$MessageBody = "Ö÷ÌâÎÄ¼şÒÑ°²×°³É¹¦"
+$ButtonType = [System.Windows.MessageBoxButton]::OK
+$MessageIcon = [System.Windows.MessageBoxImage]::Information
+$MessageTitle = "°²×°³É¹¦"
+Write-Output $MessageTitle
+[System.Windows.MessageBox]::Show($MessageBody, $MessageTitle, $ButtonType, $MessageIcon)
