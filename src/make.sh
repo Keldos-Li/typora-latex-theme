@@ -2,9 +2,9 @@
 
 target_dir="./latex-theme"
 working_dir="./build"
-windows="Windows"
-macos="macOS"
-linux="Linux"
+windows="windows"
+macos="macos"
+linux="linux"
 
 if [ -d $target_dir ]; then
     rm -r $target_dir
@@ -50,7 +50,10 @@ scss --sourcemap=none $working_dir/macos-dark.scss $target_dir/$linux/latex-dark
 
 ########################################################################
 
-cp ./install.sh $target_dir
-cp ./install.ps1 $target_dir
+cp ./install.sh $target_dir/$macos
+cp ./install.ps1 $target_dir/$windows
+
+zip -rj $target_dir/latex-theme-$macos.zip $target_dir/$macos/*
+zip -rj $target_dir/latex-theme-$windows.zip $target_dir/$windows/*
 
 rm -r $working_dir

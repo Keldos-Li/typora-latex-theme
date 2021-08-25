@@ -3,7 +3,6 @@
 Add-Type -AssemblyName PresentationFramework
 
 $dir="$env:APPDATA\Typora\themes"
-$os="Windows"
 
 Write-Output "正在寻找 Typora 主题文件夹 $dir"
 If (Test-Path -Path $dir -PathType Container) {
@@ -19,7 +18,7 @@ If (Test-Path -Path $dir -PathType Container) {
 }
 
 Try {
-    Copy-Item -Path "$os\*" -Destination $dir -Recurse -Force -ErrorAction Stop
+    Copy-Item -Path ".\*.css" -Destination $dir -Recurse -Force -ErrorAction Stop
 } Catch {
     $MessageBody = $_.Exception.Message
     $ButtonType = [System.Windows.MessageBoxButton]::OK
