@@ -6,11 +6,9 @@ base_dir=`dirname $0`
 if [ `uname` = "Linux" ]
 then
     dir="$HOME/.config/Typora/themes"
-    os="$base_dir/Linux"
 elif [ `uname` = "Darwin" ]
 then
     dir="$HOME/Library/Application Support/abnerworks.Typora/themes"
-    os="$base_dir/macOS"
 else
     echo "暂不支持当前操作系统 `uname`"
     exit 1
@@ -25,7 +23,7 @@ else
     exit 2
 fi
 
-cp -f $os/* "$dir"
+cp -f $base_dir/*.css "$dir"
 if [ $? -eq 0 ]
 then
     echo "安装成功"
