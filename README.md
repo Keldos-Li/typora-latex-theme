@@ -96,7 +96,12 @@ $$
 
 3. 解压缩这个文件，并进入解压缩后的文件夹。在这个文件夹里，请运行符合您操作系统的脚本文件：
 
-    - 如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。具体的运行方式是：右键点击 `install.ps1` 文件，然后点击“使用 PowerShell 运行”。
+    - 如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。具体的运行方式是：右键点击 `install.ps1` 文件，然后点击“使用 PowerShell 运行”。  
+      若您看到了以下提示，请输入`Y`，然后按下回车`enter`：  
+      > 执行策略更改  
+      > 执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?  
+      > [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):  
+    
     - 如果您正在使用 macOS ，请运行 `install.sh` 文件。具体的运行方式是：打开*终端*，将 `install.sh` 文件拖入终端窗口中。如果您不知道如何打开终端，这里有[一份介绍](#macos-如何打开终端)。
     - 本主题目前没有对 Linux 的完善支持。如果您在使用 Linux ，且愿意体验本主题，您也可以通过先下载 `latex-theme-macos.zip`，再运行 `install.sh` 的方式进行安装。
 
