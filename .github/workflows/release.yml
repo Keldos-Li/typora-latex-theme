@@ -15,11 +15,11 @@ jobs:
           sudo apt install ruby sass -y
       - name: Compile
         run: |
-          sh ./src/make.sh
+          cd ./src; make
       - name: Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
           files: |
-            ./src/latex-theme/*.zip 
+            ./src/latex-theme/*.zip
