@@ -23,7 +23,7 @@ else
     exit 2
 fi
 
-cp -f $base_dir/*.css "$dir"
+cp -f $base_dir/target/*.css "$dir"
 if [ $? -eq 0 ]
 then
     echo "安装成功"
