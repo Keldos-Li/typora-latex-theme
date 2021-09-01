@@ -1,7 +1,7 @@
 ![cover](./Supplemental/cover.png)
 # Typora伪装LaTeX中文样式主题
 
-[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](常见问题) | [已知 bug](#已知-bug)  
+[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug)  
 
 本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。
 
@@ -94,24 +94,25 @@ $$
 
 2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，然后下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip`. 
 
-3. 解压缩这个文件，并进入解压缩后的文件夹。在这个文件夹里，请运行符合您操作系统的脚本文件：
+3. 解压缩这个文件，并进入解压缩后的文件夹。  
+    - 您可以选择**使用安装包中提供的脚本**进行自动安装（推荐）：  
+        - 如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。具体的运行方式是：右键点击 `install.ps1` 文件，然后点击“使用 PowerShell 运行”。  
+          若您看到了以下提示，请输入`Y`，然后按下回车`enter`：  
+          > 执行策略更改  
+          > 执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?  
+          > [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):  
+        
+        - 如果您正在使用 macOS ，请运行 `install.sh` 文件。具体的运行方式是：打开*终端*，将 `install.sh` 文件拖入终端窗口中。如果您不知道如何打开终端，这里有[一份介绍](#macos-如何打开终端)。
+        - 本主题目前没有对 Linux 的完善支持。如果您在使用 Linux ，且愿意体验本主题，您也可以通过先下载 `latex-theme-macos.zip`，再运行 `install.sh` 的方式进行安装。
+    - 如果自动安装出现问题，您也可以选择进行**手动安装**。请您打开安装包的 `target` 文件夹，按照[官方教程（英文）](https://theme.typora.io/doc/Install-Theme/)，将这个文件夹里的所有 CSS 文件复制到指定的 Typora 主题文件夹中。  
 
-    - 如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。具体的运行方式是：右键点击 `install.ps1` 文件，然后点击“使用 PowerShell 运行”。  
-      若您看到了以下提示，请输入`Y`，然后按下回车`enter`：  
-      > 执行策略更改  
-      > 执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?  
-      > [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):  
-    
-    - 如果您正在使用 macOS ，请运行 `install.sh` 文件。具体的运行方式是：打开*终端*，将 `install.sh` 文件拖入终端窗口中。如果您不知道如何打开终端，这里有[一份介绍](#macos-如何打开终端)。
-    - 本主题目前没有对 Linux 的完善支持。如果您在使用 Linux ，且愿意体验本主题，您也可以通过先下载 `latex-theme-macos.zip`，再运行 `install.sh` 的方式进行安装。
+4. 如果您是要更新这个主题，以上的过程仍然有效；**新的主题文件会自动覆盖旧的主题文件**。
 
-5. 如果您是要更新这个主题，以上的过程仍然有效；**新的主题文件会自动覆盖旧的主题文件**。
+5. 如果您需要下载字体，您可以在  [Keldos-Li/typora-latex-theme-fonts](https://github.com/Keldos-Li/typora-latex-theme-fonts) 仓库下载并安装您[需要的字体](#该主题都包含了哪些字体)。
 
-6. 如果您需要下载字体，您可以在  [Keldos-Li/typora-latex-theme-fonts](https://github.com/Keldos-Li/typora-latex-theme-fonts) 仓库下载并安装您[需要的字体](#该主题都包含了哪些字体)。
+6. 启动或重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。
 
-7. 启动或重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。
-
-8. 本项目会持续更新，所以您可以选择点击本仓库的 `watch` 按钮（此按钮在 GitHub 网页版的右上方），从而实时跟进这个项目的更新信息。*（可选）*
+7. 本项目会持续更新，所以您可以选择点击本仓库的 `watch` 按钮（此按钮在 GitHub 网页版的右上方），从而实时跟进这个项目的更新信息。*（可选）*
 
 ### 使用封面
 
@@ -208,6 +209,25 @@ $$
 - Typora 自身用户界面的样式也受本主题的影响。因此，在您阅读本项目的源代码时，需要留意，您看到的 CSS 规则不止影响了输出结果，还影响了 Typora UI。
 - 若要在本地构建本项目，请确保您安装了 sass. 然后，执行 `src` 目录下的 `build.sh`，即可完成构建。请注意，这里的构建结果不包含字体文件。
 - 目前，**本项目对 Linux 的支持并不完善**。主要问题有暗色模式无法正常显示、中文字符的字体存在问题等，但纯英文的显示是符合预期的。如果您仍想在 Linux 上安装这个主题，您也可以直接执行 `install.sh` 脚本。
+
+### 构建过程
+
+位于 `src` 目录下的文件有三种： SCSS 文件， Makefile 和自动安装脚本。运行以下指令，即可构建项目：  
+
+```shell
+# 我们默认您当前位于仓库的根目录
+cd src
+make
+```
+
+在 `make` 指令执行的过程中，发生了以下步骤：  
+1. 创建一个 `build` 目录，以存储中间结果。  
+2. 将操作系统信息、主题信息和 SCSS 文件字面地拼接在一起，形成某个特定操作系统和主题的 SCSS 文件。  
+3. 这些 `SCSS` 文件被转译为 `CSS` 文件，并被存储在 `latex-theme/${os_name}/target` 目录下。  
+4. 操作系统对应的自动安装脚本被复制到 `latex-theme/${os_name}` 目录下。  
+5. 所有 `latex-theme/${os_name}` 目录都会被分别打成 zip 包，包内保持原先的文件结构。  
+
+GitHub Actions 会把上述 zip 包发布。  
 
 ### 主题文件夹
 

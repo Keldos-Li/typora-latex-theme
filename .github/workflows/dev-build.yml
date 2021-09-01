@@ -1,11 +1,12 @@
-name: Release
+name: Dev Build
+
 on:
-  create:
-    tags:
-      - v*
+  push:
+    branches:
+      - dev**
 
 jobs:
-  release:
+  compile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,10 +17,9 @@ jobs:
       - name: Compile
         run: |
           cd ./src; make
-      - name: Release
-        uses: marvinpinto/action-automatic-releases@latest
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
-          files: |
+          name: my-artifact
+          path: |
             ./src/latex-theme/*.zip
