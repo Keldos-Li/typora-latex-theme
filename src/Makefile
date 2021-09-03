@@ -32,6 +32,8 @@ define build-os
 	else \
 		cp $(base_dir)/install.sh $(target_dir)/$(1); \
 	fi;
+	cp $(base_dir)/README.md $(target_dir)/$(1)
+	cp -r $(base_dir)/../Supplemental $(target_dir)/$(1)/Supplemental
 	cd $(target_dir)/$(1); zip -r $(target_dir)/latex-theme-$(1).zip ./*
 endef
 
