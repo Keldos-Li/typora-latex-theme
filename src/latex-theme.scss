@@ -867,4 +867,27 @@ h6.md-focus:before {
   span > a {
     color: #8bb1f9;
   }
+
+  /* quick open框  （e.g. 插入代码后弹出的语言候选框） */
+  .auto-suggest-container {
+    border: 0px;
+    background-color: #525C65;
+  }
+  
+  #typora-quick-open {
+    background-color: #525C65;
+  }
+  
+  #typora-quick-open input{
+    background-color: #525C65;
+    border: 0;
+    border-bottom: 1px solid grey;
+  }
+
+  /* 插入图片后弹出的框 */
+  .context-menu,
+  #spell-check-panel,
+  #footer-word-count-info {
+      background-color: #42464A;
+  }
 }
