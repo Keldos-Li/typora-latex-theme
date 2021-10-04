@@ -791,7 +791,7 @@ h6.md-focus:before {
     /* 树形结构下文件激活边框色 */
     /*--side-bar-bg-color: hsl(0, 0%, 10%);*/
     /*文件 大纲 侧边栏 背景色*/
-    --item-hover-bg-color: hsl(0, 0%, 5%);
+    --item-hover-bg-color: #373737;
     /* 打开文文件夹、正文菜单、最近使用 hover 效果 */
     --item-hover-text-color: hsl(212, 100%, 75%);
     --primary-color: hsl(212, 100%, 75%);
@@ -866,5 +866,28 @@ h6.md-focus:before {
   /*  更改URL超链接颜色，最初的颜色不易查看 */
   span > a {
     color: #8bb1f9;
+  }
+
+  /* quick open框  （e.g. 插入代码后弹出的语言候选框） */
+  .auto-suggest-container {
+    border: 0px;
+    background-color: #282828;
+  }
+  
+  #typora-quick-open {
+    background-color: #282828;
+  }
+  
+  #typora-quick-open input{
+    background-color: #282828;
+    border: 0;
+    border-bottom: 1px solid grey;
+  }
+
+  /* 插入图片后弹出的框 */
+  .context-menu,
+  #spell-check-panel,
+  #footer-word-count-info {
+      background-color: #282828;
   }
 }
