@@ -99,7 +99,7 @@
     --text-color: #dcdcdc;
     --select-text-bg-color: #9ab1cf;
     --select-text-font-color: #161616;
-    /*--bg-color: hsl(0, 0%, 15%);*/
+    --bg-color: hsl(0, 0%, 15%);
     --mermaid-theme: night;
   }
 }
@@ -784,7 +784,7 @@ h6.md-focus:before {
 
   :root {
     --blur-text-color: hsla(0, 0%, 90%, 0.2);
-    --active-file-bg-color: hsl(0, 0%, 5%);
+    --active-file-bg-color: #373737;
     /* 文件列表 当前文件激活 背景色*/
     --active-file-text-color: hsl(212, 100%, 75%);
     --active-file-border-color: hsl(212, 100%, 75%);
@@ -889,5 +889,16 @@ h6.md-focus:before {
   #spell-check-panel,
   #footer-word-count-info {
       background-color: #282828;
+  }
+
+  /* 退出代码模式的按钮 */
+  .typora-sourceview-on #toggle-sourceview-btn {
+    background: #00000000;  /* 设为透明，用于覆盖掉默认的浅色 */
+  }
+
+  /* 鼠标悬停到按钮上后的悬停文本框 */
+  .ty-tooltip {
+    background: #282828;
+    color: #fff;
   }
 }
