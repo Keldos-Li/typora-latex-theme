@@ -891,14 +891,27 @@ h6.md-focus:before {
       background-color: #282828;
   }
 
-  /* 退出代码模式的按钮 */
-  .typora-sourceview-on #toggle-sourceview-btn {
-    background: #00000000;  /* 设为透明，用于覆盖掉默认的浅色 */
+  /* 退出代码模式的按钮，以及最近打开文件页面中的按钮 */
+  .typora-sourceview-on #toggle-sourceview-btn, #recent-file-panel-action-btn {
+    background: #00000000; /* 设为透明，用于覆盖掉默认的浅色 */
   }
 
   /* 鼠标悬停到按钮上后的悬停文本框 */
   .ty-tooltip {
     background: #282828;
     color: #fff;
+  }
+
+  /* 以下三段与 Unibody UI 模式的适配有关 */
+  .megamenu-content, .megamenu-opened header {
+    background: var(--bg-color);
+  }
+
+  .megamenu-menu {
+    background-color: #282828;
+  }
+
+  #recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: #282828;
   }
 }
