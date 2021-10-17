@@ -1,7 +1,7 @@
 ![cover](./Supplemental/cover.png)
 # Typora伪装LaTeX中文样式主题
 
-[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug)  
+[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug) | [反馈与贡献](#反馈与贡献)  
 
 本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。
 
@@ -18,7 +18,7 @@ If you are not studying in China, please DO NOT use this theme. Instead, you cou
 
 ## 预览
 
-较完整的论文预览见这里: [点我😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果GitHub中的图像加载不出来，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。
+较完整的论文预览见这里: [点我😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果 GitHub 中的图像加载不出来，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。
 
 ### 封面，摘要和关键词
 
@@ -208,7 +208,7 @@ $$
 - Typora 通过开源项目 Pandoc 将 markdown 转换为 HTML，每一个 markdown 元素都会带有特定的 HTML 标签。本主题的本质就是撰写一些 CSS 规则，从而规定超文本的样式。这意味着，本主题不但支持 Pandoc，还支持其他依赖 Pandoc 的 markdown 文本编辑器。
 - Typora 自身用户界面的样式也受本主题的影响。因此，在您阅读本项目的源代码时，需要留意，您看到的 CSS 规则不止影响了输出结果，还影响了 Typora UI。
 - 若要在本地构建本项目，请确保您安装了 sass. 然后，执行 `src` 目录下的 `build.sh`，即可完成构建。请注意，这里的构建结果不包含字体文件。
-- 目前，**本项目对 Linux 的支持并不完善**。主要问题有暗色模式无法正常显示、中文字符的字体存在问题等，但纯英文的显示是符合预期的。如果您仍想在 Linux 上安装这个主题，您也可以直接执行 `install.sh` 脚本。
+- 目前，**本项目对 Linux 的支持并不完善**。主要问题有中文字符的字体存在问题等，但纯英文的显示是符合预期的。如果您仍想在 Linux 上安装这个主题，您也可以直接执行 `install.sh` 脚本。
 
 ### 构建过程
 
@@ -293,13 +293,17 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 *   This theme for Typora is built on Mac, with Typora version 0.10.10 (5354).
 
-## 反馈
+## 反馈与贡献
 
-*   在 GitHub Issues [报告Bug](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=bug)
-*   在 GitHub [请求新的功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)
-*   给仓库Star之后联系[我本人](mailto:i@keldos.me)。
-*   Fork之后PR
-*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="加入交流反馈QQ群" title="Typora伪LaTeX交流反馈"></a>之后问群内大佬们
+如果您在使用过程中遇到任何问题，或想为本项目做出任何贡献，请优先考虑：  
+*   前往 GitHub Discussions [发起讨论](https://github.com/Keldos-Li/typora-latex-theme/discussions/new)
+*   前往 GitHub Issues [报告故障](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=bug)
+*   前往 GitHub Issues [请求新功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)
+*   如果您希望在本地修改这个项目的代码，推荐您在 fork 后使用 `git clone ${target} --depth 1` 进行克隆。这是因为，本仓库的历史中有大量二进制文件，而这些二进制文件对当前开发并无作用，可以舍弃。设置较浅的克隆深度可帮助您更快地获取到此项目的最新代码。在完成您的修改后，**请向我们的 `develop` 分支提出拉取请求**。  
+
+如果以上方法都行不通，您也可以考虑：  
+*   联系[我本人](mailto:i@keldos.me)
+*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="加入交流反馈QQ群" title="Typora伪LaTeX交流反馈"></a>之后和大家一起讨论
 
 ## 鸣谢
 
