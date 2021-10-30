@@ -3,14 +3,13 @@
 
 [预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug) | [反馈与贡献](#反馈与贡献)  
 
-本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。
+本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。  
 
-Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。
+Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。本项目支持 Windows, macOS 和 Linux 三大平台的 Typora.  
 
 If you are not studying in China, please DO NOT use this theme. Instead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
 
-<!-- ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Keldos-Li/typora-latex-theme/latest/total) -->
-<!-- ![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow&style=plastic) -->
+![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow)
 <a href="https://github.com/Keldos-Li/typora-latex-theme/releases/latest">![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green&logo=hack-the-box)</a>
 <a href="https://github.com/Keldos-Li/typora-latex-theme/stargazers">![GitHub Repo stars](https://img.shields.io/github/stars/Keldos-Li/typora-latex-theme?style=flat&logo=github&color=yellow)</a>
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=IB2QSpQSSOQIDZfN74ujqx1aVtQtdtXF&jump_from=webapi">
@@ -103,7 +102,7 @@ $$
           > [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):  
         
         - 如果您正在使用 macOS ，请运行 `install.sh` 文件。具体的运行方式是：打开*终端*，将 `install.sh` 文件拖入终端窗口中。如果您不知道如何打开终端，这里有[一份介绍](#macos-如何打开终端)。
-        - 本主题目前没有对 Linux 的完善支持。如果您在使用 Linux ，且愿意体验本主题，您也可以通过先下载 `latex-theme-macos.zip`，再运行 `install.sh` 的方式进行安装。
+        - 如果您在使用 Linux ，只需在终端执行 `sh ./install.sh` 即可完成安装。  
     - 如果自动安装出现问题，您也可以选择进行**手动安装**。请您打开安装包的 `target` 文件夹，按照[官方教程（英文）](https://theme.typora.io/doc/Install-Theme/)，将这个文件夹里的所有 CSS 文件复制到指定的 Typora 主题文件夹中。  
 
 4. 如果您是要更新这个主题，以上的过程仍然有效；**新的主题文件会自动覆盖旧的主题文件**。
@@ -138,7 +137,7 @@ $$
 
 进行个性化设置有两种方案：  
 1. 您可以直接在您下载的安装包中进行修改。**在完成修改后，请重新执行与您操作系统相匹配的脚本（`install.ps1` 或 `install.sh`），并重新启动 Typora，以应用您的更改**。  
-2. （面向高级用户）您也可以直接更改 Typora 主题文件夹下的文件，[点击此处了解主题文件夹所在的位置](#主题文件夹)。进入这个文件夹后，与本主题相关的两个文件分别是 `latex.css` 和 `latex-dark.css`，请您按需修改。**在完成修改后，请重新启动 Typora，以应用您的更改**。  
+2. 您也可以直接更改 Typora 主题文件夹下的文件，[点击此处了解主题文件夹所在的位置](#主题文件夹)。进入这个文件夹后，与本主题相关的两个文件分别是 `latex.css` 和 `latex-dark.css`，请您按需修改。**在完成修改后，请重新启动 Typora，以应用您的更改**。  
 
 如果您在打开 CSS 文件时遇到了困难，请考虑使用 *记事本*（Windows）或*文本编辑*（macOS）打开它。**绝对不要用 Microsoft Word 打开它！！！就算它可以！**  
 
@@ -202,13 +201,12 @@ $$
     
 ## 面向高级用户
 
-若您仅希望在 Windows 或 macOS 的 Typora 中使用本主题，请跳过本章节，因为**本章节涉及与主题相关的进阶用法**，您很有可能无需关心这些内容。
+若您仅希望使用本主题，而不在意本主题的实现细节，请跳过本章节，因为**本章节涉及与主题相关的进阶用法**，您很有可能无需关心这些内容。
 
 - Typora 是一个专有软件。在测试阶段，Typora 会保持免费；但在正式版中，其可能需要付费才能使用。
 - Typora 通过开源项目 Pandoc 将 markdown 转换为 HTML，每一个 markdown 元素都会带有特定的 HTML 标签。本主题的本质就是撰写一些 CSS 规则，从而规定超文本的样式。这意味着，本主题不但支持 Pandoc，还支持其他依赖 Pandoc 的 markdown 文本编辑器。
 - Typora 自身用户界面的样式也受本主题的影响。因此，在您阅读本项目的源代码时，需要留意，您看到的 CSS 规则不止影响了输出结果，还影响了 Typora UI。
 - 若要在本地构建本项目，请确保您安装了 sass. 然后，执行 `src` 目录下的 `build.sh`，即可完成构建。请注意，这里的构建结果不包含字体文件。
-- 目前，**本项目对 Linux 的支持并不完善**。主要问题有中文字符的字体存在问题等，但纯英文的显示是符合预期的。如果您仍想在 Linux 上安装这个主题，您也可以直接执行 `install.sh` 脚本。
 
 ### 构建过程
 
@@ -289,9 +287,7 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 话说论文封面的学校徽标是不是做得太大了（？）你们觉得不合适自己改改就好，就调一个`width`的事。
 
->   虽然是都开源项目，但这个项目似乎经过三手每个人都重新做了仓库而不是fork😂，不过确实每经一次手都有很多深化和改进orz，感觉目前代码已经没有办法merge了，害。感觉不是很符合开源精神。有点对不起原作者的感觉🥲（虽然我们谈过话）。
-
-*   This theme for Typora is built on Mac, with Typora version 0.10.10 (5354).
+>   虽然是都开源项目，但这个项目似乎经过三手每个人都重新做了仓库而不是fork😂，不过确实每经一次手都有很多深化和改进orz，感觉目前代码已经没有办法merge了，害。感觉不是很符合开源精神。有点对不起原作者的感觉🥲（虽然我们谈过话）。  
 
 ## 反馈与贡献
 
