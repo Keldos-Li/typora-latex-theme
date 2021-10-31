@@ -41,6 +41,7 @@ endef
 all:
 	make windows
 	make macos
+	make linux
 
 .PHONY: windows
 windows:
@@ -49,6 +50,10 @@ windows:
 .PHONY: macos
 macos:
 	$(call build-os,$(macos))
+
+.PHONY: linux
+linux:
+	$(call build-os,$(linux))
 
 .PHONY: clean
 clean:

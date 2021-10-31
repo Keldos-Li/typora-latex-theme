@@ -1,16 +1,15 @@
 ![cover](./Supplemental/cover.png)
-# Typora伪装LaTeX中文样式主题
+# Typora 伪装 LaTeX 中文样式主题
 
-[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug)  
+[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug) | [反馈与贡献](#反馈与贡献)  
 
-本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。
+本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。  
 
-Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。
+Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。本项目支持 Windows, macOS 和 Linux 三大平台的 Typora.  
 
 If you are not studying in China, please DO NOT use this theme. Instead, you could check another theme: [Paper – A typora theme using latex fonts to be used in academic work](https://theme.typora.io/theme/paper/).
 
-<!-- ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Keldos-Li/typora-latex-theme/latest/total) -->
-<!-- ![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?color=yellow&style=plastic) -->
+![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAAAAXNSR0IArs4c6QAAAX1JREFUOE/llLEuBGEUhb+zIaHR8gYapUQUig1RaEg0Wo3GC4hOoaDXKVQ6UXgAoVGIaBRGYiMSXkBDMEf+mdmZf3bWegBTTe5/77nnnnv+Xwz4bE8AF5ImB+XpD5Ap4OQ/gtjeABaA4aCRgUKsb2Ab2CujxWEK7y04lnQm2zuYtW5VLnQJcydp1XYSI0c5IXE3gFwDY7XiikoFUq7RGMU9b+XUSYhEI8T/OUickyXG2XSU2kkeizv8Pk6FUeZ0ZKdJRc98o60h6dT2jeGp1dUEXiW1be8Dy5FJA4iTumuzDvPAC3AqacX2laRZ27PAUY/L+4xTjbuIeFYuAP70HEMcVsfF+CZn0l9U84GWRqRH28FDB801Z5w6xXZqavdYhXNMu9xgv+00jBRvqlnQ26Bg0hW2UVCwi+MNwpkumSb3YMUu/Buv5trHAHIJjAfPxn4pr2CPmn3MdhVA1oGtX5Sv34fmM/gFbGY33vZ0CjMtGB30XMZnKby14FzSww+Jf/H06Zp5zAAAAABJRU5ErkJggg==)
 <a href="https://github.com/Keldos-Li/typora-latex-theme/releases/latest">![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green&logo=hack-the-box)</a>
 <a href="https://github.com/Keldos-Li/typora-latex-theme/stargazers">![GitHub Repo stars](https://img.shields.io/github/stars/Keldos-Li/typora-latex-theme?style=flat&logo=github&color=yellow)</a>
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=IB2QSpQSSOQIDZfN74ujqx1aVtQtdtXF&jump_from=webapi">
@@ -18,7 +17,7 @@ If you are not studying in China, please DO NOT use this theme. Instead, you cou
 
 ## 预览
 
-较完整的论文预览见这里: [点我😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果GitHub中的图像加载不出来，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。
+较完整的论文预览见这里: [点我😀](https://blog.keldos.me/2021/05/md-latex-template/)；如果 GitHub 中的图像加载不出来，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。
 
 ### 封面，摘要和关键词
 
@@ -90,29 +89,16 @@ $$
 
 ## 安装与使用
 
+**请完整阅读以下安装过程，以确保一切符合预期。**  
+
 1. 安装本主题前，**请确保您已经安装 Typora**. 如果您不清楚 Typora 是什么，这里有[一段介绍](#什么是-typora)。如果您对 markdown 的语法还不了解，您可以从这里[获得帮助](#什么是-markdown)。
 
 2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，然后下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip`. 
 
-3. 解压缩这个文件，并进入解压缩后的文件夹。  
-    - 您可以选择**使用安装包中提供的脚本**进行自动安装（推荐）：  
-        - 如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。具体的运行方式是：右键点击 `install.ps1` 文件，然后点击“使用 PowerShell 运行”。  
-          若您看到了以下提示，请输入`Y`，然后按下回车`enter`：  
-          > 执行策略更改  
-          > 执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?  
-          > [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):  
-        
-        - 如果您正在使用 macOS ，请运行 `install.sh` 文件。具体的运行方式是：打开*终端*，将 `install.sh` 文件拖入终端窗口中。如果您不知道如何打开终端，这里有[一份介绍](#macos-如何打开终端)。
-        - 本主题目前没有对 Linux 的完善支持。如果您在使用 Linux ，且愿意体验本主题，您也可以通过先下载 `latex-theme-macos.zip`，再运行 `install.sh` 的方式进行安装。
-    - 如果自动安装出现问题，您也可以选择进行**手动安装**。请您打开安装包的 `target` 文件夹，按照[官方教程（英文）](https://theme.typora.io/doc/Install-Theme/)，将这个文件夹里的所有 CSS 文件复制到指定的 Typora 主题文件夹中。  
-
-4. 如果您是要更新这个主题，以上的过程仍然有效；**新的主题文件会自动覆盖旧的主题文件**。
-
-5. 如果您需要下载字体，您可以在  [Keldos-Li/typora-latex-theme-fonts](https://github.com/Keldos-Li/typora-latex-theme-fonts) 仓库下载并安装您[需要的字体](#该主题都包含了哪些字体)。
-
-6. 启动或重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。
-
-7. 本项目会持续更新，所以您可以选择点击本仓库的 `watch` 按钮（此按钮在 GitHub 网页版的右上方），从而实时跟进这个项目的更新信息。*（可选）*
+3. 解压缩这个文件，并进入解压缩后的文件夹。在这个文件夹中，用 Typora 打开 `README.md`，并按照其中的描述完成剩余步骤。该文件的在线预览版本在[此处](./src/README.md)。简单而言，需要进行如下几步：
+    - 进行手动或自动主题安装
+    - 若遇到字体问题，则下载所需的字体
+    
 
 ### 使用封面
 
@@ -138,7 +124,7 @@ $$
 
 进行个性化设置有两种方案：  
 1. 您可以直接在您下载的安装包中进行修改。**在完成修改后，请重新执行与您操作系统相匹配的脚本（`install.ps1` 或 `install.sh`），并重新启动 Typora，以应用您的更改**。  
-2. （面向高级用户）您也可以直接更改 Typora 主题文件夹下的文件，[点击此处了解主题文件夹所在的位置](#主题文件夹)。进入这个文件夹后，与本主题相关的两个文件分别是 `latex.css` 和 `latex-dark.css`，请您按需修改。**在完成修改后，请重新启动 Typora，以应用您的更改**。  
+2. 您也可以直接更改 Typora 主题文件夹下的文件，[点击此处了解主题文件夹所在的位置](#主题文件夹)。进入这个文件夹后，与本主题相关的两个文件分别是 `latex.css` 和 `latex-dark.css`，请您按需修改。**在完成修改后，请重新启动 Typora，以应用您的更改**。  
 
 如果您在打开 CSS 文件时遇到了困难，请考虑使用 *记事本*（Windows）或*文本编辑*（macOS）打开它。**绝对不要用 Microsoft Word 打开它！！！就算它可以！**  
 
@@ -202,13 +188,12 @@ $$
     
 ## 面向高级用户
 
-若您仅希望在 Windows 或 macOS 的 Typora 中使用本主题，请跳过本章节，因为**本章节涉及与主题相关的进阶用法**，您很有可能无需关心这些内容。
+若您仅希望使用本主题，而不在意本主题的实现细节，请跳过本章节，因为**本章节涉及与主题相关的进阶用法**，您很有可能无需关心这些内容。
 
 - Typora 是一个专有软件。在测试阶段，Typora 会保持免费；但在正式版中，其可能需要付费才能使用。
 - Typora 通过开源项目 Pandoc 将 markdown 转换为 HTML，每一个 markdown 元素都会带有特定的 HTML 标签。本主题的本质就是撰写一些 CSS 规则，从而规定超文本的样式。这意味着，本主题不但支持 Pandoc，还支持其他依赖 Pandoc 的 markdown 文本编辑器。
 - Typora 自身用户界面的样式也受本主题的影响。因此，在您阅读本项目的源代码时，需要留意，您看到的 CSS 规则不止影响了输出结果，还影响了 Typora UI。
 - 若要在本地构建本项目，请确保您安装了 sass. 然后，执行 `src` 目录下的 `build.sh`，即可完成构建。请注意，这里的构建结果不包含字体文件。
-- 目前，**本项目对 Linux 的支持并不完善**。主要问题有暗色模式无法正常显示、中文字符的字体存在问题等，但纯英文的显示是符合预期的。如果您仍想在 Linux 上安装这个主题，您也可以直接执行 `install.sh` 脚本。
 
 ### 构建过程
 
@@ -289,17 +274,19 @@ Markdown 广泛用于博客、即时消息、在线论坛、协作软件、文�
 
 话说论文封面的学校徽标是不是做得太大了（？）你们觉得不合适自己改改就好，就调一个`width`的事。
 
->   虽然是都开源项目，但这个项目似乎经过三手每个人都重新做了仓库而不是fork😂，不过确实每经一次手都有很多深化和改进orz，感觉目前代码已经没有办法merge了，害。感觉不是很符合开源精神。有点对不起原作者的感觉🥲（虽然我们谈过话）。
+>   虽然是都开源项目，但这个项目似乎经过三手每个人都重新做了仓库而不是fork😂，不过确实每经一次手都有很多深化和改进orz，感觉目前代码已经没有办法merge了，害。感觉不是很符合开源精神。有点对不起原作者的感觉🥲（虽然我们谈过话）。  
 
-*   This theme for Typora is built on Mac, with Typora version 0.10.10 (5354).
+## 反馈与贡献
 
-## 反馈
+如果您在使用过程中遇到任何问题，或想为本项目做出任何贡献，请优先考虑：  
+*   前往 GitHub Discussions [发起讨论](https://github.com/Keldos-Li/typora-latex-theme/discussions/new)
+*   前往 GitHub Issues [报告故障](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=bug)
+*   前往 GitHub Issues [请求新功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)
+*   如果您希望在本地修改这个项目的代码，推荐您在 fork 后使用 `git clone ${target} --depth 1` 进行克隆。这是因为，本仓库的历史中有大量二进制文件，而这些二进制文件对当前开发并无作用，可以舍弃。设置较浅的克隆深度可帮助您更快地获取到此项目的最新代码。在完成您的修改后，**请向我们的 `develop` 分支提出拉取请求**。  
 
-*   在 GitHub Issues [报告Bug](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=bug)
-*   在 GitHub [请求新的功能](https://github.com/Keldos-Li/typora-latex-theme/issues/new?labels=Feature+Request)
-*   给仓库Star之后联系[我本人](mailto:i@keldos.me)。
-*   Fork之后PR
-*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="加入交流反馈QQ群" title="Typora伪LaTeX交流反馈"></a>之后问群内大佬们
+如果以上方法都行不通，您也可以考虑：  
+*   联系[我本人](mailto:i@keldos.me)
+*   <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=8Vy0m_9-phExgORJKwVTZ2Hix19yScCn&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="加入交流反馈QQ群" title="Typora伪LaTeX交流反馈"></a>之后和大家一起讨论
 
 ## 鸣谢
 
