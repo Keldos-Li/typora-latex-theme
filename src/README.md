@@ -1,7 +1,5 @@
 # 安装教程
 
-这里给出精简的安装教程。  
-
 ## 安装前
 
 安装本主题前，**请确保您已经安装 Typora**.
@@ -28,18 +26,18 @@
 
 ## 安装字体
 
-**以上步骤执行完毕后， Typora 显示的结果可能并不符合您的预期。比如，中文字体缺少衬线，或中文字体是点阵字体等。这时，您需要安装本主题依赖的所有字体。**对于 macOS 和 Windows 用户，您可以在  [Keldos-Li/typora-latex-theme-fonts](https://github.com/Keldos-Li/typora-latex-theme-fonts) 仓库下载并安装您需要的字体； Linux 用户应确保相关字体在您的发行版上被正确安装。具体而言：  
+**以上步骤执行完毕后， Typora 显示的结果可能并不符合您的预期。比如，中文字体缺少衬线，或中文字体是点阵字体等。这时，您需要安装本主题依赖的所有字体。** 对于 macOS 和 Windows 用户，您可以在  [Keldos-Li/typora-latex-theme-fonts](https://github.com/Keldos-Li/typora-latex-theme-fonts) 仓库下载并安装您需要的字体； Linux 用户应确保相关字体在您的发行版上被正确安装。具体而言：  
 
 - macOS 用户可以前往 [`/macOS`](https://github.com/Keldos-Li/typora-latex-theme-fonts/tree/main/macOS) 和 [`/General platform`](https://github.com/Keldos-Li/typora-latex-theme-fonts/tree/main/General%20platform) 获取适用于 macOS 的额外字体。  
 - Windows 用户可以前往 [`/Windows`](https://github.com/Keldos-Li/typora-latex-theme-fonts/tree/main/Windows) 和 [`/General platform`](https://github.com/Keldos-Li/typora-latex-theme-fonts/tree/main/General%20platform) 获取适用于 Windows 的额外字体。  
-- **Linux 用户必须确认已安装 `Noto CJK` 家族的字体，因为一些发行版或桌面环境并不默认安装该字体。**您需要在您的包管理器中搜索 `noto-cjk` 或 `noto-fonts-cjk`， 确认该字体的来源或维护者与谷歌相关，即可放心进行安装。如果您不理解以上描述，我们在附录里给出了一些常见包管理器安装 `Noto CJK` 的指令，供您参考。  
+- **Linux 用户必须确认已安装 `Noto CJK` 家族的字体，因为一些发行版或桌面环境并不默认安装该字体。** 您需要在您的包管理器中搜索 `noto-cjk` 或 `noto-fonts-cjk`， 确认该字体的来源或维护者与谷歌相关，即可放心进行安装。如果您不理解以上描述，我们在附录里给出了一些常见包管理器安装 `Noto CJK` 的指令，供您参考。  
 
 
 ## 最后一步
 
-重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。
+重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。如果您在手动安装字体后，依然出现与字体相关的问题，请尝试重启您的计算机。  
 
-如果您觉得这个主题对您有帮助，您可以考虑在 GitHub 上为我们的项目点 star ⭐。因为，这不仅有助于将这个主题推广给更多有需要的人，还能对我们的开发与维护产生帮助。您的支持就是我们做下去的最大动力。  
+如果您觉得这个主题对您有帮助，您可以考虑在 GitHub 上为我们的项目点 star ⭐. 因为，这不仅有助于将这个主题推广给更多有需要的人，还能对我们的开发与维护产生帮助。您的支持就是我们做下去的最大动力。  
 
 ## 附录
 
