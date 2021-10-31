@@ -1,5 +1,5 @@
 ![cover](./Supplemental/cover.png)
-# Typora伪装LaTeX中文样式主题
+# Typora 伪装 LaTeX 中文样式主题
 
 [预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [个性化设置](#个性化设置) | [面向高级用户](#面向高级用户) | [常见问题](#常见问题) | [已知 bug](#已知-bug) | [反馈与贡献](#反馈与贡献)  
 
@@ -89,29 +89,16 @@ $$
 
 ## 安装与使用
 
+**请完整阅读以下安装过程，以确保一切符合预期。**  
+
 1. 安装本主题前，**请确保您已经安装 Typora**. 如果您不清楚 Typora 是什么，这里有[一段介绍](#什么是-typora)。如果您对 markdown 的语法还不了解，您可以从这里[获得帮助](#什么是-markdown)。
 
 2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，然后下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip`. 
 
-3. 解压缩这个文件，并进入解压缩后的文件夹。  
-    - 您可以选择**使用安装包中提供的脚本**进行自动安装（推荐）：  
-        - 如果您正在使用 Windows 操作系统，请运行 `install.ps1` 文件。具体的运行方式是：右键点击 `install.ps1` 文件，然后点击“使用 PowerShell 运行”。  
-          若您看到了以下提示，请输入`Y`，然后按下回车`enter`：  
-          > 执行策略更改  
-          > 执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?  
-          > [Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):  
-        
-        - 如果您正在使用 macOS ，请运行 `install.sh` 文件。具体的运行方式是：打开*终端*，将 `install.sh` 文件拖入终端窗口中。如果您不知道如何打开终端，这里有[一份介绍](#macos-如何打开终端)。
-        - 如果您在使用 Linux ，只需在终端执行 `sh ./install.sh` 即可完成安装。  
-    - 如果自动安装出现问题，您也可以选择进行**手动安装**。请您打开安装包的 `target` 文件夹，按照[官方教程（英文）](https://theme.typora.io/doc/Install-Theme/)，将这个文件夹里的所有 CSS 文件复制到指定的 Typora 主题文件夹中。  
-
-4. 如果您是要更新这个主题，以上的过程仍然有效；**新的主题文件会自动覆盖旧的主题文件**。
-
-5. 如果您需要下载字体，您可以在  [Keldos-Li/typora-latex-theme-fonts](https://github.com/Keldos-Li/typora-latex-theme-fonts) 仓库下载并安装您[需要的字体](#该主题都包含了哪些字体)。
-
-6. 启动或重新启动 Typora，然后在菜单栏的**主题**下拉菜单中选择 `Latex` 或 `Latex Dark` 选项。
-
-7. 本项目会持续更新，所以您可以选择点击本仓库的 `watch` 按钮（此按钮在 GitHub 网页版的右上方），从而实时跟进这个项目的更新信息。*（可选）*
+3. 解压缩这个文件，并进入解压缩后的文件夹。在这个文件夹中，用 Typora 打开 `README.md`，并按照其中的描述完成剩余步骤。该文件的在线预览版本在[此处](./src/README.md)。简单而言，需要进行如下几步：
+    - 进行手动或自动主题安装
+    - 若遇到字体问题，则下载所需的字体
+    
 
 ### 使用封面
 
