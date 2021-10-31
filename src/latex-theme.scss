@@ -923,4 +923,10 @@ h6.md-focus:before {
   #recent-file-panel tbody tr:nth-child(2n-1) {
     background-color: #282828;
   }
+
+  /* typora UI 编辑页面，在宽度较小时的底栏 */
+  footer.ty-footer {
+    border-top: 1px solid #222
+  }
+
 }
