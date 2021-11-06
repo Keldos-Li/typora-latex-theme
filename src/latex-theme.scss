@@ -125,23 +125,6 @@ body {
   }
 }
 
-/* 正文区基本属性 */
-#write {
-  font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
-  font-size: var(--base-font-size);
-  max-width: 21cm; /* A4标准宽度 */
-  @if $theme == "light" {
-    background-color: white;
-  } @else if $theme == "dark" {
-    background-color: #1e1e1e; /* 黑色模式修改 */
-  }
-  /* column-count: 2;
-    column-gap: 25px;
-    column-width: 8cm; 
-    display: inline-block; */
-  /* 这里可以试分栏的，但确实不适合实现 */
-}
-
 strong {
   font-weight: var(--strong-weight);
 }
@@ -174,8 +157,154 @@ strong {
   }
 }
 
-#write p {
-  text-align: left;
+/* 正文区基本属性 */
+#write {
+  font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
+  font-size: var(--base-font-size);
+  max-width: 21cm; /* A4标准宽度 */
+  @if $theme == "light" {
+    background-color: white;
+  } @else if $theme == "dark" {
+    background-color: #1e1e1e; /* 黑色模式修改 */
+  }
+  /* column-count: 2;
+    column-gap: 25px;
+    column-width: 8cm; 
+    display: inline-block; */
+  /* 这里可以试分栏的，但确实不适合实现 */
+
+  p {
+    text-align: left;
+  }
+
+  /* 标题属性 */
+  h1, h2, h3, h4, h5, h6 {
+    @if $os == "windows" {
+      font-weight: bold; // 对 Windows 的修改
+    } @else if $os == "macos" {
+      font-weight: normal;
+    }
+
+    font-family: var(--heading-Latin-font), var(--heading-Chinese-font),
+      sans-serif;
+    page-break-after: avoid !important;
+  }
+
+  h1 {
+    font-family: var(--heading-Latin-font), var(--title-Chinese-font), sans-serif;
+    @if $os == "macos" {
+      font-weight: normal;
+    }
+    text-align: center;
+    column-span: all;
+    font-size: var(--title-font-size);
+  }
+  h2 {
+    font-family: var(--heading-Latin-font), var(--h2-Chinese-font), sans-serif;
+    font-size: var(--h2-font-size);
+  }
+  h3 {
+    font-family: var(--heading-Latin-font), var(--h3-Chinese-font), sans-serif;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-font-size);
+  }
+  h4 {
+    font-family: var(--heading-Latin-font), var(--h4-Chinese-font), sans-serif;
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-font-size);
+  }
+  h5 {
+    font-family: var(--heading-Latin-font), var(--h5-Chinese-font), sans-serif;
+    font-size: var(--h5-font-size);
+    line-height: var(--h5-font-size);
+  }
+  h6 {
+    font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
+    font-size: var(--h6-font-size);
+    line-height: var(--h5-font-size); /* 没有写错，为了避免行距太小才这么写 */
+  }
+
+  /* 三线表 */
+  table {
+    border-top: 1.2pt solid; /* 三线表第一条线宽度 */
+    border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
+    font-family: var(--table-font), var(--base-Latin-font), var(--base-Chinese-font), serif;
+    /* font-size: var(--base-font-size); */
+    text-align: center;
+    page-break-inside: avoid;
+    border-spacing: 6px;
+    width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
+    margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+
+    td {
+      padding: 2px;
+    }
+  
+    tr {
+      padding: 2px;
+    }
+  }
+
+  th {
+    padding: 0px 6px;
+  }
+
+  thead { /* 表格标题（首行）样式 */
+    /* 三线表表头的线 */ 
+    border-bottom: 0.5pt solid;
+    font-family: var(--table-title-font), var(--heading-Latin-font), var(--heading-Chinese-font), serif !important;
+    /* font-size: var(--base-font-size); */
+    font-weight: var(--strong-weight);
+  }
+
+  /* 代码块样式*/
+  .CodeMirror-wrap {
+    padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
+  }
+
+  .CodeMirror-code pre {
+    font-family: var(--code-font), var(--ui-font), monospace;
+  }
+
+  // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
+  // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
+  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
+  h1 {
+    counter-reset: h2;
+  }
+  h2 {
+    counter-reset: h3;
+  }
+  h3 {
+    counter-reset: h4;
+  }
+  h4 {
+    counter-reset: h5;
+  }
+  h5 {
+    counter-reset: h6;
+  }
+
+  h2:before {
+    @extend %h2-with-count;
+  }
+
+  h3:before {
+    @extend %h3-with-count;
+  }
+
+  h4:before {
+    @extend %h4-with-count;
+  }
+
+  h5:before {
+    @extend %h5-with-count;
+  }
+
+  h6:before {
+    @extend %h6-with-count;
+  }
+
 }
 
 /*
@@ -200,8 +329,7 @@ strong {
 /* basic样式采用一般的引言，具有左边框、左缩进 */
 blockquote {
   font-style: normal;
-  font-family: var(--quote-font), var(--base-Latin-font),
-    var(--base-Chinese-font), -apple-system, serif;
+  font-family: var(--quote-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
   border-left: 3px solid grey;
   padding-left: 16px; /* 文字离左边框的距离 */
@@ -212,96 +340,6 @@ blockquote {
   } @else if $theme == "dark" {
     color: #bfbfbf; /* 文字颜色 */
   }
-}
-
-/*border-width: 0.5pt 0;
-  border-style:solid; 这一行本来使用了上下边框*/
-
-/* 标题属性 */
-#write h1,
-#write h2,
-#write h3,
-#write h4,
-#write h5,
-#write h6 {
-  @if $os == "windows" {
-    font-weight: bold; /* 对 Windows 的修改 */
-  } @else if $os == "macos" {
-    font-weight: normal;
-  }
-
-  font-family: var(--heading-Latin-font), var(--heading-Chinese-font),
-    sans-serif;
-  page-break-after: avoid !important;
-}
-
-#write h1 {
-  font-family: var(--heading-Latin-font), var(--title-Chinese-font), sans-serif;
-  @if $os == "macos" {
-    font-weight: normal;
-  }
-  text-align: center;
-  column-span: all;
-  font-size: var(--title-font-size);
-}
-#write h2 {
-  font-family: var(--heading-Latin-font), var(--h2-Chinese-font), sans-serif;
-  font-size: var(--h2-font-size);
-}
-#write h3 {
-  font-family: var(--heading-Latin-font), var(--h3-Chinese-font), sans-serif;
-  font-size: var(--h3-font-size);
-  line-height: var(--h3-font-size);
-}
-#write h4 {
-  font-family: var(--heading-Latin-font), var(--h4-Chinese-font), sans-serif;
-  font-size: var(--h4-font-size);
-  line-height: var(--h4-font-size);
-}
-#write h5 {
-  font-family: var(--heading-Latin-font), var(--h5-Chinese-font), sans-serif;
-  font-size: var(--h5-font-size);
-  line-height: var(--h5-font-size);
-}
-#write h6 {
-  font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
-  font-size: var(--h6-font-size);
-  line-height: var(--h5-font-size); /* 没有写错，为了避免行距太小才这么写 */
-}
-
-/* 三线表 */
-#write table {
-  border-top: 1.2pt solid; /* 三线表第一条线宽度 */
-  border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
-  font-family: var(--table-font), var(--base-Latin-font),
-    var(--base-Chinese-font), serif;
-  /* font-size: var(--base-font-size); */
-  text-align: center;
-  page-break-inside: avoid;
-  border-spacing: 6px;
-  width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
-  margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
-}
-
-#write table td {
-  padding: 2px;
-}
-
-#write table tr {
-  padding: 2px;
-}
-
-#write th {
-  padding: 0px 6px;
-}
-
-/* 表格标题（首行）样式 */
-#write thead {
-  border-bottom: 0.5pt solid; /* 三线表表头的线 */
-  font-family: var(--table-title-font), var(--heading-Latin-font),
-    var(--heading-Chinese-font), serif !important;
-  /* font-size: var(--base-font-size); */
-  font-weight: var(--strong-weight);
 }
 
 hr {
@@ -319,58 +357,60 @@ img {
 /* ============ 多级列表样式 ============ */
 ul {
   list-style: disc; /* 无序列表第一级：实心圆点 */
-}
-
-ul ul {
-  /*list-style: circle;*/
-  list-style: "–　 "; /* 直接用空格代替一部分缩进的调整了我真懒 */
-  /*left: -0.8em;*/
-}
-
-ul ul ul {
-  list-style: "◦　  "; /* 无序列表第三极：小圈 */
-  left: 0.6em;
+  ul {
+    /*list-style: circle;*/
+    list-style: "–　 "; /* 直接用空格代替一部分缩进的调整了我真懒 */
+    /*left: -0.8em;*/
+    ul {
+      list-style: "◦　  "; /* 无序列表第三极：小圈 */
+      left: 0.6em;
+    }
+  }
 }
 
 ol {
-  list-style: decimal;
   /* 有序列表第一级：数字 */
-}
+  list-style: decimal;
 
-ol ol {
-  counter-reset: liist;
-  list-style: none;
-}
-ol ol li {
-  counter-increment: liist;
-  position: relative;
-}
-ol ol li::before {
-  content: "(" counter(liist, lower-alpha) ")　　"; /* 有序列表第二级：括号加小写字母 */
-  position: absolute;
-  margin-right: 2rem;
-  left: -2.4em;
-}
+  ol {
+    counter-reset: liist;
+    list-style: none;
 
-ol ol ol {
-  counter-reset: liiist;
-  list-style: none;
-  margin: 0;
-}
-ol ol ol li {
-  counter-increment: liiist;
-  position: relative;
-}
-ol ol ol li::before {
-  content: counter(liiist, lower-roman) ".　　　"; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
-  align-self: flex-end;
-  position: absolute;
-  left: -2.4em;
-  /* -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;*/
-  width: 4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
-  text-align: right;
+    li {
+      counter-increment: liist;
+      position: relative;
+    }
+
+    li::before {
+      content: "(" counter(liist, lower-alpha) ")　　"; /* 有序列表第二级：括号加小写字母 */
+      position: absolute;
+      margin-right: 2rem;
+      left: -2.4em;
+    }
+
+    ol {
+      counter-reset: liiist;
+      list-style: none;
+      margin: 0;
+
+      li {
+        counter-increment: liiist;
+        position: relative;
+      }
+
+      li::before {
+        content: counter(liiist, lower-roman) ".　　　"; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+        align-self: flex-end;
+        position: absolute;
+        left: -2.4em;
+        /* -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;*/
+        width: 4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+        text-align: right;
+      }
+    }
+  }
 }
 
 li {
@@ -398,15 +438,6 @@ li code {
   border-radius: 2px 2px 2px 2px; /* 圆角 */
 }
 
-/* 代码块样式*/
-#write .CodeMirror-wrap {
-  padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
-}
-
-#write .CodeMirror-code pre {
-  font-family: var(--code-font), var(--ui-font), monospace;
-}
-
 /* typora 编写模式 */
 #typora-source {
   @if $theme == "dark" {
@@ -418,59 +449,50 @@ li code {
   line-height: 2rem;
 }
 
-/* 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX */
-/* 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题 */
-#write {
-  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
-}
 
-#write h1 {
-  counter-reset: h2;
-}
-h2 {
-  counter-reset: h3;
-}
-h3 {
-  counter-reset: h4;
-}
-h4 {
-  counter-reset: h5;
-}
-h5 {
-  counter-reset: h6;
-}
-
-/* put counter result into headings */
-#write h2:before {
+%h2-with-count {
   counter-increment: h2;
   content: counter(h2);
   margin-right: 2rem;
 }
-/** override the default style for focused headings */
-#write h3:before,
-h3.md-focus.md-heading:before {
+
+%h3-with-count {
   counter-increment: h3;
   content: counter(h2) "." counter(h3);
   margin-right: 2rem;
 }
-#write h4:before,
-h4.md-focus.md-heading:before {
+
+%h4-with-count {
   counter-increment: h4;
   content: counter(h2) "." counter(h3) "." counter(h4);
   margin-right: 2rem;
 }
-#write h5:before,
-h5.md-focus.md-heading:before {
+
+%h5-with-count {
   counter-increment: h5;
   content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
   margin-right: 2rem;
 }
-#write h6:before,
-h6.md-focus.md-heading:before {
+
+%h6-with-count {
   counter-increment: h6;
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "."
-    counter(h6);
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
   margin-right: 2rem;
+}
+
+
+/* override the default style for focused headings */
+h3.md-focus.md-heading:before {
+  @extend %h3-with-count;
+}
+h4.md-focus.md-heading:before {
+  @extend %h4-with-count;
+}
+h5.md-focus.md-heading:before {
+  @extend %h5-with-count;
+}
+h6.md-focus.md-heading:before {
+  @extend %h6-with-count;
 }
 
 /* 目录 */
@@ -642,46 +664,51 @@ h6.md-focus:before {
 @if $theme == "dark" {
   /* Modifications for dark-mode */
   /*下面是针对代码块的修改，各部分含义由名称可以知道 */
-  /*.cm-s-inner .cm-variable {
+  /*.
+  cm-s-inner .cm-variable {
     color: #fff;
-}
-.cm-s-inner .cm-operator {
-    color: #69fc9a;
-}
-.cm-s-inner .cm-keyword {
-    color: #fcad7e;
-}
-.cm-s-inner .cm-string {
-    color: #01e5f9;
-}
-.cm-s-inner .cm-def {
-    color: #93598f;
-}
-.cm-s-inner .cm-meta {
-    color: #ad9494;
-} 
-.cm-s-inner .cm-builtin {
-    color: #7f69b1;
-}
-.cm-s-inner .cm-number {
-    color: #8c5853;
-}*/
+  }
+  .cm-s-inner .cm-operator {
+      color: #69fc9a;
+  }
+  .cm-s-inner .cm-keyword {
+      color: #fcad7e;
+  }
+  .cm-s-inner .cm-string {
+      color: #01e5f9;
+  }
+  .cm-s-inner .cm-def {
+      color: #93598f;
+  }
+  .cm-s-inner .cm-meta {
+      color: #ad9494;
+  } 
+  .cm-s-inner .cm-builtin {
+      color: #7f69b1;
+  }
+  .cm-s-inner .cm-number {
+      color: #8c5853;
+  }
+  */
 
   /* ====================我加的================== */
-  /*.cm-s-inner {
-  background-color: #263238;
-  color: rgba(233, 237, 237);
-}*/
-  /*.cm-s-inner .CodeMirror-gutters {
-  background: #263238;
-  color: #537f7e;
-  border: none;
-}*/
-  /*.cm-s-inner .CodeMirror-guttermarker,
-.cm-s-inner .CodeMirror-guttermarker-subtle,
-.cm-s-inner .CodeMirror-linenumber {
-  color: #537f7e;
-}*/
+  /*
+  .cm-s-inner {
+    background-color: #263238;
+    color: rgba(233, 237, 237);
+  }
+  .cm-s-inner .CodeMirror-gutters {
+    background: #263238;
+    color: #537f7e;
+    border: none;
+  }
+  .cm-s-inner .CodeMirror-guttermarker,
+  .cm-s-inner .CodeMirror-guttermarker-subtle,
+  .cm-s-inner .CodeMirror-linenumber {
+    color: #537f7e;
+  }
+  */
+
   .cm-s-inner .CodeMirror-cursor {
     border-left: 1px solid #f8f8f0;
   }
@@ -774,16 +801,18 @@ h6.md-focus:before {
     color: #4770c0;
   }
 
-  .md-fences {
-    /*background-color: #0E1116;*/
-    /*color: #e9eded;*/
-  }
   .md-fences .code-tooltip {
     background-color: #282828;
   }
+  /*
   #write pre.md-fences {
-    /*padding: 10rem;*/
+    padding: 10rem;
   }
+  .md-fences {
+    background-color: #0E1116;
+    color: #e9eded;
+  }
+  */
 
   /* 改变光标的颜色，在黑暗背景下能显示*/
   .CodeMirror div.CodeMirror-cursor {
