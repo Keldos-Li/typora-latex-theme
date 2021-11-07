@@ -158,7 +158,17 @@ strong {
 }
 
 /* 正文区基本属性 */
-#write {
+@if $tool == "typora" {
+  #write {
+    @extend %base;
+  }
+} @else if $tool == "pandoc" {
+  body {
+    @extend %base;
+  }
+}
+
+%base {
   font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
   font-size: var(--base-font-size);
   max-width: 21cm; /* A4标准宽度 */
