@@ -35,24 +35,30 @@
   /* 引言字体 */
   --quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times,
     "Times New Roman", "华文仿宋";
-  --quote-font-size: 10pt; /* 这里字体用了10pt,比正文字体稍大 */
+  /* 这里字体用了10pt,比正文字体稍大 */
+  --quote-font-size: 10pt;
 
-  /* 代码字体（代码中的中文会调用ui-font） */
+  /* 代码字体（代码中的中文会调用 ui-font） */
   --code-font: "Latin Modern Mono", "Latin Modern Mono 10";
 
   /* 侧边栏字体 */
   --ui-font: "#{$ui-font}";
 
   /* source mode 字体 */
-  --sourceMode-font: "SF Mono", "#{$ui-font}"; /* 默认调用code-font和ui-font */
+  /* 默认调用 code-font 和 ui-font */
+  --sourceMode-font: "SF Mono", "#{$ui-font}";
 
   /* 目录字体 */
-  --toc-font: ""; /* 默认调用base-font */
-  --toc-font-size: ""; /* 默认调用base-font-size */
+  /* 默认调用 base-font */
+  --toc-font: "";
+  /* 默认调用 base-font-size */
+  --toc-font-size: "";
 
   /* 表格字体 */
-  --table-title-font: ""; /* 默认调用heading-font */
-  --table-font: ""; /* 默认调用base-font */
+  /* 默认调用 heading-font */
+  --table-title-font: "";
+  /* 默认调用 base-font */
+  --table-font: "";
 
   /* 标题字体（总设置） */
   --heading-Latin-font: var(--base-Latin-font);
@@ -79,7 +85,8 @@
   --h6-font-size: 9.5pt;
 
   /* 粗体样式设置 */
-  --strong-weight: 900; /* 加粗风格时使用的字重；400等同于normal，700等同于bold，900等同于heavy */
+  /* 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy */
+  --strong-weight: 900;
 
   /* 基础行距 */
   --base-line-height: 16pt;
@@ -87,7 +94,6 @@
   /* == 页面设置 == */
   /* 打印页边距 */
   --set-margin: 1.8cm 2cm 1.2cm 2cm !important;
-  /* 参阅 <https://github.com/Keldos-Li/typora-latex-theme/blob/main/README.md#特别注意> */
 
   /* == 控制设置 == */
   /* 目录中是否显示一级标题 */
@@ -102,7 +108,8 @@
     --focus-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.9);
     --opt-shadow: 0px 8px 16px 1px hsla(0, 0%, 0%, 0.3);
 
-    --side-bar-bg-color: #282828; /*change background of sidebar*/
+    /*change background of sidebar*/
+    --side-bar-bg-color: #282828;
     --window-border: 0px solid #929292;
     --title-color: #dddddd;
     --text-color: #dcdcdc;
@@ -119,8 +126,10 @@ body {
   line-height: var(--base-line-height);
   /*counter-reset: tableHead 0 imgHead 0;*/
   @if $theme == "dark" {
-    color: #dddddd; /* 黑色模式修改 */
-    background-color: #282828; /* 黑色模式修改 */
+    /* 黑色模式修改 */
+    color: #dddddd;
+    /* 黑色模式修改 */
+    background-color: #282828;
     /*background:url(mermaidAPI.initialize({'fontFamily': '宋体-简, serif;'});); 可恶，不行 */
   }
 }
@@ -133,11 +142,14 @@ strong {
   #write {
     padding: var(--set-margin);
     @if $theme == "light" {
-      /*border: 0.8px solid #AAC ; /* 添加一个淡蓝色的边框 */
-      box-shadow: 0 0 24px 12px #cccccc; /* 页边来一个阴影！！好耶 */
+      /* 添加一个淡蓝色的边框 */
+      /*border: 0.8px solid #AAC ; */
+      /* 页边阴影 */
+      box-shadow: 0 0 24px 12px #cccccc;
     } @else if $theme == "dark" {
       /*border: 1px solid #AAAAAA ;*/
-      box-shadow: 0 0 24px 12px #101010; /* 页边来一个阴影！！好耶 */
+      /* 页边阴影 */
+      box-shadow: 0 0 24px 12px #101010;
     }
   }
 }
@@ -151,9 +163,7 @@ strong {
     text-decoration: none;
   }
   @page {
-    /* size: A4;  强制A4大小 */
-    margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距在这里！！！！！！！！！！！！！！！！ */
-    /* 参阅 <https://github.com/Keldos-Li/typora-latex-theme/blob/main/README.md#特别注意> */
+    margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距 */
   }
 }
 
@@ -171,11 +181,13 @@ strong {
 %base {
   font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
   font-size: var(--base-font-size);
-  max-width: 21cm; /* A4标准宽度 */
+  /* A4标准宽度 */
+  max-width: 21cm;
   @if $theme == "light" {
     background-color: white;
   } @else if $theme == "dark" {
-    background-color: #1e1e1e; /* 黑色模式修改 */
+    /* 黑色模式修改 */
+    background-color: #1e1e1e;
   }
   /* column-count: 2;
     column-gap: 25px;
@@ -231,20 +243,25 @@ strong {
   h6 {
     font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
     font-size: var(--h6-font-size);
-    line-height: var(--h5-font-size); /* 没有写错，为了避免行距太小才这么写 */
+    /* 没有写错，为了避免行距太小才这么写 */
+    line-height: var(--h5-font-size);
   }
 
-  /* 三线表 */
+  // 三线表
   table {
-    border-top: 1.2pt solid; /* 三线表第一条线宽度 */
-    border-bottom: 1.2pt solid; /* 三线表第二条线宽度 */
+    /* 三线表第一条线宽度 */
+    border-top: 1.2pt solid;
+    /* 三线表第二条线宽度 */
+    border-bottom: 1.2pt solid;
     font-family: var(--table-font), var(--base-Latin-font), var(--base-Chinese-font), serif;
     /* font-size: var(--base-font-size); */
     text-align: center;
     page-break-inside: avoid;
     border-spacing: 6px;
-    width: auto; /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
-    margin: 0 auto; /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+    /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
+    width: auto;
+    /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+    margin: 0 auto;
 
     td {
       padding: 2px;
@@ -269,7 +286,7 @@ strong {
 
   /* 代码块样式*/
   .CodeMirror-wrap {
-    padding: 10px; /* 当代码太长跨页的时候好像也会有点问题，到时候再改 */
+    padding: 10px; // 当代码太长跨页的时候好像也会有点问题，到时候再改
   }
 
   .CodeMirror-code pre {
@@ -336,19 +353,22 @@ strong {
 }
 */
 
-/* basic样式采用一般的引言，具有左边框、左缩进 */
+/* basic 样式采用一般的引言，具有左边框、左缩进 */
 blockquote {
   font-style: normal;
   font-family: var(--quote-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
   border-left: 3px solid grey;
-  padding-left: 16px; /* 文字离左边框的距离 */
+  /* 文字离左边框的距离 */
+  padding-left: 16px;
   padding-right: 20pt;
-  margin-left: 20px; /* 左边框离页面边的距离 */
+  /* 左边框离页面边的距离 */
+  margin-left: 20px;
   @if $theme == "light" {
     color: grey;
   } @else if $theme == "dark" {
-    color: #bfbfbf; /* 文字颜色 */
+    /* 文字颜色 */
+    color: #bfbfbf;
   }
 }
 
@@ -361,18 +381,22 @@ hr {
 }
 
 img {
-  page-break-inside: avoid; /* 避免图片在导出时被断开 */
+  /* 避免图片在导出时被断开 */
+  page-break-inside: avoid;
 }
 
 /* ============ 多级列表样式 ============ */
 ul {
-  list-style: disc; /* 无序列表第一级：实心圆点 */
+  /* 无序列表第一级：实心圆点 */
+  list-style: disc;
   ul {
     /*list-style: circle;*/
-    list-style: "–　 "; /* 直接用空格代替一部分缩进的调整了我真懒 */
+    /* 直接用空格代替一部分缩进的调整了我真懒 */
+    list-style: "–　 ";
     /*left: -0.8em;*/
     ul {
-      list-style: "◦　  "; /* 无序列表第三极：小圈 */
+      /* 无序列表第三极：小圈 */
+      list-style: "◦　  ";
       left: 0.6em;
     }
   }
@@ -392,7 +416,8 @@ ol {
     }
 
     li::before {
-      content: "(" counter(liist, lower-alpha) ")　　"; /* 有序列表第二级：括号加小写字母 */
+      /* 有序列表第二级：括号加小写字母 */
+      content: "(" counter(liist, lower-alpha) ")　　";
       position: absolute;
       margin-right: 2rem;
       left: -2.4em;
@@ -409,14 +434,17 @@ ol {
       }
 
       li::before {
-        content: counter(liiist, lower-roman) ".　　　"; /* 有序列表第三级：小写罗马数字 这些后续还要改的可恶*/
+        /* 有序列表第三级：小写罗马数字 */
+        // FIXME 这里要改
+        content: counter(liiist, lower-roman) ".　　　";
         align-self: flex-end;
         position: absolute;
         left: -2.4em;
         /* -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;*/
-        width: 4em; /* 为了让项目编号是重新用句点对齐而不是左对齐我调试了一整个晚上啊啊啊啊 CSS好难写 */
+        /* 为了让项目编号是重新用句点对齐而不是左对齐 */
+        width: 4em;
         text-align: right;
       }
     }
@@ -434,18 +462,23 @@ li code {
   @if $theme == "light" {
     color: rgb(60, 112, 198);
     background-color: #fefefe;
-    box-shadow: 0 0 1px 1px #c8d3df; /* 阴影 */
+    /* 阴影 */
+    box-shadow: 0 0 1px 1px #c8d3df;
   } @else if $theme == "dark" {
-    color: #8bb1f9; /* 黑色模式修改 */
-    background-color: #161616; /* 黑色模式修改 */
-    box-shadow: 0 0 1px 1px #141414; /* 黑色模式修改 */
+    /* 黑色模式修改 */
+    color: #8bb1f9;
+    /* 黑色模式修改 */
+    background-color: #161616;
+    /* 黑色模式修改 */
+    box-shadow: 0 0 1px 1px #141414;
   }
   font-family: var(--code-font), var(--ui-font), monospace;
   box-sizing: border-box;
   border-right: 0px;
   margin: 0 2px 0 2px;
   padding: 0 2px 0 2px;
-  border-radius: 2px 2px 2px 2px; /* 圆角 */
+  /* 圆角 */
+  border-radius: 2px 2px 2px 2px;
 }
 
 /* typora 编写模式 */
@@ -491,7 +524,7 @@ li code {
 }
 
 
-/* override the default style for focused headings */
+// override the default style for focused headings
 h3.md-focus.md-heading:before {
   @extend %h3-with-count;
 }
@@ -508,7 +541,8 @@ h6.md-focus.md-heading:before {
 /* 目录 */
 .md-toc-content {
   margin-left: 2em;
-  counter-reset: toc-h2 toc-h3 toc-h4; /* 修复缺失上级标题时无法递增 */
+  /* 修复缺失上级标题时无法递增 */
+  counter-reset: toc-h2 toc-h3 toc-h4;
   page-break-after: always;
 }
 .md-toc-inner {
@@ -542,100 +576,106 @@ h6.md-focus.md-heading:before {
 }
 
 /* 目录标题前 */
-.md-toc-content .md-toc-h1 {
-  display: var(--toc-show-title);
-  counter-reset: toc-h2;
-}
-.md-toc-content .md-toc-h2 {
-  counter-reset: toc-h3;
-}
-.md-toc-content .md-toc-h3 {
-  counter-reset: toc-h4;
-}
-.md-toc-content .md-toc-h4 {
-  counter-reset: toc-h5;
-}
-.md-toc-content .md-toc-h5 {
-  counter-reset: toc-h6;
-}
-.md-toc-content .md-toc-h2:before {
-  counter-increment: toc-h2;
-  content: counter(toc-h2);
-  margin-right: 1rem;
-  font-weight: var(--strong-weight);
-}
-.md-toc-content .md-toc-h3:before {
-  counter-increment: toc-h3;
-  content: counter(toc-h2) "." counter(toc-h3);
-  margin-left: 1.5rem;
-  margin-right: 0.5rem;
-}
-.md-toc-content .md-toc-h4:before {
-  counter-increment: toc-h4;
-  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
-  margin-left: 3.5rem;
-  margin-right: 0.5rem;
-}
-.md-toc-content .md-toc-h5:before {
-  counter-increment: toc-h5;
-  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "."
-    counter(toc-h5);
-  margin-left: 5.5rem;
-  margin-right: 0.5rem;
-}
-.md-toc-content .md-toc-h6:before {
-  counter-increment: toc-h6;
-  content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "."
-    counter(toc-h5) "." counter(toc-h6);
-  margin-left: 7.5rem;
-  margin-right: 0.5rem;
+.md-toc-content {
+  .md-toc-h1 {
+    display: var(--toc-show-title);
+    counter-reset: toc-h2;
+  }
+  .md-toc-h2 {
+    counter-reset: toc-h3;
+  }
+  .md-toc-h3 {
+    counter-reset: toc-h4;
+  }
+  .md-toc-h4 {
+    counter-reset: toc-h5;
+  }
+  .md-toc-h5 {
+    counter-reset: toc-h6;
+  }
+  .md-toc-h2:before {
+    counter-increment: toc-h2;
+    content: counter(toc-h2);
+    margin-right: 1rem;
+    font-weight: var(--strong-weight);
+  }
+  .md-toc-h3:before {
+    counter-increment: toc-h3;
+    content: counter(toc-h2) "." counter(toc-h3);
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  .md-toc-h4:before {
+    counter-increment: toc-h4;
+    content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
+    margin-left: 3.5rem;
+    margin-right: 0.5rem;
+  }
+  .md-toc-h5:before {
+    counter-increment: toc-h5;
+    content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "."
+      counter(toc-h5);
+    margin-left: 5.5rem;
+    margin-right: 0.5rem;
+  }
+  .md-toc-h6:before {
+    counter-increment: toc-h6;
+    content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "."
+      counter(toc-h5) "." counter(toc-h6);
+    margin-left: 7.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 /* 侧边大纲标题 */
-.sidebar-content .outline-h1 {
-  counter-reset: outline-h2;
-}
-.sidebar-content .outline-h2 {
-  counter-reset: outline-h3;
-}
-.sidebar-content .outline-h3 {
-  counter-reset: outline-h4;
-}
-.sidebar-content .outline-h4 {
-  counter-reset: outline-h5;
-}
-.sidebar-content .outline-h5 {
-  counter-reset: outline-h6;
-}
-.sidebar-content .outline-h2 .outline-label:before {
-  counter-increment: outline-h2;
-  content: counter(outline-h2) " ";
-}
-.sidebar-content .outline-h3 .outline-label:before {
-  counter-increment: outline-h3;
-  content: counter(outline-h2) "." counter(outline-h3) "  ";
-}
-.sidebar-content .outline-h4 .outline-label:before {
-  counter-increment: outline-h4;
-  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4)
-    "  ";
-}
-.sidebar-content .outline-h5 .outline-label:before {
-  counter-increment: outline-h5;
-  content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4)
-    "." counter(outline-h5) "  ";
+.sidebar-content {
+  .outline-h1 {
+    counter-reset: outline-h2;
+  }
+  .outline-h2 {
+    counter-reset: outline-h3;
+    .outline-label:before {
+      counter-increment: outline-h2;
+      content: counter(outline-h2) " ";
+    }
+  }
+  .outline-h3 {
+    counter-reset: outline-h4;
+    .outline-label:before {
+      counter-increment: outline-h3;
+      content: counter(outline-h2) "." counter(outline-h3) "  ";
+    }
+  }
+  .outline-h4 {
+    counter-reset: outline-h5;
+    .outline-label:before {
+      counter-increment: outline-h4;
+      content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4)
+        "  ";
+    }
+  }
+  .outline-h5 {
+    counter-reset: outline-h6;
+    .outline-label:before {
+      counter-increment: outline-h5;
+      content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4)
+        "." counter(outline-h5) "  ";
+    }
+  }
 }
 
 .sidebar-content {
-  font-family: var(--ui-font); /* 侧边栏的字体修改 */
+  /* 侧边栏的字体修改 */
+  font-family: var(--ui-font);
   list-style: none;
   @if $theme == "dark" {
-    background-color: #282828; /* 黑色模式修改 */
+    /* 黑色模式修改 */
+    background-color: #282828;
     color: #e9e9e9;
   }
 }
 
-/* 元数据（如YAML front matter）的背景框 */
+/* 元数据（如 YAML front matter）的背景框 */
 pre.md-meta-block {
   @if $theme == "light" {
     background: #cccccc;
@@ -647,7 +687,7 @@ pre.md-meta-block {
   font-family: var(--code-font), var(--ui-font), monospace;
 }
 
-/** override the default style for focused headings */
+// override the default style for focused headings
 #write > h3.md-focus:before,
 #write > h4.md-focus:before,
 #write > h5.md-focus:before,
@@ -673,33 +713,6 @@ h6.md-focus:before {
 
 @if $theme == "dark" {
   /* Modifications for dark-mode */
-  /*下面是针对代码块的修改，各部分含义由名称可以知道 */
-  /*.
-  cm-s-inner .cm-variable {
-    color: #fff;
-  }
-  .cm-s-inner .cm-operator {
-      color: #69fc9a;
-  }
-  .cm-s-inner .cm-keyword {
-      color: #fcad7e;
-  }
-  .cm-s-inner .cm-string {
-      color: #01e5f9;
-  }
-  .cm-s-inner .cm-def {
-      color: #93598f;
-  }
-  .cm-s-inner .cm-meta {
-      color: #ad9494;
-  } 
-  .cm-s-inner .cm-builtin {
-      color: #7f69b1;
-  }
-  .cm-s-inner .cm-number {
-      color: #8c5853;
-  }
-  */
 
   /* ====================我加的================== */
   /*
@@ -741,67 +754,6 @@ h6.md-focus:before {
   .cm-s-inner .CodeMirror-activeline-background {
     background: rgba(0, 0, 0, 0);
   }
-  .cm-s-inner .cm-keyword {
-    color: #c792ea;
-  }
-  .cm-s-inner .cm-operator {
-    color: #e9eded;
-  }
-  .cm-s-inner .cm-variable-2 {
-    color: #80cbc4;
-  }
-  .cm-s-inner .cm-variable-3 {
-    color: #82b1ff;
-  }
-  .cm-s-inner .cm-builtin {
-    color: #decb6b;
-  }
-  .cm-s-inner .cm-atom {
-    color: #f77669;
-  }
-  .cm-s-inner .cm-number {
-    color: #f77669;
-  }
-  .cm-s-inner .cm-def {
-    color: #e9eded;
-  }
-  .cm-s-inner .cm-string {
-    color: #c3e88d;
-  }
-  .cm-s-inner .cm-string-2 {
-    color: #80cbc4;
-  }
-  .cm-s-inner .cm-comment {
-    color: #546e7a;
-  }
-  .cm-s-inner .cm-variable {
-    color: #82b1ff;
-  }
-  .cm-s-inner .cm-tag {
-    color: #80cbc4;
-  }
-  .cm-s-inner .cm-meta {
-    color: #80cbc4;
-  }
-  .cm-s-inner .cm-attribute {
-    color: #ffcb6b;
-  }
-  .cm-s-inner .cm-property {
-    color: #80cbae;
-  }
-  .cm-s-inner .cm-qualifier {
-    color: #decb6b;
-  }
-  .cm-s-inner .cm-variable-3 {
-    color: #decb6b;
-  }
-  .cm-s-inner .cm-tag {
-    color: #ff5370;
-  }
-  .cm-s-inner .cm-error {
-    color: #ffffff;
-    background-color: #ec5f67;
-  }
   .cm-s-inner .CodeMirror-matchingbracket {
     text-decoration: underline;
     color: white !important;
@@ -809,6 +761,69 @@ h6.md-focus:before {
   .cm-s-inner .cm-link,
   .cm-s-inner.cm-link {
     color: #4770c0;
+  }
+  .cm-s-inner {
+    .cm-keyword {
+      color: #c792ea;
+    }
+    .cm-operator {
+      color: #e9eded;
+    }
+    .cm-variable-2 {
+      color: #80cbc4;
+    }
+    .cm-variable-3 {
+      color: #82b1ff;
+    }
+    .cm-builtin {
+      color: #decb6b;
+    }
+    .cm-atom {
+      color: #f77669;
+    }
+    .cm-number {
+      color: #f77669;
+    }
+    .cm-def {
+      color: #e9eded;
+    }
+    .cm-string {
+      color: #c3e88d;
+    }
+    .cm-string-2 {
+      color: #80cbc4;
+    }
+    .cm-comment {
+      color: #546e7a;
+    }
+    .cm-variable {
+      color: #82b1ff;
+    }
+    .cm-tag {
+      color: #80cbc4;
+    }
+    .cm-meta {
+      color: #80cbc4;
+    }
+    .cm-attribute {
+      color: #ffcb6b;
+    }
+    .cm-property {
+      color: #80cbae;
+    }
+    .cm-qualifier {
+      color: #decb6b;
+    }
+    .cm-variable-3 {
+      color: #decb6b;
+    }
+    .cm-tag {
+      color: #ff5370;
+    }
+    .cm-error {
+      color: #ffffff;
+      background-color: #ec5f67;
+    }
   }
 
   .md-fences .code-tooltip {
@@ -924,12 +939,11 @@ h6.md-focus:before {
   
   #typora-quick-open {
     background-color: #282828;
-  }
-  
-  #typora-quick-open input{
-    background-color: #282828;
-    border: 0;
-    border-bottom: 1px solid grey;
+    input {
+      background-color: #282828;
+      border: 0;
+      border-bottom: 1px solid grey;
+    }
   }
 
   /* 插入图片后弹出的框 */
@@ -941,7 +955,8 @@ h6.md-focus:before {
 
   /* 退出代码模式的按钮，以及最近打开文件页面中的按钮 */
   .typora-sourceview-on #toggle-sourceview-btn, #recent-file-panel-action-btn {
-    background: #00000000; /* 设为透明，用于覆盖掉默认的浅色 */
+    /* 设为透明，用于覆盖掉默认的浅色 */
+    background: #00000000;
   }
 
   /* 鼠标悬停到按钮上后的悬停文本框 */
