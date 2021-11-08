@@ -1,5 +1,8 @@
+// 以下三个键会被 Makefile 拼接到文件起始部分
+// 下面展示的值是一个样例
 // $os: "macos";
 // $theme: "light";
+// $tool: "typora";
 
 :root {
   @if $os == "windows" {
@@ -19,7 +22,7 @@
   } @else if $os == "linux" {
     $ui-font: "Noto Sans CJK SC" !global;
     $heading-Chinese-font: "Noto Sans CJK SC" !global;
-    $chapter-Chinese-font: "Noto Serif CJK SC" !global;
+    $chapter-Chinese-font: "Noto Sans CJK SC" !global;
     $sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
     $sub-sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
     $base-Chinese-font: "Noto Serif CJK SC" !global;
@@ -130,7 +133,7 @@ body {
     color: #dddddd;
     /* 黑色模式修改 */
     background-color: #282828;
-    /*background:url(mermaidAPI.initialize({'fontFamily': '宋体-简, serif;'});); 可恶，不行 */
+    // background:url(mermaidAPI.initialize({'fontFamily': '宋体-简, serif;'}););
   }
 }
 
@@ -199,21 +202,27 @@ strong {
     text-align: left;
   }
 
-  /* 标题属性 */
-  h1, h2, h3, h4, h5, h6 {
+  // 标题属性
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @if $os == "windows" {
       font-weight: bold; // 对 Windows 的修改
     } @else if $os == "macos" {
       font-weight: normal;
     }
-
+    /* 标题字体 */
     font-family: var(--heading-Latin-font), var(--heading-Chinese-font),
       sans-serif;
     page-break-after: avoid !important;
   }
 
   h1 {
-    font-family: var(--heading-Latin-font), var(--title-Chinese-font), sans-serif;
+    font-family: var(--heading-Latin-font), var(--title-Chinese-font),
+      sans-serif;
     @if $os == "macos" {
       font-weight: normal;
     }
@@ -253,7 +262,8 @@ strong {
     border-top: 1.2pt solid;
     /* 三线表第二条线宽度 */
     border-bottom: 1.2pt solid;
-    font-family: var(--table-font), var(--base-Latin-font), var(--base-Chinese-font), serif;
+    font-family: var(--table-font), var(--base-Latin-font),
+      var(--base-Chinese-font), serif;
     /* font-size: var(--base-font-size); */
     text-align: center;
     page-break-inside: avoid;
@@ -266,7 +276,7 @@ strong {
     td {
       padding: 2px;
     }
-  
+
     tr {
       padding: 2px;
     }
@@ -276,17 +286,19 @@ strong {
     padding: 0px 6px;
   }
 
-  thead { /* 表格标题（首行）样式 */
-    /* 三线表表头的线 */ 
+  thead {
+    /* 表格标题（首行）样式 */
+    /* 三线表表头的线 */
     border-bottom: 0.5pt solid;
-    font-family: var(--table-title-font), var(--heading-Latin-font), var(--heading-Chinese-font), serif !important;
+    font-family: var(--table-title-font), var(--heading-Latin-font),
+      var(--heading-Chinese-font), serif !important;
     /* font-size: var(--base-font-size); */
     font-weight: var(--strong-weight);
   }
 
-  /* 代码块样式*/
+  // 代码块样式
   .CodeMirror-wrap {
-    padding: 10px; // 当代码太长跨页的时候好像也会有点问题，到时候再改
+    padding: 10px; // FIXME 当代码太长跨页的时候好像也会有点问题
   }
 
   .CodeMirror-code pre {
@@ -331,7 +343,6 @@ strong {
   h6:before {
     @extend %h6-with-count;
   }
-
 }
 
 /*
@@ -356,7 +367,8 @@ strong {
 /* basic 样式采用一般的引言，具有左边框、左缩进 */
 blockquote {
   font-style: normal;
-  font-family: var(--quote-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
+  font-family: var(--quote-font), var(--base-Latin-font),
+    var(--base-Chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
   border-left: 3px solid grey;
   /* 文字离左边框的距离 */
@@ -492,7 +504,6 @@ li code {
   line-height: 2rem;
 }
 
-
 %h2-with-count {
   counter-increment: h2;
   content: counter(h2);
@@ -519,10 +530,10 @@ li code {
 
 %h6-with-count {
   counter-increment: h6;
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "."
+    counter(h6);
   margin-right: 2rem;
 }
-
 
 // override the default style for focused headings
 h3.md-focus.md-heading:before {
@@ -650,16 +661,16 @@ h6.md-focus.md-heading:before {
     counter-reset: outline-h5;
     .outline-label:before {
       counter-increment: outline-h4;
-      content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4)
-        "  ";
+      content: counter(outline-h2) "." counter(outline-h3) "."
+        counter(outline-h4) "  ";
     }
   }
   .outline-h5 {
     counter-reset: outline-h6;
     .outline-label:before {
       counter-increment: outline-h5;
-      content: counter(outline-h2) "." counter(outline-h3) "." counter(outline-h4)
-        "." counter(outline-h5) "  ";
+      content: counter(outline-h2) "." counter(outline-h3) "."
+        counter(outline-h4) "." counter(outline-h5) "  ";
     }
   }
 }
@@ -732,37 +743,37 @@ h6.md-focus:before {
   }
   */
 
-  .cm-s-inner .CodeMirror-cursor {
-    border-left: 1px solid #f8f8f0;
-  }
-  .cm-s-inner div.CodeMirror-selected {
-    background: rgba(255, 255, 255, 0.15);
-  }
   .cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
     background: rgba(255, 255, 255, 0.1);
-  }
-  .cm-s-inner .CodeMirror-line::selection,
-  .cm-s-inner .CodeMirror-line > span::selection,
-  .cm-s-inner .CodeMirror-line > span > span::selection {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .cm-s-inner .CodeMirror-line::-moz-selection,
-  .cm-s-inner .CodeMirror-line > span::-moz-selection,
-  .cm-s-inner .CodeMirror-line > span > span::-moz-selection {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .cm-s-inner .CodeMirror-activeline-background {
-    background: rgba(0, 0, 0, 0);
-  }
-  .cm-s-inner .CodeMirror-matchingbracket {
-    text-decoration: underline;
-    color: white !important;
   }
   .cm-s-inner .cm-link,
   .cm-s-inner.cm-link {
     color: #4770c0;
   }
   .cm-s-inner {
+    .CodeMirror-cursor {
+      border-left: 1px solid #f8f8f0;
+    }
+    div.CodeMirror-selected {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .CodeMirror-line::selection,
+    .CodeMirror-line > span::selection,
+    .CodeMirror-line > span > span::selection {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .CodeMirror-line::-moz-selection,
+    .CodeMirror-line > span::-moz-selection,
+    .CodeMirror-line > span > span::-moz-selection {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .CodeMirror-activeline-background {
+      background: rgba(0, 0, 0, 0);
+    }
+    .CodeMirror-matchingbracket {
+      text-decoration: underline;
+      color: white !important;
+    }
     .cm-keyword {
       color: #c792ea;
     }
@@ -886,7 +897,8 @@ h6.md-focus:before {
     background-color: #161616;
   }
 
-  /*#top-titlebar,
+  /*
+  #top-titlebar,
   #top-titlebar * {
     background-color: #1A1A1A;
     color: white;
@@ -901,7 +913,8 @@ h6.md-focus:before {
   }
   [draggable] {
     cursor: pointer;
-  }*/
+  }
+  */
 
   /* 调整html编辑时的行为，能看清楚里面的文字 */
   .md-rawblock-control:not(.md-rawblock-tooltip) {
@@ -936,7 +949,7 @@ h6.md-focus:before {
     border: 0px;
     background-color: #282828;
   }
-  
+
   #typora-quick-open {
     background-color: #282828;
     input {
@@ -950,11 +963,12 @@ h6.md-focus:before {
   .context-menu,
   #spell-check-panel,
   #footer-word-count-info {
-      background-color: #282828;
+    background-color: #282828;
   }
 
   /* 退出代码模式的按钮，以及最近打开文件页面中的按钮 */
-  .typora-sourceview-on #toggle-sourceview-btn, #recent-file-panel-action-btn {
+  .typora-sourceview-on #toggle-sourceview-btn,
+  #recent-file-panel-action-btn {
     /* 设为透明，用于覆盖掉默认的浅色 */
     background: #00000000;
   }
@@ -966,7 +980,8 @@ h6.md-focus:before {
   }
 
   /* 以下三段与 Unibody UI 模式的适配有关 */
-  .megamenu-content, .megamenu-opened header {
+  .megamenu-content,
+  .megamenu-opened header {
     background: var(--bg-color);
   }
 
@@ -980,7 +995,6 @@ h6.md-focus:before {
 
   /* typora UI 编辑页面，在宽度较小时的底栏 */
   footer.ty-footer {
-    border-top: 1px solid #222
+    border-top: 1px solid #222;
   }
-
 }
