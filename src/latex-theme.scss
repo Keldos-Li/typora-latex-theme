@@ -6,7 +6,7 @@
 
 :root {
   @if $os == "windows" {
-    $ui-font: "阿里巴巴普惠体 2.0" !global;
+    $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"" !global;
     $heading-Chinese-font: "华文黑体" !global;
     $chapter-Chinese-font: "华文黑体" !global;
     $sub-chapter-Chinese-font: "华文楷体" !global;
@@ -31,7 +31,8 @@
   /* == 字体设置 == */
 
   /* 基准字体 */
-  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10"; /* 备选：Times, "Times New Roman" */
+  /* 备选：Times, "Times New Roman" */
+  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10";
   --base-Chinese-font: "#{$base-Chinese-font}";
   --base-font-size: 9.5pt;
 
@@ -45,11 +46,11 @@
   --code-font: "Latin Modern Mono", "Latin Modern Mono 10";
 
   /* 侧边栏字体 */
-  --ui-font: "#{$ui-font}";
+  --ui-font: #{$ui-font};
 
   /* source mode 字体 */
   /* 默认调用 code-font 和 ui-font */
-  --sourceMode-font: "SF Mono", "#{$ui-font}";
+  --sourceMode-font: "SF Mono", #{$ui-font};
 
   /* 目录字体 */
   /* 默认调用 base-font */
