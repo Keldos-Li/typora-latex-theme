@@ -11,7 +11,7 @@ pandoc = pandoc
 $(shell mkdir -p $(working_dir))
 $(shell mkdir -p $(target_dir))
 
-# $(1) is the name of operating system, $(3) is light or dark theme
+# $(1) is the name of operating system, $(2) is typora or pandoc, $(3) is light or dark theme
 define build
 	mkdir -p $(target_dir)/$(1)-$(2)
 	mkdir -p $(target_dir)/$(1)-$(2)/target
@@ -19,7 +19,11 @@ define build
 	echo '$$tool: "$(2)";' >> $(working_dir)/$(1)-$(2)-$(3).scss
 	echo '$$theme: "$(3)";' >> $(working_dir)/$(1)-$(2)-$(3).scss
 	cat $(base_dir)/latex-theme.scss >> $(working_dir)/$(1)-$(2)-$(3).scss
-	scss --sourcemap=none $(working_dir)/$(1)-$(2)-$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css
+	if [ "$(3)" = "light" ]; then \
+		scss --sourcemap=none --style expanded $(working_dir)/$(1)-$(2)-$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
+	else \
+		scss --sourcemap=none --style expanded $(working_dir)/$(1)-$(2)-$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
+	fi
 endef
 
 # $(1) is the name of operating system
@@ -33,13 +37,11 @@ define build-typora
 	fi;
 	cp $(base_dir)/README.md $(target_dir)/$(1)-$(typora)
 	cp -r $(base_dir)/../Supplemental $(target_dir)/$(1)-$(typora)/Supplemental
-	cd $(target_dir)/$(1)-$(typora); zip -r $(target_dir)/latex-theme-$(1).zip ./*
 endef
 
 define build-pandoc
 	$(call build,$(linux),$(pandoc),light)
 	$(call build,$(linux),$(pandoc),dark)
-	cd $(target_dir)/$(1)-$(pandoc); zip -r $(target_dir)/latex-theme-$(1)-$(pandoc).zip ./*
 endef
 
 .PHONY: all
@@ -48,6 +50,14 @@ all:
 	make macos
 	make linux
 	make pandoc
+
+.PHONY: all-and-compress
+all-and-compress:
+	make all
+	cd $(target_dir)/$(windows)-$(typora); zip -r $(target_dir)/latex-theme-$(windows).zip ./*
+	cd $(target_dir)/$(macos)-$(typora); zip -r $(target_dir)/latex-theme-$(macos).zip ./*
+	cd $(target_dir)/$(linux)-$(typora); zip -r $(target_dir)/latex-theme-$(linux).zip ./*
+	cd $(target_dir)/$(pandoc)-$(typora); zip -r $(target_dir)/latex-theme-$(pandoc).zip ./*
 
 .PHONY: windows
 windows:
