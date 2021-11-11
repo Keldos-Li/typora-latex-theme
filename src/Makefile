@@ -57,7 +57,7 @@ all-and-compress:
 	cd $(target_dir)/$(windows)-$(typora); zip -r $(target_dir)/latex-theme-$(windows).zip ./*
 	cd $(target_dir)/$(macos)-$(typora); zip -r $(target_dir)/latex-theme-$(macos).zip ./*
 	cd $(target_dir)/$(linux)-$(typora); zip -r $(target_dir)/latex-theme-$(linux).zip ./*
-	cd $(target_dir)/$(pandoc)-$(typora); zip -r $(target_dir)/latex-theme-$(pandoc).zip ./*
+#	cd $(target_dir)/$(pandoc)-$(typora); zip -r $(target_dir)/latex-theme-$(pandoc).zip ./*
 
 .PHONY: windows
 windows:
