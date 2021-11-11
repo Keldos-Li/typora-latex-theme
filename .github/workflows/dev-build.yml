@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           sudo apt install ruby sass -y
       - name: Compile
@@ -22,4 +22,4 @@ jobs:
         with:
           name: my-artifact
           path: |
-            ./src/latex-theme/*.zip
+            ./src/latex-theme/*
