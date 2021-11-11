@@ -80,7 +80,7 @@
   --quote-font-size: 10pt;
 
   /* 代码字体（代码中的中文会调用 ui-font） */
-  --code-font: "Latin Modern Mono", "Latin Modern Mono 10";
+  --code-font: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New";
 
   /* 侧边栏字体 */
   --ui-font: #{$ui-font};
