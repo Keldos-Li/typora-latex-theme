@@ -19,7 +19,8 @@
    that contains part or all of the Typora LaTeX Theme
    and distribute that work under terms of your choice,
    so long as that work isn't itself a CSS theme
-   or a generator of CSS theme. Alternatively, if you
+   or can be processed into CSS theme by using some
+   CSS pre-processors like SASS. Alternatively, if you
    modify or redistribute this CSS theme itself,
    you may (at your option) remove this special exception,
    which will cause the CSS theme and the resulting output files
@@ -29,11 +30,11 @@
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
-//                       如果您仅想使用本主题                      //
-//                         不要下载此文件！                        //
-//               请前往 GitHub Release 页面下载 ZIP 包             //
-//                                                                 //
-/////////////////////////////////////////////////////////////////////
+//                       如果您仅想使用本主题                         //
+//                         不要下载此文件！                          //
+//               请前往 GitHub Release 页面下载 ZIP 包               //
+//                                                                //
+////////////////////////////////////////////////////////////////////
 
 // 以下三个键会被 Makefile 拼接到文件起始部分
 // 下面展示的值是一个样例
@@ -50,14 +51,14 @@
     $sub-sub-chapter-Chinese-font: "华文仿宋" !global;
     $base-Chinese-font: "华文宋体" !global;
   } @else if $os == "macos" {
-    $ui-font: "苹方-简" !global;
+    $ui-font: "\"苹方-简\"" !global;
     $heading-Chinese-font: "华文黑体Bold" !global;
     $chapter-Chinese-font: "方正公文黑体" !global;
     $sub-chapter-Chinese-font: "方正公文楷体" !global;
     $sub-sub-chapter-Chinese-font: "方正公文仿宋" !global;
     $base-Chinese-font: "宋体-简" !global;
   } @else if $os == "linux" {
-    $ui-font: "Noto Sans CJK SC" !global;
+    $ui-font: "\"Noto Sans CJK SC\"" !global;
     $heading-Chinese-font: "Noto Sans CJK SC" !global;
     $chapter-Chinese-font: "Noto Sans CJK SC" !global;
     $sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
