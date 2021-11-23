@@ -101,22 +101,7 @@ $$
 
 ## 鸣谢
 
-本项目是在下面两人工作的基础上完成的。括号内链接为两人的项目地址：
+本项目是在下面两人工作的基础上完成的：  
 
-[@让幻想飞](https://zhuanlan.zhihu.com/p/357096043)（[yfzhao20](https://github.com/yfzhao20/Typora-markdown)）
-
-> * 适配LaTeX的字体
-> * 更改标题、目录和大纲的编号样式；改成1. ，1.1 ， 1.1.1 ，……这样的编号更有一种浓厚的论文感觉
-> * 二级及以下标题全部靠左，适应文章样式；后面加上大空白，适配LaTeX样式
-
-[@LAN DU](https://zhuanlan.zhihu.com/p/158767474)（[du33169](https://github.com/du33169/typora-theme-essay_cn)）
-
-> 一个简单的、为中文课程论文排版设计的[Typora](https://typora.io/)主题。
->
-> 1.  各级标题选取合适字体，更加美观
-> 2.  标题自动编号，又有了不必打开Word的理由
-> 3.  图表下方自动编号，专业严谨（图片编号暂无法导出）
-> 4.  表格采用三线表，简洁清晰
-> 5.  目录样式覆盖，规范大气
-> 6.  A4页面设定，编辑器内所见即所得
-> 7.  提供.md格式的封面模板，写作->导出PDF全过程一处进行
+- [yfzhao20/Typora-markdown](https://github.com/yfzhao20/Typora-markdown)  
+- [du33169/typora-theme-essay_cn](https://github.com/du33169/typora-theme-essay_cn)  
