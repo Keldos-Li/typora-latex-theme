@@ -93,9 +93,9 @@ $$
 
 2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，然后下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip`. 
 
-3. 解压缩这个文件，并进入解压缩后的文件夹。在这个文件夹中，用 Typora 打开 `README.md`，并按照其中的描述完成剩余步骤。该文件的在线预览版本在[此处](./src/README.md)。简单而言，需要进行如下几步：
-    - 进行手动或自动主题安装
-    - 若遇到字体问题，则下载所需的字体
+3. 解压缩这个文件，并进入解压缩后的文件夹。按照[在线安装教程](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)或该文件夹下 `README.md` 中的安装教程**完成剩余的安装步骤**。请务必确认您完成了下面的步骤：
+     - [进行手动或自动主题安装](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85)
+     - [下载并安装所需的字体](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93)
 
 
 
