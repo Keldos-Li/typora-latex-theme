@@ -1,11 +1,11 @@
 ![cover](./Supplemental/cover.png)
 # Typora 伪装 LaTeX 中文样式主题
 
-[预览](#预览) | [安装与使用](#安装与使用) | [下载](https://github.com/Keldos-Li/typora-latex-theme/releases) | [帮助文档](https://github.com/Keldos-Li/typora-latex-theme/wiki) | [个性化设置](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE) | [面向高级用户](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E9%9D%A2%E5%90%91%E9%AB%98%E7%BA%A7%E7%94%A8%E6%88%B7) | [常见问题](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98) | [反馈与贡献](https://github.com/Keldos-Li/typora-latex-theme/wiki#%E5%8F%8D%E9%A6%88%E4%B8%8E%E8%B4%A1%E7%8C%AE)  
+[下载与安装](#下载与安装) | [帮助文档](https://github.com/Keldos-Li/typora-latex-theme/wiki) | [个性化设置](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE) | [贡献指南](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97) | [技术细节](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82) | [常见问题](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)  
 
 本项目的初衷是为了简化中国大陆本科生**小型通识课论文**（或**小型实验报告**）撰写的负担。这里基本采用了浙江大学要求的格式（字体较小，页边距较小），但大部分同学都可以自行在 CSS 中修改适合自己学校的格式。  
 
-Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出媲美卷王由 LaTeX 排版的精美论文与报告。本项目支持 Windows, macOS 和 Linux 三大平台的 Typora.  
+Markdown 的轻量化特性，使您可以专注于论文内容而不用担心格式。书写时仅通过简单的标记，并通过替换样例模板中的个人信息，您就可以输出类 LaTeX 排版的精美论文与报告。本项目支持 Windows ，macOS 和 Linux 三大平台的 Typora 。
 
 <a href="https://github.com/Keldos-Li/typora-latex-theme/releases">![GitHub downloads](https://img.shields.io/github/downloads/Keldos-Li/typora-latex-theme/total?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAAAAXNSR0IArs4c6QAAAX1JREFUOE/llLEuBGEUhb+zIaHR8gYapUQUig1RaEg0Wo3GC4hOoaDXKVQ6UXgAoVGIaBRGYiMSXkBDMEf+mdmZf3bWegBTTe5/77nnnnv+Xwz4bE8AF5ImB+XpD5Ap4OQ/gtjeABaA4aCRgUKsb2Ab2CujxWEK7y04lnQm2zuYtW5VLnQJcydp1XYSI0c5IXE3gFwDY7XiikoFUq7RGMU9b+XUSYhEI8T/OUickyXG2XSU2kkeizv8Pk6FUeZ0ZKdJRc98o60h6dT2jeGp1dUEXiW1be8Dy5FJA4iTumuzDvPAC3AqacX2laRZ27PAUY/L+4xTjbuIeFYuAP70HEMcVsfF+CZn0l9U84GWRqRH28FDB801Z5w6xXZqavdYhXNMu9xgv+00jBRvqlnQ26Bg0hW2UVCwi+MNwpkumSb3YMUu/Buv5trHAHIJjAfPxn4pr2CPmn3MdhVA1oGtX5Sv34fmM/gFbGY33vZ0CjMtGB30XMZnKby14FzSww+Jf/H06Zp5zAAAAABJRU5ErkJggg==)</a>
 <a href="https://github.com/Keldos-Li/typora-latex-theme/releases/latest">![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Keldos-Li/typora-latex-theme?include_prereleases&color=green&logo=hack-the-box)</a>
@@ -85,13 +85,13 @@ $$
 $$
 ```
 
-## 安装与使用
+## 下载与安装
 
-**请完整阅读以下安装过程，以确保一切符合预期。**  
+**请完整阅读以下过程，以确保一切符合预期。**  
 
-1. 安装本主题前，**请确保您已经安装 Typora**. 如果您不清楚 Typora 是什么，这里有[一段介绍](#什么是-typora)。如果您对 markdown 的语法还不了解，您可以从这里[获得帮助](#什么是-markdown)。
+1. 安装本主题前，**请确保您已经安装 Typora** 。如果您不清楚 Typora 是什么，这里有[一段介绍](#什么是-typora)。如果您对 markdown 的语法还不了解，您可以从这里[获得帮助](#什么是-markdown)。
 
-2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，然后下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip`. 
+2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，然后下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip` 。 
 
 3. 解压缩这个文件，并进入解压缩后的文件夹。按照[在线安装教程](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)或该文件夹下 `README.md` 中的安装教程**完成剩余的安装步骤**。请务必确认您完成了下面的步骤：
      - [进行手动或自动主题安装](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85)
