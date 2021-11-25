@@ -89,7 +89,7 @@ $$
 
 **请完整阅读以下过程，以确保一切符合预期。**  
 
-1. 安装本主题前，**请确保您已经安装 [Typora](https://typora.io/)**（一个支持实时预览的 markdown 编辑器，[下载](https://typora.io/)）。如果您对 markdown 的语法还不了解，您可以从这里[获得帮助](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98#%E4%BB%80%E4%B9%88%E6%98%AF-markdown)。
+1. 安装本主题前，**请确保您已经安装 [Typora](https://typora.io/)**（一个支持实时预览的 markdown 编辑器，[下载](https://typora.io/#download)）。如果您对 markdown 的语法还不了解，您可以从这里[获得帮助](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98#%E4%BB%80%E4%B9%88%E6%98%AF-markdown)。
 
 2. 前往本项目的 [release](https://github.com/Keldos-Li/typora-latex-theme/releases) 页面，下载适合您操作系统的最新版本压缩包。比如，如果您在使用 Windows 操作系统，您就应该下载 `latex-theme-windows.zip`。 
 
