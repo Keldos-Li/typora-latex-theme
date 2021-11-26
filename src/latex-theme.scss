@@ -49,21 +49,18 @@
     $chapter-Chinese-font: "华文黑体" !global;
     $sub-chapter-Chinese-font: "华文楷体" !global;
     $sub-sub-chapter-Chinese-font: "华文仿宋" !global;
-    $base-Chinese-font: "华文宋体" !global;
   } @else if $os == "macos" {
     $ui-font: "\"苹方-简\"" !global;
     $heading-Chinese-font: "华文黑体Bold" !global;
     $chapter-Chinese-font: "方正公文黑体" !global;
     $sub-chapter-Chinese-font: "方正公文楷体" !global;
     $sub-sub-chapter-Chinese-font: "方正公文仿宋" !global;
-    $base-Chinese-font: "宋体-简" !global;
   } @else if $os == "linux" {
     $ui-font: "\"Noto Sans CJK SC\"" !global;
     $heading-Chinese-font: "Noto Sans CJK SC" !global;
     $chapter-Chinese-font: "Noto Sans CJK SC" !global;
     $sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
     $sub-sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
-    $base-Chinese-font: "Noto Serif CJK SC" !global;
   }
 
   /* == 字体设置 == */
@@ -71,7 +68,7 @@
   /* 基准字体 */
   /* 备选：Times, "Times New Roman" */
   --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10";
-  --base-Chinese-font: "#{$base-Chinese-font}";
+  --base-Chinese-font: "宋体-简", "华文宋体", "Noto Serif CJK SC";
   --base-font-size: 9.5pt;
 
   /* 引言字体 */
