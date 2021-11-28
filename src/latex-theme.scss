@@ -271,6 +271,14 @@ strong {
     page-break-after: avoid !important;
   }
 
+  @if $tool == "joplin" {
+    h1,
+    h2 {
+      /* 去除一、二级标题的下划线 */
+      border-bottom: none;
+    }
+  }
+
   h1 {
     font-family: var(--heading-Latin-font), var(--title-Chinese-font),
       sans-serif;
