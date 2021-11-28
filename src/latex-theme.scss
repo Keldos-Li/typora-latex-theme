@@ -228,10 +228,10 @@ strong {
 
 %base {
   font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
-  //@if $tool != "joplin" {
-    //统一设置字体大小会导致 Joplin 公式显示异常，需要各自设置
-    //font-size: var(--base-font-size);
-  //}
+  @if $tool != "joplin" {
+    //统一设置字体大小会导致 Joplin 公式显示异常，在 Joplin 里需要各自设置
+    font-size: var(--base-font-size);
+  }
   /* A4标准宽度 */
   max-width: 21cm;
   @if $theme == "light" {
@@ -247,9 +247,11 @@ strong {
   /* 这里可以试分栏的，但确实不适合实现 */
 
   p {
-    /* Joplin 编辑时不支持段首空格，需要在这里设置 */
-    /*text-indent: 2em;*/
-    font-size: var(--base-font-size);
+    @if $tool == "joplin" {
+      /* Joplin 编辑时不支持段首空格，若需要可在这里设置 */
+      /*text-indent: 2em;*/
+      font-size: var(--base-font-size);
+    }
     text-align: left;
   }
 

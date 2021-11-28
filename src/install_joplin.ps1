@@ -8,7 +8,7 @@ Write-Output "正在寻找 Joplin 主题文件夹 $dir"
 If (Test-Path -Path $dir -PathType Container) {
     Write-Output "已找到该文件夹"
 } Else {
-    $MessageBody = "未找到 Joplin 主题文件夹，请先安装 Typora"
+    $MessageBody = "未找到 Joplin 主题文件夹，请先安装 Joplin"
     $ButtonType = [System.Windows.MessageBoxButton]::OK
     $MessageIcon = [System.Windows.MessageBoxImage]::Error
     $MessageTitle = "安装失败"
@@ -18,7 +18,7 @@ If (Test-Path -Path $dir -PathType Container) {
 }
 
 Try {
-    Copy-Item -Path ".\target\*.css" -Destination "$dir\userstyle.css" -Recurse -Force -ErrorAction Stop
+    Copy-Item -Path ".\target\latex.css" -Destination "$dir\userstyle.css" -Recurse -Force -ErrorAction Stop
 } Catch {
     $MessageBody = $_.Exception.Message
     $ButtonType = [System.Windows.MessageBoxButton]::OK
