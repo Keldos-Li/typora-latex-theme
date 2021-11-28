@@ -7,6 +7,7 @@ macos = macos
 linux = linux
 typora = typora
 pandoc = pandoc
+joplin = joplin
 
 $(shell mkdir -p $(working_dir))
 $(shell mkdir -p $(target_dir))
@@ -46,12 +47,20 @@ define build-pandoc
 	$(call build,$(linux),$(pandoc),dark)
 endef
 
+define build-joplin
+	$(call build,$(1),$(joplin),light)
+	if [ "$(1)" = "$(windows)" ]; then \
+		cp $(base_dir)/install_joplin.ps1 $(target_dir)/$(1)-$(joplin); \
+	fi;
+endef
+
 .PHONY: all
 all:
 	make windows
 	make macos
 	make linux
 	make pandoc
+	make joplin
 
 .PHONY: all-and-compress
 all-and-compress:
@@ -76,6 +85,12 @@ linux:
 .PHONY: pandoc
 pandoc:
 	$(call build-pandoc,$(linux))
+
+.PHONY: joplin
+joplin:
+	$(call build-joplin,$(windows))
+	$(call build-joplin,$(linux))
+	$(call build-joplin,$(macos))
 
 .PHONY: clean
 clean:
