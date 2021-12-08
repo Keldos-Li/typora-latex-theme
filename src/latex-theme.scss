@@ -194,6 +194,11 @@ strong {
 }
 
 @media print {
+  @if $tool == "joplin" {
+    .exported-note-title {
+      display: none !important;
+    }
+  }
   #write {
     padding: 0 !important;
   }
@@ -215,11 +220,18 @@ strong {
   body {
     @extend %base;
   }
+} @else if $tool == "joplin" {
+  body {
+    @extend %base;
+  }
 }
 
 %base {
   font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
-  font-size: var(--base-font-size);
+  @if $tool != "joplin" {
+    //统一设置字体大小会导致 Joplin 公式显示异常，在 Joplin 里需要各自设置
+    font-size: var(--base-font-size);
+  }
   /* A4标准宽度 */
   max-width: 21cm;
   @if $theme == "light" {
@@ -235,6 +247,11 @@ strong {
   /* 这里可以试分栏的，但确实不适合实现 */
 
   p {
+    @if $tool == "joplin" {
+      /* Joplin 编辑时不支持段首空格，若需要可在这里设置 */
+      /*text-indent: 2em;*/
+      font-size: var(--base-font-size);
+    }
     text-align: left;
   }
 
@@ -254,6 +271,14 @@ strong {
     font-family: var(--heading-Latin-font), var(--heading-Chinese-font),
       sans-serif;
     page-break-after: avoid !important;
+  }
+
+  @if $tool == "joplin" {
+    h1,
+    h2 {
+      /* 去除一、二级标题的下划线 */
+      border-bottom: none;
+    }
   }
 
   h1 {
@@ -298,9 +323,14 @@ strong {
     border-top: 1.2pt solid;
     /* 三线表第二条线宽度 */
     border-bottom: 1.2pt solid;
+    @if $tool == "joplin" {
+      //去除左右边界线
+      border-left: none;
+      border-right: none;
+    }
     font-family: var(--table-font), var(--base-Latin-font),
       var(--base-Chinese-font), serif;
-    /* font-size: var(--base-font-size); */
+    font-size: var(--base-font-size);
     text-align: center;
     page-break-inside: avoid;
     border-spacing: 6px;
@@ -310,15 +340,42 @@ strong {
     margin: 0 auto;
 
     td {
+      @if $tool == "joplin" {
+        font-family: inherit;
+        font-size: inherit;
+        text-align: inherit;
+        border: none;
+      }
       padding: 2px;
     }
 
     tr {
+      @if $tool == "joplin" {
+        font-family: inherit;
+        font-size: inherit;
+        text-align: inherit;
+        border: none;
+        background: none;
+      }
       padding: 2px;
+    }
+
+    @if $tool == "joplin" {
+      /* 去除第2n行默认的背景颜色 */
+      tr:nth-child(2n) {
+        background: none;
+      }
     }
   }
 
   th {
+    @if $tool == "joplin" {
+      font-family: var(--table-font), var(--base-Latin-font),
+        var(--base-Chinese-font), serif;
+      font-size: var(--base-font-size);
+      text-align: center;
+      border: none;
+    }
     padding: 0px 6px;
   }
 
@@ -326,9 +383,13 @@ strong {
     /* 表格标题（首行）样式 */
     /* 三线表表头的线 */
     border-bottom: 0.5pt solid;
+    @if $tool == "joplin" {
+      font-size: var(--base-font-size);
+      background: none;
+      /* 去除背景颜色 */
+    }
     font-family: var(--table-title-font), var(--heading-Latin-font),
       var(--heading-Chinese-font), serif !important;
-    /* font-size: var(--base-font-size); */
     font-weight: var(--strong-weight);
   }
 
@@ -435,6 +496,9 @@ img {
 
 /* ============ 多级列表样式 ============ */
 ul {
+  @if $tool == "joplin" {
+    font-size: var(--base-font-size);
+  }
   /* 无序列表第一级：实心圆点 */
   list-style: disc;
   ul {
@@ -451,6 +515,9 @@ ul {
 }
 
 ol {
+  @if $tool == "joplin" {
+    font-size: var(--base-font-size);
+  }
   /* 有序列表第一级：数字 */
   list-style: decimal;
 
