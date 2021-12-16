@@ -13,6 +13,8 @@ Markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=IB2QSpQSSOQIDZfN74ujqx1aVtQtdtXF&jump_from=webapi">
 ![QQ群](https://img.shields.io/badge/QQ群-643187070-89AED1?logo=Tencent-QQ)</a>
 
+
+
 ## 预览
 
 较完整的论文预览见[此处](https://blog.keldos.me/2021/05/md-latex-template/)；如果 GitHub 中的图像加载失败，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。另外，请注意链接内博客的更新时间，博文的内容很可能滞后于该项目目前所能提供的特性。
@@ -85,6 +87,8 @@ $$
 $$
 ```
 
+
+
 ## 下载与安装
 
 **请完整阅读以下过程，以确保一切符合预期。**  
@@ -96,6 +100,13 @@ $$
 3. 解压缩这个文件，进入解压缩后的文件夹。按照[在线安装教程](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B)或该文件夹下 `README.md` 中的安装教程**完成剩余的安装步骤**。请务必确认您完成了下面的步骤：
      - [进行手动或自动主题安装](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85)
      - [下载并安装所需的字体](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93)
+
+
+
+## 贡献
+如果您在使用过程中遇到了问题，或是想要增加新功能，您都可以根据我们[贡献指南](https://github.com/Keldos-Li/typora-latex-theme/wiki/%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97)中描述的步骤与社区进行交流。这个过程非常快捷，您只需要输入您的想法，点击提交即可。我们欢迎任何形式的贡献，且您在近 30 天内贡献的每一个议题、拉取请求和提交都会被记录在下面的图表中：  
+
+![过去三十天内的贡献情况](https://repobeats.axiom.co/api/embed/a2eedfc72977df20b8babfa28022be191cf8f7ad.svg "Repobeats analytics image")
 
 
 
