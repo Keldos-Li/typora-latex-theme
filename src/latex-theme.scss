@@ -505,6 +505,10 @@ li {
 /* ============ 多级列表样式END ============ */
 
 /* 行内代码 */
+code {
+  font-family: var(--code-font), var(--ui-font), monospace; 
+}
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code,
 p code,
 li code {
   @if $theme == "light" {
