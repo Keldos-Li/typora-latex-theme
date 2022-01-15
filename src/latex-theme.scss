@@ -589,6 +589,21 @@ h6.md-focus.md-heading:before {
   @extend %h6-with-count;
 }
 
+// 参考文献块
+.footnotes-area {
+  /* 把参考资料块的文字大小和文字颜色与正文统一 */
+  .footnote-line {
+    color: var(--text-color);
+    font-size: var(--base-font-size);
+  }
+
+  /* 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉 */
+  hr {
+    border: 0;
+    color: #00000000;
+  }
+}
+
 /* 目录 */
 .md-toc-content {
   margin-left: 2em;
