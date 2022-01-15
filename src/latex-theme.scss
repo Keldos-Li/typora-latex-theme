@@ -406,18 +406,11 @@ blockquote {
   font-family: var(--quote-font), var(--base-Latin-font),
     var(--base-Chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
-  border-left: 3px solid grey;
   /* 文字离左边框的距离 */
   padding-left: 16px;
   padding-right: 20pt;
   /* 左边框离页面边的距离 */
   margin-left: 20px;
-  @if $theme == "light" {
-    color: grey;
-  } @else if $theme == "dark" {
-    /* 文字颜色 */
-    color: #bfbfbf;
-  }
 }
 
 hr {
@@ -591,13 +584,13 @@ h6.md-focus.md-heading:before {
 
 // 参考文献块
 .footnotes-area {
-  /* 把参考资料块的文字大小和文字颜色与正文统一 */
   .footnote-line {
+    // 把参考资料块的文字大小和文字颜色与正文统一
     color: var(--text-color);
     font-size: var(--base-font-size);
   }
 
-  /* 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉 */
+  // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉
   hr {
     border: 0;
     color: #00000000;
@@ -614,7 +607,7 @@ h6.md-focus.md-heading:before {
 .md-toc-inner {
   margin-left: 0 !important;
   @if $theme == "light" {
-    color: var(--text-color) !important;  // var(--text-color) 被 Typora 定义
+    color: var(--text-color) !important;
   } @else if $theme == "dark" {
     color: #dddddd !important;
   }
