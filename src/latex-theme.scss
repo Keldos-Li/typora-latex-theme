@@ -614,14 +614,14 @@ h6.md-focus.md-heading:before {
 .md-toc-inner {
   margin-left: 0 !important;
   @if $theme == "light" {
-    color: black !important;
+    color: var(--text-color) !important;  // var(--text-color) 被 Typora 定义
   } @else if $theme == "dark" {
     color: #dddddd !important;
   }
 }
 .md-toc-item {
   @if $theme == "light" {
-    color: black !important;
+    color: var(--text-color) !important;
   } @else if $theme == "dark" {
     color: #dddddd !important;
   }
