@@ -102,5 +102,5 @@ $$
 
 [TOC]
 
-[^1]: 从 https://en.wikipedia.org/wiki/Lorem_ipsum *Forke*得到
+[^1]: 从 https://en.wikipedia.org/wiki/Lorem_ipsum 整理得到
 
