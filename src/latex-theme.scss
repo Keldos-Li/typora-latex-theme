@@ -100,8 +100,17 @@
   --table-font: "";
 
   /* 标题字体（总设置） */
-  --heading-Latin-font: var(--base-Latin-font);
-  --heading-Chinese-font: "#{$heading-Chinese-font}";
+  @if $os == "macos" {
+    /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
+    --heading-Latin-font: "LMRoman10-Bold";
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  } @else if $os == "windows" {
+    --heading-Latin-font: var(--base-Latin-font);
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  } @else if $os == "linux" {
+    --heading-Latin-font: var(--base-Latin-font);
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  }
 
   /* 标题字体分别设置 */
   /* 大标题（h1）字体 */
@@ -246,7 +255,7 @@ strong {
   h5,
   h6 {
     @if $os == "windows" {
-      font-weight: bold; // 对 Windows 的修改
+      font-weight: bold; 
     } @else if $os == "macos" {
       font-weight: normal;
     }
