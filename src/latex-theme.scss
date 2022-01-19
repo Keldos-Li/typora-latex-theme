@@ -100,8 +100,17 @@
   --table-font: "";
 
   /* 标题字体（总设置） */
-  --heading-Latin-font: var(--base-Latin-font);
-  --heading-Chinese-font: "#{$heading-Chinese-font}";
+  @if $os == "macos" {
+    /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
+    --heading-Latin-font: "LMRoman10-Bold";
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  } @else if $os == "windows" {
+    --heading-Latin-font: var(--base-Latin-font);
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  } @else if $os == "linux" {
+    --heading-Latin-font: var(--base-Latin-font);
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  }
 
   /* 标题字体分别设置 */
   /* 大标题（h1）字体 */
@@ -138,6 +147,11 @@
   /* 目录中是否显示一级标题 */
   --toc-show-title: none;
 
+  /* == 颜色设置 == */
+  /* 超链接颜色 */
+  --link-color-light: #2E67D3;
+  --link-color-dark: #8bb1f9;
+
   @if $theme == "dark" {
     --md-char-color: hsl(212, 100%, 85%);
     --link-hover: hsl(212, 100%, 85%);
@@ -159,15 +173,28 @@
   }
 }
 
+/* ========== VERY IMPORTANT 请注意看下面的几行: ================
+   如果您需要在输出PDF时隐藏超链接的颜色和下划线，请取消注释下面的代码块，即删去下面的 Ln.1 和 Ln.2
+   如果您需要在输出PDF时保持超链接的显示效果，则不用更改 ============= */
+/* 如要取消注释代码，请把本行删去 Ln.1
+
+@media print {
+  #write a {
+    color: inherit !important;
+    text-decoration: none;
+  } 
+}
+
+如要取消注释代码，请把本行删去 Ln.2 */
+// 因为 CSS 没有一般的布尔变量可以使用，所以采用这种笨办法，如果有其他开关方法可以选用请 pull request, 谢谢
+
 body {
   padding: 0 !important;
   margin: 0 !important;
   line-height: var(--base-line-height);
-  /*counter-reset: tableHead 0 imgHead 0;*/
+  /* counter-reset: tableHead 0 imgHead 0; */
   @if $theme == "dark" {
-    /* 黑色模式修改 */
     color: #dddddd;
-    /* 黑色模式修改 */
     background-color: #282828;
     // background:url(mermaidAPI.initialize({'fontFamily': '宋体-简, serif;'}););
   }
@@ -182,11 +209,11 @@ strong {
     padding: var(--set-margin);
     @if $theme == "light" {
       /* 添加一个淡蓝色的边框 */
-      /*border: 0.8px solid #AAC ; */
+      /* border: 0.8px solid #AAC ; */
       /* 页边阴影 */
       box-shadow: 0 0 24px 12px #cccccc;
     } @else if $theme == "dark" {
-      /*border: 1px solid #AAAAAA ;*/
+      /* border: 1px solid #AAAAAA ;*/
       /* 页边阴影 */
       box-shadow: 0 0 24px 12px #101010;
     }
@@ -196,10 +223,6 @@ strong {
 @media print {
   #write {
     padding: 0 !important;
-  }
-  #write a {
-    color: inherit;
-    text-decoration: none;
   }
   @page {
     margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距 */
@@ -225,7 +248,6 @@ strong {
   @if $theme == "light" {
     background-color: white;
   } @else if $theme == "dark" {
-    /* 黑色模式修改 */
     background-color: #1e1e1e;
   }
   /* column-count: 2;
@@ -238,6 +260,17 @@ strong {
     text-align: left;
   }
 
+  // 超链接
+  @if $theme == "light" {
+    a {
+      color: var(--link-color-light);
+    }
+  } @else if $theme == "dark" {
+    a {
+      color: var(--link-color-dark);
+    }
+  }
+  
   // 标题属性
   h1,
   h2,
@@ -246,7 +279,7 @@ strong {
   h5,
   h6 {
     @if $os == "windows" {
-      font-weight: bold; // 对 Windows 的修改
+      font-weight: bold; 
     } @else if $os == "macos" {
       font-weight: normal;
     }
@@ -432,13 +465,14 @@ ul {
   list-style: disc;
   ul {
     /*list-style: circle;*/
-    /* 直接用空格代替一部分缩进的调整了我真懒 */
+    /* 请勿删除“–”后的空格, 他们对缩进有一定影响, 下同 */
+    //FIXME 如果您可以改成没有空格，而仅用缩进控制的样式会更好
     list-style: "–　 ";
-    /*left: -0.8em;*/
+    /*left: -0.8rem;*/
     ul {
       /* 无序列表第三极：小圈 */
-      list-style: "◦　  ";
-      left: 0.6em;
+      list-style: "◦　";
+      left: 0.1rem;
     }
   }
 }
@@ -461,7 +495,7 @@ ol {
       content: "(" counter(liist, lower-alpha) ")　　";
       position: absolute;
       margin-right: 2rem;
-      left: -2.4em;
+      left: -2.4rem;
     }
 
     ol {
@@ -476,16 +510,15 @@ ol {
 
       li::before {
         /* 有序列表第三级：小写罗马数字 */
-        // FIXME 这里要改
-        content: counter(liiist, lower-roman) ".　　　";
+        content: counter(liiist, lower-roman) ".　　";
         align-self: flex-end;
         position: absolute;
-        left: -2.4em;
+        left: -3rem;
         /* -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;*/
         /* 为了让项目编号是重新用句点对齐而不是左对齐 */
-        width: 4em;
+        width: 4.2rem;
         text-align: right;
       }
     }
@@ -773,8 +806,7 @@ h6.md-focus:before {
 @if $theme == "dark" {
   /* Modifications for dark-mode */
 
-  /* ====================我加的================== */
-  /*
+  /* 可能的代码高亮样式
   .cm-s-inner {
     background-color: #263238;
     color: rgba(233, 237, 237);
@@ -985,11 +1017,6 @@ h6.md-focus:before {
   .md-rawblock:hover > .md-rawblock-tooltip {
     transition: none;
     animation: none;
-  }
-
-  /*  更改URL超链接颜色，最初的颜色不易查看 */
-  span > a {
-    color: #8bb1f9;
   }
 
   /* quick open框  （e.g. 插入代码后弹出的语言候选框） */
