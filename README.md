@@ -19,22 +19,22 @@ Markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 
 ### 封面，摘要和关键词
 
-| ![sample-essay_1](https://gitee.com/Keldos-Li/picture/raw/master/img/sample-essay_1.png)|![sample-essay_2](https://gitee.com/Keldos-Li/picture/raw/master/img/sample-essay_2.png)|
+| ![sample-essay_1](./Supplemental/images/sample-essay_1.png)|![sample-essay_2](./Supplemental/images/sample-essay_2.png)|
 | :----: | :----: |
 
 ### 预览与编写
 
-| ![preview-l](https://gitee.com/Keldos-Li/picture/raw/master/img/preview-l.png)|![preview-d](https://gitee.com/Keldos-Li/picture/raw/master/img/preview-d.png)|
+| ![preview-l](./Supplemental/images/preview-l.png)|![preview-d](./Supplemental/images/preview-d.png)|
 | :----: | :----: |
-| ![edit-l](https://gitee.com/Keldos-Li/picture/raw/master/img/edit-l.png)|![edit-d](https://gitee.com/Keldos-Li/picture/raw/master/img/edit-d.png)|
+| ![edit-l](./Supplemental/images/edit-l.png)|![edit-d](./Supplemental/images/edit-d.png)|
 
 #### 层级标题 
 
-|![heading-l](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-l.png)|![heading-d](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-d.png)|
+|![heading-l](./Supplemental/images/heading-l.png)|![heading-d](./Supplemental/images/heading-d.png)|
 | :----: | :----: |
 
 #### 表格 
-|![table-l](https://gitee.com/Keldos-Li/picture/raw/master/img/table-l.png)|![table-d](https://gitee.com/Keldos-Li/picture/raw/master/img/table-d.png)|
+|![table-l](./Supplemental/images/table-l.png)|![table-d](./Supplemental/images/table-d.png)|
 | :----: | :----: |
 
 ```markdown
@@ -49,15 +49,15 @@ Markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 ```
 
 #### 项目列表
-|![item-l](https://gitee.com/Keldos-Li/picture/raw/master/img/item-l.png)|![item-d](https://gitee.com/Keldos-Li/picture/raw/master/img/item-d.png)|
+|![item-l](./Supplemental/images/item-l.png)|![item-d](./Supplemental/images/item-d.png)|
 | :----: | :----: |
 
 #### 代码块 
-|![code-l](https://gitee.com/Keldos-Li/picture/raw/master/img/code-l.png)|![code-d](https://gitee.com/Keldos-Li/picture/raw/master/img/code-d.png)|
+|![code-l](./Supplemental/images/code-l.png)|![code-d](./Supplemental/images/code-d.png)|
 | :----: | :----: |
 
 #### Mermaid
-|![mermaid-l](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-l.png)|![mermaid-d](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-d.png)|
+|![mermaid-l](./Supplemental/images/mermaid-l.png)|![mermaid-d](./Supplemental/images/mermaid-d.png)|
 | :----: | :----: |
 
 ```markdown
@@ -74,7 +74,7 @@ if --->|no| f2["a, b = b, a % b "]-->if
 
 #### 公式
 
-|![equation-l](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-l.png)|![equation-d](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-d.png)|
+|![equation-l](./Supplemental/images/equation-l.png)|![equation-d](./Supplemental/images/equation-d.png)|
 | :----: | :----: |
 
 ```latex
