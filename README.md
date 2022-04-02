@@ -19,22 +19,22 @@ Markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 
 ### 封面，摘要和关键词
 
-| ![sample-essay_1](https://gitee.com/Keldos-Li/picture/raw/master/img/sample-essay_1.png)|![sample-essay_2](https://gitee.com/Keldos-Li/picture/raw/master/img/sample-essay_2.png)|
+| ![sample-essay_1](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/sample-essay_1.png)|![sample-essay_2](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/sample-essay_2.png)|
 | :----: | :----: |
 
 ### 预览与编写
 
-| ![preview-l](https://gitee.com/Keldos-Li/picture/raw/master/img/preview-l.png)|![preview-d](https://gitee.com/Keldos-Li/picture/raw/master/img/preview-d.png)|
+| ![preview-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/preview-l.png)|![preview-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/preview-d.png)|
 | :----: | :----: |
-| ![edit-l](https://gitee.com/Keldos-Li/picture/raw/master/img/edit-l.png)|![edit-d](https://gitee.com/Keldos-Li/picture/raw/master/img/edit-d.png)|
+| ![edit-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/edit-l.png)|![edit-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/edit-d.png)|
 
 #### 层级标题 
 
-|![heading-l](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-l.png)|![heading-d](https://gitee.com/Keldos-Li/picture/raw/master/img/heading-d.png)|
+|![heading-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/heading-l.png)|![heading-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/heading-d.png)|
 | :----: | :----: |
 
 #### 表格 
-|![table-l](https://gitee.com/Keldos-Li/picture/raw/master/img/table-l.png)|![table-d](https://gitee.com/Keldos-Li/picture/raw/master/img/table-d.png)|
+|![table-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/table-l.png)|![table-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/table-d.png)|
 | :----: | :----: |
 
 ```markdown
@@ -49,15 +49,15 @@ Markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 ```
 
 #### 项目列表
-|![item-l](https://gitee.com/Keldos-Li/picture/raw/master/img/item-l.png)|![item-d](https://gitee.com/Keldos-Li/picture/raw/master/img/item-d.png)|
+|![item-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/item-l.png)|![item-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/item-d.png)|
 | :----: | :----: |
 
 #### 代码块 
-|![code-l](https://gitee.com/Keldos-Li/picture/raw/master/img/code-l.png)|![code-d](https://gitee.com/Keldos-Li/picture/raw/master/img/code-d.png)|
+|![code-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/code-l.png)|![code-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/code-d.png)|
 | :----: | :----: |
 
 #### Mermaid
-|![mermaid-l](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-l.png)|![mermaid-d](https://gitee.com/Keldos-Li/picture/raw/master/img/mermaid-d.png)|
+|![mermaid-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/mermaid-l.png)|![mermaid-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/mermaid-d.png)|
 | :----: | :----: |
 
 ```markdown
@@ -74,7 +74,7 @@ if --->|no| f2["a, b = b, a % b "]-->if
 
 #### 公式
 
-|![equation-l](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-l.png)|![equation-d](https://gitee.com/Keldos-Li/picture/raw/master/img/equation-d.png)|
+|![equation-l](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/equation-l.png)|![equation-d](https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/equation-d.png)|
 | :----: | :----: |
 
 ```latex
