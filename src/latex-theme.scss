@@ -93,6 +93,9 @@
   /* 默认调用 base-font-size */
   --toc-font-size: "";
 
+  /* 公式字体 */
+  --math-font-size: 1em;
+
   /* 表格字体 */
   /* 默认调用 heading-font */
   --table-title-font: "";
@@ -270,7 +273,7 @@ strong {
       color: var(--link-color-dark);
     }
   }
-  
+
   // 标题属性
   h1,
   h2,
@@ -557,6 +560,11 @@ li code {
   padding: 0 2px 0 2px;
   /* 圆角 */
   border-radius: 2px 2px 2px 2px;
+}
+
+// 公式
+.MathJax {
+  font-size: var(--math-font-size);
 }
 
 /* typora 编写模式 */
