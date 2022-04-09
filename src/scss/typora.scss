@@ -14,6 +14,11 @@
   }
 }
 
+// 公式
+.MathJax {
+  font-size: var(--math-font-size);
+}
+
 /* typora 编写模式 */
 #typora-source {
   @if $theme == "dark" {
