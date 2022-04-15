@@ -1,0 +1,79 @@
+$os: "windows";
+$theme: "light";
+$tool: "typora";
+// 基准字体
+$ui-font: "Source Han Sans CN" !global;
+$base-English-font: "Times New Roman";
+$base-Chinese-font: "Source Han Serif CN";
+$base-font-size: 9.5pt;
+$base-heading-font: "Source Han Sans CN" !global; // 总标题字体
+$base-chapter-Chinese-font: "Source Han Sans CN" !global; // 小标题字体
+$base-line-height: 20pt; // 基础行距
+
+// 正文设置
+$main-text-font: $base-English-font, $base-Chinese-font;
+$main-text-font-size: 12pt;
+$main-text-margin-top: 1rem;
+$main-text-margin-bottom: 1rem;
+$main-text-line-height: $base-line-height;
+
+// 引言设置
+$quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times,
+    "Times New Roman", "华文仿宋";
+$quote-font-size: 10pt; // 这里字体用了10pt,比正文字体稍大
+
+// 代码设置
+$code-font: "Cascadia Mono";
+$code-font-line-height: 16pt;
+
+// source mode 设置
+$sourceMode-font: "Fira Code", $ui-font;
+
+// 目录字体
+$toc-font: $main-text-font;
+$toc-font-size: ""; // 默认调用 base-font-size
+
+// 表格设置(三线表)
+$table-title-font: $main-text-font;
+$table-title-font-size: 10.5pt;
+$table-font: $main-text-font;
+$table-margin-top: 0px;
+$table-margin-bottom: 1rem;
+
+// 标题字体分别设置
+$heading-Chinese-font: $base-heading-font;
+$title-margin-right: 1rem; // 编号右边的空白大小
+// 大标题, 即文章总标题
+$title-Chinese-font: $base-heading-font;
+$title-font-size: 22pt;
+// h2, 一级标题
+$h2-Chinese-font: $base-heading-font;
+$h2-font-size: 18pt;
+// h3, 二级标题
+$h3-Chinese-font: $base-heading-font;
+$h3-font-size: 15pt;
+// h4, 三级标题
+$h4-Chinese-font: $base-heading-font;
+$h4-font-size: 14pt;
+// h5, 四级标题
+$h5-Chinese-font: $base-heading-font;
+$h5-font-size: 10pt;
+// h6, 五级标题
+$h6-Chinese-font: $base-heading-font;
+$h6-font-size: 9.5pt;
+
+// 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy
+$strong-weight: 900;
+
+// 引用样式设置
+$references-font-size: $base-font-size;
+
+// == 页面设置 ==
+$screen-margin: 2cm 2cm 2cm 2cm !important; // typora中展示的页边距
+$print-margin: 2cm 2cm 2cm 2cm !important; // 打印的页边距
+// == 控制设置 ==
+$toc-show-title: none; // 目录中是否显示一级标题
+// == 颜色设置 ==
+// 超链接颜色
+$link-color-light: #2e67d3;
+$link-color-dark: #8bb1f9;

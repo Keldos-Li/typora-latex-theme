@@ -1,0 +1,51 @@
+#write {
+    font-family: $main-text-font;
+    font-size: $main-text-font-size;
+    /* A4标准宽度 */
+    max-width: 21cm;
+    @if $theme == "light" {
+        background-color: white;
+    } @else if $theme == "dark" {
+        background-color: #1e1e1e;
+    }
+    /* column-count: 2;
+    column-gap: 25px;
+    column-width: 8cm; 
+    display: inline-block; */
+    /* 这里可以试分栏的，但确实不适合实现 */
+
+    p {
+        text-align: left;
+        line-height: $main-text-line-height; // 行距
+        margin-top: $main-text-margin-top; // 段前距
+        margin-bottom: $main-text-margin-bottom; // 段后距
+    }
+
+    // 超链接
+    @if $theme == "light" {
+        a {
+            color: $link-color-light;
+        }
+    } @else if $theme == "dark" {
+        a {
+            color: $link-color-dark;
+        }
+    }
+}
+
+hr {
+    @if $theme == "light" {
+        border-top: solid 0.7px #eee;
+    } @else if $theme == "dark" {
+        border-top: solid 0.7px #888888;
+    }
+}
+
+img {
+    /* 避免图片在导出时被断开 */
+    page-break-inside: avoid;
+}
+
+strong {
+    font-weight: $strong-weight;
+}

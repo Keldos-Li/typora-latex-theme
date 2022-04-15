@@ -1,5 +1,4 @@
-Fonts/
-**/build/
-**/.sass-cache/
-**/latex-theme/
-**/.DS_Store
+latex-theme.scss
+node_modules/
+dist/
+*.pdf

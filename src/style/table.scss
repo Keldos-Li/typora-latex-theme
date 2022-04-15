@@ -1,0 +1,43 @@
+#write {
+    .md-table-fig {
+        margin-top: $table-margin-top;
+        margin-bottom: $table-margin-bottom;
+    }
+    // 三线表
+    table {
+        margin: 100px auto;
+        /* 三线表第一条线宽度 */
+        border-top: 1.2pt solid;
+        /* 三线表第二条线宽度 */
+        border-bottom: 1.2pt solid;
+        font-family: $table-font;
+        font-size: $table-title-font-size;
+        text-align: center;
+        page-break-inside: avoid;
+        border-spacing: 6px;
+        /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
+        width: auto;
+        /* 使表格默认居中；虽然这个代码不好，但好像没别的实现办法 */
+        margin: 0 auto;
+
+        td {
+            padding: 2px;
+        }
+
+        tr {
+            padding: 2px;
+        }
+    }
+
+    th {
+        padding: 0px 6px;
+    }
+
+    thead {
+        /* 表格标题（首行）样式 */
+        /* 三线表表头的线 */
+        border-bottom: 0.5pt solid;
+        font-family: $table-title-font !important;
+        font-weight: $strong-weight;
+    }
+}
