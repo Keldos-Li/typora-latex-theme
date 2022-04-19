@@ -6,40 +6,45 @@
     h4,
     h5,
     h6 {
-        font-weight: bold;
+        font-weight: $title-font-weight;
         page-break-after: avoid !important;
     }
     h1 {
-        font-family: $title-Chinese-font;
-        font-weight: normal;
+        font-family: $title-font;
+        font-size: $title-font-size;
+        font-weight: $title-font-weight;
         text-align: center;
         column-span: all;
-        font-size: $title-font-size;
+        margin-top: $title-margin-top;
+        margin-bottom: $title-margin-bottom;
     }
     h2 {
-        font-family: $h2-Chinese-font;
+        font-family: $h2-font;
         font-size: $h2-font-size;
+        margin-top: $h2-margin-top;
+        margin-bottom: $h2-margin-bottom;
     }
     h3 {
-        font-family: $h3-Chinese-font;
+        font-family: $h3-font;
         font-size: $h3-font-size;
-        line-height: $h3-font-size;
+        line-height: $h3-font-size; // TODO 必要性待研究
+        margin-top: $h3-margin-top;
+        margin-bottom: $h3-margin-bottom;
     }
     h4 {
-        font-family: $h4-Chinese-font;
+        font-family: $h4-font;
         font-size: $h4-font-size;
         line-height: $h4-font-size;
     }
     h5 {
-        font-family: $h5-Chinese-font;
+        font-family: $h5-font;
         font-size: $h5-font-size;
         line-height: $h5-font-size;
     }
     h6 {
-        font-family: $h6-Chinese-font;
+        font-family: $h6-font;
         font-size: $h6-font-size;
-        /* 没有写错，为了避免行距太小才这么写 */
-        line-height: $h5-font-size;
+        line-height: $h6-font-size;
     }
 
     // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX

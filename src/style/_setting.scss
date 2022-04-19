@@ -9,64 +9,78 @@ $base-font-size: 9.5pt;
 $base-heading-font: "Source Han Sans CN" !global; // 总标题字体
 $base-chapter-Chinese-font: "Source Han Sans CN" !global; // 小标题字体
 $base-line-height: 20pt; // 基础行距
+$strong-weight: 900; // 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy
 
 // 正文设置
 $main-text-font: $base-English-font, $base-Chinese-font;
-$main-text-font-size: 12pt;
-$main-text-margin-top: 1rem;
-$main-text-margin-bottom: 1rem;
-$main-text-line-height: $base-line-height;
+$main-text-font-size: 12pt; // 字号
+$main-text-margin-top: 1rem; // 段前距
+$main-text-margin-bottom: 1rem; // 段后距
+$main-text-line-height: $base-line-height; // 行距
 
 // 引言设置
-$quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times,
-    "Times New Roman", "华文仿宋";
-$quote-font-size: 10pt; // 这里字体用了10pt,比正文字体稍大
+$quote-font: $main-text-font;
+$quote-font-size: 10pt; // 字号, 这里字体用了10pt,比正文字体稍大
+$quote-margin: 1rem 20pt 1rem 36px;
+$quote-text-line-height: $base-line-height; // 行距
 
 // 代码设置
 $code-font: "Cascadia Mono";
 $code-font-line-height: 16pt;
 
-// source mode 设置
-$sourceMode-font: "Fira Code", $ui-font;
-
-// 目录字体
+// 目录
+// 目录的各项之间没有段前段后距, 即margin
 $toc-font: $main-text-font;
-$toc-font-size: ""; // 默认调用 base-font-size
+$toc-h2-font-size: 1rem; // 一级标题字号
+$toc-h2-line-height: $base-line-height; // 一级标题行距
+$toc-font-size: $base-font-size; // 小标题字号
+$toc-line-height: $base-line-height; // 小标题行距
+
+// 图表的说明文字
+$caption-font: $main-text-font;
+$caption-font-size: $main-text-font-size;
 
 // 表格设置(三线表)
-$table-title-font: $main-text-font;
+$table-title-font: $main-text-font; // 三线表首行字体
 $table-title-font-size: 10.5pt;
-$table-font: $main-text-font;
+$table-font: $main-text-font; // 其他行字体
 $table-margin-top: 0px;
 $table-margin-bottom: 1rem;
 
-// 标题字体分别设置
-$heading-Chinese-font: $base-heading-font;
+// 标题设置
 $title-margin-right: 1rem; // 编号右边的空白大小
+$title-font-weight: $strong-weight; // 标题字重
 // 大标题, 即文章总标题
-$title-Chinese-font: $base-heading-font;
+$title-font: $base-heading-font;
 $title-font-size: 22pt;
+$title-font-weight: $strong-weight;
+$title-margin-top: 1rem;
+$title-margin-bottom: 1rem;
 // h2, 一级标题
-$h2-Chinese-font: $base-heading-font;
+$h2-font: $base-heading-font;
 $h2-font-size: 18pt;
+$h2-margin-top: 1rem;
+$h2-margin-bottom: 1rem;
 // h3, 二级标题
-$h3-Chinese-font: $base-heading-font;
+$h3-font: $base-heading-font;
 $h3-font-size: 15pt;
+$h3-margin-top: 1rem;
+$h3-margin-bottom: 1rem;
 // h4, 三级标题
-$h4-Chinese-font: $base-heading-font;
+$h4-font: $base-heading-font;
 $h4-font-size: 14pt;
 // h5, 四级标题
-$h5-Chinese-font: $base-heading-font;
+$h5-font: $base-heading-font;
 $h5-font-size: 10pt;
 // h6, 五级标题
-$h6-Chinese-font: $base-heading-font;
+$h6-font: $base-heading-font;
 $h6-font-size: 9.5pt;
 
-// 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy
-$strong-weight: 900;
-
 // 引用样式设置
-$references-font-size: $base-font-size;
+$references-font: $main-text-font;
+$references-font-size: $main-text-font-size;
+$references-margin-top: 1rem;
+$references-margin-bottom: 0px;
 
 // == 页面设置 ==
 $screen-margin: 2cm 2cm 2cm 2cm !important; // typora中展示的页边距
@@ -77,3 +91,5 @@ $toc-show-title: none; // 目录中是否显示一级标题
 // 超链接颜色
 $link-color-light: #2e67d3;
 $link-color-dark: #8bb1f9;
+// source mode 设置
+$sourceMode-font: $code-font, $main-text-font;

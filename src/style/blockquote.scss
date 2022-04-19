@@ -3,9 +3,5 @@ blockquote {
     font-style: normal;
     font-family: $quote-font;
     font-size: $quote-font-size;
-    /* 文字离左边框的距离 */
-    padding-left: 16px;
-    padding-right: 20pt;
-    /* 左边框离页面边的距离 */
-    margin-left: 20px;
+    margin: $quote-margin;
 }

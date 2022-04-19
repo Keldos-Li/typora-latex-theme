@@ -2,10 +2,11 @@
     .md-table-fig {
         margin-top: $table-margin-top;
         margin-bottom: $table-margin-bottom;
+        margin-left: auto;
+        margin-right: auto;
     }
     // 三线表
     table {
-        margin: 100px auto;
         /* 三线表第一条线宽度 */
         border-top: 1.2pt solid;
         /* 三线表第二条线宽度 */
@@ -37,7 +38,13 @@
         /* 表格标题（首行）样式 */
         /* 三线表表头的线 */
         border-bottom: 0.5pt solid;
-        font-family: $table-title-font !important;
+        font-family: $table-title-font;
         font-weight: $strong-weight;
     }
+}
+
+// 图表说明文字
+center strong {
+    font-family: $caption-font;
+    font-size: $caption-font-size;
 }

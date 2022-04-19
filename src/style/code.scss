@@ -1,4 +1,4 @@
-/* 行内代码 */
+// 行内代码
 code {
     font-family: $code-font;
 }
@@ -32,8 +32,9 @@ li code {
     /* 圆角 */
     border-radius: 2px 2px 2px 2px;
 }
+
+// 代码块
 #write {
-    // 代码块样式
     .CodeMirror-wrap {
         padding: 10px; // FIXME 当代码太长跨页的时候好像也会有点问题
     }

@@ -29,9 +29,12 @@
 .md-toc-h6 {
     font-size: $toc-font-size;
     font-family: $toc-font;
+    line-height: $toc-line-height;
 }
 .md-toc-h2 {
     font-weight: $strong-weight;
+    font-size: $toc-h2-font-size;
+    line-height: $toc-h2-line-height;
 }
 
 /* 目录标题前 */
