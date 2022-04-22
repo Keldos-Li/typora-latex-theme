@@ -1,13 +1,14 @@
 $os: "windows";
 $theme: "light";
 $tool: "typora";
+
 // 基准字体
-$ui-font: "Source Han Sans CN" !global;
+$ui-font: "Source Han Sans CN";
 $base-English-font: "Times New Roman";
 $base-Chinese-font: "Source Han Serif CN";
 $base-font-size: 9.5pt;
-$base-heading-font: "Source Han Sans CN" !global; // 总标题字体
-$base-chapter-Chinese-font: "Source Han Sans CN" !global; // 小标题字体
+$base-heading-font: "Source Han Sans CN"; // 总标题字体
+$base-chapter-Chinese-font: "Source Han Sans CN"; // 小标题字体
 $base-line-height: 20pt; // 基础行距
 $strong-weight: 900; // 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy
 

@@ -4,6 +4,7 @@
         // 把参考资料块的文字大小和文字颜色与正文统一
         color: var(--text-color);
         font-size: $references-font-size;
+        font-family: $references-font;
     }
 
     // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉

@@ -31,21 +31,20 @@
             color: $link-color-dark;
         }
     }
-}
 
-hr {
-    @if $theme == "light" {
-        border-top: solid 0.7px #eee;
-    } @else if $theme == "dark" {
-        border-top: solid 0.7px #888888;
+    img {
+        /* 避免图片在导出时被断开 */
+        page-break-inside: avoid;
     }
-}
 
-img {
-    /* 避免图片在导出时被断开 */
-    page-break-inside: avoid;
-}
-
-strong {
-    font-weight: $strong-weight;
+    strong {
+        font-weight: $strong-weight;
+    }
+    hr {
+        @if $theme == "light" {
+            border-top: solid 0.7px #eee;
+        } @else if $theme == "dark" {
+            border-top: solid 0.7px #888888;
+        }
+    }
 }
