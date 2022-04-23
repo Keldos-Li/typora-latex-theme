@@ -1,0 +1,18 @@
+$theme: "light";
+$tool: "pandoc";
+@import "./style/setting";
+@import "./style/main-text.scss";
+@import "./style/blockquote.scss";
+@import "./style/code.scss";
+@import "./style/list.scss";
+@import "./style/main-text.scss";
+@import "./style/references.scss";
+@import "./style/table-of-contents.scss";
+@import "./style/table.scss";
+@import "./style/html.scss";
+@import "./style/title.scss";
+@import "./style/template/cover.scss";
+@import "./style/typora.scss";
+body {
+    @extend #write;
+}

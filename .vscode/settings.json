@@ -7,14 +7,13 @@
         }
     ],
     "liveSassCompile.settings.includeItems": [
-        "main.scss",
-        "dark.scss"
+        "/src/*.scss"
     ],
     "liveSassCompile.settings.generateMap": false,
     "liveSassCompile.settings.excludeList": [
-        "**/node_modules/**",
-        ".vscode/**",
-        "src/**",
-        "test/**"
+        "/**/node_modules/**",
+        "/.vscode/**",
+        "/src/style/**",
+        "/test/**"
     ]
 }
