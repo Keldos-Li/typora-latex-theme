@@ -130,12 +130,3 @@ h6.md-focus:before {
     font-weight: inherit;
     line-height: inherit;
 }
-
-/////////////////////////暗黑模式
-body {
-    /* counter-reset: tableHead 0 imgHead 0; */
-    @if $theme == "dark" {
-        color: #dddddd;
-        background-color: #282828;
-    }
-}

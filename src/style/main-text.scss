@@ -3,6 +3,7 @@
     font-size: $main-text-font-size;
     /* A4标准宽度 */
     max-width: 21cm;
+
     @if $theme == "light" {
         background-color: white;
     } @else if $theme == "dark" {
@@ -22,12 +23,10 @@
     }
 
     // 超链接
-    @if $theme == "light" {
-        a {
+    a {
+        @if $theme == "light" {
             color: $link-color-light;
-        }
-    } @else if $theme == "dark" {
-        a {
+        } @else if $theme == "dark" {
             color: $link-color-dark;
         }
     }

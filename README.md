@@ -1,6 +1,6 @@
 魔改
-- light
-- pandoc
-- dark
-- mac
-- linux
+- [x] light
+- [ ] pandoc
+- [x] dark
+- [ ] mac
+- [ ] linux

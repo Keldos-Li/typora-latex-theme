@@ -1,6 +1,7 @@
-$theme: "light";
+$theme: "dark";
 $tool: "typora";
 @import "./src/style/setting";
+@import "./src/style/dark.scss";
 @import "./src/style/main-text.scss";
 @import "./src/style/blockquote.scss";
 @import "./src/style/code.scss";

@@ -18,6 +18,7 @@
 - html 与html块相关的设置
 - typora typora中显示、打印的设置
 - typora-sidebar typora侧边栏
+- dark 暗黑模式
 
-## 模板
+## 模板 —— template 文件夹
 - cover 封面样式
