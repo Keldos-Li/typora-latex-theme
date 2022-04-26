@@ -27,20 +27,20 @@
 .md-toc-h4,
 .md-toc-h5,
 .md-toc-h6 {
-    font-size: $toc-font-size;
-    font-family: $toc-font;
-    line-height: $toc-line-height;
+    font-size: var(--toc-font-size);
+    font-family: var(--toc-font);
+    line-height: var(--toc-line-height);
 }
 .md-toc-h2 {
-    font-weight: $strong-weight;
-    font-size: $toc-h2-font-size;
-    line-height: $toc-h2-line-height;
+    font-weight: var(--strong-weight);
+    font-size: var(--toc-h2-font-size);
+    line-height: var(--toc-h2-line-height);
 }
 
 /* 目录标题前 */
 .md-toc-content {
     .md-toc-h1 {
-        display: $toc-show-title;
+        display: var(--toc-show-title);
         counter-reset: toc-h2;
     }
     .md-toc-h2 {
@@ -59,7 +59,7 @@
         counter-increment: toc-h2;
         content: counter(toc-h2);
         margin-right: 1rem;
-        font-weight: $strong-weight;
+        font-weight: var(--strong-weight);
     }
     .md-toc-h3:before {
         counter-increment: toc-h3;

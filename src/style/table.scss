@@ -1,7 +1,7 @@
 #write {
     .md-table-fig {
-        margin-top: $table-margin-top;
-        margin-bottom: $table-margin-bottom;
+        margin-top: var(--table-margin-top);
+        margin-bottom: var(--table-margin-bottom);
         margin-left: auto;
         margin-right: auto;
     }
@@ -11,8 +11,8 @@
         border-top: 1.2pt solid;
         /* 三线表第二条线宽度 */
         border-bottom: 1.2pt solid;
-        font-family: $table-font;
-        font-size: $table-title-font-size;
+        font-family: var(--table-font);
+        font-size: var(--table-title-font-size);
         text-align: center;
         page-break-inside: avoid;
         border-spacing: 6px;
@@ -38,13 +38,13 @@
         /* 表格标题（首行）样式 */
         /* 三线表表头的线 */
         border-bottom: 0.5pt solid;
-        font-family: $table-title-font;
-        font-weight: $strong-weight;
+        font-family: var(--table-title-font);
+        font-weight: var(--strong-weight);
     }
 }
 
 // 图表说明文字
 center strong {
-    font-family: $caption-font;
-    font-size: $caption-font-size;
+    font-family: var(--caption-font);
+    font-size: var(--caption-font-size);
 }

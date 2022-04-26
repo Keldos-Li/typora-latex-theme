@@ -1,6 +1,6 @@
 #write {
-    font-family: $main-text-font;
-    font-size: $main-text-font-size;
+    font-family: var(--main-text-font);
+    font-size: var(--main-text-font-size);
     /* A4标准宽度 */
     max-width: 21cm;
 
@@ -17,17 +17,17 @@
 
     p {
         text-align: left;
-        line-height: $main-text-line-height; // 行距
-        margin-top: $main-text-margin-top; // 段前距
-        margin-bottom: $main-text-margin-bottom; // 段后距
+        line-height: var(--main-text-line-height); // 行距
+        margin-top: var(--main-text-margin-top); // 段前距
+        margin-bottom: var(--main-text-margin-bottom); // 段后距
     }
 
     // 超链接
     a {
         @if $theme == "light" {
-            color: $link-color-light;
+            color: var(--link-color-light);
         } @else if $theme == "dark" {
-            color: $link-color-dark;
+            color: var(--link-color-dark);
         }
     }
 
@@ -37,7 +37,7 @@
     }
 
     strong {
-        font-weight: $strong-weight;
+        font-weight: var(--strong-weight);
     }
     hr {
         @if $theme == "light" {

@@ -1,6 +1,6 @@
 @media screen {
     #write {
-        padding: $screen-margin;
+        padding: var(--screen-margin);
         @if $theme == "light" {
             /* 添加一个淡蓝色的边框 */
             /* border: 0.8px solid #AAC ; */
@@ -19,7 +19,7 @@
         padding: 0 !important;
     }
     @page {
-        margin: $print-margin;
+        margin: var(--print-margin);
     }
 }
 
@@ -46,14 +46,14 @@
         /* background: ;*/
         color: #dddddd;
     }
-    font-family: $sourceMode-font;
+    font-family: var(--sourceMode-font);
     line-height: 2rem;
 }
 
 /* 侧边大纲标题 */
 .sidebar-content {
     /* 侧边栏的字体修改 */
-    font-family: $ui-font;
+    font-family: var(--ui-font);
     list-style: none;
     @if $theme == "dark" {
         /* 黑色模式修改 */
@@ -104,7 +104,7 @@ pre.md-meta-block {
         color: white !important;
     }
     padding: 1.4em;
-    font-family: $code-font;
+    font-family: var(--code-font);
 }
 
 // override the default style for focused headings

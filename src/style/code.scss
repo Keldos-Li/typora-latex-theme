@@ -1,6 +1,6 @@
 // 行内代码
 code {
-    font-family: $code-font;
+    font-family: var(--code-font);
 }
 h1 code,
 h2 code,
@@ -18,12 +18,10 @@ li code {
     } @else if $theme == "dark" {
         /* 黑色模式修改 */
         color: #8bb1f9;
-        /* 黑色模式修改 */
         background-color: #161616;
-        /* 黑色模式修改 */
         box-shadow: 0 0 1px 1px #141414;
     }
-    font-family: $code-font;
+    font-family: var(--code-font);
 
     box-sizing: border-box;
     border-right: 0px;
@@ -40,7 +38,7 @@ li code {
     }
 
     .CodeMirror-code pre {
-        font-family: $code-font;
-        line-height: $code-font-line-height;
+        font-family: var(--code-font);
+        line-height: var(--code-font-line-height);
     }
 }

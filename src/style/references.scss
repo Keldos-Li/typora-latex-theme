@@ -3,8 +3,8 @@
     .footnote-line {
         // 把参考资料块的文字大小和文字颜色与正文统一
         color: var(--text-color);
-        font-size: $references-font-size;
-        font-family: $references-font;
+        font-size: var(--references-font-size);
+        font-family: var(--references-font);
     }
 
     // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉
@@ -34,10 +34,10 @@
 // // 参考文献块
 // .footnotes {
 //     color: black;
-//     font-family: $references-font;
-//     font-size: $references-font-size;
-//     margin-top: $references-margin-top;
-//     margin-bottom: $references-margin-bottom;
+//     font-family: var(--references-font);
+//     font-size: var(--references-font-size);
+//     margin-top: var(--references-margin-top);
+//     margin-bottom: var(--references-margin-bottom);
 //     // 取消跳转箭头
 //     // .md-reverse-footnote-area {
 //     //     display: none;

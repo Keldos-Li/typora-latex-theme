@@ -8,7 +8,7 @@
         text-align: center !important;
         font-family: "黑体";
         font-size: 22pt;
-        font-weight: $strong-weight;
+        font-weight: var(--strong-weight);
         margin: 6cm auto;
         margin-bottom: 0cm;
     }
@@ -27,7 +27,7 @@
         align-items: center;
         span:first-child {
             text-align: right;
-            font-weight: $strong-weight;
+            font-weight: var(--strong-weight);
         }
         span:nth-child(2) {
             flex: 10;

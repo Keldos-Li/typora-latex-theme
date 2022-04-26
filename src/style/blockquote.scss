@@ -1,7 +1,7 @@
 /* basic 样式采用一般的引言，具有左边框、左缩进 */
 blockquote {
     font-style: normal;
-    font-family: $quote-font;
-    font-size: $quote-font-size;
-    margin: $quote-margin;
+    font-family: var(--quote-font);
+    font-size: var(--quote-font-size);
+    margin: var(--quote-margin);
 }
