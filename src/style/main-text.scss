@@ -3,7 +3,7 @@
     font-size: var(--main-text-font-size);
     /* A4标准宽度 */
     max-width: 21cm;
-
+    tab-size: var(--tab-size);
     @if $theme == "light" {
         background-color: white;
     } @else if $theme == "dark" {

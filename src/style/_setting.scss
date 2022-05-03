@@ -1,17 +1,19 @@
 :root {
-    /* 基准字体 */
-    --ui-font: "Source Han Sans CN";
-    --base-English-font: "Times New Roman";
-    --base-Chinese-font: "Source Han Serif CN";
+    /* 基准字体风格 */
+    --ui-font: "微软雅黑"; /* 界面字体 */
+    --base-English-font: "Latin Modern Roman", "Latin Modern Roman 10"; /* 西文字体 */
+    --base-Chinese-font: "宋体-简", "华文宋体", "Noto Serif CJK SC"; /* 中文字体 */
     --base-font-size: 9.5pt;
-    --base-heading-font: "Source Han Sans CN"; /* 总标题字体 */
-    --base-chapter-Chinese-font: "Source Han Sans CN"; /* 小标题字体 */
-    --base-line-height: 20pt; /* 基础行距 */
+    --base-heading-font: "Latin Modern Roman", "Latin Modern Roman 10",
+        "华文楷体"; /* 文章各标题基础字体 */
+    --base-line-height: 20pt; /* 行距 */
     --strong-weight: 900; /* 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy */
+    --code-font: "Latin Modern Mono", "Latin Modern Mono 10"; /* 代码块字体 */
+    --tab-size: 1em; /* tab键宽度 */
 
     /* 正文设置 */
-    --main-text-font: var(--base-English-font, --base-Chinese-font);
-    --main-text-font-size: 12pt; /* 字号 */
+    --main-text-font: var(--base-English-font), var(--base-Chinese-font);
+    --main-text-font-size: 9.5pt; /* 字号 */
     --main-text-margin-top: 1rem; /* 段前距 */
     --main-text-margin-bottom: 1rem; /* 段后距 */
     --main-text-line-height: var(--base-line-height); /* 行距 */
@@ -23,11 +25,9 @@
     --quote-text-line-height: var(--base-line-height); /* 行距 */
 
     /* 代码设置 */
-    --code-font: "Cascadia Mono";
     --code-font-line-height: 16pt;
 
     /* 目录 */
-    /* 目录的各项之间没有段前段后距, 即margin */
     --toc-font: var(--main-text-font);
     --toc-h2-font-size: 1rem; /* 一级标题字号 */
     --toc-h2-line-height: var(--base-line-height); /* 一级标题行距 */
@@ -45,13 +45,12 @@
     --table-margin-top: 0px;
     --table-margin-bottom: 1rem;
 
-    /* 标题设置 */
+    /* 标题基础设置 */
     --title-margin-right: 1rem; /* 编号右边的空白大小 */
     --title-font-weight: var(--strong-weight); /* 标题字重 */
     /* 大标题, 即文章总标题 */
     --title-font: var(--base-heading-font);
     --title-font-size: 22pt;
-    --title-font-weight: var(--strong-weight);
     --title-margin-top: 1rem;
     --title-margin-bottom: 1rem;
     /* h2, 一级标题 */
@@ -82,7 +81,6 @@
 
     /* == 页面设置 == */
     --screen-margin: 2cm 2cm 2cm 2cm !important; /* typora中展示的页边距 */
-    --print-margin: 2cm 2cm 2cm 2cm !important; /* 打印的页边距 */
     /* == 控制设置 == */
     --toc-show-title: none; /* 目录中是否显示一级标题 */
     /* == 颜色设置 == */

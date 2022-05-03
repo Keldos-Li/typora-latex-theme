@@ -15,24 +15,25 @@
     #school-name {
         content: url("http://www.cumt.edu.cn/_upload/article/images/d1/18/82bf4c134df495badbc6d68d9fe8/5ca74b21-ad47-4b9c-91d0-ef2b3c24e0da.jpg");
     }
-}
-#essay-info {
-    position: relative;
-    top: 6.5cm;
-    width: 10cm;
-    margin: 0 auto;
-    div {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        span:first-child {
-            text-align: right;
-            font-weight: var(--strong-weight);
-        }
-        span:nth-child(2) {
-            flex: 10;
-            text-align: center;
-            border-bottom: 1.2pt solid;
+    #school-icon {
+        content: url();
+    }
+    #essay-info {
+        width: 10cm;
+        margin: 6.5cm auto 0 auto;
+        div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            span:first-child {
+                text-align: right;
+                font-weight: var(--strong-weight);
+            }
+            span:nth-child(2) {
+                flex: 10;
+                text-align: center;
+                border-bottom: 1.2pt solid;
+            }
         }
     }
 }

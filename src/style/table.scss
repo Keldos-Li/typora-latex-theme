@@ -1,4 +1,8 @@
 #write {
+    // 防止打印时表格被隔断
+    figure {
+        page-break-inside: avoid;
+    }
     .md-table-fig {
         margin-top: var(--table-margin-top);
         margin-bottom: var(--table-margin-bottom);

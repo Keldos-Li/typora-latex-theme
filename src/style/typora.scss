@@ -14,15 +14,6 @@
     }
 }
 
-@media print {
-    #write {
-        padding: 0 !important;
-    }
-    @page {
-        margin: var(--print-margin);
-    }
-}
-
 /* 
  * ========== VERY IMPORTANT 请注意看下面的几行: ================
  * 如果您需要在输出PDF时隐藏超链接的颜色和下划线，请取消注释下面的代码块，即删去下面的 line 1 和 line 2 这两行

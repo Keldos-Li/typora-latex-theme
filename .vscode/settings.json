@@ -6,14 +6,10 @@
             "savePath": "/dist/css"
         }
     ],
-    "liveSassCompile.settings.includeItems": [
-        "/src/*.scss"
-    ],
     "liveSassCompile.settings.generateMap": false,
     "liveSassCompile.settings.excludeList": [
         "/**/node_modules/**",
         "/.vscode/**",
         "/src/style/**",
-        "/test/**"
     ]
 }

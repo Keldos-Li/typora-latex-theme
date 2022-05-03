@@ -1,4 +1,3 @@
-latex-theme.scss
 node_modules/
 dist/
 *.pdf
