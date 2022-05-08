@@ -10,7 +10,6 @@ $tool: "pandoc";
 @import "./style/table.scss";
 @import "./style/html.scss";
 @import "./style/title.scss";
-@import "./style/template/cover.scss";
 @import "./style/typora.scss";
 body {
     @extend #write;

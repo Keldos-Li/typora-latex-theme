@@ -1,0 +1,61 @@
+<div id="cover">
+    <img
+        id="school-name"
+        src="http://www.cumt.edu.cn/_upload/article/images/d1/18/82bf4c134df495badbc6d68d9fe8/5ca74b21-ad47-4b9c-91d0-ef2b3c24e0da.jpg"
+    />
+    <img id="school-icon" src="" />
+    <p class="essay-name">2077级本科生课程设计报告</p>
+    <div id="essay-info">
+        <div><span>课程名称：</span><span>系统软件开发实践</span></div>
+        <div><span>姓　　名：</span><span>你的名字</span></div>
+        <div><span>学　　号：</span><span>114514</span></div>
+        <div><span>专　　业：</span><span>计算机科学与技术</span></div>
+        <div><span>任课教师：</span><span>约翰·冯·诺依曼</span></div>
+        <div><span>报告时间：</span><span>2077年7月7日</span></div>
+    </div>
+</div>
+
+<!-- 以下粘贴到typora设置中 -->
+<style>
+    #cover {
+        page-break-after: always;
+        width: 100%;
+        height: 100%;
+        border: none;
+        margin: 0 auto;
+    }
+    #cover .essay-name {
+        text-align: center !important;
+        font-family: "黑体";
+        font-size: 22pt;
+        font-weight: bold;
+        margin: 6cm auto;
+        margin-bottom: 0cm;
+    }
+    #essay-info {
+        width: 10cm;
+        margin: 6.5cm auto 0 auto;
+    }
+    #essay-info div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    #essay-info div span:first-child {
+        text-align: right;
+        font-weight: bold;
+    }
+    #essay-info div span:nth-child(2) {
+        flex: 10;
+        text-align: center;
+        border-bottom: 1.2pt solid;
+    }
+</style>
+
+<script>
+    // 去掉参考文献前的空白行
+    let p = document.querySelector("#write > p:last-of-type");
+    if (p.innerHTML === "&nbsp;") {
+        p.remove();
+    }
+</script>
