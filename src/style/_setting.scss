@@ -1,19 +1,42 @@
+/*
+字体大小:
+| word字号 | css字体值（pt） |
+| -------- | --------------- |
+| 初号     | 44pt            |
+| 小初     | 36pt            |
+| 一号     | 26pt            |
+| 小一     | 24pt            |
+| 二号     | 22pt            |
+| 小二     | 18pt            |
+| 三号     | 16pt            |
+| 小三     | 15pt            |
+| 四号     | 14pt            |
+| 小四     | 12pt            |
+| 五号     | 10.5pt          |
+| 小五     | 9pt             |
+| 六号     | 7.5pt           |
+| 小六     | 6.5pt           |
+| 七号     | 5.5pt           |
+| 八号     | 5pt             |
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap");
+@import url("http://fonts.cdnfonts.com/css/latin-modern-roman");
 :root {
     /* 基准字体风格 */
-    --ui-font: "微软雅黑"; /* 界面字体 */
-    --base-English-font: "Latin Modern Roman", "Latin Modern Roman 10"; /* 西文字体 */
-    --base-Chinese-font: "宋体-简", "华文宋体", "Noto Serif CJK SC"; /* 中文字体 */
+    --ui-font: "Noto Sans SC"; /* 界面字体 */
+    --base-English-font: "LMRoman10"; /* 西文字体 */
+    --base-Chinese-font: "Noto Serif SC", serif; /* 中文字体 */
     --base-font-size: 9.5pt;
-    --base-heading-font: "Latin Modern Roman", "Latin Modern Roman 10",
-        "华文楷体"; /* 文章各标题基础字体 */
+    --base-heading-font: "LMRoman10", "Noto Sans SC"; /* 文章各标题基础字体 */
     --base-line-height: 20pt; /* 行距 */
     --strong-weight: 900; /* 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy */
-    --code-font: "Latin Modern Mono", "Latin Modern Mono 10"; /* 代码块字体 */
+    --code-font: "Fira Mono"; /* 代码块字体 */
     --tab-size: 1em; /* tab键宽度 */
 
     /* 正文设置 */
     --main-text-font: var(--base-English-font), var(--base-Chinese-font);
-    --main-text-font-size: 9.5pt; /* 字号 */
+    --main-text-font-size: 12pt; /* 字号 */
     --main-text-margin-top: 1rem; /* 段前距 */
     --main-text-margin-bottom: 1rem; /* 段后距 */
     --main-text-line-height: var(--base-line-height); /* 行距 */
@@ -25,7 +48,7 @@
     --quote-text-line-height: var(--base-line-height); /* 行距 */
 
     /* 代码设置 */
-    --code-font-line-height: 16pt;
+    --code-font-line-height: 16pt; /* 代码块行距 */
 
     /* 目录 */
     --toc-font: var(--main-text-font);
@@ -79,11 +102,11 @@
     --references-margin-top: 1rem;
     --references-margin-bottom: 0px;
 
-    /* == 页面设置 == */
+    /* 页面设置 */
     --screen-margin: 2cm 2cm 2cm 2cm !important; /* typora中展示的页边距 */
-    /* == 控制设置 == */
+    /* 控制设置 */
     --toc-show-title: none; /* 目录中是否显示一级标题 */
-    /* == 颜色设置 == */
+    /* 颜色设置 */
     /* 超链接颜色 */
     --link-color-light: #2e67d3;
     --link-color-dark: #8bb1f9;

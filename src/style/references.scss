@@ -10,6 +10,7 @@
     &::after {
         content: "]";
     }
+    color: var(--text-color) !important;
 }
 
 // 参考文献块
@@ -28,7 +29,6 @@
 @mixin footnote-style {
     color: var(--text-color);
     font-family: var(--references-font);
-    font-size: var(--references-font-size);
     margin-top: var(--references-margin-top) !important;
     margin-bottom: var(--references-margin-bottom);
 }
@@ -46,11 +46,15 @@
     .reversefootnote {
         display: none;
     }
+    .footnote-line {
+        font-size: var(--references-font-size);
+    }
 }
 
 // 非导出时
 .footnotes {
     @include footnote-style;
+    font-size: var(--references-font-size);
     // 取消跳转箭头
     .md-reverse-footnote-area {
         display: none;

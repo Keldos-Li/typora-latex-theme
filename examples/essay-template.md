@@ -44,6 +44,8 @@
 <div style="width:82px;float:left;line-height:16pt"><b>Key Words: </b></div> 
 <div style="overflow:hidden;line-height:16pt">Computer; Operating System; Function; Development; Windows; macOS;</div>
 </div>
+
+
 ## 什么是计算机操作系统
 
 ​		操作系统（Operating System，OS）是一组相互关联的系统软件程序，用以主管并控制计算机操作、运用和运行硬件、软件资源和提供公共服务，最终来组织用户交互，更是也是计算机系统的核心支撑。操作系统需要处理如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务，以帮助用户使用计算机。操作系统也提供一个让用户与系统交互的操作界面，有些操作系统集成了图形用户界面，而有些仅使用命令行界面。
@@ -243,4 +245,3 @@ for i in range(10):
 [^15]:Statcounter. Desktop Operating System Market Share China [DS/OL]. (2020-12-20) [2021-01-09]. https://gs.statcounter.com/os-market-share/desktop/china/
 [^16]:维基百科编者.Microsoft Windows[G/OL].维基百科, 2021(2021-01-02)[2021-01-10]. https://zh.wikipedia.org/w/index.php?title=Microsoft_Windows&oldid=63546256.
 [^17]:韩兵,李海坤.浅谈Windows操作系统[J].数码世界,2017(06):66-67.
-
