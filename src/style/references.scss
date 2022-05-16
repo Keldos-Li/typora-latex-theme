@@ -11,8 +11,19 @@
         content: "]";
     }
     color: var(--text-color) !important;
+    // 使导出时数字颜色与正文相同
     a {
         color: var(--text-color) !important;
+    }
+
+    &.md-expand {
+        z-index: -999; // 使编辑引用时的光标不被遮挡
+        &::before {
+            content: "";
+        }
+        &::after {
+            content: "";
+        }
     }
 }
 
