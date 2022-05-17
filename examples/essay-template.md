@@ -1,6 +1,6 @@
 <div id="cover">
-    <img id="school-name">
-    <img id="school-icon">
+    <img id="school-name" src="http://www.cumt.edu.cn/_upload/article/images/d1/18/82bf4c134df495badbc6d68d9fe8/5ca74b21-ad47-4b9c-91d0-ef2b3c24e0da.jpg" />
+    <img id="school-icon" src="" />
     <p class="essay-name">2077级本科生课程设计报告</p>
     <div id="essay-info">
         <div><span>课程名称：</span><span>系统软件开发实践</span></div>
@@ -160,8 +160,8 @@ for i in range(10):
 　　个人电脑市场目前分为两大阵营，此两种架构分别有支持的操作系统：
 
 | <span style="font-family:'Latin Modern Roman',宋体-简;font-weight:750">Apple  Mac</span> | <span style="font-family:'Latin Modern Roman',宋体-简;font-weight:normal">macOS（原Mac OS X）、Windows（当前仅支持Intel平台，但有消息称ARM版Windows也即将支持使用Apple Silicon的Mac）、Linux、BSD </span> |
-| ----------------- | ------------------------------------------------------------|
-| **IBM** **兼容PC** | Windows、Linux、BSD、macOS（非正式支持，俗称黑苹果）         |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **IBM** **兼容PC**                                                                       | Windows、Linux、BSD、macOS（非正式支持，俗称黑苹果）                                                                                                                                                      |
 
 #### 移动操作系统
 
