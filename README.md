@@ -15,9 +15,11 @@ Markdown 的轻量化特性，使您可以专注于论文内容而不用担心�
 
 ## 预览
 
-较完整的论文预览见[此处](https://blog.keldos.me/2021/05/md-latex-template/)；如果 GitHub 中的图像加载失败，您也可以查看[我博客上的说明](https://blog.keldos.me/2021/05/typora-latex-css/)。另外，请注意链接内博客的更新时间，博文的内容很可能滞后于该项目目前所能提供的特性。
+您可以通过以下方式预览本主题：
 
-您也可以观看UP主[@大啊好我r中之](https://space.bilibili.com/239828907)的这个[B站视频](https://www.bilibili.com/video/BV1634y1h7pE)，视频中有对项目的简短介绍，并演示了安装的方法。
+1. 通过[在线 PDF 预览器](https://blog.keldos.me/2021/05/md-latex-template/)预览导出结果
+2. 观看[介绍视频](https://www.bilibili.com/video/BV1634y1h7pE)，其中简洁清晰地介绍了主题外观和安装方法
+3. 查看下列截图
 
 ### 封面，摘要和关键词
 
@@ -103,7 +105,9 @@ $$
 
 ## 鸣谢
 
-本项目是在下面两人工作的基础上完成的：  
+本项目是在下面两个开源项目的基础上完成的：  
 
 - [yfzhao20/Typora-markdown](https://github.com/yfzhao20/Typora-markdown)  
 - [du33169/typora-theme-essay_cn](https://github.com/du33169/typora-theme-essay_cn)  
+
+感谢 [@大啊好我r中之](https://space.bilibili.com/239828907) 制作介绍视频  
