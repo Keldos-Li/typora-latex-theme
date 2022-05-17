@@ -27,7 +27,6 @@
     --ui-font: "Noto Sans SC"; /* 界面字体 */
     --base-English-font: "LMRoman10"; /* 西文字体 */
     --base-Chinese-font: "Noto Serif SC", serif; /* 中文字体 */
-    --base-font-size: 9.5pt;
     --base-heading-font: "LMRoman10", "Noto Sans SC"; /* 文章各标题基础字体 */
     --base-line-height: 20pt; /* 行距 */
     --strong-weight: 900; /* 粗体样式设置, 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy */
@@ -54,7 +53,7 @@
     --toc-font: var(--main-text-font);
     --toc-h2-font-size: 1rem; /* 一级标题字号 */
     --toc-h2-line-height: var(--base-line-height); /* 一级标题行距 */
-    --toc-font-size: var(--base-font-size); /* 小标题字号 */
+    --toc-font-size: 9.5pt; /* 小标题字号 */
     --toc-line-height: var(--base-line-height); /* 小标题行距 */
 
     /* 图表的说明文字 */
