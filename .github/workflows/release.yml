@@ -1,9 +1,9 @@
 name: CI
 
 on:
-    push:
-        branches:
-            - cumt
+    create:
+        tags:
+            - v*
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,16 +37,24 @@ jobs:
 
             - name: Packaging
               run: |
-                  zip -j Latex-for-typora.zip /tmp/css/*.css
-                  zip -j Latex-for-typora.zip ./utils/*
-                  zip -r Latex-for-typora.zip ./examples/*.md ./examples/*.pdf ./LICENSE
-                  zip Latex-for-typora.zip 把这段代码放到偏好设置--导出--pdf--插入额外内容的方框中.txt
+                  zip -j Latex-for-typora-Windows.zip /tmp/css/*.css
+                  zip -j Latex-for-typora-Windows.zip ./utils/*.md
+                  zip -r Latex-for-typora-Windows.zip ./examples/*.md ./examples/*.pdf ./LICENSE
+                  zip Latex-for-typora-Windows.zip 把这段代码放到偏好设置--导出--pdf--插入额外内容的方框中.txt
+
+            - name: Add Unix install script
+              run: |
+                  cp Latex-for-typora-Windows.zip Latex-for-typora-Unix.zip
+                  zip -j Latex-for-typora-Unix.zip ./utils/install.sh
+
+            - name: Add Windows install script
+              run: |
+                  zip -j Latex-for-typora-Windows.zip ./utils/install.ps1
 
             - name: Release
               uses: marvinpinto/action-automatic-releases@latest
               with:
                   repo_token: ${{ secrets.GITHUB_TOKEN }}
-                  automatic_release_tag: "latest"
                   prerelease: false
                   files: |
-                      ./Latex-for-typora.zip
+                      ./*.zip
