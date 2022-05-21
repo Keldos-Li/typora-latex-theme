@@ -1,25 +1,60 @@
-name: Release
-on:
-  create:
-    tags:
-      - v*
+name: CI
 
+on:
+    create:
+        tags:
+            - v*
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: |
-          sudo apt install ruby sass -y
-      - name: Compile
-        run: |
-          cd ./src; make all-and-compress
-      - name: Release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
-          files: |
-            ./src/latex-theme/*.zip
+    # This workflow contains a single job called "build"
+    build:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v3
+
+            - name: Make destination directory for compiled CSS
+              run: mkdir -vp /tmp/css
+
+            - name: Compile CSS from SCSS files
+              uses: gha-utilities/sass-build@v0.4.9
+              with:
+                  source: |
+                      ./src/main.scss
+                      ./src/dark.scss
+                  destination: |
+                      /tmp/css/latex.css
+                      /tmp/css/latex-dark.css
+
+            - name: Make template doc
+              run: |
+                  awk 'n==1{print} $0~/<!-- awkflag.* -->/{n=1}' ./src/template/cover.html > \
+                  把这段代码放到偏好设置--导出--pdf--插入额外内容的方框中.txt
+
+            - name: Packaging
+              run: |
+                  zip -j Latex-for-typora-Windows.zip /tmp/css/*.css
+                  zip -j Latex-for-typora-Windows.zip ./utils/*.md
+                  zip -r Latex-for-typora-Windows.zip ./examples/*.md ./examples/*.pdf ./LICENSE
+                  zip Latex-for-typora-Windows.zip 把这段代码放到偏好设置--导出--pdf--插入额外内容的方框中.txt
+
+            - name: Add Unix install script
+              run: |
+                  cp Latex-for-typora-Windows.zip Latex-for-typora-Unix.zip
+                  zip -j Latex-for-typora-Unix.zip ./utils/install.sh
+
+            - name: Add Windows install script
+              run: |
+                  zip -j Latex-for-typora-Windows.zip ./utils/install.ps1
+
+            - name: Release
+              uses: marvinpinto/action-automatic-releases@latest
+              with:
+                  repo_token: ${{ secrets.GITHUB_TOKEN }}
+                  prerelease: false
+                  files: |
+                      ./*.zip

@@ -1,5 +1,1 @@
-Fonts/
-**/build/
-**/.sass-cache/
-**/latex-theme/
-**/.DS_Store
+dist/

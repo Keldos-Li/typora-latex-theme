@@ -18,7 +18,7 @@ If (Test-Path -Path $dir -PathType Container) {
 }
 
 Try {
-    Copy-Item -Path ".\target\*.css" -Destination $dir -Recurse -Force -ErrorAction Stop
+    Copy-Item -Path ".\*.css" -Destination $dir -Recurse -Force -ErrorAction Stop
 } Catch {
     $MessageBody = $_.Exception.Message
     $ButtonType = [System.Windows.MessageBoxButton]::OK
