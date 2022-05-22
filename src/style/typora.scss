@@ -1,0 +1,123 @@
+@media screen {
+    #write {
+        padding: var(--screen-margin);
+        @if $theme == "light" {
+            /* 添加一个淡蓝色的边框 */
+            /* border: 0.8px solid #AAC ; */
+            /* 页边阴影 */
+            box-shadow: 0 0 24px 12px #cccccc;
+        } @else if $theme == "dark" {
+            /* border: 1px solid #AAAAAA ;*/
+            /* 页边阴影 */
+            box-shadow: 0 0 24px 12px #101010;
+        }
+    }
+}
+
+/* 
+ * ========== VERY IMPORTANT 请注意看下面的几行: ================
+ * 如果您需要在输出PDF时隐藏超链接的颜色和下划线，请取消注释下面的代码块，即删去下面的 line 1 和 line 2 这两行
+ * 如果您需要在输出PDF时保持超链接的显示效果，则不用更改 
+ * ===========================================================
+*/
+// 因为 CSS 没有一般的布尔变量可以使用，所以采用这种笨办法，如果有其他开关方法可以选用请 pull request, 谢谢
+
+/*  line 1 如要取消注释代码，请把本行删去 
+@media print {
+  #write a {
+    color: inherit !important;
+    text-decoration: none;
+  } 
+}
+    line 2 如要取消注释代码，请把本行删去 */
+
+/* typora 编写模式 */
+#typora-source {
+    @if $theme == "dark" {
+        /* background: ;*/
+        color: #dddddd;
+    }
+    font-family: var(--sourceMode-font);
+    line-height: 2rem;
+}
+
+/* 侧边大纲标题 */
+.sidebar-content {
+    /* 侧边栏的字体修改 */
+    font-family: var(--ui-font);
+    list-style: none;
+    @if $theme == "dark" {
+        /* 黑色模式修改 */
+        background-color: #282828;
+        color: #e9e9e9;
+    }
+    .outline-h1 {
+        counter-reset: outline-h2;
+    }
+    .outline-h2 {
+        counter-reset: outline-h3;
+        .outline-label:before {
+            counter-increment: outline-h2;
+            content: counter(outline-h2) " ";
+        }
+    }
+    .outline-h3 {
+        counter-reset: outline-h4;
+        .outline-label:before {
+            counter-increment: outline-h3;
+            content: counter(outline-h2) "." counter(outline-h3) "  ";
+        }
+    }
+    .outline-h4 {
+        counter-reset: outline-h5;
+        .outline-label:before {
+            counter-increment: outline-h4;
+            content: counter(outline-h2) "." counter(outline-h3) "."
+                counter(outline-h4) "  ";
+        }
+    }
+    .outline-h5 {
+        counter-reset: outline-h6;
+        .outline-label:before {
+            counter-increment: outline-h5;
+            content: counter(outline-h2) "." counter(outline-h3) "."
+                counter(outline-h4) "." counter(outline-h5) "  ";
+        }
+    }
+}
+
+/* 元数据（如 YAML front matter）的背景框 */
+pre.md-meta-block {
+    @if $theme == "light" {
+        background: #cccccc;
+    } @else if $theme == "dark" {
+        background: #161616;
+        color: white !important;
+    }
+    padding: 1.4em;
+    font-family: var(--code-font);
+}
+
+// override the default style for focused headings
+#write > h3.md-focus:before,
+#write > h4.md-focus:before,
+#write > h5.md-focus:before,
+#write > h6.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    position: inherit;
+    left: initial;
+    float: none;
+    top: initial;
+    font-size: inherit;
+    padding-left: inherit;
+    padding-right: inherit;
+    vertical-align: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}

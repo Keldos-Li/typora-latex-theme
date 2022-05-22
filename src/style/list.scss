@@ -1,0 +1,70 @@
+/* ============ 多级列表样式 ============ */
+ul {
+    /* 无序列表第一级：实心圆点 */
+    list-style: disc;
+    ul {
+        /*list-style: circle;*/
+        /* 请勿删除“–”后的空格, 他们对缩进有一定影响, 下同 */
+        //FIXME 如果您可以改成没有空格，而仅用缩进控制的样式会更好
+        list-style: "–　 ";
+        /*left: -0.8rem;*/
+        ul {
+            /* 无序列表第三极：小圈 */
+            list-style: "◦　";
+            left: 0.1rem;
+        }
+    }
+}
+
+ol {
+    /* 有序列表第一级：数字 */
+    list-style: decimal;
+
+    ol {
+        counter-reset: liist;
+        list-style: none;
+
+        li {
+            counter-increment: liist;
+            position: relative;
+        }
+
+        li::before {
+            /* 有序列表第二级：括号加小写字母 */
+            content: "(" counter(liist, lower-alpha) ")　　";
+            position: absolute;
+            margin-right: 2rem;
+            left: -2.4rem;
+        }
+
+        ol {
+            counter-reset: liiist;
+            list-style: none;
+            margin: 0;
+
+            li {
+                counter-increment: liiist;
+                position: relative;
+            }
+
+            li::before {
+                /* 有序列表第三级：小写罗马数字 */
+                content: counter(liiist, lower-roman) ".　　";
+                align-self: flex-end;
+                position: absolute;
+                left: -3rem;
+                /* -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;*/
+                /* 为了让项目编号是重新用句点对齐而不是左对齐 */
+                width: 4.2rem;
+                text-align: right;
+            }
+        }
+    }
+}
+
+li {
+    position: relative;
+}
+/* ============ 多级列表样式END ============ */
