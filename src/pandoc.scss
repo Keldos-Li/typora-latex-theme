@@ -7,10 +7,10 @@ $tool: "pandoc";
 @import "./style/list.scss";
 @import "./style/references.scss";
 @import "./style/table-of-contents.scss";
+@import "./style/typora.scss";
 @import "./style/table.scss";
 @import "./style/html.scss";
 @import "./style/title.scss";
-@import "./style/typora.scss";
 body {
     @extend #write;
 }

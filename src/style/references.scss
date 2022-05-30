@@ -1,79 +1,79 @@
 // 正文引用
 .md-footnote {
-    // 这里的样式先于typora基础样式加载, 需要!important强制生效
-    background-color: white !important;
-    padding: 0px !important;
-    margin: 0px !important;
+  // 这里的样式先于typora基础样式加载, 需要!important强制生效
+  background-color: white !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  &::before {
+    content: "[";
+  }
+  &::after {
+    content: "]";
+  }
+  color: var(--text-color) !important;
+  // 使导出时数字颜色与正文相同
+  a {
+    color: var(--text-color) !important;
+  }
+
+  &.md-expand {
+    z-index: -999; // 使编辑引用时的光标不被遮挡
     &::before {
-        content: "[";
+      content: "";
     }
     &::after {
-        content: "]";
+      content: "";
     }
-    color: var(--text-color) !important;
-    // 使导出时数字颜色与正文相同
-    a {
-        color: var(--text-color) !important;
-    }
-
-    &.md-expand {
-        z-index: -999; // 使编辑引用时的光标不被遮挡
-        &::before {
-            content: "";
-        }
-        &::after {
-            content: "";
-        }
-    }
+  }
 }
 
 // 参考文献块
 // 设置参考文献前计数括号
 @mixin footnote-count-bracket($padding-x) {
-    padding-left: $padding-x;
-    padding-right: $padding-x;
-    font-weight: normal;
-    &::after {
-        content: "]";
-    }
-    &::before {
-        content: "[";
-    }
+  padding-left: $padding-x;
+  padding-right: $padding-x;
+  font-weight: normal;
+  &::after {
+    content: "]";
+  }
+  &::before {
+    content: "[";
+  }
 }
 @mixin footnote-style {
-    color: var(--text-color);
-    font-family: var(--references-font);
-    margin-top: var(--references-margin-top) !important;
-    margin-bottom: var(--references-margin-bottom);
+  color: var(--text-color);
+  font-family: var(--references-font);
+  margin-top: var(--references-margin-top) !important;
+  margin-bottom: var(--references-margin-bottom);
 }
 // 参考文献区导出时的class有所差别, 需要分别设置
 .footnotes-area {
-    @include footnote-style;
-    page-break-inside: auto;
-    hr {
-        display: none;
-    }
-    .md-fn-count {
-        @include footnote-count-bracket(0px);
-    }
-    // 取消跳转箭头
-    .reversefootnote {
-        display: none;
-    }
-    .footnote-line {
-        font-size: var(--references-font-size);
-    }
+  @include footnote-style;
+  page-break-inside: auto;
+  hr {
+    display: none;
+  }
+  .md-fn-count {
+    @include footnote-count-bracket(0px);
+  }
+  // 取消跳转箭头
+  .reversefootnote {
+    display: none;
+  }
+  .footnote-line {
+    font-size: var(--references-font-size);
+  }
 }
 
 // 非导出时
 .footnotes {
-    @include footnote-style;
-    font-size: var(--references-font-size);
-    // 取消跳转箭头
-    .md-reverse-footnote-area {
-        display: none;
-    }
-    .md-def-name {
-        @include footnote-count-bracket(1ch);
-    }
+  @include footnote-style;
+  font-size: var(--references-font-size);
+  // 取消跳转箭头
+  .md-reverse-footnote-area {
+    display: none;
+  }
+  .md-def-name {
+    @include footnote-count-bracket(1ch);
+  }
 }

@@ -1,131 +1,131 @@
 #write {
-    // 标题属性
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: var(--title-font-weight);
-        // page-break-after: avoid !important;
-    }
-    h1 {
-        font-family: var(--title-font);
-        font-size: var(--title-font-size);
-        font-weight: var(--title-font-weight);
-        text-align: center;
-        column-span: all;
-        margin-top: var(--title-margin-top);
-        margin-bottom: var(--title-margin-bottom);
-    }
-    h2 {
-        font-family: var(--h2-font);
-        font-size: var(--h2-font-size);
-        margin-top: var(--h2-margin-top);
-        margin-bottom: var(--h2-margin-bottom);
-    }
-    h3 {
-        font-family: var(--h3-font);
-        font-size: var(--h3-font-size);
-        line-height: var(--h3-font-size); // TODO 必要性待研究
-        margin-top: var(--h3-margin-top);
-        margin-bottom: var(--h3-margin-bottom);
-    }
-    h4 {
-        font-family: var(--h4-font);
-        font-size: var(--h4-font-size);
-        line-height: var(--h4-font-size);
-    }
-    h5 {
-        font-family: var(--h5-font);
-        font-size: var(--h5-font-size);
-        line-height: var(--h5-font-size);
-    }
-    h6 {
-        font-family: var(--h6-font);
-        font-size: var(--h6-font-size);
-        line-height: var(--h6-font-size);
-    }
+  // 标题属性
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: var(--title-font-weight);
+    // page-break-after: avoid !important;
+  }
+  h1 {
+    font-family: var(--title-font);
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    text-align: center;
+    column-span: all;
+    margin-top: var(--title-margin-top);
+    margin-bottom: var(--title-margin-bottom);
+  }
+  h2 {
+    font-family: var(--h2-font);
+    font-size: var(--h2-font-size);
+    margin-top: var(--h2-margin-top);
+    margin-bottom: var(--h2-margin-bottom);
+  }
+  h3 {
+    font-family: var(--h3-font);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-font-size); // TODO 必要性待研究
+    margin-top: var(--h3-margin-top);
+    margin-bottom: var(--h3-margin-bottom);
+  }
+  h4 {
+    font-family: var(--h4-font);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-font-size);
+  }
+  h5 {
+    font-family: var(--h5-font);
+    font-size: var(--h5-font-size);
+    line-height: var(--h5-font-size);
+  }
+  h6 {
+    font-family: var(--h6-font);
+    font-size: var(--h6-font-size);
+    line-height: var(--h6-font-size);
+  }
 
-    // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
-    // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
-    counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
-    h1 {
-        counter-reset: h2;
-    }
-    h2 {
-        counter-reset: h3;
-    }
-    h3 {
-        counter-reset: h4;
-    }
-    h4 {
-        counter-reset: h5;
-    }
-    h5 {
-        counter-reset: h6;
-    }
+  // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
+  // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
+  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
+  h1 {
+    counter-reset: h2;
+  }
+  h2 {
+    counter-reset: h3;
+  }
+  h3 {
+    counter-reset: h4;
+  }
+  h4 {
+    counter-reset: h5;
+  }
+  h5 {
+    counter-reset: h6;
+  }
 
-    h2:before {
-        @extend %h2-with-count;
-    }
+  h2:before {
+    @extend %h2-with-count;
+  }
 
-    h3:before {
-        @extend %h3-with-count;
-    }
+  h3:before {
+    @extend %h3-with-count;
+  }
 
-    h4:before {
-        @extend %h4-with-count;
-    }
+  h4:before {
+    @extend %h4-with-count;
+  }
 
-    h5:before {
-        @extend %h5-with-count;
-    }
+  h5:before {
+    @extend %h5-with-count;
+  }
 
-    h6:before {
-        @extend %h6-with-count;
-    }
+  h6:before {
+    @extend %h6-with-count;
+  }
 }
 // override the default style for focused headings
 h3.md-focus.md-heading:before {
-    @extend %h3-with-count;
+  @extend %h3-with-count;
 }
 h4.md-focus.md-heading:before {
-    @extend %h4-with-count;
+  @extend %h4-with-count;
 }
 h5.md-focus.md-heading:before {
-    @extend %h5-with-count;
+  @extend %h5-with-count;
 }
 h6.md-focus.md-heading:before {
-    @extend %h6-with-count;
+  @extend %h6-with-count;
 }
 %h2-with-count {
-    counter-increment: h2;
-    content: counter(h2);
-    margin-right: var(--title-margin-right);
+  counter-increment: h2;
+  content: counter(h2);
+  margin-right: var(--title-margin-right);
 }
 
 %h3-with-count {
-    counter-increment: h3;
-    content: counter(h2) "." counter(h3);
-    margin-right: var(--title-margin-right);
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3);
+  margin-right: var(--title-margin-right);
 }
 
 %h4-with-count {
-    counter-increment: h4;
-    content: counter(h2) "." counter(h3) "." counter(h4);
-    margin-right: var(--title-margin-right);
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4);
+  margin-right: var(--title-margin-right);
 }
 
 %h5-with-count {
-    counter-increment: h5;
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
-    margin-right: var(--title-margin-right);
+  counter-increment: h5;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+  margin-right: var(--title-margin-right);
 }
 
 %h6-with-count {
-    counter-increment: h6;
-    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "."
-        counter(h6);
-    margin-right: var(--title-margin-right);
+  counter-increment: h6;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "."
+    counter(h6);
+  margin-right: var(--title-margin-right);
 }
