@@ -1,0 +1,6 @@
+$theme: "light";
+$tool: "pandoc";
+@import "./dummy.scss";
+body {
+    @extend #write;
+}
