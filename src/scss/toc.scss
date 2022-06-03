@@ -1,0 +1,88 @@
+/* 目录 */
+.md-toc-content {
+  margin-left: 2em;
+  /* 修复缺失上级标题时无法递增 */
+  counter-reset: toc-h2 toc-h3 toc-h4;
+  page-break-after: always;
+}
+.md-toc-inner {
+  margin-left: 0 !important;
+  @if $theme == "light" {
+    color: var(--text-color) !important;
+  } @else if $theme == "dark" {
+    color: #dddddd !important;
+  }
+}
+.md-toc-item {
+  @if $theme == "light" {
+    color: var(--text-color) !important;
+  } @else if $theme == "dark" {
+    color: #dddddd !important;
+  }
+}
+
+/* 目录标题内容属性 */
+.md-toc-h2,
+.md-toc-h3,
+.md-toc-h4,
+.md-toc-h5,
+.md-toc-h6 {
+  font-size: var(--toc-font-size);
+  font-family: var(--toc-font), var(--base-Latin-font), var(--base-Chinese-font),
+    serif;
+}
+.md-toc-h2 {
+  font-weight: var(--strong-weight);
+}
+
+/* 目录标题前 */
+.md-toc-content {
+  .md-toc-h1 {
+    display: var(--toc-show-title);
+    counter-reset: toc-h2;
+  }
+  .md-toc-h2 {
+    counter-reset: toc-h3;
+  }
+  .md-toc-h3 {
+    counter-reset: toc-h4;
+  }
+  .md-toc-h4 {
+    counter-reset: toc-h5;
+  }
+  .md-toc-h5 {
+    counter-reset: toc-h6;
+  }
+  .md-toc-h2:before {
+    counter-increment: toc-h2;
+    content: counter(toc-h2);
+    margin-right: 1rem;
+    font-weight: var(--strong-weight);
+  }
+  .md-toc-h3:before {
+    counter-increment: toc-h3;
+    content: counter(toc-h2) "." counter(toc-h3);
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  .md-toc-h4:before {
+    counter-increment: toc-h4;
+    content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4);
+    margin-left: 3.5rem;
+    margin-right: 0.5rem;
+  }
+  .md-toc-h5:before {
+    counter-increment: toc-h5;
+    content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "."
+      counter(toc-h5);
+    margin-left: 5.5rem;
+    margin-right: 0.5rem;
+  }
+  .md-toc-h6:before {
+    counter-increment: toc-h6;
+    content: counter(toc-h2) "." counter(toc-h3) "." counter(toc-h4) "."
+      counter(toc-h5) "." counter(toc-h6);
+    margin-left: 7.5rem;
+    margin-right: 0.5rem;
+  }
+}

@@ -1,0 +1,69 @@
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: var(--base-line-height);
+  /* counter-reset: tableHead 0 imgHead 0; */
+  @if $theme == "dark" {
+    color: #dddddd;
+    background-color: #282828;
+    // background:url(mermaidAPI.initialize({'fontFamily': '宋体-简, serif;'}););
+  }
+}
+
+@media print {
+  #write {
+    padding: 0 !important;
+  }
+  @page {
+    margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距 */
+  }
+}
+
+#write {
+  font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
+  font-size: var(--base-font-size);
+  /* A4标准宽度 */
+  max-width: 21cm;
+  @if $theme == "light" {
+    background-color: white;
+  } @else if $theme == "dark" {
+    background-color: #1e1e1e;
+  }
+  /* column-count: 2;
+    column-gap: 25px;
+    column-width: 8cm; 
+    display: inline-block; */
+  /* 这里可以试分栏的，但确实不适合实现 */
+
+  p {
+    text-align: left;
+  }
+
+  // 超链接
+  @if $theme == "light" {
+    a {
+      color: var(--link-color-light);
+    }
+  } @else if $theme == "dark" {
+    a {
+      color: var(--link-color-dark);
+    }
+  }
+}
+
+hr {
+  @if $theme == "light" {
+    border-top: solid 0.7px #eee;
+  } @else if $theme == "dark" {
+    border-top: solid 0.7px #888888;
+  }
+}
+
+img {
+  /* 避免图片在导出时被断开 */
+  page-break-inside: avoid;
+}
+
+strong {
+  font-weight: var(--strong-weight);
+}

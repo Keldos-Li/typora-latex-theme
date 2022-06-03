@@ -1,0 +1,148 @@
+#write {
+  // 标题属性
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @if $os == "windows" {
+      font-weight: bold; 
+    } @else if $os == "macos" {
+      font-weight: normal;
+    }
+    /* 标题字体 */
+    font-family: var(--heading-Latin-font), var(--heading-Chinese-font),
+      sans-serif;
+    page-break-after: avoid !important;
+  }
+
+  h1 {
+    font-family: var(--heading-Latin-font), var(--title-Chinese-font),
+      sans-serif;
+    @if $os == "macos" {
+      font-weight: normal;
+    }
+    text-align: center;
+    column-span: all;
+    font-size: var(--title-font-size);
+  }
+  h2 {
+    font-family: var(--heading-Latin-font), var(--h2-Chinese-font), sans-serif;
+    font-size: var(--h2-font-size);
+  }
+  h3 {
+    font-family: var(--heading-Latin-font), var(--h3-Chinese-font), sans-serif;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-font-size);
+  }
+  h4 {
+    font-family: var(--heading-Latin-font), var(--h4-Chinese-font), sans-serif;
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-font-size);
+  }
+  h5 {
+    font-family: var(--heading-Latin-font), var(--h5-Chinese-font), sans-serif;
+    font-size: var(--h5-font-size);
+    line-height: var(--h5-font-size);
+  }
+  h6 {
+    font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
+    font-size: var(--h6-font-size);
+    /* 没有写错，为了避免行距太小才这么写 */
+    line-height: var(--h5-font-size);
+  }
+
+  // 代码块样式
+  .CodeMirror-wrap {
+    padding: 10px; // FIXME 当代码太长跨页的时候好像也会有点问题
+  }
+
+  .CodeMirror-code pre {
+    font-family: var(--code-font), var(--ui-font), monospace;
+  }
+
+  // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
+  // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
+  counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
+  h1 {
+    counter-reset: h2;
+  }
+  h2 {
+    counter-reset: h3;
+  }
+  h3 {
+    counter-reset: h4;
+  }
+  h4 {
+    counter-reset: h5;
+  }
+  h5 {
+    counter-reset: h6;
+  }
+
+  h2:before {
+    @extend %h2-with-count;
+  }
+
+  h3:before {
+    @extend %h3-with-count;
+  }
+
+  h4:before {
+    @extend %h4-with-count;
+  }
+
+  h5:before {
+    @extend %h5-with-count;
+  }
+
+  h6:before {
+    @extend %h6-with-count;
+  }
+}
+
+// override the default style for focused headings
+h3.md-focus.md-heading:before {
+  @extend %h3-with-count;
+}
+h4.md-focus.md-heading:before {
+  @extend %h4-with-count;
+}
+h5.md-focus.md-heading:before {
+  @extend %h5-with-count;
+}
+h6.md-focus.md-heading:before {
+  @extend %h6-with-count;
+}
+
+%h2-with-count {
+  counter-increment: h2;
+  content: counter(h2);
+  margin-right: 2rem;
+}
+
+%h3-with-count {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3);
+  margin-right: 2rem;
+}
+
+%h4-with-count {
+  counter-increment: h4;
+  content: counter(h2) "." counter(h3) "." counter(h4);
+  margin-right: 2rem;
+}
+
+%h5-with-count {
+  counter-increment: h5;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+  margin-right: 2rem;
+}
+
+%h6-with-count {
+  counter-increment: h6;
+  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "."
+    counter(h6);
+  margin-right: 2rem;
+}

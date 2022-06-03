@@ -1,0 +1,130 @@
+:root {
+  @if $os == "windows" {
+    $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"" !global;
+    $heading-Chinese-font: "华文黑体" !global;
+    $chapter-Chinese-font: "华文黑体" !global;
+    $sub-chapter-Chinese-font: "华文楷体" !global;
+    $sub-sub-chapter-Chinese-font: "华文仿宋" !global;
+  } @else if $os == "macos" {
+    $ui-font: "\"苹方-简\"" !global;
+    $heading-Chinese-font: "华文黑体Bold" !global;
+    $chapter-Chinese-font: "方正公文黑体" !global;
+    $sub-chapter-Chinese-font: "方正公文楷体" !global;
+    $sub-sub-chapter-Chinese-font: "方正公文仿宋" !global;
+  } @else if $os == "linux" {
+    $ui-font: "\"Noto Sans CJK SC\"" !global;
+    $heading-Chinese-font: "Noto Sans CJK SC" !global;
+    $chapter-Chinese-font: "Noto Sans CJK SC" !global;
+    $sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
+    $sub-sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
+  }
+
+  /* == 字体设置 == */
+
+  /* 基准字体 */
+  /* 备选：Times, "Times New Roman" */
+  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10";
+  --base-Chinese-font: "宋体-简", "华文宋体", "Noto Serif CJK SC";
+  --base-font-size: 9.5pt;
+
+  /* 引言字体 */
+  --quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times,
+    "Times New Roman", "华文仿宋";
+  /* 这里字体用了10pt,比正文字体稍大 */
+  --quote-font-size: 10pt;
+
+  /* 代码字体（代码中的中文会调用 ui-font） */
+  --code-font: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New";
+
+  /* 侧边栏字体 */
+  --ui-font: #{$ui-font};
+
+  /* source mode 字体 */
+  /* 默认调用 code-font 和 ui-font */
+  --sourceMode-font: "SF Mono", #{$ui-font};
+
+  /* 目录字体 */
+  /* 默认调用 base-font */
+  --toc-font: "";
+  /* 默认调用 base-font-size */
+  --toc-font-size: "";
+
+  /* 表格字体 */
+  /* 默认调用 heading-font */
+  --table-title-font: "";
+  /* 默认调用 base-font */
+  --table-font: "";
+
+  /* 标题字体（总设置） */
+  @if $os == "macos" {
+    /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
+    --heading-Latin-font: "LMRoman10-Bold";
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  } @else if $os == "windows" {
+    --heading-Latin-font: var(--base-Latin-font);
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  } @else if $os == "linux" {
+    --heading-Latin-font: var(--base-Latin-font);
+    --heading-Chinese-font: "#{$heading-Chinese-font}";
+  }
+
+  /* 标题字体分别设置 */
+  /* 大标题（h1）字体 */
+  --title-Chinese-font: "#{$heading-Chinese-font}";
+  --title-font-size: 18pt;
+  /* h2字体 */
+  --h2-Chinese-font: "#{$chapter-Chinese-font}";
+  --h2-font-size: 14pt;
+  /* h3字体 */
+  --h3-Chinese-font: "#{$chapter-Chinese-font}";
+  --h3-font-size: 12pt;
+  /* h4字体 */
+  --h4-Chinese-font: "#{$sub-chapter-Chinese-font}";
+  --h4-font-size: 10pt;
+  /* h5字体 */
+  --h5-Chinese-font: "#{$sub-sub-chapter-Chinese-font}";
+  --h5-font-size: 10pt;
+  /* h6字体 */
+  --h6-Chinese-font: "#{$sub-sub-chapter-Chinese-font}";
+  --h6-font-size: 9.5pt;
+
+  /* 粗体样式设置 */
+  /* 加粗风格时使用的字重；400等同于 normal，700等同于 bold，900等同于 heavy */
+  --strong-weight: 900;
+
+  /* 基础行距 */
+  --base-line-height: 16pt;
+
+  /* == 页面设置 == */
+  /* 打印页边距 */
+  --set-margin: 1.8cm 2cm 1.2cm 2cm !important;
+
+  /* == 控制设置 == */
+  /* 目录中是否显示一级标题 */
+  --toc-show-title: none;
+
+  /* == 颜色设置 == */
+  /* 超链接颜色 */
+  --link-color-light: #2E67D3;
+  --link-color-dark: #8bb1f9;
+
+  @if $theme == "dark" {
+    --md-char-color: hsl(212, 100%, 85%);
+    --link-hover: hsl(212, 100%, 85%);
+    --focus-cont-bg: hsl(0, 0%, 10%);
+    --focus-para-bg: hsl(0, 0%, 15%);
+    --opt-borderb: 1px dashed hsl(212, 100%, 65%);
+    --focus-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.9);
+    --opt-shadow: 0px 8px 16px 1px hsla(0, 0%, 0%, 0.3);
+
+    /*change background of sidebar*/
+    --side-bar-bg-color: #282828;
+    --window-border: 0px solid #929292;
+    --title-color: #dddddd;
+    --text-color: #dcdcdc;
+    --select-text-bg-color: #9ab1cf;
+    --select-text-font-color: #161616;
+    --bg-color: hsl(0, 0%, 15%);
+    --mermaid-theme: night;
+  }
+}

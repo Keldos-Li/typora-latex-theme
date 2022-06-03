@@ -11,18 +11,17 @@ pandoc = pandoc
 $(shell mkdir -p $(working_dir))
 $(shell mkdir -p $(target_dir))
 
+$(shell cp -r $(base_dir)/scss $(working_dir)/scss)
+$(shell cp -r $(base_dir)/headers $(working_dir)/headers)
+
 # $(1) is the name of operating system, $(2) is typora or pandoc, $(3) is light or dark theme
 define build
 	mkdir -p $(target_dir)/$(1)-$(2)
 	mkdir -p $(target_dir)/$(1)-$(2)/target
-	echo '$$os: "$(1)";' >> $(working_dir)/$(1)-$(2)-$(3).scss
-	echo '$$tool: "$(2)";' >> $(working_dir)/$(1)-$(2)-$(3).scss
-	echo '$$theme: "$(3)";' >> $(working_dir)/$(1)-$(2)-$(3).scss
-	cat $(base_dir)/latex-theme.scss >> $(working_dir)/$(1)-$(2)-$(3).scss
 	if [ "$(3)" = "light" ]; then \
-		scss --sourcemap=none --style expanded $(working_dir)/$(1)-$(2)-$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
+		scss --sourcemap=none --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
 	else \
-		scss --sourcemap=none --style expanded $(working_dir)/$(1)-$(2)-$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
+		scss --sourcemap=none --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
 	fi
 endef
 
@@ -79,4 +78,4 @@ pandoc:
 
 .PHONY: clean
 clean:
-	rm -rf $(target_dir) $(working_dir)
+	rm -rf $(target_dir) $(working_dir) $(base_dir)/.sass-cache
