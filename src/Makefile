@@ -38,7 +38,7 @@ define build-typora
 	cp $(base_dir)/README.md $(target_dir)/$(1)-$(typora)
 	cp $(base_dir)/../LICENSE $(target_dir)/$(1)-$(typora)
 	cp $(base_dir)/../credits.md $(target_dir)/$(1)-$(typora)
-	cp -r $(base_dir)/../Supplemental $(target_dir)/$(1)-$(typora)/Supplemental
+	cp -r $(base_dir)/../resources $(target_dir)/$(1)-$(typora)/resources
 endef
 
 define build-pandoc
