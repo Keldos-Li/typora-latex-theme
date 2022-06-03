@@ -31,9 +31,9 @@ define build-typora
 	$(call build,$(1),$(typora),light)
 	$(call build,$(1),$(typora),dark)
 	if [ "$(1)" = "$(windows)" ]; then \
-		cp $(base_dir)/install.ps1 $(target_dir)/$(1)-$(typora); \
+		cp $(base_dir)/scripts/install.ps1 $(target_dir)/$(1)-$(typora); \
 	else \
-		cp $(base_dir)/install.sh $(target_dir)/$(1)-$(typora); \
+		cp $(base_dir)/scripts/install.sh $(target_dir)/$(1)-$(typora); \
 	fi;
 	cp $(base_dir)/README.md $(target_dir)/$(1)-$(typora)
 	cp $(base_dir)/../LICENSE $(target_dir)/$(1)-$(typora)
