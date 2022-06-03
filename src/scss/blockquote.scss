@@ -1,0 +1,12 @@
+/* basic 样式采用一般的引言，具有左边框、左缩进 */
+blockquote {
+  font-style: normal;
+  font-family: var(--quote-font), var(--base-Latin-font),
+    var(--base-Chinese-font), -apple-system, serif;
+  font-size: var(--quote-font-size);
+  /* 文字离左边框的距离 */
+  padding-left: 16px;
+  padding-right: 20pt;
+  /* 左边框离页面边的距离 */
+  margin-left: 20px;
+}

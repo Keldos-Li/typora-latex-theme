@@ -1,0 +1,28 @@
+/* 行内代码 */
+code {
+  font-family: var(--code-font), var(--ui-font), monospace; 
+}
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code,
+p code,
+li code {
+  @if $theme == "light" {
+    color: rgb(60, 112, 198);
+    background-color: #fefefe;
+    /* 阴影 */
+    box-shadow: 0 0 1px 1px #c8d3df;
+  } @else if $theme == "dark" {
+    /* 黑色模式修改 */
+    color: #8bb1f9;
+    /* 黑色模式修改 */
+    background-color: #161616;
+    /* 黑色模式修改 */
+    box-shadow: 0 0 1px 1px #141414;
+  }
+  font-family: var(--code-font), var(--ui-font), monospace;
+  box-sizing: border-box;
+  border-right: 0px;
+  margin: 0 2px 0 2px;
+  padding: 0 2px 0 2px;
+  /* 圆角 */
+  border-radius: 2px 2px 2px 2px;
+}
