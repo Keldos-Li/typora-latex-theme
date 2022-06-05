@@ -11,15 +11,11 @@
     } @else if $os == "macos" {
       font-weight: normal;
     }
-    /* 标题字体 */
-    font-family: var(--heading-Latin-font), var(--heading-Chinese-font),
-      sans-serif;
     page-break-after: avoid !important;
   }
 
   h1 {
-    font-family: var(--heading-Latin-font), var(--title-Chinese-font),
-      sans-serif;
+    font-family: var(--heading-Latin-font), var(--title-Chinese-font), serif;
     @if $os == "macos" {
       font-weight: normal;
     }
@@ -28,26 +24,26 @@
     font-size: var(--title-font-size);
   }
   h2 {
-    font-family: var(--heading-Latin-font), var(--h2-Chinese-font), sans-serif;
+    font-family: var(--heading-Latin-font), var(--h2-Chinese-font), serif;
     font-size: var(--h2-font-size);
   }
   h3 {
-    font-family: var(--heading-Latin-font), var(--h3-Chinese-font), sans-serif;
+    font-family: var(--heading-Latin-font), var(--h3-Chinese-font), serif;
     font-size: var(--h3-font-size);
     line-height: var(--h3-font-size);
   }
   h4 {
-    font-family: var(--heading-Latin-font), var(--h4-Chinese-font), sans-serif;
+    font-family: var(--heading-Latin-font), var(--h4-Chinese-font), serif;
     font-size: var(--h4-font-size);
     line-height: var(--h4-font-size);
   }
   h5 {
-    font-family: var(--heading-Latin-font), var(--h5-Chinese-font), sans-serif;
+    font-family: var(--heading-Latin-font), var(--h5-Chinese-font), serif;
     font-size: var(--h5-font-size);
     line-height: var(--h5-font-size);
   }
   h6 {
-    font-family: var(--heading-Latin-font), var(--h6-Chinese-font), sans-serif;
+    font-family: var(--heading-Latin-font), var(--h6-Chinese-font), serif;
     font-size: var(--h6-font-size);
     /* 没有写错，为了避免行距太小才这么写 */
     line-height: var(--h5-font-size);
