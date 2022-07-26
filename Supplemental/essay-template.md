@@ -216,7 +216,7 @@ for i in range(10):
 　　<table style="border:none;text-align:center;width:auto;margin: 0 auto;">
 	<tbody>
 		<tr>
-			<td style="padding: 6px"><img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%BD%E9%A2%9D1.png" ></td><td><img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%BD%E9%A2%9D2.png" ></td>
+			<td style="padding: 6px"><img src="https://raw.githubusercontent.com/Keldos-Li/P-pic/main/img/osqqfe.png" ></td><td><img src="https://raw.githubusercontent.com/Keldos-Li/P-pic/main/img/oszgfe.png" ></td>
 		</tr>
         <tr><td><strong>图 8  全球操作系统市场份额</strong></td><td><strong>图 9  中国操作系统市场份额</strong></td></tr>
 	</tbody>
