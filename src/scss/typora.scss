@@ -1,5 +1,5 @@
 @media screen {
-  #write {
+  #{$wrap} {
     padding: var(--set-margin);
     @if $theme == "light" {
       /* 添加一个淡蓝色的边框 */
@@ -86,10 +86,10 @@ pre.md-meta-block {
 }
 
 // override the default style for focused headings
-#write > h3.md-focus:before,
-#write > h4.md-focus:before,
-#write > h5.md-focus:before,
-#write > h6.md-focus:before,
+#{$wrap} > h3.md-focus:before,
+#{$wrap} > h4.md-focus:before,
+#{$wrap} > h5.md-focus:before,
+#{$wrap} > h6.md-focus:before,
 h3.md-focus:before,
 h4.md-focus:before,
 h5.md-focus:before,

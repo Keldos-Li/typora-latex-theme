@@ -1,6 +1,10 @@
 body {
-  padding: 0 !important;
-  margin: 0 !important;
+  @if $css-type == "typora" {
+    padding: 0 !important;
+    margin: 0 !important;
+  } @else if $css-type == "bare" {
+    margin: 0 auto !important;
+  }
   line-height: var(--base-line-height);
   /* counter-reset: tableHead 0 imgHead 0; */
   @if $theme == "dark" {
@@ -11,7 +15,7 @@ body {
 }
 
 @media print {
-  #write {
+  #{$wrap} {
     padding: 0 !important;
   }
   @page {
@@ -19,7 +23,7 @@ body {
   }
 }
 
-#write {
+#{$wrap} {
   font-family: var(--base-Latin-font), var(--base-Chinese-font), serif;
   font-size: var(--base-font-size);
   /* A4标准宽度 */
