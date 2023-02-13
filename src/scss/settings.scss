@@ -57,7 +57,7 @@
 
     /* 公式字体 */
   --math-font-size: 1em;
-  
+
   /* 标题字体（总设置） */
   @if $os == "macos" {
     /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
@@ -127,7 +127,7 @@
     --text-color: #dcdcdc;
     --select-text-bg-color: #9ab1cf;
     --select-text-font-color: #161616;
-    --bg-color: hsl(0, 0%, 15%);
+    --bg-color: #1e1e1e;
     --mermaid-theme: night;
   }
 }
