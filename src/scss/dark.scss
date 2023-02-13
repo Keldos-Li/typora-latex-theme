@@ -1,0 +1,268 @@
+@if $theme == "dark" {
+  /* 可能的代码高亮样式
+  .cm-s-inner {
+    background-color: #263238;
+    color: rgba(233, 237, 237);
+  }
+  .cm-s-inner .CodeMirror-gutters {
+    background: #263238;
+    color: #537f7e;
+    border: none;
+  }
+  .cm-s-inner .CodeMirror-guttermarker,
+  .cm-s-inner .CodeMirror-guttermarker-subtle,
+  .cm-s-inner .CodeMirror-linenumber {
+    color: #537f7e;
+  }
+  */
+
+  .cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .cm-s-inner .cm-link,
+  .cm-s-inner.cm-link {
+    color: #4770c0;
+  }
+  .cm-s-inner {
+    .CodeMirror-cursor {
+      border-left: 1px solid #f8f8f0;
+    }
+    div.CodeMirror-selected {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .CodeMirror-line::selection,
+    .CodeMirror-line > span::selection,
+    .CodeMirror-line > span > span::selection {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .CodeMirror-line::-moz-selection,
+    .CodeMirror-line > span::-moz-selection,
+    .CodeMirror-line > span > span::-moz-selection {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .CodeMirror-activeline-background {
+      background: rgba(0, 0, 0, 0);
+    }
+    .CodeMirror-matchingbracket {
+      text-decoration: underline;
+      color: white !important;
+    }
+    .cm-keyword {
+      color: #c792ea;
+    }
+    .cm-operator {
+      color: #e9eded;
+    }
+    .cm-variable-2 {
+      color: #80cbc4;
+    }
+    .cm-variable-3 {
+      color: #82b1ff;
+    }
+    .cm-builtin {
+      color: #decb6b;
+    }
+    .cm-atom {
+      color: #f77669;
+    }
+    .cm-number {
+      color: #f77669;
+    }
+    .cm-def {
+      color: #e9eded;
+    }
+    .cm-string {
+      color: #c3e88d;
+    }
+    .cm-string-2 {
+      color: #80cbc4;
+    }
+    .cm-comment {
+      color: #546e7a;
+    }
+    .cm-variable {
+      color: #82b1ff;
+    }
+    .cm-tag {
+      color: #80cbc4;
+    }
+    .cm-meta {
+      color: #80cbc4;
+    }
+    .cm-attribute {
+      color: #ffcb6b;
+    }
+    .cm-property {
+      color: #80cbae;
+    }
+    .cm-qualifier {
+      color: #decb6b;
+    }
+    .cm-variable-3 {
+      color: #decb6b;
+    }
+    .cm-tag {
+      color: #ff5370;
+    }
+    .cm-error {
+      color: #ffffff;
+      background-color: #ec5f67;
+    }
+  }
+
+  .md-fences .code-tooltip {
+    background-color: #282828;
+  }
+  /*
+  #write pre.md-fences {
+    padding: 10rem;
+  }
+  .md-fences {
+    background-color: #0E1116;
+    color: #e9eded;
+  }
+  */
+
+  /* 改变光标的颜色，在黑暗背景下能显示*/
+  .CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #ffffff;
+    z-index: 3;
+  }
+
+  :root {
+    --blur-text-color: hsla(0, 0%, 90%, 0.2);
+    --active-file-bg-color: #373737;
+    /* 文件列表 当前文件激活 背景色*/
+    --active-file-text-color: hsl(212, 100%, 75%);
+    --active-file-border-color: hsl(212, 100%, 75%);
+    /* 树形结构下文件激活边框色 */
+    /*--side-bar-bg-color: hsl(0, 0%, 10%);*/
+    /*文件 大纲 侧边栏 背景色*/
+    --item-hover-bg-color: #373737;
+    /* 打开文文件夹、正文菜单、最近使用 hover 效果 */
+    --item-hover-text-color: hsl(212, 100%, 75%);
+    --primary-color: hsl(212, 100%, 75%);
+    /* color of primary buttons */
+    --primary-btn-border-color: hsl(212, 100%, 75%);
+    --primary-btn-text-color: hsl(0, 0%, 15%);
+    --select-text-bg-color: hsl(212, 100%, 85%);
+    --select-text-font-color: hsl(0, 0%, 15%);
+    --active-bg: hsl(0, 0%, 10%);
+    --window-border: var(--bg-color);
+    --control-text-color: var(--title-color);
+    --control-text-hover-color: var(--text-color);
+  }
+  .active-tab-files .info-panel-tab,
+  .active-tab-outline .info-panel-tab {
+    color: var(--active-file-text-color);
+  }
+  .file-list-item:hover {
+    background: var(--item-hover-bg-color);
+    color: var(--item-hover-text-color);
+  }
+  .file-node-content:hover {
+    background: var(--active-file-bg-color);
+    color: var(--active-file-text-color);
+  }
+
+  /* 整个界面编辑框外面的背景色 */
+  html > body > content {
+    background-color: #161616;
+  }
+
+  /*
+  #top-titlebar,
+  #top-titlebar * {
+    background-color: #1A1A1A;
+    color: white;
+  }
+  ::-webkit-scrollbar-corner {
+    display: none;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.05);
+    background-clip: padding-box;
+  }
+  [draggable] {
+    cursor: pointer;
+  }
+  */
+
+  /* 调整html编辑时的行为，能看清楚里面的文字 */
+  .md-rawblock-control:not(.md-rawblock-tooltip) {
+    background-color: #1f1f1f;
+  }
+  .md-htmlblock .md-rawblock-tooltip {
+    z-index: 0;
+    color: rgb(45, 226, 43);
+    background-color: #1f1f1f;
+  }
+  .CodeMirror {
+    background-color: #1f1e1e;
+  }
+  .md-rawblock-on-edit > .md-rawblock-tooltip,
+  .md-rawblock:hover > .md-rawblock-container,
+  .md-rawblock:hover > .md-rawblock-tooltip {
+    background: #1b1d21;
+    display: block;
+  }
+  .md-rawblock:hover > .md-rawblock-tooltip {
+    transition: none;
+    animation: none;
+  }
+
+  /* quick open框  （e.g. 插入代码后弹出的语言候选框） */
+  .auto-suggest-container {
+    border: 0px;
+    background-color: #282828;
+  }
+
+  #typora-quick-open {
+    background-color: #282828;
+    input {
+      background-color: #282828;
+      border: 0;
+      border-bottom: 1px solid grey;
+    }
+  }
+
+  /* 插入图片后弹出的框 */
+  .context-menu,
+  #spell-check-panel,
+  #footer-word-count-info {
+    background-color: #282828;
+  }
+
+  /* 退出代码模式的按钮，以及最近打开文件页面中的按钮 */
+  .typora-sourceview-on #toggle-sourceview-btn,
+  #recent-file-panel-action-btn {
+    /* 设为透明，用于覆盖掉默认的浅色 */
+    background: #00000000;
+  }
+
+  /* 鼠标悬停到按钮上后的悬停文本框 */
+  .ty-tooltip {
+    background: #282828;
+    color: #fff;
+  }
+
+  /* 以下三段与 Unibody UI 模式的适配有关 */
+  .megamenu-content,
+  .megamenu-opened header {
+    background: var(--bg-color);
+  }
+
+  .megamenu-menu {
+    background-color: #282828;
+  }
+
+  #recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: #282828;
+  }
+
+  /* typora UI 编辑页面，在宽度较小时的底栏 */
+  footer.ty-footer {
+    border-top: 1px solid #222;
+  }
+}
