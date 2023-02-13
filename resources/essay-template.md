@@ -1,11 +1,11 @@
 <div class="cover" style="page-break-after:always;font-family:方正公文仿宋;width:100%;height:100%;border:none;margin: 0 auto;text-align:center;">
     <div style="width:60%;margin: 0 auto;height:0;padding-bottom:10%;">
         </br>
-        <img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%A0%A1%E5%90%8D-%E9%BB%91%E8%89%B2.svg" alt="校名" style="width:100%;"/>
+        <img src="https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/ZJU-name.svg" alt="校名" style="width:100%;"/>
     </div>
     </br></br></br></br></br>
     <div style="width:60%;margin: 0 auto;height:0;padding-bottom:40%;">
-        <img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%A0%A1%E5%BE%BD-%E9%BB%91%E8%89%B2.svg" alt="校徽" style="width:100%;"/>
+        <img src="https://raw.githubusercontent.com/Keldos-Li/pictures/main/typora-latex-theme/ZJU-logo.svg" alt="校徽" style="width:100%;"/>
 	</div>
     </br></br></br></br></br></br></br></br>
     <span style="font-family:华文黑体Bold;text-align:center;font-size:20pt;margin: 10pt auto;line-height:30pt;">《论文名称》</span>
@@ -216,7 +216,7 @@ for i in range(10):
 　　<table style="border:none;text-align:center;width:auto;margin: 0 auto;">
 	<tbody>
 		<tr>
-			<td style="padding: 6px"><img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%BD%E9%A2%9D1.png" ></td><td><img src="https://gitee.com/Keldos-Li/picture/raw/master/img/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BB%BD%E9%A2%9D2.png" ></td>
+			<td style="padding: 6px"><img src="https://raw.githubusercontent.com/Keldos-Li/P-pic/main/img/osqqfe.png" ></td><td><img src="https://raw.githubusercontent.com/Keldos-Li/P-pic/main/img/oszgfe.png" ></td>
 		</tr>
         <tr><td><strong>图 8  全球操作系统市场份额</strong></td><td><strong>图 9  中国操作系统市场份额</strong></td></tr>
 	</tbody>
