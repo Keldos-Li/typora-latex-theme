@@ -90,6 +90,11 @@ pre.md-meta-block {
   font-family: var(--code-font), var(--ui-font), monospace;
 }
 
+/* 覆盖mermaid的默认字体大小（由于mermaid图像本身大小无法改变，如果设置typora字体过大或过小可能产生问题） */
+[id *="mermaidChart"] {
+  font-size: 1em !important;
+}
+
 // override the default style for focused headings
 #write > h3.md-focus:before,
 #write > h4.md-focus:before,
