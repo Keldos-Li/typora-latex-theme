@@ -1,7 +1,7 @@
 body {
   padding: 0 !important;
   margin: 0 !important;
-  line-height: var(--base-line-height);
+  // line-height: var(--base-line-height);
   /* counter-reset: tableHead 0 imgHead 0; */
   @if $theme == "dark" {
     color: #dddddd;
@@ -34,8 +34,15 @@ body {
     display: inline-block; */
   /* 这里可以试分栏的，但确实不适合实现 */
 
+  .md-math-block,
+  .md-rawblock,
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
   p {
     text-align: left;
+    line-height: var(--base-line-height);
   }
 
   // 超链接
