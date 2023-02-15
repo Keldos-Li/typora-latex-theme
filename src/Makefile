@@ -6,7 +6,7 @@ windows = windows
 macos = macos
 linux = linux
 typora = typora
-pandoc = pandoc
+bare = bare
 
 $(shell mkdir -p $(working_dir))
 $(shell mkdir -p $(target_dir))
@@ -14,7 +14,7 @@ $(shell mkdir -p $(target_dir))
 $(shell cp -r $(base_dir)/scss $(working_dir)/scss)
 $(shell cp -r $(base_dir)/headers $(working_dir)/headers)
 
-# $(1) is the name of operating system, $(2) is typora or pandoc, $(3) is light or dark theme
+# $(1) is the name of operating system, $(2) is typora or bare, $(3) is light or dark theme
 define build
 	mkdir -p $(target_dir)/$(1)-$(2)
 	mkdir -p $(target_dir)/$(1)-$(2)/target
@@ -40,9 +40,8 @@ define build-typora
 	cp -r $(base_dir)/../resources $(target_dir)/$(1)-$(typora)/resources
 endef
 
-define build-pandoc
-	$(call build,$(linux),$(pandoc),light)
-	$(call build,$(linux),$(pandoc),dark)
+define build-bare
+	$(call build,$(bare),$(bare),light)
 endef
 
 .PHONY: all
@@ -50,7 +49,7 @@ all:
 	make windows
 	make macos
 	make linux
-	make pandoc
+	make bare
 
 .PHONY: all-and-compress
 all-and-compress:
@@ -58,7 +57,7 @@ all-and-compress:
 	cd $(target_dir)/$(windows)-$(typora); zip -r $(target_dir)/latex-theme-$(windows).zip ./*
 	cd $(target_dir)/$(macos)-$(typora); zip -r $(target_dir)/latex-theme-$(macos).zip ./*
 	cd $(target_dir)/$(linux)-$(typora); zip -r $(target_dir)/latex-theme-$(linux).zip ./*
-#	cd $(target_dir)/$(pandoc)-$(typora); zip -r $(target_dir)/latex-theme-$(pandoc).zip ./*
+#	cd $(target_dir)/$(bare)-$(bare); zip -r $(target_dir)/latex-theme-$(bare).zip ./*
 
 .PHONY: windows
 windows:
@@ -72,9 +71,9 @@ macos:
 linux:
 	$(call build-typora,$(linux))
 
-.PHONY: pandoc
-pandoc:
-	$(call build-pandoc,$(linux))
+.PHONY: bare
+bare:
+	$(call build-bare,$(linux))
 
 .PHONY: clean
 clean:
