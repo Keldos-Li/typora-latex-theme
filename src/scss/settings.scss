@@ -1,3 +1,11 @@
+@if $css-type == "bare" {
+  $wrap: 'body' !global;
+} @else if $css-type == "typora" {
+  $wrap: '#write' !global;
+} @else {
+  @error "Unknown css-type: #{$css-type}";
+}
+
 :root {
   @if $os == "windows" {
     $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"" !global;
