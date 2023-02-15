@@ -49,15 +49,6 @@
     line-height: var(--h5-font-size);
   }
 
-  // 代码块样式
-  .CodeMirror-wrap {
-    padding: 10px; // FIXME 当代码太长跨页的时候好像也会有点问题
-  }
-
-  .CodeMirror-code pre {
-    font-family: var(--code-font), var(--ui-font), monospace;
-  }
-
   // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
   // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
   counter-reset: h2 0 h3 0 h4 0 h5 0 h6 0;
