@@ -26,7 +26,7 @@
   }
   font-family: var(--sourceMode-font), var(--code-font), var(--ui-font),
     monospace;
-  line-height: 2rem;
+  line-height: 2em;
 }
 
 /* 侧边大纲标题 */
@@ -87,6 +87,7 @@ pre.md-meta-block {
   }
   padding: 1.4em;
   font-family: var(--code-font), var(--ui-font), monospace;
+  font-size: 0.8em;
 }
 
 // override the default style for focused headings

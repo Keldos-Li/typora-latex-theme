@@ -5,10 +5,10 @@ blockquote {
   font-family: var(--quote-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
   /* 文字离左边框的距离 */
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 2em;
+  padding-right: 2em;
   /* 左边框离页面边的距离 */
-  margin-left: 0rem;
+  margin-left: 0;
 }
 
 blockquote p:first-child {
