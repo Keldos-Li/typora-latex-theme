@@ -64,10 +64,12 @@ body {
 
 hr {
   @if $theme == "light" {
-    border-top: solid 0.7px #eee;
+    border-top: solid 1px #ddd;
   } @else if $theme == "dark" {
-    border-top: solid 0.7px #888888;
+    border-top: solid 1px #888888;
   }
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
 }
 
 img {
