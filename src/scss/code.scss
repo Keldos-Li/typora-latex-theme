@@ -26,3 +26,16 @@ li code {
   /* 圆角 */
   border-radius: 2px 2px 2px 2px;
 }
+
+/* 代码块样式 */
+.md-fences,
+.CodeMirror pre {
+  font-size: 1em;
+}
+.CodeMirror-wrap {
+  /* padding: 10px; */ // FIXME 当代码太长跨页的时候好像也会有点问题
+  font-size: 1em;
+}
+.CodeMirror-code pre {
+  font-family: var(--code-font), var(--ui-font), monospace;
+}
