@@ -45,7 +45,7 @@ items:
 2. ordered list item 2.
    + sub-unordered list item 1.
    + sub-unordered list item 2.
-     + [x] something is DONE.  ***==(Please Do NOT Use This feature, for it's not well polished)==***
+     + [x] something is DONE.
      + [ ] something is not TODO.
 
 
