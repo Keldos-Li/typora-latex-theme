@@ -23,7 +23,7 @@
 
   /* 基准字体 */
   /* 备选：Times, "Times New Roman" */
-  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10";
+  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times;
   --base-Chinese-font: "家族宋", "宋体-简", "华文宋体", "Noto Serif CJK SC";
   --base-font-size: 9.5pt;
 
@@ -37,7 +37,9 @@
   --quote-font-size: 1.05em;
 
   /* 代码字体（代码中的中文会调用 ui-font） */
-  --code-font: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New";
+  /* "Courier New" 从 Windows 3.1 起成为 Windows 官方提供的字体 */
+  /* "Consolas" 从 Windows Vista 起成为 Windows 官方提供的字体 */
+  --code-font: "Latin Modern Mono", "Latin Modern Mono 10", "Consolas", "Courier New";
 
   /* 侧边栏字体 */
   --ui-font: #{$ui-font};
