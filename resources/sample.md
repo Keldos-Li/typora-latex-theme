@@ -18,7 +18,7 @@ A common form of *lorem ipsum* reads:
 
 Inline styles support **strong**, *Emphasis*, `code`, <u>underline</u>, ~~strikethrough~~, :smile:, $\LaTeX$, X^2^, H~2~O, ==highlight==, [Link](typora.io), and image:
 
-![img](https://i.imgur.com/RGLj3oV.jpg)
+![img](https://www.typoraio.cn/img/screen/Group-screen.png)
 
 level heading:
 

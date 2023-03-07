@@ -20,7 +20,7 @@ description: 这个 block 块是 YAML front matters
 
 内联样式支持**粗体**、*斜体*、`code`、<u>下划线</u>、~~删除线~~、:smile:、$\LaTeX$、X^2^、H~2~O、==高亮==、[链接](typora.io)和图像：
 
-![img](https://i.imgur.com/RGLj3oV.jpg)
+![img](https://www.typoraio.cn/img/screen/Group-screen.png)
 
 层级标题：
 
