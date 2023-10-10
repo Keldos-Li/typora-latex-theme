@@ -11,13 +11,13 @@ blockquote {
   margin-left: 0;
 }
 
-blockquote p:first-child {
-  padding-top: 1ch;
-}
+// blockquote p:first-child {
+//   padding-top: 1ch;
+// }
 
-blockquote p:last-child {
-  padding-bottom: 1ch;
-}
+// blockquote p:last-child {
+//   padding-bottom: 1ch;
+// }
 
 blockquote blockquote {
   border-left: 4px solid hsl(0, 0%, 70%);

@@ -1,5 +1,5 @@
 /* 无序列表 */
-ul {
+#write ul {
   list-style: disc;
   ul {
     /*list-style: circle;*/
@@ -13,7 +13,7 @@ ul {
 }
 
 /* 有序列表 */
-ol {
+#write ol {
   list-style: decimal;
   ol {
     counter-reset: liist;
@@ -52,13 +52,23 @@ ol {
   }
 }
 
-li {
-  position: relative;
-}
-ol, ul {
+#write ol, 
+#write ul {
   padding-inline-start: 2em;
 }
 
+#write {
+  li {
+    position: relative;
+  }
+  li+li,
+  ul+ol>li,
+  ol+ul>li,
+  li>ul>li,
+  li>ol>li {
+    margin-top: -0.8em; // 让列表项之间的间距更紧凑
+  }
+}
 /* task列表 */
 .md-task-list-item>input{
   margin-top: 0.42em;
