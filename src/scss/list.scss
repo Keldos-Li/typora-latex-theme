@@ -18,11 +18,11 @@
   ol {
     counter-reset: liist;
     list-style: none;
-    li {
+    > li {
       counter-increment: liist;
       position: relative;
     }
-    li::before {
+    > li::before {
       content: "(" counter(liist, lower-alpha) ")";
       position: absolute;
       left: -1.8em;
@@ -32,11 +32,11 @@
       counter-reset: liiist;
       list-style: none;
       margin: 0;
-      li {
+      > li {
         counter-increment: liiist;
         position: relative;
       }
-      li::before {
+      > li::before {
         content: counter(liiist, lower-roman) ".";
         align-self: flex-end;
         position: absolute;
