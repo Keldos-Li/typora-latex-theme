@@ -116,6 +116,10 @@
   --link-color-light: #2E67D3;
   --link-color-dark: #8bb1f9;
 
+  /* == 强制分页 == */
+  /* 二级标题后的内容是否分页显示，always为开启，void为关闭 */
+  --page-break-after-h2: void;
+
   @if $theme == "dark" {
     --md-char-color: hsl(212, 100%, 85%);
     --link-hover: hsl(212, 100%, 85%);
