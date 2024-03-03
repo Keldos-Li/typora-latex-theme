@@ -14,7 +14,7 @@ body {
     padding: 0 !important;
   }
   h2 {
-    page-break-before: var(--page-break-after-h2);
+    page-break-before: var(--page-break-before-h2);
   }
   h2:first-of-type {
     page-break-before: avoid;
