@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install Dependencies
         run: |
           sudo apt install ruby sass -y
@@ -20,7 +20,7 @@ jobs:
         run: |
           cd ./src; make
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: |
