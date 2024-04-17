@@ -13,6 +13,12 @@ body {
   #write {
     padding: 0 !important;
   }
+  h2 {
+    break-before: var(--page-break-before-h2);
+  }
+  h2:first-of-type {
+    break-before: avoid-page;
+  }
   @page {
     margin: 1.8cm 2cm 1.2cm 2cm !important; /* 页边距 */
   }
@@ -69,7 +75,7 @@ hr {
 
 img {
   /* 避免图片在导出时被断开 */
-  page-break-inside: avoid;
+  break-inside: avoid-page;
 }
 
 strong {

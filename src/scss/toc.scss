@@ -6,7 +6,7 @@
   margin-left: 2em;
   /* 修复缺失上级标题时无法递增 */
   counter-reset: toc-h2 toc-h3 toc-h4;
-  page-break-after: always;
+  break-after: page;
 }
 .md-toc-inner {
   margin-left: 0 !important;

@@ -9,7 +9,7 @@
       var(--base-Chinese-font), serif;
     /* font-size: var(--base-font-size); */
     text-align: center;
-    page-break-inside: avoid;
+    break-inside: avoid-page;
     border-spacing: 6px;
     /* 自动布局表格宽度，如果有时内容太紧建议直接加空格吧，我自己看不惯和页面等宽的大表格 */
     width: auto;
