@@ -116,6 +116,12 @@
   --link-color-light: #2E67D3;
   --link-color-dark: #8bb1f9;
 
+  /* == 二级标题强制分页 == */
+  /* 默认值为 auto */
+  /* 更改为 page 启用强制分页 */
+  --page-break-before-h2: auto;
+
+
   @if $theme == "dark" {
     --md-char-color: hsl(212, 100%, 85%);
     --link-hover: hsl(212, 100%, 85%);

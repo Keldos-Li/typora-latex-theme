@@ -11,7 +11,7 @@
     } @else if $os == "macos" {
       font-weight: normal;
     }
-    page-break-after: avoid !important;
+    break-after: avoid-page !important;
   }
 
   h1 {
