@@ -1,9 +1,8 @@
 @media screen {
   #write {
+    zoom: var(--set-zoom);
     padding: var(--set-margin);
     @if $theme == "light" {
-      /* 添加一个淡蓝色的边框 */
-      /* border: 0.8px solid #AAC ; */
       /* 页边阴影 */
       box-shadow: 0 0 24px 12px #cccccc;
     } @else if $theme == "dark" {
