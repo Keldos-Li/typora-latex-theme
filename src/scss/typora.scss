@@ -32,25 +32,26 @@
 
 /* 侧边大纲标题 */
 .sidebar-content {
+  counter-reset: outline-h1 outline-h2 outline-h3 outline-h4 outline-h5 outline-h6;
   .outline-h1 {
-    counter-reset: outline-h2;
+    counter-reset: outline-h2 outline-h3 outline-h4 outline-h5 outline-h6;
   }
   .outline-h2 {
-    counter-reset: outline-h3;
+    counter-reset: outline-h3 outline-h4 outline-h5 outline-h6;
     .outline-label:before {
       counter-increment: outline-h2;
       content: counter(outline-h2) " ";
     }
   }
   .outline-h3 {
-    counter-reset: outline-h4;
+    counter-reset: outline-h4 outline-h5 outline-h6;
     .outline-label:before {
       counter-increment: outline-h3;
       content: counter(outline-h2) "." counter(outline-h3) "  ";
     }
   }
   .outline-h4 {
-    counter-reset: outline-h5;
+    counter-reset: outline-h5 outline-h6;
     .outline-label:before {
       counter-increment: outline-h4;
       content: counter(outline-h2) "." counter(outline-h3) "."
