@@ -4,14 +4,14 @@ Add-Type -AssemblyName PresentationFramework
 
 $dir="$env:APPDATA\Typora\themes"
 
-Write-Output "ÕıÔÚÑ°ÕÒ Typora Ö÷ÌâÎÄ¼ş¼Ğ $dir"
+Write-Output "æ­£åœ¨å¯»æ‰¾ Typora ä¸»é¢˜æ–‡ä»¶å¤¹ $dir"
 If (Test-Path -Path $dir -PathType Container) {
-    Write-Output "ÒÑÕÒµ½¸ÃÎÄ¼ş¼Ğ"
+    Write-Output "å·²æ‰¾åˆ°è¯¥æ–‡ä»¶å¤¹"
 } Else {
-    $MessageBody = "Î´ÕÒµ½ Typora Ö÷ÌâÎÄ¼ş¼Ğ£¬ÇëÏÈ°²×° Typora"
+    $MessageBody = "æœªæ‰¾åˆ° Typora ä¸»é¢˜æ–‡ä»¶å¤¹ï¼Œè¯·å…ˆå®‰è£… Typora"
     $ButtonType = [System.Windows.MessageBoxButton]::OK
     $MessageIcon = [System.Windows.MessageBoxImage]::Error
-    $MessageTitle = "°²×°Ê§°Ü"
+    $MessageTitle = "å®‰è£…å¤±è´¥"
     Write-Error $MessageBody
     [System.Windows.MessageBox]::Show($MessageBody, $MessageTitle, $ButtonType, $MessageIcon)
     Throw $MessageBody
@@ -23,15 +23,15 @@ Try {
     $MessageBody = $_.Exception.Message
     $ButtonType = [System.Windows.MessageBoxButton]::OK
     $MessageIcon = [System.Windows.MessageBoxImage]::Error
-    $MessageTitle = "°²×°Ê§°Ü"
+    $MessageTitle = "å®‰è£…å¤±è´¥"
     Write-Error $MessageTitle
     [System.Windows.MessageBox]::Show($MessageBody, $MessageTitle, $ButtonType, $MessageIcon)
     Throw $MessageBody
 }
 
-$MessageBody = "Ö÷ÌâÎÄ¼şÒÑ°²×°³É¹¦"
+$MessageBody = "ä¸»é¢˜æ–‡ä»¶å·²å®‰è£…æˆåŠŸ"
 $ButtonType = [System.Windows.MessageBoxButton]::OK
 $MessageIcon = [System.Windows.MessageBoxImage]::Information
-$MessageTitle = "°²×°³É¹¦"
+$MessageTitle = "å®‰è£…æˆåŠŸ"
 Write-Output $MessageTitle
 [System.Windows.MessageBox]::Show($MessageBody, $MessageTitle, $ButtonType, $MessageIcon)
