@@ -4,6 +4,9 @@ on:
     tags:
       - v*
 
+env:
+  DART_SASS_VERSION: 1.79.6
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -14,8 +17,8 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: 'sass/dart-sass'
-          latest: true
-          fileName: 'dart-sass-*-linux-x64.tar.gz'
+          tag: ${{ env.DART_SASS_VERSION }}
+          fileName: "dart-sass-${{ env.DART_SASS_VERSION }}-linux-x64.tar.gz"
           extract: true
       - name: Add Binary to PATH
         run: |
