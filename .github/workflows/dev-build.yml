@@ -13,9 +13,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Dependencies
+      - name: Install Dart Sass
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: 'sass/dart-sass'
+          latest: true
+          fileName: 'dart-sass-*-linux-x64.tar.gz'
+          extract: true
+      - name: Add Binary to PATH
         run: |
-          sudo apt install ruby sass -y
+          echo "$GITHUB_WORKSPACE/dart-sass" >> "$GITHUB_PATH"
       - name: Compile
         run: |
           cd ./src; make
