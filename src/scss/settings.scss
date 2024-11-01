@@ -1,22 +1,27 @@
 :root {
+  $ui-font: null;
+  $heading-Chinese-font: null;
+  $chapter-Chinese-font: null;
+  $sub-chapter-Chinese-font: null;
+  $sub-sub-chapter-Chinese-font: null;
   @if $os == "windows" {
-    $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"" !global;
-    $heading-Chinese-font: "华文黑体" !global;
-    $chapter-Chinese-font: "华文黑体" !global;
-    $sub-chapter-Chinese-font: "华文楷体" !global;
-    $sub-sub-chapter-Chinese-font: "华文仿宋" !global;
+    $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"";
+    $heading-Chinese-font: "华文黑体";
+    $chapter-Chinese-font: "华文黑体";
+    $sub-chapter-Chinese-font: "华文楷体";
+    $sub-sub-chapter-Chinese-font: "华文仿宋";
   } @else if $os == "macos" {
-    $ui-font: "\"苹方-简\"" !global;
-    $heading-Chinese-font: "华文黑体Bold" !global;
-    $chapter-Chinese-font: "方正公文黑体" !global;
-    $sub-chapter-Chinese-font: "方正公文楷体" !global;
-    $sub-sub-chapter-Chinese-font: "方正公文仿宋" !global;
+    $ui-font: "\"苹方-简\"";
+    $heading-Chinese-font: "华文黑体Bold";
+    $chapter-Chinese-font: "方正公文黑体";
+    $sub-chapter-Chinese-font: "方正公文楷体";
+    $sub-sub-chapter-Chinese-font: "方正公文仿宋";
   } @else if $os == "linux" {
-    $ui-font: "\"Noto Sans CJK SC\"" !global;
-    $heading-Chinese-font: "Noto Sans CJK SC" !global;
-    $chapter-Chinese-font: "Noto Sans CJK SC" !global;
-    $sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
-    $sub-sub-chapter-Chinese-font: "Noto Serif CJK SC" !global;
+    $ui-font: "\"Noto Sans CJK SC\"";
+    $heading-Chinese-font: "Noto Sans CJK SC";
+    $chapter-Chinese-font: "Noto Sans CJK SC";
+    $sub-chapter-Chinese-font: "Noto Serif CJK SC";
+    $sub-sub-chapter-Chinese-font: "Noto Serif CJK SC";
   }
 
   /* == 字体设置 == */
