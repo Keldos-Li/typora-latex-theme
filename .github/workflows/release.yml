@@ -23,7 +23,7 @@ jobs:
       - name: Add Binary to PATH
         run: |
           echo "$GITHUB_WORKSPACE/dart-sass" >> "$GITHUB_PATH"
-     - name: Compile
+      - name: Compile
         run: |
           cd ./src; make all-and-compress
       - name: Release
