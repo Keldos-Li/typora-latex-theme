@@ -1,14 +1,17 @@
-@use "./settings.scss";
+$os: "" !default;
+$theme: "" !default;
 
-@use "./text.scss";
-@use "./typora.scss";
+@use "./settings.scss" with ($os: $os, $theme: $theme);
 
-@use "./heading.scss";
-@use "./footnote.scss";
-@use "./list.scss";
-@use "./table.scss";
-@use "./blockquote.scss";
-@use "./code.scss";
-@use "./toc.scss";
+@use "./text.scss" with ($os: $os, $theme: $theme);
+@use "./typora.scss" with ($os: $os, $theme: $theme);
 
-@use "./dark.scss";
+@use "./heading.scss" with ($os: $os, $theme: $theme);
+@use "./footnote.scss" with ($os: $os, $theme: $theme);
+@use "./list.scss" with ($os: $os, $theme: $theme);
+@use "./table.scss" with ($os: $os, $theme: $theme);
+@use "./blockquote.scss" with ($os: $os, $theme: $theme);
+@use "./code.scss" with ($os: $os, $theme: $theme);
+@use "./toc.scss" with ($os: $os, $theme: $theme);
+
+@use "./dark.scss" with ($os: $os, $theme: $theme);

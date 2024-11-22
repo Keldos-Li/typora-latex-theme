@@ -1,4 +1,5 @@
-@use "env";
+$os: "" !default;
+$theme: "" !default;
 
 /* 目录 */
 .md-toc {
@@ -12,16 +13,16 @@
 }
 .md-toc-inner {
   margin-left: 0 !important;
-  @if env.$theme == "light" {
+  @if $theme == "light" {
     color: var(--text-color) !important;
-  } @else if env.$theme == "dark" {
+  } @else if $theme == "dark" {
     color: #dddddd !important;
   }
 }
 .md-toc-item {
-  @if env.$theme == "light" {
+  @if $theme == "light" {
     color: var(--text-color) !important;
-  } @else if env.$theme == "dark" {
+  } @else if $theme == "dark" {
     color: #dddddd !important;
   }
 }

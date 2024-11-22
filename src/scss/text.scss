@@ -1,11 +1,12 @@
-@use "env";
+$os: "" !default;
+$theme: "" !default;
 
 body {
   padding: 0 !important;
   margin: 0 !important;
   // line-height: var(--base-line-height);
   /* counter-reset: tableHead 0 imgHead 0; */
-  @if env.$theme == "dark" {
+  @if $theme == "dark" {
     color: #dddddd;
     background-color: #1e1e1e;
   }
@@ -31,9 +32,9 @@ body {
   font-size: var(--base-font-size);
   /* A4标准宽度 */
   max-width: 21cm;
-  @if env.$theme == "light" {
+  @if $theme == "light" {
     background-color: white;
-  } @else if env.$theme == "dark" {
+  } @else if $theme == "dark" {
     background-color: #1e1e1e;
   }
   /* column-count: 2;
@@ -54,11 +55,11 @@ body {
   }
 
   // 超链接
-  @if env.$theme == "light" {
+  @if $theme == "light" {
     a {
       color: var(--link-color-light);
     }
-  } @else if env.$theme == "dark" {
+  } @else if $theme == "dark" {
     a {
       color: var(--link-color-dark);
     }
@@ -66,9 +67,9 @@ body {
 }
 
 hr {
-  @if env.$theme == "light" {
+  @if $theme == "light" {
     border-top: solid 1px #ddd;
-  } @else if env.$theme == "dark" {
+  } @else if $theme == "dark" {
     border-top: solid 1px #888888;
   }
   margin-top: 1.8em;

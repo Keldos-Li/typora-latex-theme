@@ -1,6 +1,7 @@
-@use "env";
+$os: "" !default;
+$theme: "" !default;
 
-@if env.$theme == "dark" {
+@if $theme == "dark" {
   /* 可能的代码高亮样式
   .cm-s-inner {
     background-color: #263238;
