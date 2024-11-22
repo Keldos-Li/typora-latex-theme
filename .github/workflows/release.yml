@@ -23,10 +23,12 @@ jobs:
           extract: true
       - name: Add Binary to PATH
         run: |
+          ln -s "$GITHUB_WORKSPACE/dart-sass/sass" "$GITHUB_WORKSPACE/dart-sass/dart-sass"
           echo "$GITHUB_WORKSPACE/dart-sass" >> "$GITHUB_PATH"
       - name: Compile
         run: |
-          cd ./src; make all-and-compress -j3
+          cd ./src
+          make all-and-compress -j3
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')

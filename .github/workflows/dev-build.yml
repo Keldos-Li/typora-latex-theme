@@ -25,10 +25,12 @@ jobs:
           extract: true
       - name: Add Binary to PATH
         run: |
+          ln -s "$GITHUB_WORKSPACE/dart-sass/sass" "$GITHUB_WORKSPACE/dart-sass/dart-sass"
           echo "$GITHUB_WORKSPACE/dart-sass" >> "$GITHUB_PATH"
       - name: Compile
         run: |
-          cd ./src; make -j3
+          cd ./src
+          make -j3
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
