@@ -1,14 +1,14 @@
-@import "./settings.scss";
+@use "./settings.scss";
 
-@import "./text.scss";
-@import "./typora.scss";
+@use "./text.scss";
+@use "./typora.scss";
 
-@import "./heading.scss";
-@import "./footnote.scss";
-@import "./list.scss";
-@import "./table.scss";
-@import "./blockquote.scss";
-@import "./code.scss";
-@import "./toc.scss";
+@use "./heading.scss";
+@use "./footnote.scss";
+@use "./list.scss";
+@use "./table.scss";
+@use "./blockquote.scss";
+@use "./code.scss";
+@use "./toc.scss";
 
-@import "./dark.scss";
+@use "./dark.scss";

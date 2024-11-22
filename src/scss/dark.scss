@@ -1,4 +1,6 @@
-@if $theme == "dark" {
+@use "env";
+
+@if env.$theme == "dark" {
   /* 可能的代码高亮样式
   .cm-s-inner {
     background-color: #263238;

@@ -1,3 +1,5 @@
+@use "env";
+
 #write {
   // 标题属性
   h1,
@@ -6,9 +8,9 @@
   h4,
   h5,
   h6 {
-    @if $os == "windows" {
+    @if env.$os == "windows" {
       font-weight: bold; 
-    } @else if $os == "macos" {
+    } @else if env.$os == "macos" {
       font-weight: normal;
     }
     break-after: avoid-page !important;
@@ -16,7 +18,7 @@
 
   h1 {
     font-family: var(--heading-Latin-font), var(--title-Chinese-font), serif;
-    @if $os == "macos" {
+    @if env.$os == "macos" {
       font-weight: normal;
     }
     text-align: center;

@@ -1,3 +1,5 @@
+@use "env";
+
 /* 目录 */
 .md-toc {
   font-size: var(--toc-font-size);
@@ -10,16 +12,16 @@
 }
 .md-toc-inner {
   margin-left: 0 !important;
-  @if $theme == "light" {
+  @if env.$theme == "light" {
     color: var(--text-color) !important;
-  } @else if $theme == "dark" {
+  } @else if env.$theme == "dark" {
     color: #dddddd !important;
   }
 }
 .md-toc-item {
-  @if $theme == "light" {
+  @if env.$theme == "light" {
     color: var(--text-color) !important;
-  } @else if $theme == "dark" {
+  } @else if env.$theme == "dark" {
     color: #dddddd !important;
   }
 }

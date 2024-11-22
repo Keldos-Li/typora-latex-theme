@@ -1,22 +1,24 @@
+@use "env";
+
 :root {
   $ui-font: null;
   $heading-Chinese-font: null;
   $chapter-Chinese-font: null;
   $sub-chapter-Chinese-font: null;
   $sub-sub-chapter-Chinese-font: null;
-  @if $os == "windows" {
+  @if env.$os == "windows" {
     $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"";
     $heading-Chinese-font: "华文黑体";
     $chapter-Chinese-font: "华文黑体";
     $sub-chapter-Chinese-font: "华文楷体";
     $sub-sub-chapter-Chinese-font: "华文仿宋";
-  } @else if $os == "macos" {
+  } @else if env.$os == "macos" {
     $ui-font: "\"苹方-简\"";
     $heading-Chinese-font: "华文黑体Bold";
     $chapter-Chinese-font: "方正公文黑体";
     $sub-chapter-Chinese-font: "方正公文楷体";
     $sub-sub-chapter-Chinese-font: "方正公文仿宋";
-  } @else if $os == "linux" {
+  } @else if env.$os == "linux" {
     $ui-font: "\"Noto Sans CJK SC\"";
     $heading-Chinese-font: "Noto Sans CJK SC";
     $chapter-Chinese-font: "Noto Sans CJK SC";
@@ -69,14 +71,14 @@
   --table-font: "";
 
   /* 标题字体（总设置） */
-  @if $os == "macos" {
+  @if env.$os == "macos" {
     /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
     --heading-Latin-font: "LMRoman10-Bold";
     --heading-Chinese-font: "#{$heading-Chinese-font}";
-  } @else if $os == "windows" {
+  } @else if env.$os == "windows" {
     --heading-Latin-font: var(--base-Latin-font);
     --heading-Chinese-font: "#{$heading-Chinese-font}";
-  } @else if $os == "linux" {
+  } @else if env.$os == "linux" {
     --heading-Latin-font: var(--base-Latin-font);
     --heading-Chinese-font: "#{$heading-Chinese-font}";
   }
@@ -127,7 +129,7 @@
   --page-break-before-h2: auto;
 
 
-  @if $theme == "dark" {
+  @if env.$theme == "dark" {
     --md-char-color: hsl(212, 100%, 85%);
     --link-hover: hsl(212, 100%, 85%);
     --focus-cont-bg: hsl(0, 0%, 10%);

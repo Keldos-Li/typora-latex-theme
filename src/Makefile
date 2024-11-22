@@ -12,16 +12,15 @@ $(shell mkdir -p $(working_dir))
 $(shell mkdir -p $(target_dir))
 
 $(shell cp -r $(base_dir)/scss $(working_dir)/scss)
-$(shell cp -r $(base_dir)/headers $(working_dir)/headers)
 
 # $(1) is the name of operating system, $(2) is typora or pandoc, $(3) is light or dark theme
 define build
 	mkdir -p $(target_dir)/$(1)-$(2)
 	mkdir -p $(target_dir)/$(1)-$(2)/target
 	if [ "$(3)" = "light" ]; then \
-		sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
+		TYPORA_LATEX_THEME_BUILD_OS=$(1) TYPORA_LATEX_THEME_BUILD_THEME=$(3) dart-sass --no-source-map --style expanded $(working_dir)/scss/include.scss $(target_dir)/$(1)-$(2)/target/latex.css; \
 	else \
-		sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
+		TYPORA_LATEX_THEME_BUILD_OS=$(1) TYPORA_LATEX_THEME_BUILD_THEME=$(3) dart-sass --no-source-map --style expanded $(working_dir)/scss/include.scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
 	fi
 endef
 
@@ -46,19 +45,13 @@ define build-pandoc
 endef
 
 .PHONY: all
-all:
-	make windows
-	make macos
-	make linux
-	make pandoc
+all: windows macos linux
 
 .PHONY: all-and-compress
-all-and-compress:
-	make all
+all-and-compress: all
 	cd $(target_dir)/$(windows)-$(typora); zip -r $(target_dir)/latex-theme-$(windows).zip ./*
 	cd $(target_dir)/$(macos)-$(typora); zip -r $(target_dir)/latex-theme-$(macos).zip ./*
 	cd $(target_dir)/$(linux)-$(typora); zip -r $(target_dir)/latex-theme-$(linux).zip ./*
-#	cd $(target_dir)/$(pandoc)-$(typora); zip -r $(target_dir)/latex-theme-$(pandoc).zip ./*
 
 .PHONY: windows
 windows:
