@@ -1,4 +1,1 @@
-$os: "windows";
-$theme: "dark";
-
-@import "../../scss/include.scss";
+@use "../../scss/include.scss" with ($os: "windows", $theme: "dark");

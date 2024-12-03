@@ -1,3 +1,6 @@
+$os: "" !default;
+$theme: "" !default;
+
 @if $theme == "dark" {
   /* 可能的代码高亮样式
   .cm-s-inner {

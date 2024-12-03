@@ -1,4 +1,1 @@
-$os: "linux";
-$theme: "light";
-
-@import "../../scss/include.scss";
+@use "../../scss/include.scss" with ($os: "linux", $theme: "light");

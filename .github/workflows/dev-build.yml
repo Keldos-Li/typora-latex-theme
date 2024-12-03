@@ -1,14 +1,11 @@
 name: Dev Build
 
 on:
-  push:
-    branches:
-      - dev**
   pull_request:
     types: [opened, synchronize, reopened]
 
 env:
-  DART_SASS_VERSION: 1.79.6
+  DART_SASS_VERSION: 1.81.0
 
 jobs:
   compile:
@@ -25,10 +22,12 @@ jobs:
           extract: true
       - name: Add Binary to PATH
         run: |
+          ln -s "$GITHUB_WORKSPACE/dart-sass/sass" "$GITHUB_WORKSPACE/dart-sass/dart-sass"
           echo "$GITHUB_WORKSPACE/dart-sass" >> "$GITHUB_PATH"
       - name: Compile
         run: |
-          cd ./src; make
+          cd ./src
+          make -j3
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
