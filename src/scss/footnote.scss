@@ -4,6 +4,7 @@ $theme: "" !default;
 /* 参考文献（脚注）块 */
 .footnotes {
   font-size: 0.95em;
+  opacity: 1;
 }
 .footnotes-area {
   .footnote-line {
@@ -15,4 +16,36 @@ $theme: "" !default;
     border: 0;
     color: #00000000;
   }
+}
+.md-def-footnote {
+  .md-def-name {
+    padding: 0;
+    margin: 0.2em 0;
+
+    &:before {
+      content: "［";
+      position: static;
+      color: inherit;
+    }
+    &:after {
+      content: "］";
+      position: static;
+      color: inherit;
+    }
+  }
+  .md-reverse-footnote-area {
+    display: none;
+  }
+  &:hover .md-reverse-footnote-area {
+    display: inline;
+  }
+}
+
+/* 参考文献（脚注）上标 */
+sup.md-footnote {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
 }
