@@ -48,4 +48,15 @@ sup.md-footnote {
   margin: 0;
   background: transparent;
   color: inherit;
+
+  // 显示 markdown 预览，而没有点击展开显示尾注内容时
+  &:not(.md-expand) {
+    margin-inline: -0.44em;
+      &:before {
+        content: "［";
+      }
+      &:after {
+        content: "］";
+      }
+  }
 }
