@@ -3,8 +3,20 @@ $theme: "" !default;
 
 /* 参考文献（脚注）块 */
 .footnotes {
+  display: flex;
+  position: relative;
   font-size: 0.95em;
+  opacity: 1;
+  margin: 0;
+  &:not(:first-child),
+  & + *:not(.footnotes) {
+    margin-top: 1em;
+  }
+  & + .footnotes {
+    margin-top: 0.5em;
+  }
 }
+
 .footnotes-area {
   .footnote-line {
     color: var(--text-color);
@@ -14,5 +26,55 @@ $theme: "" !default;
   hr {
     border: 0;
     color: #00000000;
+  }
+}
+.md-def-footnote {
+  .md-def-name {
+    font-weight: inherit;
+    padding: 0;
+    margin-inline-end:-1ch;
+    flex-shrink: 0;
+    width: 3em;
+    text-align: right;
+
+    &:before {
+      content: "［";
+      position: static;
+      color: inherit;
+    }
+    &:after {
+      content: "］";
+      position: static;
+      color: inherit;
+    }
+  }
+  .md-reverse-footnote-area {
+    display: none;
+  }
+  &:hover .md-reverse-footnote-area {
+    position: absolute;
+    right: -6px;
+    display: inline;
+    // font-size: 0.85em;
+  }
+}
+
+/* 参考文献（脚注）上标 */
+sup.md-footnote {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+
+  // 显示 markdown 预览，而没有点击展开显示尾注内容时
+  &:not(.md-expand) {
+    margin-inline: -0.44em;
+      &:before {
+        content: "［";
+      }
+      &:after {
+        content: "］";
+      }
   }
 }
