@@ -5,7 +5,16 @@ $theme: "" !default;
 .footnotes {
   font-size: 0.95em;
   opacity: 1;
+  margin: 0;
+  &:not(:first-child),
+  & + *:not(.footnotes) {
+    margin-top: 1em;
+  }
+  & + .footnotes {
+    margin-top: 0.5em;
+  }
 }
+
 .footnotes-area {
   .footnote-line {
     color: var(--text-color);
@@ -19,8 +28,8 @@ $theme: "" !default;
 }
 .md-def-footnote {
   .md-def-name {
+    font-weight: inherit;
     padding: 0;
-    margin: 0.2em 0;
 
     &:before {
       content: "［";
@@ -38,6 +47,7 @@ $theme: "" !default;
   }
   &:hover .md-reverse-footnote-area {
     display: inline;
+    font-size: 0.85em;
   }
 }
 
