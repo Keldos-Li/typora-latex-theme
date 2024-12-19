@@ -3,6 +3,8 @@ $theme: "" !default;
 
 /* 参考文献（脚注）块 */
 .footnotes {
+  display: flex;
+  position: relative;
   font-size: 0.95em;
   opacity: 1;
   margin: 0;
@@ -30,6 +32,10 @@ $theme: "" !default;
   .md-def-name {
     font-weight: inherit;
     padding: 0;
+    margin-inline-end:-1ch;
+    flex-shrink: 0;
+    width: 3em;
+    text-align: right;
 
     &:before {
       content: "［";
@@ -46,8 +52,10 @@ $theme: "" !default;
     display: none;
   }
   &:hover .md-reverse-footnote-area {
+    position: absolute;
+    right: -6px;
     display: inline;
-    font-size: 0.85em;
+    // font-size: 0.85em;
   }
 }
 
