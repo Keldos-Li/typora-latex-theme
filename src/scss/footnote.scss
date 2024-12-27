@@ -2,40 +2,28 @@ $os: "" !default;
 $theme: "" !default;
 
 /* 参考文献（脚注）块 */
-.footnotes {
+.md-def-footnote {
   display: flex;
   position: relative;
   font-size: 0.95em;
   opacity: 1;
   margin: 0;
   &:not(:first-child),
-  & + *:not(.footnotes) {
+  & + *:not(.md-def-footnote) {
     margin-top: 1em;
   }
-  & + .footnotes {
+  & + .md-def-footnote {
     margin-top: 0.5em;
   }
-}
 
-.footnotes-area {
-  .footnote-line {
-    color: var(--text-color);
-  }
-
-  // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉
-  hr {
-    border: 0;
-    color: #00000000;
-  }
-}
-.md-def-footnote {
   .md-def-name {
     font-weight: inherit;
     padding: 0;
-    margin-inline-end:-1ch;
     flex-shrink: 0;
     width: 3em;
-    text-align: right;
+    margin-inline-start: -1ch;
+    white-space: nowrap;
+    text-align: left;
 
     &:before {
       content: "［";
@@ -59,6 +47,47 @@ $theme: "" !default;
   }
 }
 
+/* 
+ * 导出时 HTML 和 PDF 的配置需要单独写一遍。但是由于 HTML 结构的不同，使用的方法并不一样。
+ */
+.footnotes-area {
+  padding-inline-start: 2.5em;
+  // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉
+  hr {
+    display: none;
+  }
+  .footnote-line {
+    color: var(--text-color);
+    font-size: 0.95em;
+    margin-top: 0.5em;
+
+    *:not(.md-fn-count) {
+      display: inline-block;
+      vertical-align: top;
+    }
+    span.md-fn-count {
+      font-weight: inherit;
+      padding: 0;
+      margin-inline-start: -3em;
+      white-space: nowrap;
+      display: inline-block;
+      width: 2.5em;
+      &:before {
+        content: "［";
+        position: static;
+        color: inherit;
+      }
+      &:after {
+        content: "］";
+        position: static;
+        color: inherit;
+      }
+    }
+    a.reversefootnote {
+      display: none;
+    }
+  }
+}
 /* 参考文献（脚注）上标 */
 sup.md-footnote {
   display: inline;
@@ -66,6 +95,9 @@ sup.md-footnote {
   margin: 0;
   background: transparent;
   color: inherit;
+  a {
+    color: inherit !important; // 导出时的a是单独的必须再次设置
+  }
 
   // 显示 markdown 预览，而没有点击展开显示尾注内容时
   &:not(.md-expand) {
