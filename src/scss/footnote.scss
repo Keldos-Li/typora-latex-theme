@@ -1,13 +1,14 @@
 $os: "" !default;
 $theme: "" !default;
 
-/* 参考文献（脚注）块 */
+/* 参考文献（脚注）块，在 Typora 中的样式 */
 .md-def-footnote {
   display: flex;
   position: relative;
   font-size: 0.95em;
   opacity: 1;
   margin: 0;
+
   &:not(:first-child),
   & + *:not(.md-def-footnote) {
     margin-top: 1em;
@@ -36,6 +37,8 @@ $theme: "" !default;
       color: inherit;
     }
   }
+
+  // 默认隐藏行尾的 ↩️，仅在鼠标悬停时显示
   .md-reverse-footnote-area {
     display: none;
   }
@@ -43,19 +46,18 @@ $theme: "" !default;
     position: absolute;
     right: -6px;
     display: inline;
-    // font-size: 0.85em;
   }
 }
 
-/* 
- * 导出时 HTML 和 PDF 的配置需要单独写一遍。但是由于 HTML 结构的不同，使用的方法并不一样。
- */
+/* 参考文献（脚注）块，在导出 HTML 或 PDF 时的样式（导出后的 HTML tag 和 Typora 中的 HTML tag 不一致） */
 .footnotes-area {
   padding-inline-start: 2.5em;
+
   // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉
   hr {
     display: none;
   }
+
   .footnote-line {
     color: var(--text-color);
     font-size: 0.95em;
@@ -65,6 +67,7 @@ $theme: "" !default;
       display: inline-block;
       vertical-align: top;
     }
+
     span.md-fn-count {
       font-weight: inherit;
       padding: 0;
@@ -83,11 +86,13 @@ $theme: "" !default;
         color: inherit;
       }
     }
+
     a.reversefootnote {
       display: none;
     }
   }
 }
+
 /* 参考文献（脚注）上标 */
 sup.md-footnote {
   display: inline;
