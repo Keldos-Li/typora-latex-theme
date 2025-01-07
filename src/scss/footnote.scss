@@ -1,18 +1,117 @@
 $os: "" !default;
 $theme: "" !default;
 
-/* 参考文献（脚注）块 */
-.footnotes {
+/* 参考文献（脚注）块，在 Typora 中的样式 */
+.md-def-footnote {
+  display: flex;
+  position: relative;
   font-size: 0.95em;
-}
-.footnotes-area {
-  .footnote-line {
-    color: var(--text-color);
+  opacity: 1;
+  margin: 0;
+
+  &:not(:first-child),
+  & + *:not(.md-def-footnote) {
+    margin-top: 1em;
   }
+  & + .md-def-footnote {
+    margin-top: 0.5em;
+  }
+
+  .md-def-name {
+    font-weight: inherit;
+    padding: 0;
+    flex-shrink: 0;
+    width: 3em;
+    margin-inline-start: -1ch;
+    white-space: nowrap;
+    text-align: left;
+
+    &:before {
+      content: "［";
+      position: static;
+      color: inherit;
+    }
+    &:after {
+      content: "］";
+      position: static;
+      color: inherit;
+    }
+  }
+
+  // 默认隐藏行尾的 ↩️，仅在鼠标悬停时显示
+  .md-reverse-footnote-area {
+    display: none;
+  }
+  &:hover .md-reverse-footnote-area {
+    position: absolute;
+    right: -6px;
+    display: inline;
+  }
+}
+
+/* 参考文献（脚注）块，在导出 HTML 或 PDF 时的样式（导出后的 HTML tag 和 Typora 中的 HTML tag 不一致） */
+.footnotes-area {
+  padding-inline-start: 2.5em;
 
   // 默认情况下，Typora 会给参考文献块顶部加一条横线，这里把它隐藏掉
   hr {
-    border: 0;
-    color: #00000000;
+    display: none;
+  }
+
+  .footnote-line {
+    color: var(--text-color);
+    font-size: 0.95em;
+    margin-top: 0.5em;
+
+    *:not(.md-fn-count) {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    span.md-fn-count {
+      font-weight: inherit;
+      padding: 0;
+      margin-inline-start: -3em;
+      white-space: nowrap;
+      display: inline-block;
+      width: 2.5em;
+      &:before {
+        content: "［";
+        position: static;
+        color: inherit;
+      }
+      &:after {
+        content: "］";
+        position: static;
+        color: inherit;
+      }
+    }
+
+    a.reversefootnote {
+      display: none;
+    }
+  }
+}
+
+/* 参考文献（脚注）上标 */
+sup.md-footnote {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  a {
+    color: inherit !important; // 导出时的a是单独的必须再次设置
+  }
+
+  // 显示 markdown 预览，而没有点击展开显示尾注内容时
+  &:not(.md-expand) {
+    margin-inline: -0.44em;
+      &:before {
+        content: "［";
+      }
+      &:after {
+        content: "］";
+      }
   }
 }
