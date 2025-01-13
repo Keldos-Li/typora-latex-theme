@@ -8,7 +8,7 @@ $theme: "" !default;
 .md-toc-content {
   margin-left: 2em;
   /* 修复缺失上级标题时无法递增 */
-  counter-reset: toc-h2 toc-h3 toc-h4;
+  counter-reset: toc-h2 toc-h3 toc-h4 toc-h5 toc-h6;
   break-after: page;
 }
 .md-toc-inner {
@@ -45,19 +45,19 @@ $theme: "" !default;
 .md-toc-content {
   .md-toc-h1 {
     display: var(--toc-show-title);
-    counter-reset: toc-h2 toc-h3 toc-h4 toc-h5 toc-h6;
+    counter-set: toc-h2 0 toc-h3 0 toc-h4 0 toc-h5 0 toc-h6 0;
   }
   .md-toc-h2 {
-    counter-reset: toc-h3 toc-h4 toc-h5 toc-h6;
+    counter-set: toc-h3 0 toc-h4 0 toc-h5 0 toc-h6 0;
   }
   .md-toc-h3 {
-    counter-reset: toc-h4 toc-h5 toc-h6;
+    counter-set: toc-h4 0 toc-h5 0 toc-h6 0;
   }
   .md-toc-h4 {
-    counter-reset: toc-h5 toc-h6;
+    counter-set: toc-h5 0 toc-h6 0;
   }
   .md-toc-h5 {
-    counter-reset: toc-h6;
+    counter-set: toc-h6 0;
   }
   .md-toc-h2:before {
     counter-increment: toc-h2;

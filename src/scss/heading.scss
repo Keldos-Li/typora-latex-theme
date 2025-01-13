@@ -54,21 +54,21 @@ $theme: "" !default;
 
   // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
   // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
-  counter-reset: h2 h3 h4 h5 h6;
+  counter-reset: heading-h2 heading-h3 heading-h4 heading-h5 heading-h6;
   h1 {
-    counter-reset: h2 h3 h4 h5 h6;
+    counter-set: heading-h2 0 heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
   }
   h2 {
-    counter-reset: h3 h4 h5 h6;
+    counter-set: heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
   }
   h3 {
-    counter-reset: h4 h5 h6;
+    counter-set: heading-h4 0 heading-h5 0 heading-h6 0;
   }
   h4 {
-    counter-reset: h5 h6;
+    counter-set: heading-h5 0 heading-h6 0;
   }
   h5 {
-    counter-reset: h6;
+    counter-set: heading-h6 0;
   }
 
   h2:before {
@@ -110,31 +110,31 @@ h6.md-focus.md-heading:before {
 }
 
 @mixin heading-with-count($heading) {
-  counter-increment: #{$heading};
+  counter-increment: heading-#{$heading};
   margin-right: 1.2em;
 }
 
 %h2-with-count {
-  content: counter(h2);
+  content: counter(heading-h2);
   @include heading-with-count(h2);
 }
 
 %h3-with-count {
-  content: counter(h2) "." counter(h3);
+  content: counter(heading-h2) "." counter(heading-h3);
   @include heading-with-count(h3);
 }
 
 %h4-with-count {
-  content: counter(h2) "." counter(h3) "." counter(h4);
+  content: counter(heading-h2) "." counter(heading-h3) "." counter(heading-h4);
   @include heading-with-count(h4);
 }
 
 %h5-with-count {
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5);
+  content: counter(heading-h2) "." counter(heading-h3) "." counter(heading-h4) "." counter(heading-h5);
   @include heading-with-count(h5);
 }
 
 %h6-with-count {
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6);
+  content: counter(heading-h2) "." counter(heading-h3) "." counter(heading-h4) "." counter(heading-h5) "." counter(heading-h6);
   @include heading-with-count(h6);
 }
