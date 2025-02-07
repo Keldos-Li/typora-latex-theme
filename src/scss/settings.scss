@@ -7,37 +7,47 @@ $theme: "" !default;
   $chapter-Chinese-font: null;
   $sub-chapter-Chinese-font: null;
   $sub-sub-chapter-Chinese-font: null;
+  $gothic-font: null;
+  $song-font: null;
+  $regular-script-font: null;
+  $fangsong-font: null;
   @if $os == "windows" {
     $ui-font: "\"阿里巴巴普惠体 2.0\"", "\"微软雅黑\"";
-    $heading-Chinese-font: "华文黑体";
-    $chapter-Chinese-font: "华文黑体";
-    $sub-chapter-Chinese-font: "华文楷体";
-    $sub-sub-chapter-Chinese-font: "华文仿宋";
+    $gothic-font: "华文黑体";
+    $song-font: "华文宋体";
+    $regular-script-font: "华文楷体";
+    $fangsong-font: "华文仿宋";
   } @else if $os == "macos" {
     $ui-font: "\"苹方-简\"";
-    $heading-Chinese-font: "华文黑体Bold";
-    $chapter-Chinese-font: "方正公文黑体";
-    $sub-chapter-Chinese-font: "方正公文楷体";
-    $sub-sub-chapter-Chinese-font: "方正公文仿宋";
+    $gothic-font: "方正公文黑体";
+    $song-font: "家族宋", "宋体-简";
+    $regular-script-font: "方正公文楷体";
+    $fangsong-font: "方正公文仿宋";
   } @else if $os == "linux" {
     $ui-font: "\"Noto Sans CJK SC\"";
-    $heading-Chinese-font: "Noto Sans CJK SC";
-    $chapter-Chinese-font: "Noto Sans CJK SC";
-    $sub-chapter-Chinese-font: "Noto Serif CJK SC";
-    $sub-sub-chapter-Chinese-font: "Noto Serif CJK SC";
+    $gothic-font: "Noto Sans CJK SC";
+    $song-font: "Noto Serif CJK SC";
+    $regular-script-font: "Noto Serif CJK SC";  // FIXME: 找到合适的开源楷体
+    $fangsong-font: "Noto Serif CJK SC";  // FIXME: 找到合适的开源仿宋字体
   }
 
   /* == 字体设置 == */
 
+  /* 汉字字体 */
+  --gothic-font: #{gothic-font};  /* 黑体 */
+  --song-font: #{song-font};  /* 宋体 */
+  --regular-script-font: #{regular-script-font};  /* 楷体 */
+  --fangsong-font: #{fangsong-font};  /* 仿宋 */
+
   /* 基准字体 */
   /* 备选：Times, "Times New Roman" */
   --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times;
-  --base-Chinese-font: "家族宋", "宋体-简", "华文宋体", "Noto Serif CJK SC";
+  --base-Chinese-font: var(--song-font);
   --base-font-size: 9.5pt;
 
   /* 引言字体 */
   --quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times,
-    "Times New Roman", "华文仿宋";
+    "Times New Roman", var(--fangsong-font);
   /* em单位为一个正文字符（--base-font-size）大小，
   例如，如果您设置 --base-font-size 为 9.5pt，那么 1.05em = 1.05*9.5pt ≈ 10pt。下面的标题字体等设置也遵循该规则。
   这样，您就可以仅通过调整基准字体大小，而动态对其他元素大小做出调整。
@@ -75,33 +85,31 @@ $theme: "" !default;
   @if $os == "macos" {
     /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
     --heading-Latin-font: "LMRoman10-Bold";
-    --heading-Chinese-font: "#{$heading-Chinese-font}";
   } @else if $os == "windows" {
     --heading-Latin-font: var(--base-Latin-font);
-    --heading-Chinese-font: "#{$heading-Chinese-font}";
   } @else if $os == "linux" {
     --heading-Latin-font: var(--base-Latin-font);
-    --heading-Chinese-font: "#{$heading-Chinese-font}";
   }
+  --heading-Chinese-font: var(--gothic-font);
 
   /* 标题字体分别设置 */
   /* 大标题（h1）字体 */
-  --title-Chinese-font: "#{$heading-Chinese-font}";
+  --title-Chinese-font: var(--gothic-font);
   --title-font-size: 1.9em;
   /* h2字体 */
-  --h2-Chinese-font: "#{$chapter-Chinese-font}";
+  --h2-Chinese-font: var(--gothic-font);
   --h2-font-size: 1.5em;
   /* h3字体 */
-  --h3-Chinese-font: "#{$chapter-Chinese-font}";
+  --h3-Chinese-font: var(--gothic-font);
   --h3-font-size: 1.25em;
   /* h4字体 */
-  --h4-Chinese-font: "#{$sub-chapter-Chinese-font}";
+  --h4-Chinese-font: var(--regular-script-font);
   --h4-font-size: 1.15em;
   /* h5字体 */
-  --h5-Chinese-font: "#{$sub-sub-chapter-Chinese-font}";
+  --h5-Chinese-font: var(--fangsong-font);
   --h5-font-size: 1.10em;
   /* h6字体 */
-  --h6-Chinese-font: "#{$sub-sub-chapter-Chinese-font}";
+  --h6-Chinese-font: var(--fangsong-font);
   --h6-font-size: 1.05em;
 
   /* 粗体样式设置 */
