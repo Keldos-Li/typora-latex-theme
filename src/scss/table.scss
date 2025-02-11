@@ -8,8 +8,8 @@ $theme: "" !default;
     border-top: 1.2pt solid;
     /* 三线表第二条线宽度 */
     border-bottom: 1.2pt solid;
-    font-family: var(--table-font), var(--base-Latin-font),
-      var(--base-Chinese-font), serif;
+    font-family: var(--table-font), var(--base-latin-font),
+      var(--base-chinese-font), serif;
     /* font-size: var(--base-font-size); */
     text-align: center;
     break-inside: avoid-page;
@@ -36,8 +36,8 @@ $theme: "" !default;
     /* 表格标题（首行）样式 */
     /* 三线表表头的线 */
     border-bottom: 0.5pt solid;
-    font-family: var(--table-title-font), var(--heading-Latin-font),
-      var(--heading-Chinese-font), serif !important;
+    font-family: var(--table-title-font), var(--heading-latin-font),
+      var(--heading-chinese-font), serif !important;
     /* font-size: var(--base-font-size); */
     font-weight: var(--strong-weight);
   }

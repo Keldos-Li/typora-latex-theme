@@ -36,8 +36,8 @@ $theme: "" !default;
 
   /* 基准字体 */
   /* 备选：Times, "Times New Roman" */
-  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times;
-  --base-Chinese-font: #{$chinese-serif-font};
+  --base-latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times;
+  --base-chinese-font: #{$chinese-serif-font};
   --base-font-size: 9.5pt;
 
   /* 引言字体 */
@@ -79,32 +79,32 @@ $theme: "" !default;
   /* 标题字体（总设置） */
   @if $os == "macos" {
     /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
-    --heading-Latin-font: "LMRoman10-Bold";
+    --heading-latin-font: "LMRoman10-Bold";
   } @else if $os == "windows" {
-    --heading-Latin-font: var(--base-Latin-font);
+    --heading-latin-font: var(--base-latin-font);
   } @else if $os == "linux" {
-    --heading-Latin-font: var(--base-Latin-font);
+    --heading-latin-font: var(--base-latin-font);
   }
-  --heading-Chinese-font: var(--heading-chinese-sans-serif-font);
+  --heading-chinese-font: var(--heading-chinese-sans-serif-font);
 
   /* 标题字体分别设置 */
   /* 大标题（h1）字体 */
-  --title-Chinese-font: var(--heading-chinese-sans-serif-font);
+  --title-chinese-font: var(--heading-chinese-sans-serif-font);
   --title-font-size: 1.9em;
   /* h2字体 */
-  --h2-Chinese-font: var(--heading-chinese-sans-serif-font);
+  --h2-chinese-font: var(--heading-chinese-sans-serif-font);
   --h2-font-size: 1.5em;
   /* h3字体 */
-  --h3-Chinese-font: var(--heading-chinese-sans-serif-font);
+  --h3-chinese-font: var(--heading-chinese-sans-serif-font);
   --h3-font-size: 1.25em;
   /* h4字体 */
-  --h4-Chinese-font: var(--heading-chinese-kai-font);
+  --h4-chinese-font: var(--heading-chinese-kai-font);
   --h4-font-size: 1.15em;
   /* h5字体 */
-  --h5-Chinese-font: var(--heading-chinese-fangsong-font);
+  --h5-chinese-font: var(--heading-chinese-fangsong-font);
   --h5-font-size: 1.10em;
   /* h6字体 */
-  --h6-Chinese-font: var(--heading-chinese-fangsong-font);
+  --h6-chinese-font: var(--heading-chinese-fangsong-font);
   --h6-font-size: 1.05em;
 
   /* 粗体样式设置 */
