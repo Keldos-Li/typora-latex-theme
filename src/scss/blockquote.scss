@@ -5,7 +5,7 @@ $theme: "" !default;
 
 blockquote {
   font-style: normal;
-  font-family: var(--quote-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
+  font-family: var(--quote-latin-font), var(--quote-chinese-font), var(--base-Latin-font), var(--base-Chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
   /* 文字离左边框的距离 */
   padding-left: 2em;

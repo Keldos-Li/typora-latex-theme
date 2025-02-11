@@ -30,20 +30,19 @@ $theme: "" !default;
   /* == 字体设置 == */
 
   /* 汉字字体 */
-  --chinese-sans-serif-font: #{chinese-sans-serif-font};  /* 黑体 */
-  --chinese-serif-font: #{chinese-serif-font};  /* 宋体 */
-  --chinese-kai-font: #{chinese-kai-font};  /* 楷体 */
-  --chinese-fangsong-font: #{chinese-fangsong-font};  /* 仿宋 */
+  --heading-chinese-sans-serif-font: #{$chinese-sans-serif-font};  /* 黑体 */
+  --heading-chinese-kai-font: #{$chinese-kai-font};  /* 楷体 */
+  --heading-chinese-fangsong-font: #{$chinese-fangsong-font};  /* 仿宋 */
 
   /* 基准字体 */
   /* 备选：Times, "Times New Roman" */
   --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times;
-  --base-Chinese-font: var(--chinese-serif-font);
+  --base-Chinese-font: #{$chinese-serif-font};
   --base-font-size: 9.5pt;
 
   /* 引言字体 */
-  --quote-font: "Latin Modern Roman", "Latin Modern Roman 10", Times,
-    "Times New Roman", var(--chinese-fangsong-font);
+  --quote-latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times, "Times New Roman";
+  --quote-chinese-font: "华文仿宋";
   /* em单位为一个正文字符（--base-font-size）大小，
   例如，如果您设置 --base-font-size 为 9.5pt，那么 1.05em = 1.05*9.5pt ≈ 10pt。下面的标题字体等设置也遵循该规则。
   这样，您就可以仅通过调整基准字体大小，而动态对其他元素大小做出调整。
@@ -86,26 +85,26 @@ $theme: "" !default;
   } @else if $os == "linux" {
     --heading-Latin-font: var(--base-Latin-font);
   }
-  --heading-Chinese-font: var(--chinese-sans-serif-font);
+  --heading-Chinese-font: var(--heading-chinese-sans-serif-font);
 
   /* 标题字体分别设置 */
   /* 大标题（h1）字体 */
-  --title-Chinese-font: var(--chinese-sans-serif-font);
+  --title-Chinese-font: var(--heading-chinese-sans-serif-font);
   --title-font-size: 1.9em;
   /* h2字体 */
-  --h2-Chinese-font: var(--chinese-sans-serif-font);
+  --h2-Chinese-font: var(--heading-chinese-sans-serif-font);
   --h2-font-size: 1.5em;
   /* h3字体 */
-  --h3-Chinese-font: var(--chinese-sans-serif-font);
+  --h3-Chinese-font: var(--heading-chinese-sans-serif-font);
   --h3-font-size: 1.25em;
   /* h4字体 */
-  --h4-Chinese-font: var(--chinese-kai-font);
+  --h4-Chinese-font: var(--heading-chinese-kai-font);
   --h4-font-size: 1.15em;
   /* h5字体 */
-  --h5-Chinese-font: var(--chinese-fangsong-font);
+  --h5-Chinese-font: var(--heading-chinese-fangsong-font);
   --h5-font-size: 1.10em;
   /* h6字体 */
-  --h6-Chinese-font: var(--chinese-fangsong-font);
+  --h6-Chinese-font: var(--heading-chinese-fangsong-font);
   --h6-font-size: 1.05em;
 
   /* 粗体样式设置 */
