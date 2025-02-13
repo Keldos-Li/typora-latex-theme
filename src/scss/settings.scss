@@ -17,7 +17,7 @@ $theme: "" !default;
     $chinese-fangsong-font: "华文仿宋";
   } @else if $os == "macos" {
     $ui-font: "苹方-简";
-    $chinese-sans-serif-font: "方正公文黑体";
+    $chinese-sans-serif-font: "华文黑体Bold", "方正公文黑体";
     $chinese-serif-font: "家族宋", "宋体-简";
     $chinese-kai-font: "方正公文楷体";
     $chinese-fangsong-font: "方正公文仿宋";
