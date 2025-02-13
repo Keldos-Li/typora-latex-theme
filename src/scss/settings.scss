@@ -31,11 +31,6 @@ $theme: "" !default;
 
   /* == 字体设置 == */
 
-  /* 汉字字体 */
-  --heading-chinese-sans-serif-font: #{meta.inspect($chinese-sans-serif-font)};  /* 黑体 */
-  --heading-chinese-kai-font: #{meta.inspect($chinese-kai-font)};  /* 楷体 */
-  --heading-chinese-fangsong-font: #{meta.inspect($chinese-fangsong-font)};  /* 仿宋 */
-
   /* 基准字体 */
   /* 备选：Times, "Times New Roman" */
   --base-latin-font: "Latin Modern Roman", "Latin Modern Roman 10", Times;
@@ -79,6 +74,9 @@ $theme: "" !default;
   --table-font: "";
 
   /* 标题字体（总设置） */
+  --heading-chinese-sans-serif-font: #{meta.inspect($chinese-sans-serif-font)};  /* 黑体 */
+  --heading-chinese-kai-font: #{meta.inspect($chinese-kai-font)};  /* 楷体 */
+  --heading-chinese-fangsong-font: #{meta.inspect($chinese-fangsong-font)};  /* 仿宋 */
   @if $os == "macos" {
     /* 注意，如果您使用macOS系统并更改了英文字体，请在此处更换标题英文字体粗体字重的postscript值 */
     --heading-latin-font: "LMRoman10-Bold";
