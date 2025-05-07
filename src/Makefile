@@ -11,18 +11,8 @@ pandoc = pandoc
 $(shell mkdir -p $(working_dir))
 $(shell mkdir -p $(target_dir))
 
-# $(shell cp -r $(base_dir)/scss $(working_dir)/scss)
-# $(shell cp -r $(base_dir)/headers $(working_dir)/headers)
-
-# This solves the issue where changes in the source files don't take effect, 
-# because the $(shell) command is only executed once during Makefile parsing
-define update-build
-	rm -rf $(working_dir)
-	mkdir -p $(working_dir)/scss
-	mkdir -p $(working_dir)/headers
-	cp -r $(base_dir)/scss/* $(working_dir)/scss/
-	cp -r $(base_dir)/headers/* $(working_dir)/headers/
-endef
+$(shell cp -r $(base_dir)/scss $(working_dir)/scss)
+$(shell cp -r $(base_dir)/headers $(working_dir)/headers)
 
 # $(1) is the name of operating system, $(2) is typora or pandoc, $(3) is light or dark theme
 define build
@@ -37,7 +27,6 @@ endef
 
 # $(1) is the name of operating system
 define build-typora
-	$(call update-build)
 	$(call build,$(1),$(typora),light)
 	$(call build,$(1),$(typora),dark)
 	if [ "$(1)" = "$(windows)" ]; then \
@@ -52,7 +41,6 @@ define build-typora
 endef
 
 define build-pandoc
-	$(call update-build)
 	$(call build,$(linux),$(pandoc),light)
 	$(call build,$(linux),$(pandoc),dark)
 endef
