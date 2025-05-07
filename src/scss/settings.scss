@@ -32,10 +32,7 @@ $theme: "" !default;
   /* == 引用块设置 == */
   /* 1 表示启用边框，0 表示禁用 */
   --blockquote-border-enabled: 1; /* 1 表示启用边框，0 表示禁用 */
-  --blockquote-border-width: 4px; /* 边框粗细 */
   --blockquote-border-color: hsl(0, 0%, 70%); /* 边框颜色 */
-  --blockquote-padding-left: 2em; /* 左侧缩进 */
-  --blockquote-padding-right: 2em; /* 右侧缩进 */
 
   /* == 字体设置 == */
 
