@@ -1,31 +1,26 @@
 $os: "" !default;
 $theme: "" !default;
 
-/* 一个>的引言仅为两字符缩进，使用>>的引言为传统引言样式，具有左竖线、左缩进 */
+//把变量都变成可以动态调整的，并解决了边框间距以及字的大小变化问题
 
 blockquote {
   font-style: normal;
   font-family: var(--quote-latin-font), var(--quote-chinese-font), var(--base-latin-font), var(--base-chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
-  /* 文字离左边框的距离 */
-  padding-left: 2em;
-  padding-right: 2em;
-  /* 左边框离页面边的距离 */
+  
+  border-left: calc(var(--blockquote-border-enabled) * var(--blockquote-border-width)) solid var(--blockquote-border-color);
+  padding-left: calc(var(--blockquote-padding-left) - (var(--blockquote-border-enabled) * var(--blockquote-border-width)));
+  padding-right: var(--blockquote-padding-right);
   margin-left: 0;
 }
 
-// blockquote p:first-child {
-//   padding-top: 1ch;
-// }
-
-// blockquote p:last-child {
-//   padding-bottom: 1ch;
-// }
-
 blockquote blockquote {
-  border-left: 4px solid hsl(0, 0%, 70%);
-  padding-left: calc(2ch - 4px);
+  //修改，持嵌套引用与父级相同字体大小，防止间距和字体变大
+  font-size: 1em;
+  border-left: calc(var(--blockquote-border-enabled) * var(--blockquote-border-width)) solid var(--blockquote-border-color);
+  padding-left: calc(var(--blockquote-padding-left) - (var(--blockquote-border-enabled) * var(--blockquote-border-width)));
+  // 嵌套引用不需要右侧缩进
   padding-right: 0;
-  margin-left: -4px;
+  margin-left: calc(var(--blockquote-border-enabled) * -1 * var(--blockquote-border-width));
   border-radius: 0;
 }
