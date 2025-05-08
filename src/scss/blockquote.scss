@@ -5,7 +5,7 @@ blockquote {
   font-style: normal;
   font-family: var(--quote-latin-font), var(--quote-chinese-font), var(--base-latin-font), var(--base-chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
-  /* 左侧引用框  */
+  /* 左侧边框  */
   border-left: calc(var(--blockquote-border-enabled) * 4px) solid var(--blockquote-border-color);
   /* 文字离左边框的距离 */
   padding-left: calc(2em - (var(--blockquote-border-enabled) * 4px));
@@ -15,12 +15,6 @@ blockquote {
 }
 
 blockquote blockquote {
-  /* 持嵌套引用与父级相同字体大小，防止间距和字体变大 */
-  font-size: 1em;
-  border-left: calc(var(--blockquote-border-enabled) * 4px) solid var(--blockquote-border-color);
-  padding-left: calc(2em - (var(--blockquote-border-enabled) * 4px));
-  /* 嵌套引用不需要右侧缩进 */
+  font-size: inherit;
   padding-right: 0;
-  margin-left: calc(var(--blockquote-border-enabled) * -1 * 4px);
-  border-radius: 0;
 }
