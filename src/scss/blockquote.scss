@@ -1,25 +1,25 @@
 $os: "" !default;
 $theme: "" !default;
 
-//把变量都变成可以动态调整的，并解决了边框间距以及字的大小变化问题
-
 blockquote {
   font-style: normal;
   font-family: var(--quote-latin-font), var(--quote-chinese-font), var(--base-latin-font), var(--base-chinese-font), -apple-system, serif;
   font-size: var(--quote-font-size);
-  
+  /* 左侧引用框  */
   border-left: calc(var(--blockquote-border-enabled) * 4px) solid var(--blockquote-border-color);
+  /* 文字离左边框的距离 */
   padding-left: calc(2em - (var(--blockquote-border-enabled) * 4px));
   padding-right: 2em;
+  /* 左边框离页面边的距离 */
   margin-left: 0;
 }
 
 blockquote blockquote {
-  //修改，持嵌套引用与父级相同字体大小，防止间距和字体变大
+  /* 持嵌套引用与父级相同字体大小，防止间距和字体变大 */
   font-size: 1em;
   border-left: calc(var(--blockquote-border-enabled) * 4px) solid var(--blockquote-border-color);
   padding-left: calc(2em - (var(--blockquote-border-enabled) * 4px));
-  // 嵌套引用不需要右侧缩进
+  /* 嵌套引用不需要右侧缩进 */
   padding-right: 0;
   margin-left: calc(var(--blockquote-border-enabled) * -1 * 4px);
   border-radius: 0;
