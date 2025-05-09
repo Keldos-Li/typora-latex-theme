@@ -28,6 +28,11 @@ $theme: "" !default;
     $chinese-kai-font: "Noto Serif CJK SC";  // FIXME: 找到合适的开源楷体
     $chinese-fangsong-font: "Noto Serif CJK SC";  // FIXME: 找到合适的开源仿宋字体
   }
+  
+  /* == 引用块设置 == */
+  /* 1 表示启用边框，0 表示禁用 */
+  --blockquote-border-enabled: 1; /* 1 表示启用边框，0 表示禁用 */
+  --blockquote-border-color: hsl(0, 0%, 70%); /* 边框颜色 */
 
   /* == 字体设置 == */
 
