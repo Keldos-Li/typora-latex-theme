@@ -45,18 +45,26 @@ $theme: "" !default;
 .md-toc-content {
   .md-toc-h1 {
     display: var(--toc-show-title);
+    // 添加 counter-reset 以提高兼容性
+    counter-reset: toc-h2 toc-h3 toc-h4 toc-h5 toc-h6;
+    // 保留 counter-set 作为备用支持
     counter-set: toc-h2 0 toc-h3 0 toc-h4 0 toc-h5 0 toc-h6 0;
   }
   .md-toc-h2 {
+    // 确保 h2 重置 h3 及其后续计数器
+    counter-reset: toc-h3 toc-h4 toc-h5 toc-h6;
     counter-set: toc-h3 0 toc-h4 0 toc-h5 0 toc-h6 0;
   }
   .md-toc-h3 {
+    counter-reset: toc-h4 toc-h5 toc-h6;
     counter-set: toc-h4 0 toc-h5 0 toc-h6 0;
   }
   .md-toc-h4 {
+    counter-reset: toc-h5 toc-h6;
     counter-set: toc-h5 0 toc-h6 0;
   }
   .md-toc-h5 {
+    counter-reset: toc-h6;
     counter-set: toc-h6 0;
   }
   .md-toc-h2:before {
