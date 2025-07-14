@@ -19,9 +19,9 @@ define build
 	mkdir -p $(target_dir)/$(1)-$(2)
 	mkdir -p $(target_dir)/$(1)-$(2)/target
 	if [ "$(3)" = "light" ]; then \
-		sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
+		dart-sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
 	else \
-		sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
+		dart-sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
 	fi
 endef
 
@@ -72,4 +72,4 @@ pandoc:
 
 .PHONY: clean
 clean:
-	rm -rf $(target_dir) $(working_dir) $(base_dir)/.sass-cache
+	rm -rf $(target_dir) $(working_dir) $(base_dir)/.dart-sass-cache
