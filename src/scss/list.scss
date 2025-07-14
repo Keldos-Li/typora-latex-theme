@@ -69,7 +69,14 @@ $theme: "" !default;
   ol+ul>li,
   li>ul>li,
   li>ol>li {
-    margin-top: -0.8em; // 让列表项之间的间距更紧凑
+    // 在屏幕显示时使用紧凑间距
+    @media screen {
+      margin-top: -0.8em; // 让列表项之间的间距更紧凑
+    }
+    // 在打印/导出时使用更保守的间距，兼容低版本 Chromium
+    @media print {
+      margin-top: -0.4em; // 使用较小的负边距以避免在低版本 Chromium 中的压缩问题
+    }
   }
 }
 /* task列表 */
