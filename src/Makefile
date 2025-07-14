@@ -19,9 +19,9 @@ define build
 	mkdir -p $(target_dir)/$(1)-$(2)
 	mkdir -p $(target_dir)/$(1)-$(2)/target
 	if [ "$(3)" = "light" ]; then \
-		dart-sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
+		sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex.css; \
 	else \
-		dart-sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
+		sass --no-source-map --style expanded $(working_dir)/headers/$(1)/$(3).scss $(target_dir)/$(1)-$(2)/target/latex-$(3).css; \
 	fi
 endef
 
