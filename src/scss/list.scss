@@ -64,12 +64,20 @@ $theme: "" !default;
   li {
     position: relative;
   }
-  li+li,
-  ul+ol>li,
-  ol+ul>li,
-  li>ul>li,
-  li>ol>li {
+  li+li {
     margin-top: -0.8em; // 让列表项之间的间距更紧凑
+  }
+  
+  // 混合列表的间距调整，使用更简单的选择器以兼容低版本浏览器内核
+  ul+ol li:first-child,
+  ol+ul li:first-child {
+    margin-top: -0.8em;
+  }
+  
+  // 嵌套列表的间距调整，分解复杂选择器
+  li ul li:first-child,
+  li ol li:first-child {
+    margin-top: -0.8em;
   }
 }
 /* task列表 */
