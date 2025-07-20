@@ -60,27 +60,46 @@ $theme: "" !default;
   // counter-reset: available across browsers since July 2015,
   // counter-set: newly available since December 2023.
   // 为了避免 https://github.com/Keldos-Li/typora-latex-theme/issues/175 的问题, 应当尽量使用 counter-set;
-  // 但为保证老版本 Typora 的兼容性，以下仍然保留 counter-reset.
+  // 但为保证老版本 Typora 的兼容性，以下仍然默认使用 counter-reset.
   h1 {
     counter-reset: heading-h2 heading-h3 heading-h4 heading-h5 heading-h6;
-    counter-set: heading-h2 0 heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
   }
   h2 {
     // 确保h2重置h3及其后续计数器
     counter-reset: heading-h3 heading-h4 heading-h5 heading-h6;
-    counter-set: heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
   }
   h3 {
     counter-reset: heading-h4 heading-h5 heading-h6;
-    counter-set: heading-h4 0 heading-h5 0 heading-h6 0;
   }
   h4 {
     counter-reset: heading-h5 heading-h6;
-    counter-set: heading-h5 0 heading-h6 0;
   }
   h5 {
     counter-reset: heading-h6;
-    counter-set: heading-h6 0;
+  }
+
+  // 仅当浏览器内核支持 counter-set 时，才使用 counter-set 进行计数器的设置
+  @supports (counter-set: none) {
+    h1 {
+      counter-set: heading-h2 0 heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h2 {
+      counter-set: heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h3 {
+      counter-set: heading-h4 0 heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h4 {
+      counter-set: heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h5 {
+      counter-set: heading-h6 0;
+      counter-reset: none;
+    }
   }
 
   h2:before {
