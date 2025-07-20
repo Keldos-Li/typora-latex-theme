@@ -56,12 +56,11 @@ $theme: "" !default;
   // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
   counter-reset: heading-h2 heading-h3 heading-h4 heading-h5 heading-h6;
 
-  /* 
-    counter-reset: available across browsers since July 2015,
-    counter-set: newly available since December 2023.
-    为了避免 https://github.com/Keldos-Li/typora-latex-theme/issues/175 的问题, 应当尽量使用 counter-set;
-    但为保证老版本 Typora 的兼容性，以下仍然保留 counter-reset.
-  */
+  // NOTE:
+  // counter-reset: available across browsers since July 2015,
+  // counter-set: newly available since December 2023.
+  // 为了避免 https://github.com/Keldos-Li/typora-latex-theme/issues/175 的问题, 应当尽量使用 counter-set;
+  // 但为保证老版本 Typora 的兼容性，以下仍然保留 counter-reset.
   h1 {
     counter-reset: heading-h2 heading-h3 heading-h4 heading-h5 heading-h6;
     counter-set: heading-h2 0 heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
