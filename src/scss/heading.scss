@@ -55,20 +55,51 @@ $theme: "" !default;
   // 下面是标题自动编号，初始化计数器。使用多级编号，编号后加空格模仿LaTeX
   // 首先全局进行一次reset，这样即使不添加h1标题也可以使用较低级别的标题
   counter-reset: heading-h2 heading-h3 heading-h4 heading-h5 heading-h6;
+
+  // NOTE:
+  // counter-reset: available across browsers since July 2015,
+  // counter-set: newly available since December 2023.
+  // 为了避免 https://github.com/Keldos-Li/typora-latex-theme/issues/175 的问题, 应当尽量使用 counter-set;
+  // 但为保证老版本 Typora 的兼容性，以下仍然默认使用 counter-reset.
   h1 {
-    counter-set: heading-h2 0 heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
+    counter-reset: heading-h2 heading-h3 heading-h4 heading-h5 heading-h6;
   }
   h2 {
-    counter-set: heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
+    // 确保h2重置h3及其后续计数器
+    counter-reset: heading-h3 heading-h4 heading-h5 heading-h6;
   }
   h3 {
-    counter-set: heading-h4 0 heading-h5 0 heading-h6 0;
+    counter-reset: heading-h4 heading-h5 heading-h6;
   }
   h4 {
-    counter-set: heading-h5 0 heading-h6 0;
+    counter-reset: heading-h5 heading-h6;
   }
   h5 {
-    counter-set: heading-h6 0;
+    counter-reset: heading-h6;
+  }
+
+  // 仅当浏览器内核支持 counter-set 时，才使用 counter-set 进行计数器的设置
+  @supports (counter-set: none) {
+    h1 {
+      counter-set: heading-h2 0 heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h2 {
+      counter-set: heading-h3 0 heading-h4 0 heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h3 {
+      counter-set: heading-h4 0 heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h4 {
+      counter-set: heading-h5 0 heading-h6 0;
+      counter-reset: none;
+    }
+    h5 {
+      counter-set: heading-h6 0;
+      counter-reset: none;
+    }
   }
 
   h2:before {
