@@ -34,10 +34,14 @@ $theme: "" !default;
     ol {
       counter-reset: liiist;
       list-style: none;
-      margin: 0;
       > li {
         counter-increment: liiist;
         position: relative;
+      }
+      > li + li {
+        @media print {
+          margin-top: 0.42em;
+        }
       }
       > li::before {
         content: counter(liiist, lower-roman) ".";
@@ -65,19 +69,25 @@ $theme: "" !default;
     position: relative;
   }
   li+li {
-    margin-top: -0.8em; // 让列表项之间的间距更紧凑
+    @media print {
+      margin-top: 0.42em;
+    }
   }
   
   // 混合列表的间距调整，使用更简单的选择器以兼容低版本浏览器内核
   ul+ol li:first-child,
   ol+ul li:first-child {
-    margin-top: -0.8em;
+    @media print {
+      margin-top: 0.42em;
+    }
   }
   
   // 嵌套列表的间距调整，分解复杂选择器
   li ul li:first-child,
   li ol li:first-child {
-    margin-top: -0.8em;
+    @media print {
+      margin-top: 0.42em;
+    }
   }
 }
 /* task列表 */
