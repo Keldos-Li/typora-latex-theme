@@ -34,7 +34,6 @@ $theme: "" !default;
     ol {
       counter-reset: liiist;
       list-style: none;
-      margin: 0;
       > li {
         counter-increment: liiist;
         position: relative;
@@ -58,28 +57,21 @@ $theme: "" !default;
 #write ol, 
 #write ul {
   padding-inline-start: 2em;
+  // NOTE: 由于老版本 Typora 的 bug，第三级列表在渲染为 HTML 时丢失 p 标签，只能预先把所有 列表 的上下边距清零。
+  margin-block: 0;
 }
 
 #write {
   li {
     position: relative;
+    margin-block: 0.2em;
   }
-  li+li {
-    margin-top: -0.8em; // 让列表项之间的间距更紧凑
-  }
-  
-  // 混合列表的间距调整，使用更简单的选择器以兼容低版本浏览器内核
-  ul+ol li:first-child,
-  ol+ul li:first-child {
-    margin-top: -0.8em;
-  }
-  
-  // 嵌套列表的间距调整，分解复杂选择器
-  li ul li:first-child,
-  li ol li:first-child {
-    margin-top: -0.8em;
+  li > p {
+    // NOTE: 由于老版本 Typora 的 bug，第三级列表在渲染为 HTML 时丢失 p 标签，只能预先把所有 li > p 的上下边距清零。
+    margin-block: 0;
   }
 }
+
 /* task列表 */
 .md-task-list-item>input{
   margin-top: 0.42em;
