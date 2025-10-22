@@ -40,7 +40,7 @@ $theme: "" !default;
       }
       > li + li {
         @media print {
-          margin-top: 0.42em;
+          margin-bottom: 1em;
         }
       }
       > li::before {
@@ -70,7 +70,7 @@ $theme: "" !default;
   }
   li+li {
     @media print {
-      margin-top: 0.42em;
+      margin-bottom: 1em;
     }
   }
   
@@ -78,7 +78,7 @@ $theme: "" !default;
   ul+ol li:first-child,
   ol+ul li:first-child {
     @media print {
-      margin-top: 0.42em;
+      margin-bottom: 1em;
     }
   }
   
@@ -86,7 +86,7 @@ $theme: "" !default;
   li ul li:first-child,
   li ol li:first-child {
     @media print {
-      margin-top: 0.42em;
+      margin-bottom: 1em;
     }
   }
 }
