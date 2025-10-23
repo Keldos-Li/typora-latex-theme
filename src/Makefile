@@ -72,4 +72,4 @@ pandoc:
 
 .PHONY: clean
 clean:
-	rm -rf $(target_dir) $(working_dir) $(base_dir)/.dart-sass-cache
+	rm -rf $(target_dir) $(working_dir) $(base_dir)/.sass-cache
