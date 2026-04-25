@@ -5,14 +5,14 @@ on:
     types: [opened, synchronize, reopened]
 
 env:
-  DART_SASS_VERSION: 1.81.0
+  DART_SASS_VERSION: 1.99.0
 
 jobs:
   compile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install Dart Sass
         uses: robinraju/release-downloader@v1
         with:
@@ -29,7 +29,7 @@ jobs:
           cd ./src
           make -j3
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: my-artifact
           path: |
